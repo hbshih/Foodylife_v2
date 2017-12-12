@@ -1,0 +1,6 @@
+framework module Pods_Food_Diary_App_ {
+  umbrella header "Pods-Food Diary App!-umbrella.h"
+
+  export *
+  module * { export * }
+}

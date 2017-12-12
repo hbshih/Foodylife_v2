@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>551149814557-mrillf7oi1281p2704n449f3vpnlt00e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.551149814557-mrillf7oi1281p2704n449f3vpnlt00e</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAFCEGPAyK963znrFsKI9rUsBvPT32AMSk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>551149814557</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.BenShih.Food-Diary-App-</string>
+	<key>PROJECT_ID</key>
+	<string>food-diary-app-903ae</string>
+	<key>STORAGE_BUCKET</key>
+	<string>food-diary-app-903ae.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:551149814557:ios:ee08f5f73d178cc3</string>
+	<key>DATABASE_URL</key>
+	<string>https://food-diary-app-903ae.firebaseio.com</string>
+</dict>
+</plist>
