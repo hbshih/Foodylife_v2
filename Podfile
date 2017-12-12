@@ -9,6 +9,8 @@ target 'Food Diary App!' do
 
   # Pods for Food Diary App!
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
   target 'Food Diary App!Tests' do
     inherit! :search_paths
