@@ -30,6 +30,7 @@ class ViewController: UIViewController {
                 }else
                 {
                     print("Log on success")
+                    self.performSegue(withIdentifier: "logInSegue", sender: nil)
                 }
             })
         }
@@ -59,6 +60,11 @@ class ViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Confirm", style: .default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
-    
+    /*
+    override var prefersStatusBarHidden: Bool
+    {
+            return true
+    }
+    */
 }
 

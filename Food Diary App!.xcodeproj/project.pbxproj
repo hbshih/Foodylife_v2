@@ -10,6 +10,8 @@
 		2E388CAC82D57EE643AC7C59 /* Pods_Food_Diary_App_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE7B708F7170D4055C55FB7 /* Pods_Food_Diary_App_UITests.framework */; };
 		373891DAD9C61286CE8A3716 /* Pods_Food_Diary_App_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */; };
 		5ED87B49F86EA263E6B4C293 /* Pods_Food_Diary_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7BBA844F0BBB3BE83A4317 /* Pods_Food_Diary_App_Tests.framework */; };
+		B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422441FE16947002C2540 /* KDCircularProgress.swift */; };
+		B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422461FE16D13002C2540 /* homepageViewController.swift */; };
 		B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57935351FE022DE00E663DB /* AppDelegate.swift */; };
 		B57935381FE022DE00E663DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57935371FE022DE00E663DB /* ViewController.swift */; };
 		B579353B1FE022DE00E663DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57935391FE022DE00E663DB /* Main.storyboard */; };
@@ -47,6 +49,10 @@
 		9CCF8A4D64473F57091EEFC0 /* Pods-Food Diary App!UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Diary App!UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Food Diary App!UITests/Pods-Food Diary App!UITests.release.xcconfig"; sourceTree = "<group>"; };
 		A08B397D9C4F0A1F200238EE /* Pods-Food Diary App!UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Diary App!UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Food Diary App!UITests/Pods-Food Diary App!UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Diary_App_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B53422441FE16947002C2540 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
+		B53422461FE16D13002C2540 /* homepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homepageViewController.swift; sourceTree = "<group>"; };
+		B53422501FE18F3E002C2540 /* JVFloatLabeledTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextView.h; sourceTree = "<group>"; };
+		B53422511FE18FF1002C2540 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextField.h; sourceTree = "<group>"; };
 		B57935321FE022DE00E663DB /* Food Diary App!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Diary App!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57935351FE022DE00E663DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B57935371FE022DE00E663DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,10 +135,14 @@
 				B57935351FE022DE00E663DB /* AppDelegate.swift */,
 				B57935371FE022DE00E663DB /* ViewController.swift */,
 				B57935391FE022DE00E663DB /* Main.storyboard */,
+				B53422461FE16D13002C2540 /* homepageViewController.swift */,
 				B579353C1FE022DE00E663DB /* Assets.xcassets */,
 				B579353E1FE022DE00E663DB /* LaunchScreen.storyboard */,
 				B57935411FE022DE00E663DB /* Info.plist */,
 				B57935631FE0234600E663DB /* GoogleService-Info.plist */,
+				B53422441FE16947002C2540 /* KDCircularProgress.swift */,
+				B53422501FE18F3E002C2540 /* JVFloatLabeledTextView.h */,
+				B53422511FE18FF1002C2540 /* JVFloatLabeledTextField.h */,
 			);
 			path = "Food Diary App!";
 			sourceTree = "<group>";
@@ -450,6 +460,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */,
+				B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */,
 				B57935381FE022DE00E663DB /* ViewController.swift in Sources */,
 				B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */,
 			);

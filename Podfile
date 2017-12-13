@@ -11,6 +11,7 @@ target 'Food Diary App!' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'JVFloatLabeledTextField'
 
   target 'Food Diary App!Tests' do
     inherit! :search_paths
