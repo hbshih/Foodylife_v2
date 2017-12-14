@@ -228,6 +228,12 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrD-iT-Xu0" customClass="KDCircularProgress" customModule="Food_Diary_App_">
                                 <rect key="frame" x="1.5" y="20" width="372" height="372"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Face" translatesAutoresizingMaskIntoConstraints="NO" id="uU4-8g-gAk">
+                                        <rect key="frame" x="127" y="127" width="118" height="118"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372" id="8Jq-Df-QOg"/>
@@ -241,7 +247,7 @@
                                         <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="IBColor1">
-                                        <color key="value" red="0.98514515161514282" green="0.82623320817947388" blue="0.39202040433883667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="0.99243658781051636" green="0.81832700967788696" blue="0.38646960258483887" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="angle">
                                         <real key="value" value="5"/>
@@ -304,6 +310,7 @@
         <image name="Background-2" width="374" height="667"/>
         <image name="Button" width="160" height="50"/>
         <image name="FACEBOOK LOG IN" width="250" height="39"/>
+        <image name="Face" width="118" height="118"/>
         <image name="Foody Life-1" width="266" height="56"/>
         <image name="GOOGLE LOG IN" width="250" height="39"/>
         <image name="lock" width="18" height="22"/>
