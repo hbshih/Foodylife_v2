@@ -10,6 +10,7 @@ import UIKit
 
 class homepageViewController: UIViewController {
 
+   // @IBOutlet weak var circularSlider: KDCircularProgress!
     @IBOutlet weak var circularSlider: KDCircularProgress!
     
     override func viewDidLoad() {
