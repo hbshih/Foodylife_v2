@@ -12,6 +12,7 @@ target 'Food Diary App!' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'SCLAlertView'
 
   target 'Food Diary App!Tests' do
     inherit! :search_paths

@@ -39,12 +39,14 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - SCLAlertView (0.7.0)
   - SkyFloatingLabelTextField (3.2.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - SCLAlertView
   - SkyFloatingLabelTextField (~> 3.0)
 
 SPEC CHECKSUMS:
@@ -57,8 +59,9 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SkyFloatingLabelTextField: 4e2d2f7160af660ed1da6bb9d0027b5c474b4b79
 
-PODFILE CHECKSUM: 080f37f8aa1cd7bacdf9f3fb1a8d747bdb266936
+PODFILE CHECKSUM: 6b82fe32520fde2b87155334ed9c2a17dc8f53ff
 
 COCOAPODS: 1.1.1

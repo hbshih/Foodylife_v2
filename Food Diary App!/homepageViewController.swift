@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class homepageViewController: UIViewController {
 
@@ -60,5 +61,22 @@ class homepageViewController: UIViewController {
         
         let currentAngle = circularSlider.angle
         return currentAngle + 10
+    }
+    @IBAction func faceTapped(_ sender: Any)
+    {
+            
+        let appearance = SCLAlertView.SCLAppearance(
+            //kCircleIconHeight: 55.0
+            kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
+            kTextFont: UIFont(name: "HelveticaNeue", size: 16)!,
+            kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 18)!,
+            showCloseButton: true
+        )
+        let alert = SCLAlertView(appearance: appearance)
+        
+        let icon = UIImage(named:"Facetry.png")
+        let color = UIColor.orange        
+        _ = alert.showCustom("STOP", subTitle: "STOP TOUCHING MY EYES! YOU MEATBALL", color: color, icon: icon!)
+        
     }
 }
