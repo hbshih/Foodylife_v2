@@ -20,7 +20,10 @@
 		B579354B1FE022DE00E663DB /* Food_Diary_App_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B579354A1FE022DE00E663DB /* Food_Diary_App_Tests.swift */; };
 		B57935561FE022DE00E663DB /* Food_Diary_App_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57935551FE022DE00E663DB /* Food_Diary_App_UITests.swift */; };
 		B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B57935631FE0234600E663DB /* GoogleService-Info.plist */; };
-		B5EEF9881FE6BC7500322949 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EEF9871FE6BC7500322949 /* SignUpViewController.swift */; };
+		B57CF9BA1FE886D7003AEB1E /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9B91FE886D7003AEB1E /* CreateUsernameViewController.swift */; };
+		B57CF9BC1FE886E3003AEB1E /* CreateEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */; };
+		B57CF9BE1FE88712003AEB1E /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */; };
+		B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +69,10 @@
 		B57935551FE022DE00E663DB /* Food_Diary_App_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_Diary_App_UITests.swift; sourceTree = "<group>"; };
 		B57935571FE022DE00E663DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B57935631FE0234600E663DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B5EEF9871FE6BC7500322949 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B57CF9B91FE886D7003AEB1E /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
+		B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmailViewController.swift; sourceTree = "<group>"; };
+		B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
+		B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,16 +138,15 @@
 		B57935341FE022DE00E663DB /* Food Diary App! */ = {
 			isa = PBXGroup;
 			children = (
+				B59F55871FE9566400E22CCD /* Model */,
+				B59F55861FE9566200E22CCD /* View */,
+				B59F55851FE9566000E22CCD /* Controller */,
+				B59F55841FE9565600E22CCD /* Helper */,
 				B57935351FE022DE00E663DB /* AppDelegate.swift */,
-				B57935371FE022DE00E663DB /* ViewController.swift */,
-				B57935391FE022DE00E663DB /* Main.storyboard */,
-				B53422461FE16D13002C2540 /* homepageViewController.swift */,
 				B579353C1FE022DE00E663DB /* Assets.xcassets */,
 				B579353E1FE022DE00E663DB /* LaunchScreen.storyboard */,
 				B57935411FE022DE00E663DB /* Info.plist */,
 				B57935631FE0234600E663DB /* GoogleService-Info.plist */,
-				B53422441FE16947002C2540 /* KDCircularProgress.swift */,
-				B5EEF9871FE6BC7500322949 /* SignUpViewController.swift */,
 			);
 			path = "Food Diary App!";
 			sourceTree = "<group>";
@@ -162,6 +167,42 @@
 				B57935571FE022DE00E663DB /* Info.plist */,
 			);
 			path = "Food Diary App!UITests";
+			sourceTree = "<group>";
+		};
+		B59F55841FE9565600E22CCD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B53422441FE16947002C2540 /* KDCircularProgress.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		B59F55851FE9566000E22CCD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B57935371FE022DE00E663DB /* ViewController.swift */,
+				B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */,
+				B57CF9B91FE886D7003AEB1E /* CreateUsernameViewController.swift */,
+				B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */,
+				B53422461FE16D13002C2540 /* homepageViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B59F55861FE9566200E22CCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B57935391FE022DE00E663DB /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B59F55871FE9566400E22CCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F2E1F04D1CF9DF94F6356B27 /* Pods */ = {
@@ -460,10 +501,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */,
+				B57CF9BC1FE886E3003AEB1E /* CreateEmailViewController.swift in Sources */,
+				B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */,
 				B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */,
 				B57935381FE022DE00E663DB /* ViewController.swift in Sources */,
+				B57CF9BA1FE886D7003AEB1E /* CreateUsernameViewController.swift in Sources */,
+				B57CF9BE1FE88712003AEB1E /* CreatePasswordViewController.swift in Sources */,
 				B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */,
-				B5EEF9881FE6BC7500322949 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

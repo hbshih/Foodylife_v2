@@ -34,6 +34,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.11)
+  - IBAnimatable (4.1.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - IBAnimatable
   - SCLAlertView
   - SkyFloatingLabelTextField (~> 3.0)
 
@@ -58,10 +60,11 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
+  IBAnimatable: 0fd2c9fd38c4798d71bcc18dbd87d473a7df2577
   nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SkyFloatingLabelTextField: 4e2d2f7160af660ed1da6bb9d0027b5c474b4b79
 
-PODFILE CHECKSUM: 6b82fe32520fde2b87155334ed9c2a17dc8f53ff
+PODFILE CHECKSUM: 841fa39dcf1e3ff81a7f9d76f0fd6b977adf1b21
 
 COCOAPODS: 1.1.1

@@ -13,6 +13,7 @@ target 'Food Diary App!' do
   pod 'Firebase/Database'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'SCLAlertView'
+  pod 'IBAnimatable'
 
   target 'Food Diary App!Tests' do
     inherit! :search_paths

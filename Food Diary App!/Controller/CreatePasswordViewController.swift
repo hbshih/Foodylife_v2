@@ -1,0 +1,50 @@
+//
+//  CreatePasswordViewController.swift
+//  Food Diary App!
+//
+//  Created by Ben Shih on 18/12/2017.
+//  Copyright © 2017 BenShih. All rights reserved.
+//
+
+import UIKit
+import SkyFloatingLabelTextField
+import FirebaseAuth
+import FirebaseDatabase
+
+class CreatePasswordViewController: UIViewController {
+    
+    var username = ""
+    var email = ""
+    
+    @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func doneTapped(_ sender: Any)
+    {
+        if let password = passwordTextField.text
+        {
+            Auth.auth().createUser(withEmail: email, password: passwordTextField.text!) { (user, error) in
+                if error != nil
+                {
+                    print("error")
+                }else
+                {
+                    print("Sign up succesfully")
+                  //  Database.database().reference().child("email").setValue(self.email)
+                    Database.database().reference().childByAutoId().setValue(["username":self.username,"email":self.email])
+                    
+                }
+            }
+        }
+    }
+    
+}
