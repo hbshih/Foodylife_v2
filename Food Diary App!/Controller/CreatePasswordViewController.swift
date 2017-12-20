@@ -35,12 +35,13 @@ class CreatePasswordViewController: UIViewController {
             Auth.auth().createUser(withEmail: email, password: passwordTextField.text!) { (user, error) in
                 if error != nil
                 {
-                    print("error")
+                    print(error.debugDescription)
                 }else
                 {
                     print("Sign up succesfully")
                   //  Database.database().reference().child("email").setValue(self.email)
-                    Database.database().reference().childByAutoId().setValue(["username":self.username,"email":self.email])
+                    let uid = Auth.auth().currentUser?.uid
+                Database.database().reference().child("Users").child(uid!).setValue(["username":self.username,"email":self.email])
                     
                 }
             }

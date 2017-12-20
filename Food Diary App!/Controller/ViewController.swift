@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-  
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
     @IBAction func logInTapped(_ sender: Any)
@@ -51,5 +51,13 @@ class ViewController: UIViewController {
             return true
     }
     */
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
+        self.view.endEditing(true)
+        return true;
+    }
+    
+    
+    
 }
 

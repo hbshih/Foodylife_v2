@@ -8,12 +8,15 @@
 
 import UIKit
 import SCLAlertView
+import FirebaseDatabase
+import FirebaseAuth
 
 class homepageViewController: UIViewController {
 
    // @IBOutlet weak var circularSlider: KDCircularProgress!
     @IBOutlet weak var circularSlider: KDCircularProgress!
     @IBOutlet weak var centerFace: UIButton!
+    var healthPercentage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +33,25 @@ class homepageViewController: UIViewController {
                 circularSlider.animate(toAngle: newAngleView, duration: 0.5, completion: nil)
     }
     
+    func getHealthInfo()
+    {
+        let uid = Auth.auth().currentUser?.uid
+        Database.database().reference().child("Users").child(uid!).observeSingleEvent(of: .value) { (snapshot) in
+            
+            if let dictionary = snapshot.value as? [String: AnyObject]
+            {
+                if let number = dictionary["Overall"] as? Int
+                {
+                    self.healthPercentage = number
+                }
+            }
+            
+        }
+    }
+    
     func newAngle() -> Double
     {
+        getHealthInfo()
         print(circularSlider.angle)
         if circularSlider.angle >= 360
         {
@@ -70,7 +90,7 @@ class homepageViewController: UIViewController {
     
     @IBAction func faceTapped(_ sender: Any)
     {
-            
+        
         let appearance = SCLAlertView.SCLAppearance(
             //kCircleIconHeight: 55.0
             kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
