@@ -31,7 +31,7 @@ class ConfirmPhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        originalImage.image = image
+       // originalImage.image = image
         var XCoord: CGFloat = 5
         let yCoord: CGFloat = 5
         let buttonWidth: CGFloat = 70
