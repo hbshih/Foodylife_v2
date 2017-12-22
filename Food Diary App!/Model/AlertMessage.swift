@@ -11,7 +11,7 @@ import UIKit
 
 struct AlertMessage
 {
-    func displayAlert(title: String, message: String, VC:ViewController)
+    func displayAlert(title: String, message: String, VC: UIViewController)
     {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Confirm", style: .default, handler: nil))
