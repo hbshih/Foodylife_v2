@@ -22,6 +22,7 @@ class homepageViewController: UIViewController {
         super.viewDidLoad()
         circularSlider.startAngle = -90.0
 
+    
         // Do any additional setup after loading the view.
     }
     
@@ -100,7 +101,7 @@ class homepageViewController: UIViewController {
         )
         let alert = SCLAlertView(appearance: appearance)
         
-        let icon = UIImage(named:"Facetry.png")
+        let icon = UIImage(named:"Alert_Yellow.png")
         let color = UIColor.orange        
         _ = alert.showCustom("STOP", subTitle: "STOP TOUCHING MY EYES! YOU MEATBALL", color: color, icon: icon!)
         

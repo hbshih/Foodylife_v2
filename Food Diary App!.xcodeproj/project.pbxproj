@@ -25,6 +25,8 @@
 		B57CF9BC1FE886E3003AEB1E /* CreateEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */; };
 		B57CF9BE1FE88712003AEB1E /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */; };
 		B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */; };
+		B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */; };
+		B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmailViewController.swift; sourceTree = "<group>"; };
 		B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
 		B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPhotoViewController.swift; sourceTree = "<group>"; };
+		B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Rotate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				B53422441FE16947002C2540 /* KDCircularProgress.swift */,
+				B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */,
 				B53422461FE16D13002C2540 /* homepageViewController.swift */,
 				B55234321FE9AC79009A757D /* CameraViewController.swift */,
+				B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -507,7 +513,9 @@
 				B57CF9BC1FE886E3003AEB1E /* CreateEmailViewController.swift in Sources */,
 				B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */,
 				B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */,
+				B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */,
 				B57935381FE022DE00E663DB /* ViewController.swift in Sources */,
+				B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */,
 				B57CF9BA1FE886D7003AEB1E /* CreateUsernameViewController.swift in Sources */,
 				B57CF9BE1FE88712003AEB1E /* CreatePasswordViewController.swift in Sources */,
 				B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */,

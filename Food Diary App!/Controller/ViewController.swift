@@ -33,7 +33,7 @@ class ViewController: UIViewController {
                 }else
                 {
                     print("Log on success")
-                    self.performSegue(withIdentifier: "logInSegue", sender: nil)
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 }
             })
         }

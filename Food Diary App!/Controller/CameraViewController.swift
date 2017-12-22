@@ -9,123 +9,110 @@
 import UIKit
 import AVFoundation
 
-class CameraViewController: UIViewController {
+class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
+    
+    var captureSesssion : AVCaptureSession!
+    var cameraOutput : AVCapturePhotoOutput!
+    var previewLayer : AVCaptureVideoPreviewLayer!
+    var image: UIImage?
 
-    var captureSession = AVCaptureSession()
-    var backCAmera: AVCaptureDevice?
-    var frontCamera: AVCaptureDevice?
-    var currentCamera: AVCaptureDevice?
-    var photoOutput: AVCapturePhotoOutput?
+    //@IBOutlet weak var cameraView: UIView!
+      @IBOutlet weak var cameraView: UIImageView!
     
-    var image : UIImage?
-    
-    var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
-    
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        captureSesssion = AVCaptureSession()
+        captureSesssion.sessionPreset = AVCaptureSession.Preset.photo
+        cameraOutput = AVCapturePhotoOutput()
         
-        setupCaptureSession()
-        setupDevice()
-        setupInputOutput()
-        setupPreviewLayer()
-        startRunningCAptuireSession()
+        let device = AVCaptureDevice.default(for: AVMediaType.video)
         
-        
-    }
-    
-    func setupCaptureSession()
-    {
-        captureSession.sessionPreset = AVCaptureSession.Preset.photo
-        
-    }
-    func setupDevice()
-    {
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
-        
-        let devices = deviceDiscoverySession.devices
-        
-        for device in devices
-        {
-            if device.position == AVCaptureDevice.Position.back
-            {
-                backCAmera = device
-            }else
-            {
-                frontCamera = device
+        if let input = try? AVCaptureDeviceInput(device: device!) {
+            if (captureSesssion.canAddInput(input)) {
+                captureSesssion.addInput(input)
+                if (captureSesssion.canAddOutput(cameraOutput)) {
+                    captureSesssion.addOutput(cameraOutput)
+                    previewLayer = AVCaptureVideoPreviewLayer(session: captureSesssion)
+                    previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+                    
+                    previewLayer.frame = cameraView.bounds
+                    cameraView.layer.addSublayer(previewLayer)
+                    captureSesssion.startRunning()
+                }
+            } else {
+                print("issue here : captureSesssion.canAddInput")
             }
-            currentCamera = backCAmera
+        } else {
+            print("some problem here")
+        }
+    }
+    
+    @IBAction func shotButtonTapped(_ sender: Any)
+    {
+        print("Take photo")
+        let settings = AVCapturePhotoSettings()
+        let previewPixelType = settings.availablePreviewPhotoPixelFormatTypes.first!
+        let previewFormat = [
+            kCVPixelBufferPixelFormatTypeKey as String: previewPixelType,
+            kCVPixelBufferWidthKey as String: 160,
+            kCVPixelBufferHeightKey as String: 160
+        ]
+        settings.previewPhotoFormat = previewFormat
+        cameraOutput.capturePhoto(with: settings, delegate: self)
+    }
+    
+    // callBack from take picture
+    func photoOutput(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
+        
+        if let error = error {
+            print("error occure : \(error.localizedDescription)")
         }
         
+        if  let sampleBuffer = photoSampleBuffer,
+            let previewBuffer = previewPhotoSampleBuffer,
+            let dataImage =  AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer:  sampleBuffer, previewPhotoSampleBuffer: previewBuffer) {
+            print(UIImage(data: dataImage)?.size as Any)
         
+            let dataProvider = CGDataProvider(data: dataImage as CFData)
+            
+            let cgImageRef: CGImage! = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent)
+            
+            var image_A = UIImage(cgImage: cgImageRef, scale: 1.0, orientation: UIImageOrientation.right)
+          //  self.image = shootedImage.cropToRect(rect: CGRect(x: 150.0, y: 200.0, width: 100.0, height: 100.0))
+            
+            let height = CGFloat(image_A.size.height)
+            let rect = CGRect(x: 0, y: image_A.size.height - height, width: image_A.size.width , height: height)
+            self.image = cropImage(image: image_A, toRect: rect)
+            self.image = self.image?.imageRotatedByDegrees(degrees: 90, flip: false)
+            
+            performSegue(withIdentifier: "confirmPhotoSegue", sender: nil)
+            
+            // self.capturedImage.image = image
+            
+        } else {
+            print("some error here")
+        }
     }
-    func setupInputOutput()
+    
+    func cropImage(image:UIImage, toRect rect:CGRect) -> UIImage{
+        let imageRef:CGImage = image.cgImage!.cropping(to: rect)!
+        let croppedImage:UIImage = UIImage(cgImage:imageRef)
+        return croppedImage
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        do{
-            if let camera = currentCamera
+        if segue.identifier == "confirmPhotoSegue"
+        {
+            if let ConfirmPhotoVC = segue.destination as? ConfirmPhotoViewController
             {
-                let captureDeviceInput = try AVCaptureDeviceInput(device: camera)
-                captureSession.addInput(captureDeviceInput)
-                photoOutput = AVCapturePhotoOutput()
-                photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format:[AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil)
-                captureSession.addOutput(photoOutput!)
+                ConfirmPhotoVC.image = image
             }
-        }catch
-        {
-            print(error)
-        }
-        
-    }
-    func setupPreviewLayer()
-    {
-        cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspect
-        cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-        cameraPreviewLayer?.frame = self.view.frame
-        
-        self.view.layer.insertSublayer(cameraPreviewLayer!, at: 0)
-        
-    }
-    func startRunningCAptuireSession()
-    {
-        captureSession.startRunning()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func cameraButtonTapped(_ sender: Any) {
-        
-        photoOutput?.capturePhoto(with: AVCapturePhotoSettings(), delegate: self as! AVCapturePhotoCaptureDelegate)
-        
-        //performSegue(withIdentifier: "showphotoSugue", sender: nil)
-    }
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showphotoSugue"
-        {
-            let previewVC = segue.destination as! PreviewViewController
-            previewVC.preImage = image!
         }
     }
- */
     
-}
-
-extension ViewController: AVCapturePhotoCaptureDelegate
-{
-    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        if let imageData = photo.fileDataRepresentation()
-        {
-            print(imageData)
-           // image = UIImage(data: imageData)
-            /*
-            performSegue(withIdentifier: "showphotoSugue", sender: nil)
- */
-        }
-    }
 }
 
 
