@@ -12,8 +12,8 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class homepageViewController: UIViewController {
-
-   // @IBOutlet weak var circularSlider: KDCircularProgress!
+    
+    // @IBOutlet weak var circularSlider: KDCircularProgress!
     @IBOutlet weak var circularSlider: KDCircularProgress!
     @IBOutlet weak var centerFace: UIButton!
     var healthPercentage = 0
@@ -21,17 +21,20 @@ class homepageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         circularSlider.startAngle = -90.0
-
-    
+        //  self.navigationController?.title.
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func buttonTapped(_ sender: Any)
     {
-
-                let newAngleView = newAngle()
-                print(newAngleView)
-                circularSlider.animate(toAngle: newAngleView, duration: 0.5, completion: nil)
+        
+        let newAngleView = newAngle()
+        print(newAngleView)
+        circularSlider.animate(toAngle: newAngleView, duration: 0.5, completion: nil)
+        shake(layer: self.centerFace.layer)
     }
     
     func getHealthInfo()
@@ -89,9 +92,16 @@ class homepageViewController: UIViewController {
         return currentAngle + 10
     }
     
+    func shake(layer: CALayer)
+    {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+        layer.add(animation, forKey: "shake")
+    }
+    
     @IBAction func faceTapped(_ sender: Any)
     {
-        
         let appearance = SCLAlertView.SCLAppearance(
             //kCircleIconHeight: 55.0
             kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,

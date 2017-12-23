@@ -15,6 +15,7 @@ class ConfirmPhotoViewController:UIViewController {
     @IBOutlet weak var imageToFilter:UIImageView!
     @IBOutlet weak var filtersScrollView:UIScrollView!
     @IBOutlet weak var buttonBar:UIView!
+    @IBOutlet weak var doneButton: UIButton!
     
     var image:UIImage?
     
@@ -34,12 +35,13 @@ class ConfirmPhotoViewController:UIViewController {
     {
         super.viewDidLoad()
         
-        //originalImage.image = image
+        originalImage.image = image
         var XCoord:CGFloat = 5
         let yCoord:CGFloat = 5
         let buttonWidth:CGFloat = 80
         let buttonHeight:CGFloat = 80
         let gapBetweenButtons:CGFloat = 5
+        doneButton.alpha = 1
         
         buttonBar.alpha = 0
         
@@ -77,7 +79,8 @@ class ConfirmPhotoViewController:UIViewController {
     
     @IBAction func doneTapped(_ sender: Any)
     {
-        buttonBar.alpha = 1
+        UIView.animate(withDuration: 0.1, animations: {self.buttonBar.alpha = 1}, completion: nil)
+        doneButton.alpha = 0
     }
     
     @objc func filterButtonTapped(sender:UIButton)

@@ -74,6 +74,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         settings.previewPhotoFormat = previewFormat
         cameraOutput.capturePhoto(with: settings, delegate: self)
         captureSesssion.stopRunning()
+        
     }
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?)
