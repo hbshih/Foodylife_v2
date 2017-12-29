@@ -41,6 +41,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - SCLAlertView (0.7.0)
+  - SKPhotoBrowser (4.0.1)
   - SkyFloatingLabelTextField (3.2.0)
 
 DEPENDENCIES:
@@ -49,6 +50,7 @@ DEPENDENCIES:
   - Firebase/Database
   - IBAnimatable
   - SCLAlertView
+  - SKPhotoBrowser
   - SkyFloatingLabelTextField (~> 3.0)
 
 SPEC CHECKSUMS:
@@ -63,8 +65,9 @@ SPEC CHECKSUMS:
   IBAnimatable: 0fd2c9fd38c4798d71bcc18dbd87d473a7df2577
   nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
+  SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
   SkyFloatingLabelTextField: 4e2d2f7160af660ed1da6bb9d0027b5c474b4b79
 
-PODFILE CHECKSUM: 841fa39dcf1e3ff81a7f9d76f0fd6b977adf1b21
+PODFILE CHECKSUM: de7c2a2721bf561c5fb2cc169ecd481af2c26d10
 
 COCOAPODS: 1.1.1

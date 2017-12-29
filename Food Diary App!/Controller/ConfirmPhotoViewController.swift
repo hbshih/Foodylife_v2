@@ -79,8 +79,47 @@ class ConfirmPhotoViewController:UIViewController {
     
     @IBAction func doneTapped(_ sender: Any)
     {
-        UIView.animate(withDuration: 0.1, animations: {self.buttonBar.alpha = 1}, completion: nil)
+        UIView.animate(withDuration: 0.2, animations: {self.buttonBar.alpha = 1}, completion: nil)
         doneButton.alpha = 0
+    }
+    @IBAction func completeTapped(_ sender: Any)
+    {
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
+        let currentFileName = "\(format.string(from: Date()))"
+        print(currentFileName)
+        saveImage(imageName: currentFileName)
+    } 
+    func saveImage(imageName: String)
+    {
+        //create an instance of the FileManager
+        let fileManager = FileManager.default
+        //get the image path
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        //get the image we took with camera
+        let imageSaveImage: UIImage
+        if imageToFilter.image != nil
+        {
+            imageSaveImage = imageToFilter.image!
+        }else
+        {
+            imageSaveImage = originalImage.image!
+        }
+        //get the PNG data for this image
+        let data = UIImageJPEGRepresentation(imageSaveImage, 0.5)
+        //store it in the document directory
+        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
+        print(imagePath)
+        
+        // Update the image name array to keep track of all the photos
+        let defaults = UserDefaults.standard
+        var myarray = defaults.object(forKey: "imageFileName") as? [String] ?? [String]()
+        myarray.append(imageName)
+        defaults.set(myarray, forKey: "imageFileName")
+        for i in myarray
+        {
+            print("\(i) saved succesfully\n")
+        }
     }
     
     @objc func filterButtonTapped(sender:UIButton)

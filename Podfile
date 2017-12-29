@@ -14,6 +14,7 @@ target 'Food Diary App!' do
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'SCLAlertView'
   pod 'IBAnimatable'
+  pod 'SKPhotoBrowser'
 
   target 'Food Diary App!Tests' do
     inherit! :search_paths
