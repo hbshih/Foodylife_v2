@@ -16,6 +16,8 @@ class ConfirmPhotoViewController:UIViewController {
     @IBOutlet weak var filtersScrollView:UIScrollView!
     @IBOutlet weak var buttonBar:UIView!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var addnoteText: UITextView!
+    
     
     var image:UIImage?
     
@@ -69,7 +71,8 @@ class ConfirmPhotoViewController:UIViewController {
             XCoord += buttonWidth + gapBetweenButtons
             filtersScrollView.addSubview(filterButton)
         }
-        filtersScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(itemCount + 2),height: yCoord)
+       // filtersScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(itemCount + 2),height: yCoord + 50)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,6 +84,8 @@ class ConfirmPhotoViewController:UIViewController {
     {
         UIView.animate(withDuration: 0.2, animations: {self.buttonBar.alpha = 1}, completion: nil)
         doneButton.alpha = 0
+        filtersScrollView.alpha = 0
+        addnoteText.alpha = 0
     }
     @IBAction func completeTapped(_ sender: Any)
     {
