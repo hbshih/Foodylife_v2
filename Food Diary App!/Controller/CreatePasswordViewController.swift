@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SkyFloatingLabelTextField
+//import SkyFloatingLabelTextField
 import FirebaseAuth
 import FirebaseDatabase
 
@@ -16,7 +16,7 @@ class CreatePasswordViewController: UIViewController {
     var username = ""
     var email = ""
     
-    @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +32,7 @@ class CreatePasswordViewController: UIViewController {
     {
         if let password = passwordTextField.text
         {
-            Auth.auth().createUser(withEmail: email, password: passwordTextField.text!) { (user, error) in
+            Auth.auth().createUser(withEmail: email, password: password!) { (user, error) in
                 if error != nil
                 {
                     print(error.debugDescription)
