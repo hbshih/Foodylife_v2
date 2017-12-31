@@ -9,9 +9,10 @@
 import UIKit
 
 class DiaryTableViewController: UITableViewController {
-
+    
     var images: [UIImage] = []
     var fileName: [String] = []
+    var notes: [String] = []
     //var revFileName: [String] = []
     
     override func viewDidLoad() {
@@ -21,6 +22,7 @@ class DiaryTableViewController: UITableViewController {
         
         let myarray = defaults.object(forKey: "imageFileName") as? [String] ?? [String]()
         
+        print("my array count \(myarray)")
         if myarray.count != 0
         {
             let fileManager = FileManager.default
@@ -34,16 +36,42 @@ class DiaryTableViewController: UITableViewController {
                     if let outputImage = UIImage(contentsOfFile: imagePath)
                     {
                         images.append(outputImage)
-                        //
                         counter += 1
+                        print("found \(imagePath)")
+                    }else
+                    {
+                        print("cannot find \(imagePath)")
                     }
                 }else{
                     print("Panic! No Image!")
                 }
+                
+                let file = "\(imageName)txt"
+                if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+                {
+                    let fileURL = dir.appendingPathComponent(file)
+                    do
+                    {
+                        let note = try String(contentsOf: fileURL, encoding: .utf8)
+                        //notes.append(note)
+                        print("note here \(note)")
+                        notes.append(note)
+                        print("the file name is \(file)")
+                    }
+                    catch
+                    {
+                        
+                        print("Read note problem.")
+                        notes.append("")
+                    }
+                }
             }
         }
         
-     //   revFileName = Array(fileName.reversed())
+        //   revFileName = Array(fileName.reversed())
+        print("note count \(notes.count)")
+        print("image count \(images.count)")
+        print("file count \(fileName.count)")
         
         
     }
@@ -68,7 +96,6 @@ class DiaryTableViewController: UITableViewController {
             
             var subString = str.prefix(7)
             let month = subString.suffix(2)
-            print(month)
             subString = str.prefix(10)
             let day = subString.suffix(2)
             subString = str.prefix(13)
@@ -79,9 +106,13 @@ class DiaryTableViewController: UITableViewController {
             let date = "\(month)/\(day)"
             let time = "\(hour):\(minute)"
             
+            // if images[indexPath.row] ==
+            // print("Image array \(images[indexPath.row])")
             cell.foodImage.image = images[indexPath.row]
             cell.date.text = date
             cell.time.text = time
+            
+            cell.note.text = notes[indexPath.row]
             
             if indexPath.row == fileName.count - 1
             {
@@ -94,5 +125,5 @@ class DiaryTableViewController: UITableViewController {
             return UITableViewCell ()
         }
     }
-
+    
 }

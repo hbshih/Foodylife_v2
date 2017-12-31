@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConfirmPhotoViewController:UIViewController {
+class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var containerView:UIView!
     @IBOutlet weak var originalImage:UIImageView!
@@ -36,8 +36,12 @@ class ConfirmPhotoViewController:UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        addnoteText.text = "add some note here..."
+        addnoteText.textColor = UIColor.lightGray
+        addnoteText.delegate = self
         
         originalImage.image = image
+        
         var XCoord:CGFloat = 5
         let yCoord:CGFloat = 5
         let buttonWidth:CGFloat = 80
@@ -71,8 +75,8 @@ class ConfirmPhotoViewController:UIViewController {
             XCoord += buttonWidth + gapBetweenButtons
             filtersScrollView.addSubview(filterButton)
         }
-       // filtersScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(itemCount + 2),height: yCoord + 50)
-
+        filtersScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(itemCount + 2),height: yCoord + 50)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -94,7 +98,28 @@ class ConfirmPhotoViewController:UIViewController {
         let currentFileName = "\(format.string(from: Date()))"
         print(currentFileName)
         saveImage(imageName: currentFileName)
-    } 
+        if addnoteText.text != "add some note here..."
+        {
+            saveText(textName: currentFileName)
+        }
+    }
+    
+    func saveText(textName: String)
+    {
+        let file = "\(textName)txt" //this is the file.
+        let text = addnoteText.text
+        
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            
+            let fileURL = dir.appendingPathComponent(file)
+            //writing
+            do {
+                try text?.write(to: fileURL, atomically: false, encoding: .utf8)
+            }
+            catch {/* error handling here */}
+        }
+    }
+    
     func saveImage(imageName: String)
     {
         //create an instance of the FileManager
@@ -132,4 +157,22 @@ class ConfirmPhotoViewController:UIViewController {
         let button = sender as UIButton
         imageToFilter.image = button.backgroundImage(for: UIControlState.normal)
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if addnoteText.textColor == UIColor.lightGray
+        {
+            addnoteText.text = ""
+            addnoteText.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView)
+    {
+        if addnoteText.text == ""
+        {
+            addnoteText.text = "add some note here..."
+            addnoteText.textColor = UIColor.lightGray
+        }
+    }
+    
 }

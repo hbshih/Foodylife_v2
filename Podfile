@@ -14,6 +14,7 @@ target 'Food Diary App!' do
   pod 'IBAnimatable'
   pod 'SKPhotoBrowser'
   pod 'SCLAlertView'
+  pod 'IQKeyboardManagerSwift', '5.0.0'
 
   target 'Food Diary App!Tests' do
     inherit! :search_paths

@@ -32,7 +32,7 @@ class CreatePasswordViewController: UIViewController {
     {
         if let password = passwordTextField.text
         {
-            Auth.auth().createUser(withEmail: email, password: password!) { (user, error) in
+            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                 if error != nil
                 {
                     print(error.debugDescription)

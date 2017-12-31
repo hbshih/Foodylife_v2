@@ -25,6 +25,7 @@
 		B57CF9BC1FE886E3003AEB1E /* CreateEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */; };
 		B57CF9BE1FE88712003AEB1E /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */; };
 		B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */; };
+		B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */; };
 		B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */; };
 		B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */; };
 		B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */; };
@@ -80,6 +81,7 @@
 		B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmailViewController.swift; sourceTree = "<group>"; };
 		B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
 		B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		B5C42E271FF80F8D002B887A /* Core Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Core Data.xcdatamodel"; sourceTree = "<group>"; };
 		B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
 		B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumBrowserViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				B59F55841FE9565600E22CCD /* Helper */,
 				B57935351FE022DE00E663DB /* AppDelegate.swift */,
 				B579353C1FE022DE00E663DB /* Assets.xcassets */,
+				B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */,
 				B579353E1FE022DE00E663DB /* LaunchScreen.storyboard */,
 				B57935411FE022DE00E663DB /* Info.plist */,
 				B57935631FE0234600E663DB /* GoogleService-Info.plist */,
@@ -391,7 +394,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		19CF577C6426E4B9DBF3B16E /* [CP] Copy Pods Resources */ = {
@@ -434,9 +437,9 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -444,9 +447,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,7 +487,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BE996A0BB2ABEACE3E0DD14F /* [CP] Check Pods Manifest.lock */ = {
@@ -502,7 +505,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C8AA0D5EA3C8ABEF3CFA591C /* [CP] Copy Pods Resources */ = {
@@ -543,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */,
+				B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */,
 				B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */,
 				B57CF9BC1FE886E3003AEB1E /* CreateEmailViewController.swift in Sources */,
 				B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */,
@@ -859,6 +863,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B5C42E271FF80F8D002B887A /* Core Data.xcdatamodel */,
+			);
+			currentVersion = B5C42E271FF80F8D002B887A /* Core Data.xcdatamodel */;
+			path = "Food Diary App!.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B579352A1FE022DE00E663DB /* Project object */;
 }
