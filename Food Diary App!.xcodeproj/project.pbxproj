@@ -25,6 +25,7 @@
 		B57CF9BC1FE886E3003AEB1E /* CreateEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */; };
 		B57CF9BE1FE88712003AEB1E /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */; };
 		B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */; };
+		B5C0404E200A72CF0013A5E0 /* TestCoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0404D200A72CF0013A5E0 /* TestCoreDataViewController.swift */; };
 		B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */; };
 		B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */; };
 		B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */; };
@@ -81,6 +82,7 @@
 		B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmailViewController.swift; sourceTree = "<group>"; };
 		B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
 		B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		B5C0404D200A72CF0013A5E0 /* TestCoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataViewController.swift; sourceTree = "<group>"; };
 		B5C42E271FF80F8D002B887A /* Core Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Core Data.xcdatamodel"; sourceTree = "<group>"; };
 		B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */,
 				B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */,
 				B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */,
+				B5C0404D200A72CF0013A5E0 /* TestCoreDataViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				B57935381FE022DE00E663DB /* ViewController.swift in Sources */,
 				B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */,
 				B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */,
+				B5C0404E200A72CF0013A5E0 /* TestCoreDataViewController.swift in Sources */,
 				B57CF9BA1FE886D7003AEB1E /* CreateUsernameViewController.swift in Sources */,
 				B57CF9BE1FE88712003AEB1E /* CreatePasswordViewController.swift in Sources */,
 				B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */,

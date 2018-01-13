@@ -20,7 +20,8 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
         
         // Static setup
         SKPhotoBrowserOptions.displayAction = true
-        SKPhotoBrowserOptions.displayStatusbar = true
+        SKPhotoBrowserOptions.displayStatusbar = false
+        SKPhotoBrowserOptions.displayDeleteButton = true
         // SKPhotoBrowserOptions.backgroundColor = UIColor.white
         
         setupTestData()
@@ -37,6 +38,11 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    func removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: @escaping (() -> Void))
+    {
+        print("remove photo")
     }
 }
 
