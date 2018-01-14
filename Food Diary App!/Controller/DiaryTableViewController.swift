@@ -33,8 +33,6 @@ class DiaryTableViewController: UITableViewController {
             {
                 for result in results as! [NSManagedObject]
                 {
-                    print("result: \(result)")
-                    print("id: \(result.objectID)")
                     if let imageName = result.value(forKey: "imageName") as? String
                     {
                         fileName.append(imageName)
@@ -69,63 +67,6 @@ class DiaryTableViewController: UITableViewController {
                 }
             }
         }
-        /*
-        let defaults = UserDefaults.standard
-        
-        let myarray = defaults.object(forKey: "imageFileName") as? [String] ?? [String]()
-        
-        print("my array count \(myarray)")
-        if myarray.count != 0
-        {
-            let fileManager = FileManager.default
-            var counter = 0
-            for imageName in myarray
-            {
-                fileName.append(imageName)
-                print(imageName)
-                let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-                if fileManager.fileExists(atPath: imagePath){
-                    if let outputImage = UIImage(contentsOfFile: imagePath)
-                    {
-                        images.append(outputImage)
-                        counter += 1
-                        print("found \(imagePath)")
-                    }else
-                    {
-                        print("cannot find \(imagePath)")
-                    }
-                }else{
-                    print("Panic! No Image!")
-                }
-                
-                let file = "\(imageName)txt"
-                if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-                {
-                    let fileURL = dir.appendingPathComponent(file)
-                    do
-                    {
-                        let note = try String(contentsOf: fileURL, encoding: .utf8)
-                        //notes.append(note)
-                        print("note here \(note)")
-                        notes.append(note)
-                        print("the file name is \(file)")
-                    }
-                    catch
-                    {
-                        
-                        print("Read note problem.")
-                        notes.append("")
-                    }
-                }
-            }
-        }*/
-        
-        //   revFileName = Array(fileName.reversed())
-        print("note count \(notes.count)")
-        print("image count \(images.count)")
-        print("file count \(fileName.count)")
-        
-        
     }
     
     override func didReceiveMemoryWarning() {

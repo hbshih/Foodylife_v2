@@ -96,32 +96,11 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
     {
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
-     //   let currentTime = "\(format.string(from: Date()))"
         let currentTime = Date()
-        let currentFileName = "img\(format.string(from: Date()))"
+        let currentFileName = "img\(format.string(from: currentTime))"
         saveImage(imageName: currentFileName, time: currentTime)
-        if addnoteText.text != "add some note here..."
-        {
-          //  saveText(textName: currentFileName)
-        }
     }
-    
-    func saveText(textName: String)
-    {
-        let file = "\(textName)txt" //this is the file.
-        let text = addnoteText.text
-        
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            
-            let fileURL = dir.appendingPathComponent(file)
-            //writing
-            do {
-                try text?.write(to: fileURL, atomically: false, encoding: .utf8)
-            }
-            catch {/* error handling here */}
-        }
-    }
-    
+
     func saveImage(imageName: String, time: Date)
     {
         //create an instance of the FileManager
