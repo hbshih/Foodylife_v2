@@ -21,9 +21,7 @@ class DiaryTableViewController: UITableViewController {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
-        
         request.returnsObjectsAsFaults = false
         
         do
@@ -38,7 +36,7 @@ class DiaryTableViewController: UITableViewController {
                         fileName.append(imageName)
                         if let note = result.value(forKey: "note") as? String
                         {
-                             notes.append(note)
+                            notes.append(note)
                         }
                     }
                 }
@@ -67,6 +65,7 @@ class DiaryTableViewController: UITableViewController {
                 }
             }
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -80,6 +79,75 @@ class DiaryTableViewController: UITableViewController {
         return images.count
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return true 
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+        if editingStyle == .delete
+        {
+            print("I will delete")
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
+            request.predicate = NSPredicate(format: "imageName = %@", "\(fileName[indexPath.row])")
+            request.returnsObjectsAsFaults = false
+            do
+            {
+                let result = try context.fetch(request)
+                
+                if result.count > 0
+                {
+                    for name in result as! [NSManagedObject]
+                    {
+                        if let username = name.value(forKey: "imageName") as? String
+                        {
+                            print("\(name) deleted complete")
+                            context.delete(name)
+                            do {
+                                try context.save()
+                            } catch  {
+                                print("Delete Failed")
+                            }
+                        }
+                    }
+                }else
+                {
+                }
+                
+                
+            }catch
+            {
+                
+            }
+            
+            let fileManager = FileManager.default
+            let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(fileName[indexPath.row])
+            if fileManager.fileExists(atPath: imagePath)
+            {
+                do
+                {
+                    try fileManager.removeItem(atPath: imagePath)
+                }catch
+                {
+                    print("error on filemanager remove")
+                }
+                print("image deleted from \(imagePath)")
+            }else{
+                print("Panic! No Image!")
+            }
+            images.remove(at: indexPath.row)
+            notes.remove(at: indexPath.row)
+            fileName.remove(at: indexPath.row)
+            
+            tableView.reloadData()
+            
+        }
+        
+    }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
@@ -87,20 +155,18 @@ class DiaryTableViewController: UITableViewController {
         {
             let str = self.fileName[indexPath.row]
             
-            var subString = str.prefix(7)
+            var subString = str.prefix(10)
             let month = subString.suffix(2)
-            subString = str.prefix(10)
-            let day = subString.suffix(2)
             subString = str.prefix(13)
-            let hour = subString.suffix(2)
+            let day = subString.suffix(2)
             subString = str.prefix(16)
+            let hour = subString.suffix(2)
+            subString = str.prefix(19)
             let minute = subString.suffix(2)
             
             let date = "\(month)/\(day)"
             let time = "\(hour):\(minute)"
             
-            // if images[indexPath.row] ==
-            // print("Image array \(images[indexPath.row])")
             cell.foodImage.image = images[indexPath.row]
             cell.date.text = date
             cell.time.text = time

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zBE-bZ-8WM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -723,6 +723,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIb-Gc-8x9">
                                                 <rect key="frame" x="26" y="28.5" width="17" height="22"/>
                                                 <state key="normal" image="Image_Vegetable"/>
+                                                <connections>
+                                                    <segue destination="zBE-bZ-8WM" kind="custom" customClass="PresentFlipSegue" customModule="IBAnimatable" id="3Ts-RM-Mb9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1253,16 +1256,16 @@
             </objects>
             <point key="canvasLocation" x="-548" y="2632"/>
         </scene>
-        <!--Vegetable Dashboard View Controller-->
+        <!--Vegetable Dashboard-->
         <scene sceneID="qJ2-b3-d1Q">
             <objects>
-                <viewController id="zBE-bZ-8WM" customClass="VegetableDashboardViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Vegetable Dashboard" id="zBE-bZ-8WM" customClass="VegetableDashboardViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mzl-Ki-oyA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qA0-IQ-J7y" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_BiggerVegetable" translatesAutoresizingMaskIntoConstraints="NO" id="S64-hM-eVx">
                                         <rect key="frame" x="142" y="150" width="91" height="75"/>
@@ -1295,89 +1298,64 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7k3-3J-pdv">
-                                <rect key="frame" x="0.0" y="517" width="375" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="5Xz-dS-vGs"/>
-                                </constraints>
-                            </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_SeparatingLine" translatesAutoresizingMaskIntoConstraints="NO" id="R3W-bV-AR5">
-                                <rect key="frame" x="0.0" y="447" width="375" height="3"/>
+                                <rect key="frame" x="0.0" y="439" width="375" height="3"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Recent Vegetables" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBJ-8h-QYx">
-                                <rect key="frame" x="90.5" y="467" width="194" height="25"/>
+                                <rect key="frame" x="90.5" y="450" width="194" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHD-1o-7Ew">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.96540623903274536" green="0.57776814699172974" blue="0.11639869958162308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Vegetable Dashboard" id="FHi-8x-107">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="3IJ-Ea-Icf">
+                                            <connections>
+                                                <segue destination="11y-dy-dCj" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="LyA-Rf-FrZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7k3-3J-pdv">
+                                <rect key="frame" x="0.0" y="503" width="375" height="164"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7k3-3J-pdv" secondAttribute="height" multiplier="16:7" id="v7S-kd-V0R"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7k3-3J-pdv" firstAttribute="leading" secondItem="EKo-vf-SxY" secondAttribute="leading" id="7vX-J8-JR5"/>
-                            <constraint firstItem="R3W-bV-AR5" firstAttribute="leading" secondItem="EKo-vf-SxY" secondAttribute="leading" id="NIV-Bn-v5P"/>
-                            <constraint firstItem="R3W-bV-AR5" firstAttribute="trailing" secondItem="EKo-vf-SxY" secondAttribute="trailing" id="Pzf-gC-O9K"/>
-                            <constraint firstItem="7k3-3J-pdv" firstAttribute="bottom" secondItem="EKo-vf-SxY" secondAttribute="bottom" id="TYh-FB-Qbs"/>
-                            <constraint firstItem="vBJ-8h-QYx" firstAttribute="top" secondItem="R3W-bV-AR5" secondAttribute="bottom" constant="17" id="XdE-Yc-BeK"/>
-                            <constraint firstItem="7k3-3J-pdv" firstAttribute="top" secondItem="vBJ-8h-QYx" secondAttribute="bottom" constant="25" id="cok-4c-EUn"/>
-                            <constraint firstItem="7k3-3J-pdv" firstAttribute="trailing" secondItem="EKo-vf-SxY" secondAttribute="trailing" id="fY7-MO-6YZ"/>
+                            <constraint firstItem="R3W-bV-AR5" firstAttribute="leading" secondItem="Mzl-Ki-oyA" secondAttribute="leading" id="06A-xn-F2L"/>
+                            <constraint firstItem="WHD-1o-7Ew" firstAttribute="leading" secondItem="EKo-vf-SxY" secondAttribute="leading" id="5Aq-qP-1tN"/>
+                            <constraint firstItem="vBJ-8h-QYx" firstAttribute="top" secondItem="R3W-bV-AR5" secondAttribute="bottom" constant="8" id="Coo-GQ-IZB"/>
+                            <constraint firstItem="qA0-IQ-J7y" firstAttribute="top" secondItem="WHD-1o-7Ew" secondAttribute="bottom" id="IkC-fu-CaT"/>
+                            <constraint firstItem="R3W-bV-AR5" firstAttribute="top" secondItem="qA0-IQ-J7y" secondAttribute="bottom" id="NO1-4c-sj2"/>
+                            <constraint firstItem="7k3-3J-pdv" firstAttribute="bottom" secondItem="EKo-vf-SxY" secondAttribute="bottom" id="OKF-8a-ZUo"/>
+                            <constraint firstItem="WHD-1o-7Ew" firstAttribute="top" secondItem="EKo-vf-SxY" secondAttribute="top" id="SKL-sc-ePt"/>
+                            <constraint firstItem="WHD-1o-7Ew" firstAttribute="trailing" secondItem="EKo-vf-SxY" secondAttribute="trailing" id="StA-Gg-93D"/>
+                            <constraint firstItem="7k3-3J-pdv" firstAttribute="trailing" secondItem="EKo-vf-SxY" secondAttribute="trailing" id="ZfY-he-iPv"/>
+                            <constraint firstItem="vBJ-8h-QYx" firstAttribute="centerX" secondItem="EKo-vf-SxY" secondAttribute="centerX" id="ffC-WT-2OI"/>
+                            <constraint firstAttribute="trailing" secondItem="R3W-bV-AR5" secondAttribute="trailing" id="gl6-tY-TUa"/>
                             <constraint firstItem="qA0-IQ-J7y" firstAttribute="leading" secondItem="EKo-vf-SxY" secondAttribute="leading" id="kBn-HJ-Cvm"/>
                             <constraint firstItem="qA0-IQ-J7y" firstAttribute="trailing" secondItem="EKo-vf-SxY" secondAttribute="trailing" id="mUN-tu-arw"/>
-                            <constraint firstItem="vBJ-8h-QYx" firstAttribute="centerX" secondItem="EKo-vf-SxY" secondAttribute="centerX" id="o9T-2M-6zC"/>
-                            <constraint firstItem="qA0-IQ-J7y" firstAttribute="top" secondItem="EKo-vf-SxY" secondAttribute="top" id="wXL-t8-XF1"/>
+                            <constraint firstItem="7k3-3J-pdv" firstAttribute="leading" secondItem="EKo-vf-SxY" secondAttribute="leading" id="pnp-Jr-CuQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EKo-vf-SxY"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="scrollView" destination="7k3-3J-pdv" id="ZP2-QQ-Ugd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gu-xe-igv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="872.79999999999995" y="949.47526236881572"/>
-        </scene>
-        <!--Test Core Data View Controller-->
-        <scene sceneID="KOh-QJ-rhz">
-            <objects>
-                <viewController id="14T-Ma-Vhv" customClass="TestCoreDataViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8ek-4T-ffq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e2l-P6-xE2">
-                                <rect key="frame" x="139" y="106" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbe-HW-EjE">
-                                <rect key="frame" x="164" y="176" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="submitUsernameButton:" destination="14T-Ma-Vhv" eventType="touchUpInside" id="pNS-Xl-R6c"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZb-Oi-eXi">
-                                <rect key="frame" x="56" y="323" width="281" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="L7X-9Z-iDZ"/>
-                    </view>
-                    <connections>
-                        <outlet property="submitUsername" destination="Wbe-HW-EjE" id="n3J-q0-Bqp"/>
-                        <outlet property="usernameTextfield" destination="e2l-P6-xE2" id="3sF-Xm-CVD"/>
-                        <outlet property="welcomeMessage" destination="tZb-Oi-eXi" id="0xi-xT-GNh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FDe-zV-h2n" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3456.8000000000002" y="1155.472263868066"/>
+            <point key="canvasLocation" x="871.875" y="948.59154929577471"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QiT-w3-ISs">
@@ -1495,6 +1473,103 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bd7-gk-GQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6000" y="185.30734632683661"/>
+        </scene>
+        <!--Fruits Dashboard-->
+        <scene sceneID="grg-xR-y6z">
+            <objects>
+                <viewController title="Fruits Dashboard" id="tfi-QV-4IM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f3T-5L-KO3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUi-gy-9Ma" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_BiggerVegetable" translatesAutoresizingMaskIntoConstraints="NO" id="Eeu-I9-VCo">
+                                        <rect key="frame" x="142" y="150" width="91" height="75"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EUi-gy-9Ma" secondAttribute="height" multiplier="1:1" id="3by-wl-9T0"/>
+                                    <constraint firstItem="Eeu-I9-VCo" firstAttribute="centerX" secondItem="EUi-gy-9Ma" secondAttribute="centerX" id="PyZ-sb-Kes"/>
+                                    <constraint firstItem="Eeu-I9-VCo" firstAttribute="centerY" secondItem="EUi-gy-9Ma" secondAttribute="centerY" id="V7a-bw-bbW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                        <real key="value" value="-90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progressThickness">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="trackThickness">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
+                                        <color key="value" red="0.9521811604" green="0.97788041830000005" blue="0.9097866416" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="IBColor1">
+                                        <color key="value" red="0.69858199359999995" green="0.87692767380000003" blue="0.47049587970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_SeparatingLine" translatesAutoresizingMaskIntoConstraints="NO" id="KNR-o8-2or">
+                                <rect key="frame" x="0.0" y="439" width="375" height="3"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Recent Vegetables" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryX-L9-RoU">
+                                <rect key="frame" x="90.5" y="450" width="194" height="25"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKx-Ao-xz7">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.965406239" green="0.57776814700000001" blue="0.1163986996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Fruit Dashboard" id="ude-vG-g21">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="PvA-aE-SyC"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2t-pa-Hyh">
+                                <rect key="frame" x="0.0" y="503" width="375" height="164"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="t2t-pa-Hyh" secondAttribute="height" multiplier="16:7" id="tJa-V1-QcM"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EUi-gy-9Ma" firstAttribute="leading" secondItem="jIq-fB-Pxf" secondAttribute="leading" id="3hK-Nb-gCQ"/>
+                            <constraint firstItem="ryX-L9-RoU" firstAttribute="top" secondItem="KNR-o8-2or" secondAttribute="bottom" constant="8" id="51j-t9-3B6"/>
+                            <constraint firstItem="rKx-Ao-xz7" firstAttribute="top" secondItem="jIq-fB-Pxf" secondAttribute="top" id="BGP-ny-ija"/>
+                            <constraint firstItem="ryX-L9-RoU" firstAttribute="centerX" secondItem="jIq-fB-Pxf" secondAttribute="centerX" id="Jy6-Ap-wx9"/>
+                            <constraint firstItem="KNR-o8-2or" firstAttribute="leading" secondItem="f3T-5L-KO3" secondAttribute="leading" id="OyR-Wy-E9p"/>
+                            <constraint firstItem="EUi-gy-9Ma" firstAttribute="trailing" secondItem="jIq-fB-Pxf" secondAttribute="trailing" id="VaZ-Ly-bfG"/>
+                            <constraint firstAttribute="trailing" secondItem="KNR-o8-2or" secondAttribute="trailing" id="Z8O-73-Nok"/>
+                            <constraint firstItem="rKx-Ao-xz7" firstAttribute="trailing" secondItem="jIq-fB-Pxf" secondAttribute="trailing" id="bVc-Qw-iKW"/>
+                            <constraint firstItem="EUi-gy-9Ma" firstAttribute="top" secondItem="rKx-Ao-xz7" secondAttribute="bottom" id="n1j-gT-X90"/>
+                            <constraint firstItem="t2t-pa-Hyh" firstAttribute="leading" secondItem="jIq-fB-Pxf" secondAttribute="leading" id="nca-f6-3vh"/>
+                            <constraint firstItem="t2t-pa-Hyh" firstAttribute="bottom" secondItem="jIq-fB-Pxf" secondAttribute="bottom" id="pL1-Yb-4md"/>
+                            <constraint firstItem="rKx-Ao-xz7" firstAttribute="leading" secondItem="jIq-fB-Pxf" secondAttribute="leading" id="s6W-DD-WpE"/>
+                            <constraint firstItem="KNR-o8-2or" firstAttribute="top" secondItem="EUi-gy-9Ma" secondAttribute="bottom" id="uYY-d1-xZ2"/>
+                            <constraint firstItem="t2t-pa-Hyh" firstAttribute="trailing" secondItem="jIq-fB-Pxf" secondAttribute="trailing" id="zW2-xD-4ft"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jIq-fB-Pxf"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="scrollView" destination="t2t-pa-Hyh" id="kuK-tA-Re4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1y-jn-98y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1886" y="949"/>
         </scene>
     </scenes>
     <resources>
@@ -10760,9 +10835,10 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="orLine" width="260" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="3Ts-RM-Mb9"/>
         <segue reference="Oq9-67-GAe"/>
         <segue reference="UbM-Po-ocL"/>
-        <segue reference="IgR-yY-8Ij"/>
+        <segue reference="LyA-Rf-FrZ"/>
         <segue reference="1ST-UX-CHe"/>
         <segue reference="2iH-jb-HTL"/>
     </inferredMetricsTieBreakers>

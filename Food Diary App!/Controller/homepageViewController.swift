@@ -13,19 +13,14 @@ import FirebaseAuth
 
 class homepageViewController: UIViewController {
     
-    // @IBOutlet weak var circularSlider: KDCircularProgress!
     @IBOutlet weak var circularSlider: KDCircularProgress!
     @IBOutlet weak var centerFace: UIButton!
     var healthPercentage = 0
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         circularSlider.startAngle = -90.0
-        //  self.navigationController?.title.
-        
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func buttonTapped(_ sender: Any)
@@ -41,7 +36,6 @@ class homepageViewController: UIViewController {
     {
         let uid = Auth.auth().currentUser?.uid
         Database.database().reference().child("Users").child(uid!).observeSingleEvent(of: .value) { (snapshot) in
-            
             if let dictionary = snapshot.value as? [String: AnyObject]
             {
                 if let number = dictionary["Overall"] as? Int
