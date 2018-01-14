@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
     
@@ -95,12 +96,13 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
     {
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd-hh-mm-ss"
-        let currentFileName = "\(format.string(from: Date()))"
-        print(currentFileName)
-        saveImage(imageName: currentFileName)
+     //   let currentTime = "\(format.string(from: Date()))"
+        let currentTime = Date()
+        let currentFileName = "img\(format.string(from: Date()))"
+        saveImage(imageName: currentFileName, time: currentTime)
         if addnoteText.text != "add some note here..."
         {
-            saveText(textName: currentFileName)
+          //  saveText(textName: currentFileName)
         }
     }
     
@@ -120,7 +122,7 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
         }
     }
     
-    func saveImage(imageName: String)
+    func saveImage(imageName: String, time: Date)
     {
         //create an instance of the FileManager
         let fileManager = FileManager.default
@@ -135,12 +137,12 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
         {
             imageSaveImage = originalImage.image!
         }
-        //get the PNG data for this image
+        //get the JPG data for this image
         let data = UIImageJPEGRepresentation(imageSaveImage, 0.5)
         //store it in the document directory
         fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
-        print(imagePath)
-        
+        //print("This is the image path \(imagePath)")
+
         // Update the image name array to keep track of all the photos
         let defaults = UserDefaults.standard
         var myarray = defaults.object(forKey: "imageFileName") as? [String] ?? [String]()
@@ -149,6 +151,26 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
         for i in myarray
         {
             print("\(i) saved succesfully\n")
+        }
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let newValue = NSEntityDescription.insertNewObject(forEntityName: "UserEntries", into: context)
+        newValue.setValue(time, forKey: "time")
+        newValue.setValue(imageName, forKey: "imageName")
+        if addnoteText.text != "add some note here..."
+        {
+            newValue.setValue(addnoteText.text, forKey: "note")
+        }else
+        {
+            newValue.setValue("", forKey: "note")
+        }
+        
+        do {
+            try context.save()
+            print("All data saved succesfully")
+        } catch {
+            print("Problem Saving Data")
         }
     }
     

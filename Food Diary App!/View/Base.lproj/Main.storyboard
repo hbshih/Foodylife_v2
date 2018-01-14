@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="14T-Ma-Vhv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -579,7 +579,6 @@
                                         <state key="normal" image="Button_Done"/>
                                         <connections>
                                             <action selector="completeTapped:" destination="sdL-l7-QO5" eventType="touchUpInside" id="kxl-zq-omd"/>
-                                            <segue destination="11y-dy-dCj" kind="show" id="zy8-t7-65U"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Nutrition Plate" translatesAutoresizingMaskIntoConstraints="NO" id="pWd-nd-hWQ">
@@ -10677,7 +10676,7 @@ WQAAAAAAAAAAAAAAAAAIcZk
     <inferredMetricsTieBreakers>
         <segue reference="Oq9-67-GAe"/>
         <segue reference="jfo-5l-jJg"/>
-        <segue reference="zy8-t7-65U"/>
+        <segue reference="0d5-av-SoM"/>
         <segue reference="1ST-UX-CHe"/>
         <segue reference="c8e-hH-ef2"/>
     </inferredMetricsTieBreakers>

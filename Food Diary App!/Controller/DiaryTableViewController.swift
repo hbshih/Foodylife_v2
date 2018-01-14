@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DiaryTableViewController: UITableViewController {
     
@@ -18,6 +19,57 @@ class DiaryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
+        
+        request.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let results = try context.fetch(request)
+            if results.count > 0
+            {
+                for result in results as! [NSManagedObject]
+                {
+                    print("result: \(result)")
+                    print("id: \(result.objectID)")
+                    if let imageName = result.value(forKey: "imageName") as? String
+                    {
+                        fileName.append(imageName)
+                        if let note = result.value(forKey: "note") as? String
+                        {
+                             notes.append(note)
+                        }
+                    }
+                }
+            }
+        }catch
+        {
+            print("Retrieving core data error")
+        }
+        
+        if fileName.count != 0
+        {
+            let fileManager = FileManager.default
+            for imageName in fileName
+            {
+                let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+                if fileManager.fileExists(atPath: imagePath){
+                    if let outputImage = UIImage(contentsOfFile: imagePath)
+                    {
+                        images.append(outputImage)
+                    }else
+                    {
+                        print("cannot find \(imagePath)")
+                    }
+                }else{
+                    print("Panic! No Image!")
+                }
+            }
+        }
+        /*
         let defaults = UserDefaults.standard
         
         let myarray = defaults.object(forKey: "imageFileName") as? [String] ?? [String]()
@@ -66,7 +118,7 @@ class DiaryTableViewController: UITableViewController {
                     }
                 }
             }
-        }
+        }*/
         
         //   revFileName = Array(fileName.reversed())
         print("note count \(notes.count)")
