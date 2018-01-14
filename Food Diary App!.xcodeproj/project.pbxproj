@@ -21,6 +21,7 @@
 		B579354B1FE022DE00E663DB /* Food_Diary_App_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B579354A1FE022DE00E663DB /* Food_Diary_App_Tests.swift */; };
 		B57935561FE022DE00E663DB /* Food_Diary_App_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57935551FE022DE00E663DB /* Food_Diary_App_UITests.swift */; };
 		B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B57935631FE0234600E663DB /* GoogleService-Info.plist */; };
+		B57A5C92200BD110000F8690 /* VegetableDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57A5C91200BD110000F8690 /* VegetableDashboardViewController.swift */; };
 		B57CF9BA1FE886D7003AEB1E /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9B91FE886D7003AEB1E /* CreateUsernameViewController.swift */; };
 		B57CF9BC1FE886E3003AEB1E /* CreateEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */; };
 		B57CF9BE1FE88712003AEB1E /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */; };
@@ -78,6 +79,7 @@
 		B57935551FE022DE00E663DB /* Food_Diary_App_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_Diary_App_UITests.swift; sourceTree = "<group>"; };
 		B57935571FE022DE00E663DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B57935631FE0234600E663DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B57A5C91200BD110000F8690 /* VegetableDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegetableDashboardViewController.swift; sourceTree = "<group>"; };
 		B57CF9B91FE886D7003AEB1E /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
 		B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmailViewController.swift; sourceTree = "<group>"; };
 		B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				B53422461FE16D13002C2540 /* homepageViewController.swift */,
 				B55234321FE9AC79009A757D /* CameraViewController.swift */,
 				B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */,
+				B57A5C91200BD110000F8690 /* VegetableDashboardViewController.swift */,
 				B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */,
 				B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */,
 				B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */,
@@ -550,6 +553,7 @@
 			files = (
 				B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */,
 				B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */,
+				B57A5C92200BD110000F8690 /* VegetableDashboardViewController.swift in Sources */,
 				B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */,
 				B57CF9BC1FE886E3003AEB1E /* CreateEmailViewController.swift in Sources */,
 				B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */,
