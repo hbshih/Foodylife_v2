@@ -102,9 +102,9 @@ class DiaryTableViewController: UITableViewController {
                 {
                     for name in result as! [NSManagedObject]
                     {
-                        if let username = name.value(forKey: "imageName") as? String
+                        if let Imagename = name.value(forKey: "imageName") as? String
                         {
-                            print("\(name) deleted complete")
+                            print("\(Imagename) deleted complete")
                             context.delete(name)
                             do {
                                 try context.save()

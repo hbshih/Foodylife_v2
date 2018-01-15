@@ -465,7 +465,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Album" id="1UE-oO-2P4">
                             <connections>
-                                <segue destination="MLP-jO-XoJ" kind="show" id="eXb-3M-3r0"/>
+                                <segue destination="tGS-QA-qMt" kind="custom" customClass="PresentSlideSegue" customModule="IBAnimatable" id="34h-gc-Teg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1379,100 +1379,72 @@
             </objects>
             <point key="canvasLocation" x="3113" y="185"/>
         </scene>
-        <!--Photos-->
-        <scene sceneID="6d1-bB-idU">
+        <!--Album-->
+        <scene sceneID="Dk1-iL-5ze">
             <objects>
-                <viewController id="TUu-dv-T8z" customClass="FromLocalViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6vT-Uf-aMy"/>
-                        <viewControllerLayoutGuide type="bottom" id="hYF-7Z-vaq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JQc-H7-uDN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                <viewController id="EOA-aA-dqT" customClass="FromLocalViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U9E-91-mUo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ixQ-Hx-4II">
-                                <rect key="frame" x="0.0" y="5" width="375" height="598"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X17-fD-ZF5">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aSV-rH-hcR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jo7-hX-yN8">
                                     <size key="itemSize" width="182" height="182"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="exampleCollectionViewCell" id="Mfa-bS-eV7" customClass="ExampleCollectionViewCell" customModule="Food_Diary_App_" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="exampleCollectionViewCell" id="RWq-Yy-U8A" customClass="ExampleCollectionViewCell" customModule="Food_Diary_App_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UaA-X2-2e7">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="peJ-TQ-sMP">
                                                     <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="UaA-X2-2e7" firstAttribute="top" secondItem="Mfa-bS-eV7" secondAttribute="top" id="0ae-VK-2Bb"/>
-                                            <constraint firstAttribute="trailing" secondItem="UaA-X2-2e7" secondAttribute="trailing" id="3aV-jo-y5e"/>
-                                            <constraint firstAttribute="bottom" secondItem="UaA-X2-2e7" secondAttribute="bottom" id="PEA-xa-HZa"/>
-                                            <constraint firstItem="UaA-X2-2e7" firstAttribute="leading" secondItem="Mfa-bS-eV7" secondAttribute="leading" id="kDF-P3-8qa"/>
+                                            <constraint firstItem="peJ-TQ-sMP" firstAttribute="leading" secondItem="RWq-Yy-U8A" secondAttribute="leading" id="Gmt-au-WmA"/>
+                                            <constraint firstAttribute="trailing" secondItem="peJ-TQ-sMP" secondAttribute="trailing" id="Q3R-X9-gAC"/>
+                                            <constraint firstItem="peJ-TQ-sMP" firstAttribute="top" secondItem="RWq-Yy-U8A" secondAttribute="top" id="bF4-15-Cu3"/>
+                                            <constraint firstAttribute="bottom" secondItem="peJ-TQ-sMP" secondAttribute="bottom" id="jaT-Z4-C4h"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="exampleImageView" destination="UaA-X2-2e7" id="tP3-D7-XEK"/>
+                                            <outlet property="exampleImageView" destination="peJ-TQ-sMP" id="zYe-69-kr4"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ixQ-Hx-4II" firstAttribute="top" secondItem="018-AZ-gl0" secondAttribute="top" constant="5" id="OVe-Pc-O9r"/>
-                            <constraint firstAttribute="trailing" secondItem="ixQ-Hx-4II" secondAttribute="trailing" id="cM6-Av-RDd"/>
-                            <constraint firstItem="ixQ-Hx-4II" firstAttribute="leading" secondItem="JQc-H7-uDN" secondAttribute="leading" id="diO-4Z-tLa"/>
-                            <constraint firstItem="ixQ-Hx-4II" firstAttribute="bottom" secondItem="hYF-7Z-vaq" secondAttribute="top" id="vKQ-jt-Iqg"/>
+                            <constraint firstItem="aSV-rH-hcR" firstAttribute="leading" secondItem="pDI-TP-Gau" secondAttribute="leading" id="ap8-Sd-p8b"/>
+                            <constraint firstItem="aSV-rH-hcR" firstAttribute="top" secondItem="pDI-TP-Gau" secondAttribute="top" id="c1e-Pq-eVL"/>
+                            <constraint firstItem="pDI-TP-Gau" firstAttribute="bottom" secondItem="aSV-rH-hcR" secondAttribute="bottom" id="lHp-vk-YFM"/>
+                            <constraint firstItem="pDI-TP-Gau" firstAttribute="trailing" secondItem="aSV-rH-hcR" secondAttribute="trailing" id="xeC-qt-Nb4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="018-AZ-gl0"/>
+                        <viewLayoutGuide key="safeArea" id="pDI-TP-Gau"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Photos" id="L1e-rr-oss">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="UOM-O2-tAf">
+                    <navigationItem key="navigationItem" title="Album" id="L5A-wI-3XO">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="v1o-uQ-err">
                             <connections>
-                                <segue destination="K1M-cg-dHG" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="1ST-UX-CHe"/>
+                                <segue destination="K1M-cg-dHG" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="GHi-nD-NU8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="collectionView" destination="ixQ-Hx-4II" id="w0z-cY-EI8"/>
+                        <outlet property="collectionView" destination="aSV-rH-hcR" id="iJr-pi-qUx"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sUy-lT-7wb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GIV-r8-rJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6742" y="192"/>
-        </scene>
-        <!--FromLocal-->
-        <scene sceneID="OZb-83-uUV">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MLP-jO-XoJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="FromLocal" id="nW5-xp-DNJ"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="tOe-yD-Bxs">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.99928766489028931" green="0.670970618724823" blue="0.25852575898170471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="TUu-dv-T8z" kind="relationship" relationship="rootViewController" id="Nlr-1B-BnM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bd7-gk-GQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6000" y="185.30734632683661"/>
+            <point key="canvasLocation" x="8413.6000000000004" y="184.85757121439281"/>
         </scene>
         <!--Fruits Dashboard-->
         <scene sceneID="grg-xR-y6z">
@@ -1570,6 +1542,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1y-jn-98y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1886" y="949"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8ZT-o6-p34">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tGS-QA-qMt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5vs-jp-qOr">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EOA-aA-dqT" kind="relationship" relationship="rootViewController" id="RqJ-fS-isQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OTd-vQ-fMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7592" y="185.30734632683661"/>
         </scene>
     </scenes>
     <resources>
@@ -10835,11 +10825,11 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="orLine" width="260" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Ts-RM-Mb9"/>
+        <segue reference="RqJ-fS-isQ"/>
         <segue reference="Oq9-67-GAe"/>
         <segue reference="UbM-Po-ocL"/>
-        <segue reference="LyA-Rf-FrZ"/>
-        <segue reference="1ST-UX-CHe"/>
-        <segue reference="2iH-jb-HTL"/>
+        <segue reference="ejy-Cq-Uuf"/>
+        <segue reference="GHi-nD-NU8"/>
+        <segue reference="c8e-hH-ef2"/>
     </inferredMetricsTieBreakers>
 </document>

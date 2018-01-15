@@ -8,22 +8,22 @@
 
 import UIKit
 import SKPhotoBrowser
+import CoreData
 
-class FromLocalViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, SKPhotoBrowserDelegate {
-
+class FromLocalViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, SKPhotoBrowserDelegate
+{
     @IBOutlet weak var collectionView: UICollectionView!
     
     var images = [SKPhotoProtocol]()
+    var caption: [String] = []
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        
         // Static setup
         SKPhotoBrowserOptions.displayAction = true
         SKPhotoBrowserOptions.displayStatusbar = false
         SKPhotoBrowserOptions.displayDeleteButton = true
-        // SKPhotoBrowserOptions.backgroundColor = UIColor.white
-        
         setupTestData()
         setupCollectionView()
     }
@@ -32,60 +32,79 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
         super.didReceiveMemoryWarning()
     }
     
-    override var prefersStatusBarHidden: Bool {
+    override var prefersStatusBarHidden: Bool
+    {
         return false
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    override var preferredStatusBarStyle: UIStatusBarStyle
+    {
         return .lightContent
     }
     
     func removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: @escaping (() -> Void))
     {
+        
         print("remove photo")
     }
 }
 
 // MARK: - UICollectionViewDataSource
-extension FromLocalViewController {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension FromLocalViewController
+{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
         return images.count
     }
     
-    @objc(collectionView:cellForItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    @objc(collectionView:cellForItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exampleCollectionViewCell", for: indexPath) as? ExampleCollectionViewCell else {
             return UICollectionViewCell()
         }
-        var imagest: [UIImage] = []
+        var fileImage: [UIImage] = []
         var fileName: [String] = []
-        let defaults = UserDefaults.standard
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
+        request.returnsObjectsAsFaults = false
         
-        let myarray = defaults.object(forKey: "imageFileName") as? [String] ?? [String]()
+        do
+        {
+            let results = try context.fetch(request)
+            if results.count > 0
+            {
+                for result in results as! [NSManagedObject]
+                {
+                    if let imageName = result.value(forKey: "imageName") as? String
+                    {
+                        fileName.append(imageName)
+                    }
+                }
+            }
+        }catch
+        {
+            print("Retrieving core data error")
+        }
         
-        if myarray.count != 0
+        if fileName.count != 0
         {
             let fileManager = FileManager.default
-            var counter = 0
-            for imageName in myarray
+            for imageName in fileName
             {
-                fileName.append(imageName)
-                print(imageName)
                 let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
                 if fileManager.fileExists(atPath: imagePath){
                     if let outputImage = UIImage(contentsOfFile: imagePath)
                     {
-                        imagest.append(outputImage)
-                        counter += 1
+                        fileImage.append(outputImage)
                     }
                 }else{
-                    print("Panic! No Image!")
+                    print("Panic! Image not found --> \(imageName)")
                 }
             }
         }
-        cell.exampleImageView.image = imagest[indexPath.row]
         
-        /*cell.exampleImageView.image = UIImage(named: "image\((indexPath as NSIndexPath).row % 10).jpg")*/
-        //        cell.exampleImageView.contentMode = .ScaleAspectFill
+        cell.exampleImageView.image = fileImage[indexPath.row]
         return cell
     }
 }
@@ -98,8 +117,6 @@ extension FromLocalViewController {
         let browser = SKPhotoBrowser(photos: images)
         browser.initializePageIndex(indexPath.row)
         browser.delegate = self
-        //        browser.updateCloseButton(UIImage(named: "image1.jpg")!)
-        
         present(browser, animated: true, completion: {})
     }
     
@@ -110,41 +127,6 @@ extension FromLocalViewController {
             return CGSize(width: UIScreen.main.bounds.size.width / 2 - 5, height: 200)
         }
     }
-}
-
-// MARK: - SKPhotoBrowserDelegate
-
-extension FromLocalViewController {
-    /*
-     func didShowPhotoAtIndex(_ index: Int) {
-     collectionView.visibleCells.forEach({$0.isHidden = false})
-     collectionView.cellForItem(at: IndexPath(item: index, section: 0))?.isHidden = true
-     }
-     
-     func willDismissAtPageIndex(_ index: Int) {
-     collectionView.visibleCells.forEach({$0.isHidden = false})
-     collectionView.cellForItem(at: IndexPath(item: index, section: 0))?.isHidden = true
-     }
-     
-     func willShowActionSheet(_ photoIndex: Int) {
-     // do some handle if you need
-     }
-     
-     func didDismissAtPageIndex(_ index: Int) {
-     collectionView.cellForItem(at: IndexPath(item: index, section: 0))?.isHidden = false
-     }
-     
-     func didDismissActionSheetWithButtonIndex(_ buttonIndex: Int, photoIndex: Int) {
-     // handle dismissing custom actions
-     }
-     
-     func removePhoto(index: Int, reload: (() -> Void)) {
-     reload()
-     }
-     
-     func viewForPhoto(_ browser: SKPhotoBrowser, index: Int) -> UIView? {
-     return collectionView.cellForItem(at: IndexPath(item: index, section: 0))
-     }*/
 }
 
 // MARK: - private
@@ -164,45 +146,64 @@ private extension FromLocalViewController {
     {
         var images: [UIImage] = []
         var fileName: [String] = []
-        let defaults = UserDefaults.standard
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
+        request.returnsObjectsAsFaults = false
         
-        let myarray = defaults.object(forKey: "imageFileName") as? [String] ?? [String]()
+        do
+        {
+            let results = try context.fetch(request)
+            if results.count > 0
+            {
+                for result in results as! [NSManagedObject]
+                {
+                    if let imageName = result.value(forKey: "imageName") as? String
+                    {
+                        fileName.append(imageName)
+                        if let note = result.value(forKey: "note") as? String
+                        {
+                            caption.append(note)
+                        }
+                    }
+                }
+            }
+        }catch
+        {
+            print("Retrieving core data error")
+        }
         
-        if myarray.count != 0
+        if fileName.count != 0
         {
             let fileManager = FileManager.default
-            var counter = 0
-            for imageName in myarray
+            for imageName in fileName
             {
-                fileName.append(imageName)
-                print(imageName)
                 let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-                if fileManager.fileExists(atPath: imagePath){
+                if fileManager.fileExists(atPath: imagePath)
+                {
                     if let outputImage = UIImage(contentsOfFile: imagePath)
                     {
                         images.append(outputImage)
-                        //
-                        counter += 1
                     }
                 }else{
-                    print("Panic! No Image!")
+                    print("Panic! Image not found --> \(imageName)")
                 }
             }
         }
         return (0..<images.count).map { (i: Int) -> SKPhotoProtocol in
             let photo = SKPhoto.photoWithImage(images[i])
-            print("count")
-            photo.caption = caption[i%10]
-            //            photo.contentMode = .ScaleAspectFill
+            photo.caption = caption[i]
             return photo
         }
     }
 }
 
 class ExampleCollectionViewCell: UICollectionViewCell {
+
     @IBOutlet weak var exampleImageView: UIImageView!
     
-    override func awakeFromNib() {
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
         exampleImageView.image = nil
         layer.cornerRadius = 25.0
@@ -214,17 +215,4 @@ class ExampleCollectionViewCell: UICollectionViewCell {
     }
 }
 
-var caption = ["Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-               "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-               "It has survived not only five centuries, but also the leap into electronic typesetting",
-               "remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-               "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-               "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-               "It has survived not only five centuries, but also the leap into electronic typesetting",
-               "remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-               "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-               "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-               "It has survived not only five centuries, but also the leap into electronic typesetting",
-               "remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-]
 
