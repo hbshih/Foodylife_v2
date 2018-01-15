@@ -46,6 +46,9 @@ class DiaryTableViewController: UITableViewController {
             print("Retrieving core data error")
         }
         
+        fileName = fileName.reversed()
+        notes = notes.reversed()
+        
         if fileName.count != 0
         {
             let fileManager = FileManager.default
@@ -183,6 +186,11 @@ class DiaryTableViewController: UITableViewController {
         {
             return UITableViewCell ()
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        tableView.reloadData()
     }
     
 }
