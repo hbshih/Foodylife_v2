@@ -22,6 +22,14 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
     
     var image:UIImage?
     
+    var grain = 0
+    var protein = 0
+    var fruit = 0
+    var vegetable = 0
+    var dairy = 0
+ 
+    
+    
     // Array of all filters
     var CIFilterNames = [
         "CIPhotoEffectChrome",
@@ -80,6 +88,34 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
         
     }
     
+    @IBAction func nutritionTapped(_ sender: AnyObject)
+    {
+        
+        print(sender.tag)
+        switch sender.tag
+        {
+        case 1:
+            grain += 1
+            print("grain: \(grain)")
+        case 2:
+            fruit += 1
+            print("fruit: \(fruit)")
+        case 3:
+            protein += 1
+            print("protein: \(protein)")
+        case 4:
+            vegetable += 1
+            print("vegetable: \(vegetable)")
+        case 5:
+            dairy += 1
+            print("dairy: \(dairy)")
+        default:
+            print("none")
+        }
+ 
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -123,14 +159,14 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
         //print("This is the image path \(imagePath)")
 
         // Update the image name array to keep track of all the photos
-        let defaults = UserDefaults.standard
-        var myarray = defaults.object(forKey: "imageFileName") as? [String] ?? [String]()
-        myarray.append(imageName)
-        defaults.set(myarray, forKey: "imageFileName")
-        for i in myarray
-        {
-            print("\(i) saved succesfully\n")
-        }
+//        let defaults = UserDefaults.standard
+//        var myarray = defaults.object(forKey: "imageFileName") as? [String] ?? [String]()
+//        myarray.append(imageName)
+//        defaults.set(myarray, forKey: "imageFileName")
+//        for i in myarray
+//        {
+//            print("\(i) saved succesfully\n")
+//        }
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -143,6 +179,42 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
         }else
         {
             newValue.setValue("", forKey: "note")
+        }
+        
+        if grain != 0
+        {
+            newValue.setValue(grain, forKey: "n_Grain")
+        }else
+        {
+            newValue.setValue(0, forKey: "n_Grain")
+        }
+        if fruit != 0
+        {
+            newValue.setValue(fruit, forKey: "n_Fruit")
+        }else
+        {
+            newValue.setValue(0, forKey: "n_Fruit")
+        }
+        if protein != 0
+        {
+            newValue.setValue(fruit, forKey: "n_Protein")
+        }else
+        {
+            newValue.setValue(0, forKey: "n_Protein")
+        }
+        if vegetable != 0
+        {
+            newValue.setValue(vegetable, forKey: "n_Vegetable")
+        }else
+        {
+            newValue.setValue(0, forKey: "n_Vegetable")
+        }
+        if dairy != 0
+        {
+            newValue.setValue(dairy, forKey: "n_Dairy")
+        }else
+        {
+            newValue.setValue(0, forKey: "n_Dairy")
         }
         
         do {

@@ -14,11 +14,19 @@ class DiaryTableViewController: UITableViewController {
     var images: [UIImage] = []
     var fileName: [String] = []
     var notes: [String] = []
+    // var nutritionList = ["vegetable":0,"protein":0,"diary":0,"fruit":0,"grain":0]
+    var nutritionList: [Int:[Int]]?
     //var revFileName: [String] = []
+    var dairyList: [Int] = []
+    var vegetableList: [Int] = []
+    var proteinList: [Int] = []
+    var fruitList: [Int] = []
+    var grainList: [Int] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        nutritionList?.removeAll()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
@@ -38,7 +46,31 @@ class DiaryTableViewController: UITableViewController {
                         {
                             notes.append(note)
                         }
+                        if let grain_value = result.value(forKey: "n_Grain") as? Int
+                        {
+                            if let vegetableValue = result.value(forKey: "n_Vegetable") as? Int
+                            {
+                                if let fruitValue = result.value(forKey: "n_Fruit") as? Int
+                                {
+                                    if let dairyValue = result.value(forKey: "n_Dairy") as? Int
+                                    {
+                                        if let proteinValue = result.value(forKey: "n_Protein") as? Int
+                                        {
+                                            var pr = [grain_value,vegetableValue,fruitValue,dairyValue,proteinValue]
+                                            print(pr)
+                                            grainList.append(grain_value)
+                                            vegetableList.append(vegetableValue)
+                                            proteinList.append(proteinValue)
+                                            dairyList.append(dairyValue)
+                                            fruitList.append(fruitValue)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
                     }
+                 
                 }
             }
         }catch
@@ -46,8 +78,16 @@ class DiaryTableViewController: UITableViewController {
             print("Retrieving core data error")
         }
         
+        //-- to display the most up to date items first
+        print(grainList)
         fileName = fileName.reversed()
         notes = notes.reversed()
+        fruitList = fruitList.reversed()
+        dairyList = dairyList.reversed()
+        vegetableList = vegetableList.reversed()
+        proteinList = proteinList.reversed()
+        grainList = grainList.reversed()
+        
         
         if fileName.count != 0
         {
@@ -156,8 +196,8 @@ class DiaryTableViewController: UITableViewController {
     {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? DiaryTableViewCell
         {
+            print(indexPath.row)
             let str = self.fileName[indexPath.row]
-            
             var subString = str.prefix(10)
             let month = subString.suffix(2)
             subString = str.prefix(13)
@@ -176,6 +216,44 @@ class DiaryTableViewController: UITableViewController {
             
             cell.note.text = notes[indexPath.row]
             
+            // Showing nutritions
+            if grainList[indexPath.row] > 0
+            {
+                cell.grainField.alpha = 1
+            }else
+            {
+                cell.grainField.alpha = 0.25
+            }
+            if vegetableList[indexPath.row] > 0
+            {
+                cell.vegetableField.alpha = 1
+            }else
+            {
+                cell.vegetableField.alpha = 0.25
+            }
+            if proteinList[indexPath.row] > 0
+            {
+                cell.proteinField.alpha = 1
+            }else
+            {
+                cell.proteinField.alpha = 0.25
+            }
+            if fruitList[indexPath.row] > 0
+            {
+                cell.fruitField.alpha = 1
+            }else
+            {
+                cell.fruitField.alpha = 0.25
+            }
+            if dairyList[indexPath.row] > 0
+            {
+                cell.diaryField.alpha = 1
+            }else
+            {
+                cell.diaryField.alpha = 0.25
+            }
+            
+            // Add a ending line
             if indexPath.row == fileName.count - 1
             {
                 cell.separationLine.image = UIImage(named: "Timeline_endLine.png")
@@ -188,9 +266,5 @@ class DiaryTableViewController: UITableViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool)
-    {
-        tableView.reloadData()
-    }
     
 }

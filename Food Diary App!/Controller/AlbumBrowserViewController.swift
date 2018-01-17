@@ -24,6 +24,11 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
     {
         super.viewDidLoad()
         
+        fileName.removeAll()
+        fileImage.removeAll()
+        caption.removeAll()
+        images.removeAll()
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
@@ -146,13 +151,16 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
         images.remove(at: index)
         caption.remove(at: index)
         fileName.remove(at: index)
-        
-        browser.reloadData()
-        
-        
         */
+        //browser.reloadData()
+        
+ 
+        browser.dismissPhotoBrowser(animated: true)
+        
+       
     }
 }
+
 
 // MARK: - UICollectionViewDataSource
 extension FromLocalViewController
@@ -208,11 +216,6 @@ private extension FromLocalViewController {
     
     func createLocalPhotos() -> [SKPhotoProtocol]
     {
-//        for note in notes
-//        {
-//            caption.append(note)
-//        }
-        
         return (0..<fileImage.count).map { (i: Int) -> SKPhotoProtocol in
             let photo = SKPhoto.photoWithImage(fileImage[i])
             photo.caption = caption[i]

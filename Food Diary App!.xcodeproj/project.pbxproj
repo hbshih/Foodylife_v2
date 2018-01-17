@@ -16,7 +16,6 @@
 		B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57935351FE022DE00E663DB /* AppDelegate.swift */; };
 		B57935381FE022DE00E663DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57935371FE022DE00E663DB /* ViewController.swift */; };
 		B579353B1FE022DE00E663DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57935391FE022DE00E663DB /* Main.storyboard */; };
-		B579353D1FE022DE00E663DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B579353C1FE022DE00E663DB /* Assets.xcassets */; };
 		B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B579353E1FE022DE00E663DB /* LaunchScreen.storyboard */; };
 		B579354B1FE022DE00E663DB /* Food_Diary_App_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B579354A1FE022DE00E663DB /* Food_Diary_App_Tests.swift */; };
 		B57935561FE022DE00E663DB /* Food_Diary_App_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57935551FE022DE00E663DB /* Food_Diary_App_UITests.swift */; };
@@ -33,6 +32,7 @@
 		B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */; };
 		B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */; };
 		B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */; };
+		B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F61738200FAED900B0C871 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,6 @@
 		B57935351FE022DE00E663DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B57935371FE022DE00E663DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B579353A1FE022DE00E663DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B579353C1FE022DE00E663DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B579353F1FE022DE00E663DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B57935411FE022DE00E663DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B57935461FE022DE00E663DB /* Food Diary App!Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Food Diary App!Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +90,7 @@
 		B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumBrowserViewController.swift; sourceTree = "<group>"; };
 		B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPhotoViewController.swift; sourceTree = "<group>"; };
 		B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Rotate.swift; sourceTree = "<group>"; };
+		B5F61738200FAED900B0C871 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +160,8 @@
 				B59F55861FE9566200E22CCD /* View */,
 				B59F55851FE9566000E22CCD /* Controller */,
 				B59F55841FE9565600E22CCD /* Helper */,
+				B5F61738200FAED900B0C871 /* Assets.xcassets */,
 				B57935351FE022DE00E663DB /* AppDelegate.swift */,
-				B579353C1FE022DE00E663DB /* Assets.xcassets */,
 				B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */,
 				B579353E1FE022DE00E663DB /* LaunchScreen.storyboard */,
 				B57935411FE022DE00E663DB /* Info.plist */,
@@ -363,7 +363,7 @@
 			files = (
 				B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */,
 				B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */,
-				B579353D1FE022DE00E663DB /* Assets.xcassets in Resources */,
+				B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */,
 				B579353B1FE022DE00E663DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

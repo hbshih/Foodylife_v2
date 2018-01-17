@@ -329,7 +329,7 @@
             <objects>
                 <tableViewController id="K1M-cg-dHG" customClass="DiaryTableViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jzl-Pe-wzH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -352,7 +352,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08/16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iam-p0-skx">
-                                                    <rect key="frame" x="14" y="80" width="37" height="21"/>
+                                                    <rect key="frame" x="14" y="80.5" width="37" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -393,62 +393,99 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Vegetable" translatesAutoresizingMaskIntoConstraints="NO" id="2ou-1w-NGS">
-                                            <rect key="frame" x="219" y="132" width="18" height="18"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="2ou-1w-NGS" secondAttribute="height" multiplier="1:1" id="3Sh-iD-xJ7"/>
-                                                <constraint firstAttribute="height" constant="18" id="7Of-KQ-gWk"/>
-                                                <constraint firstAttribute="width" constant="18" id="bww-wL-yTf"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F &amp; V" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ej-KO-A3f">
-                                            <rect key="frame" x="243" y="133" width="32.5" height="17"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                            <color key="textColor" white="0.70547853197370258" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6F-HJ-J7T">
-                                            <rect key="frame" x="219" y="49" width="140" height="81"/>
+                                            <rect key="frame" x="219" y="49" width="140" height="75"/>
                                             <string key="text">Did you set the CollectionViewController to the storyboard identity inspector? :) And I would try to call the reloadData() after you change the data in the viewDidLoad method. Hope that helps ...</string>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="A2o-wm-4x3">
+                                            <rect key="frame" x="219" y="132" width="94" height="18"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Demo_Vegetable" translatesAutoresizingMaskIntoConstraints="NO" id="2ou-1w-NGS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="2ou-1w-NGS" secondAttribute="height" multiplier="1:1" id="3Sh-iD-xJ7"/>
+                                                        <constraint firstAttribute="height" constant="18" id="7Of-KQ-gWk"/>
+                                                        <constraint firstAttribute="width" constant="18" id="bww-wL-yTf"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Demo_Protein" translatesAutoresizingMaskIntoConstraints="NO" id="Rj0-0m-Otz">
+                                                    <rect key="frame" x="19" y="0.0" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Rj0-0m-Otz" secondAttribute="height" multiplier="1:1" id="4vd-Ly-dCb"/>
+                                                        <constraint firstAttribute="height" constant="18" id="L8q-4D-QmJ"/>
+                                                        <constraint firstAttribute="width" constant="18" id="YV8-2U-grK"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Demo_Grain" translatesAutoresizingMaskIntoConstraints="NO" id="vVK-5R-0XY">
+                                                    <rect key="frame" x="38" y="0.0" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="vVK-5R-0XY" secondAttribute="height" multiplier="1:1" id="LL4-SE-Yeo"/>
+                                                        <constraint firstAttribute="width" constant="18" id="hkq-u8-jcZ"/>
+                                                        <constraint firstAttribute="height" constant="18" id="rN0-B5-IJZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Demo_Fruit" translatesAutoresizingMaskIntoConstraints="NO" id="4Jb-12-6Fr">
+                                                    <rect key="frame" x="57" y="0.0" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="Joz-V7-6N2"/>
+                                                        <constraint firstAttribute="width" secondItem="4Jb-12-6Fr" secondAttribute="height" multiplier="1:1" id="L9i-J8-PX8"/>
+                                                        <constraint firstAttribute="width" constant="18" id="d51-Ag-D5D"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Demo_Dairy" translatesAutoresizingMaskIntoConstraints="NO" id="sKC-UJ-2oh">
+                                                    <rect key="frame" x="76" y="0.0" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="sKC-UJ-2oh" secondAttribute="height" multiplier="1:1" id="EvT-dI-cZR"/>
+                                                        <constraint firstAttribute="width" constant="18" id="J3g-6f-lCO"/>
+                                                        <constraint firstAttribute="height" constant="18" id="dj7-B5-yAZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4Jb-12-6Fr" firstAttribute="width" secondItem="4Jb-12-6Fr" secondAttribute="height" multiplier="1:1" id="Ijx-pI-L2Y"/>
+                                                <constraint firstItem="Rj0-0m-Otz" firstAttribute="width" secondItem="Rj0-0m-Otz" secondAttribute="height" multiplier="1:1" id="PMV-Tu-CMe"/>
+                                                <constraint firstItem="sKC-UJ-2oh" firstAttribute="width" secondItem="sKC-UJ-2oh" secondAttribute="height" multiplier="1:1" id="X3Z-12-UBG"/>
+                                                <constraint firstItem="vVK-5R-0XY" firstAttribute="width" secondItem="vVK-5R-0XY" secondAttribute="height" multiplier="1:1" id="bM6-NO-4RA"/>
+                                            </constraints>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ZhX-qT-0Og" firstAttribute="top" secondItem="h2s-09-Utr" secondAttribute="top" id="38w-k3-Wu9"/>
-                                        <constraint firstItem="4Ej-KO-A3f" firstAttribute="leading" secondItem="2ou-1w-NGS" secondAttribute="trailing" constant="6" id="4Iy-CN-nd3"/>
                                         <constraint firstItem="NDt-bR-wql" firstAttribute="top" secondItem="nbX-wJ-SCs" secondAttribute="top" id="97P-8E-f2E"/>
                                         <constraint firstItem="E6F-HJ-J7T" firstAttribute="leading" secondItem="NDt-bR-wql" secondAttribute="leading" id="9hA-5P-2F2"/>
+                                        <constraint firstItem="A2o-wm-4x3" firstAttribute="bottom" secondItem="nbX-wJ-SCs" secondAttribute="bottom" id="Gwy-nG-zSp"/>
                                         <constraint firstItem="e0W-O4-QOc" firstAttribute="top" secondItem="h2s-09-Utr" secondAttribute="top" id="J3L-iH-FhH"/>
-                                        <constraint firstItem="2ou-1w-NGS" firstAttribute="top" secondItem="E6F-HJ-J7T" secondAttribute="bottom" constant="2" id="OLp-HS-o8a"/>
                                         <constraint firstItem="NDt-bR-wql" firstAttribute="leading" secondItem="nbX-wJ-SCs" secondAttribute="trailing" constant="8" id="OzU-xH-DN2"/>
                                         <constraint firstItem="pCA-H7-dKU" firstAttribute="width" secondItem="pCA-H7-dKU" secondAttribute="height" multiplier="1:1" id="P8q-RF-1eg"/>
                                         <constraint firstItem="E6F-HJ-J7T" firstAttribute="top" secondItem="NDt-bR-wql" secondAttribute="bottom" constant="2" id="PgU-FZ-xdq"/>
                                         <constraint firstItem="E6F-HJ-J7T" firstAttribute="trailing" secondItem="h2s-09-Utr" secondAttribute="trailingMargin" id="W6p-0v-NfU"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NDt-bR-wql" secondAttribute="trailing" constant="20" symbolic="YES" id="WTf-2T-Lzd"/>
+                                        <constraint firstItem="A2o-wm-4x3" firstAttribute="leading" secondItem="NDt-bR-wql" secondAttribute="leading" id="ZN1-4E-TpK"/>
                                         <constraint firstAttribute="bottom" secondItem="e0W-O4-QOc" secondAttribute="bottom" id="Zhl-yb-Alx"/>
-                                        <constraint firstItem="4Ej-KO-A3f" firstAttribute="bottom" secondItem="2ou-1w-NGS" secondAttribute="bottom" id="cQg-Ul-Z2g"/>
                                         <constraint firstItem="e0W-O4-QOc" firstAttribute="leading" secondItem="h2s-09-Utr" secondAttribute="leading" id="ktK-oH-m1c"/>
                                         <constraint firstItem="ZhX-qT-0Og" firstAttribute="leading" secondItem="e0W-O4-QOc" secondAttribute="trailing" id="mL3-1x-CFQ"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Ej-KO-A3f" secondAttribute="trailing" constant="20" symbolic="YES" id="oCV-wm-SGk"/>
-                                        <constraint firstItem="2ou-1w-NGS" firstAttribute="bottom" secondItem="nbX-wJ-SCs" secondAttribute="bottom" id="qx3-gL-9JR"/>
                                         <constraint firstAttribute="bottom" secondItem="ZhX-qT-0Og" secondAttribute="bottom" id="sJf-yb-0Wq"/>
-                                        <constraint firstItem="2ou-1w-NGS" firstAttribute="leading" secondItem="NDt-bR-wql" secondAttribute="leading" id="sYD-Mv-jV4"/>
                                         <constraint firstItem="pCA-H7-dKU" firstAttribute="centerX" secondItem="ZhX-qT-0Og" secondAttribute="centerX" id="tMz-m6-qam"/>
                                         <constraint firstItem="nbX-wJ-SCs" firstAttribute="leading" secondItem="pCA-H7-dKU" secondAttribute="trailing" constant="20" id="xPf-ha-Ccv"/>
                                         <constraint firstItem="nbX-wJ-SCs" firstAttribute="centerY" secondItem="h2s-09-Utr" secondAttribute="centerY" id="xWd-F0-i2y"/>
                                         <constraint firstItem="pCA-H7-dKU" firstAttribute="centerY" secondItem="ZhX-qT-0Og" secondAttribute="centerY" id="xkg-Or-4da"/>
+                                        <constraint firstItem="A2o-wm-4x3" firstAttribute="top" secondItem="E6F-HJ-J7T" secondAttribute="bottom" constant="8" id="yES-sd-jJA"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="date" destination="iam-p0-skx" id="KsI-Lg-xCq"/>
+                                    <outlet property="diaryField" destination="sKC-UJ-2oh" id="1Ob-sl-5Np"/>
                                     <outlet property="foodImage" destination="nbX-wJ-SCs" id="ddq-Qj-oiW"/>
-                                    <outlet property="foodType" destination="4Ej-KO-A3f" id="VZg-oq-I51"/>
-                                    <outlet property="foodTypeIcon" destination="2ou-1w-NGS" id="bdk-gb-kwZ"/>
+                                    <outlet property="fruitField" destination="4Jb-12-6Fr" id="Ycr-Er-KSA"/>
+                                    <outlet property="grainField" destination="vVK-5R-0XY" id="oik-sZ-Jnv"/>
                                     <outlet property="note" destination="E6F-HJ-J7T" id="epi-CQ-paP"/>
+                                    <outlet property="proteinField" destination="Rj0-0m-Otz" id="1sY-nM-ctJ"/>
                                     <outlet property="separationLine" destination="ZhX-qT-0Og" id="2fY-UZ-S1L"/>
                                     <outlet property="time" destination="NDt-bR-wql" id="LnA-bq-B2V"/>
+                                    <outlet property="vegetableField" destination="2ou-1w-NGS" id="jaW-q4-QZh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -472,7 +509,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMK-75-yYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4983" y="186"/>
+            <point key="canvasLocation" x="4981.6000000000004" y="185.75712143928038"/>
         </scene>
         <!--Confirm Photo View Controller-->
         <scene sceneID="4fi-3K-zRC">
@@ -564,10 +601,61 @@
                                 </constraints>
                             </scrollView>
                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIb-Xu-utK">
-                                <rect key="frame" x="16" y="347" width="343" height="320"/>
+                                <rect key="frame" x="16" y="267" width="343" height="400"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Does it contain any of the following?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yz-n9-XeC">
-                                        <rect key="frame" x="33" y="18" width="276" height="45"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2J7-pg-aTQ">
+                                        <rect key="frame" x="91.5" y="332" width="160" height="50"/>
+                                        <state key="normal" image="Button_Done"/>
+                                        <connections>
+                                            <action selector="completeTapped:" destination="sdL-l7-QO5" eventType="touchUpInside" id="kxl-zq-omd"/>
+                                            <segue destination="11y-dy-dCj" kind="custom" customClass="PresentTurnSegue" customModule="IBAnimatable" id="ejy-Cq-Uuf"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BAr-gu-p5a">
+                                        <rect key="frame" x="36.5" y="262" width="270" height="52"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="grain" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5k-mq-luV">
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="52"/>
+                                                <state key="normal" image="DemoImage_Grain"/>
+                                                <connections>
+                                                    <action selector="nutritionTapped:" destination="sdL-l7-QO5" eventType="touchUpInside" id="0Vn-hO-sKL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="fruit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPi-98-Nai">
+                                                <rect key="frame" x="57" y="0.0" width="42" height="52"/>
+                                                <state key="normal" image="DemoImage_Fruit-1"/>
+                                                <connections>
+                                                    <action selector="nutritionTapped:" destination="sdL-l7-QO5" eventType="touchUpInside" id="tbS-P2-PCt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" restorationIdentifier="vegetable" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8VB-fa-GaZ">
+                                                <rect key="frame" x="114" y="2" width="42" height="48"/>
+                                                <state key="normal" image="DemoImage_Vegetable"/>
+                                                <connections>
+                                                    <action selector="nutritionTapped:" destination="sdL-l7-QO5" eventType="touchUpInside" id="kNe-Gz-P8v"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" restorationIdentifier="dairy" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtU-a7-0LC">
+                                                <rect key="frame" x="171" y="2" width="42" height="48"/>
+                                                <state key="normal" image="DemoImage_Dairy"/>
+                                                <connections>
+                                                    <action selector="nutritionTapped:" destination="sdL-l7-QO5" eventType="touchUpInside" id="wWy-7f-PFY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="protein" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msZ-eq-IRy">
+                                                <rect key="frame" x="228" y="3.5" width="42" height="45"/>
+                                                <state key="normal" image="DemoImage_Protein"/>
+                                                <connections>
+                                                    <action selector="nutritionTapped:" destination="sdL-l7-QO5" eventType="touchUpInside" id="OJd-1c-lHf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nutrition Plate" translatesAutoresizingMaskIntoConstraints="NO" id="g9E-8v-sIh">
+                                        <rect key="frame" x="16" y="10" width="311" height="191"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Does your plate contain any of the following?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yz-n9-XeC">
+                                        <rect key="frame" x="5" y="209" width="333" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="etC-T5-3vX"/>
                                         </constraints>
@@ -575,28 +663,20 @@
                                         <color key="textColor" red="0.2901991605758667" green="0.29019206762313843" blue="0.29019346833229065" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2J7-pg-aTQ">
-                                        <rect key="frame" x="91" y="252" width="160" height="50"/>
-                                        <state key="normal" image="Button_Done"/>
-                                        <connections>
-                                            <action selector="completeTapped:" destination="sdL-l7-QO5" eventType="touchUpInside" id="kxl-zq-omd"/>
-                                            <segue destination="11y-dy-dCj" kind="custom" customClass="PresentTurnSegue" customModule="IBAnimatable" id="ejy-Cq-Uuf"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Nutrition Plate" translatesAutoresizingMaskIntoConstraints="NO" id="pWd-nd-hWQ">
-                                        <rect key="frame" x="40" y="63" width="262" height="164"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="7TK-uP-kLe"/>
-                                    <constraint firstItem="pWd-nd-hWQ" firstAttribute="top" secondItem="9Yz-n9-XeC" secondAttribute="bottom" id="833-Aq-pHX"/>
-                                    <constraint firstItem="pWd-nd-hWQ" firstAttribute="centerX" secondItem="CIb-Xu-utK" secondAttribute="centerX" id="IWw-nP-SFY"/>
-                                    <constraint firstItem="9Yz-n9-XeC" firstAttribute="top" secondItem="CIb-Xu-utK" secondAttribute="top" constant="18" id="RkL-59-jCr"/>
+                                    <constraint firstAttribute="trailing" secondItem="g9E-8v-sIh" secondAttribute="trailing" constant="16" id="3T8-nF-tqk"/>
+                                    <constraint firstAttribute="height" constant="400" id="7TK-uP-kLe"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Yz-n9-XeC" secondAttribute="trailing" constant="5" id="LMO-4X-bYV"/>
+                                    <constraint firstItem="BAr-gu-p5a" firstAttribute="top" secondItem="9Yz-n9-XeC" secondAttribute="bottom" constant="8" id="aWm-zM-130"/>
                                     <constraint firstAttribute="bottom" secondItem="2J7-pg-aTQ" secondAttribute="bottom" constant="18" id="aZO-gz-FI7"/>
+                                    <constraint firstItem="9Yz-n9-XeC" firstAttribute="top" secondItem="g9E-8v-sIh" secondAttribute="bottom" constant="8" id="cqE-oP-cO1"/>
                                     <constraint firstItem="2J7-pg-aTQ" firstAttribute="centerX" secondItem="CIb-Xu-utK" secondAttribute="centerX" id="fHf-g8-ygk"/>
-                                    <constraint firstItem="9Yz-n9-XeC" firstAttribute="centerX" secondItem="CIb-Xu-utK" secondAttribute="centerX" id="hn4-HG-cWy"/>
-                                    <constraint firstItem="2J7-pg-aTQ" firstAttribute="top" secondItem="pWd-nd-hWQ" secondAttribute="bottom" constant="25" id="ukS-pG-zg3"/>
+                                    <constraint firstItem="g9E-8v-sIh" firstAttribute="top" secondItem="CIb-Xu-utK" secondAttribute="top" constant="10" id="idh-V3-l5v"/>
+                                    <constraint firstItem="g9E-8v-sIh" firstAttribute="leading" secondItem="CIb-Xu-utK" secondAttribute="leading" constant="16" id="pez-Ns-XgJ"/>
+                                    <constraint firstItem="9Yz-n9-XeC" firstAttribute="leading" secondItem="CIb-Xu-utK" secondAttribute="leading" constant="5" id="wWB-lZ-cnq"/>
+                                    <constraint firstItem="BAr-gu-p5a" firstAttribute="centerX" secondItem="CIb-Xu-utK" secondAttribute="centerX" id="zig-P5-TEv"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -720,9 +800,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ksj-pq-oPL" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="68.5" height="78"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIb-Gc-8x9">
-                                                <rect key="frame" x="26" y="28.5" width="17" height="22"/>
-                                                <state key="normal" image="Image_Vegetable"/>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIb-Gc-8x9">
+                                                <rect key="frame" x="16" y="25.5" width="37" height="28"/>
+                                                <state key="normal" image="Demo_Vegetable"/>
                                                 <connections>
                                                     <segue destination="zBE-bZ-8WM" kind="custom" customClass="PresentFlipSegue" customModule="IBAnimatable" id="3Ts-RM-Mb9"/>
                                                 </connections>
@@ -1574,6 +1654,16 @@
         <image name="Button_LogIn" width="160" height="50"/>
         <image name="Button_Next" width="160" height="50"/>
         <image name="Button_Take" width="63" height="63"/>
+        <image name="DemoImage_Dairy" width="32" height="48"/>
+        <image name="DemoImage_Fruit-1" width="36" height="52"/>
+        <image name="DemoImage_Grain" width="42" height="52"/>
+        <image name="DemoImage_Protein" width="39" height="45"/>
+        <image name="DemoImage_Vegetable" width="37" height="48"/>
+        <image name="Demo_Dairy" width="32" height="29"/>
+        <image name="Demo_Fruit" width="36" height="33"/>
+        <image name="Demo_Grain" width="42" height="34"/>
+        <image name="Demo_Protein" width="36" height="28"/>
+        <image name="Demo_Vegetable" width="37" height="28"/>
         <image name="Face_Yellow" width="118" height="118"/>
         <image name="Image_FacebookLogIn" width="250" height="39"/>
         <image name="Image_GoogleLogin" width="250" height="39"/>
@@ -10825,11 +10915,10 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="orLine" width="260" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RqJ-fS-isQ"/>
         <segue reference="Oq9-67-GAe"/>
         <segue reference="UbM-Po-ocL"/>
-        <segue reference="ejy-Cq-Uuf"/>
-        <segue reference="GHi-nD-NU8"/>
-        <segue reference="c8e-hH-ef2"/>
+        <segue reference="I63-Bd-qlj"/>
+        <segue reference="1gd-EK-yKm"/>
+        <segue reference="2iH-jb-HTL"/>
     </inferredMetricsTieBreakers>
 </document>
