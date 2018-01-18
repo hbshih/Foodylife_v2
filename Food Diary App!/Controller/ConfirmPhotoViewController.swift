@@ -18,18 +18,14 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
     @IBOutlet weak var buttonBar:UIView!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var addnoteText: UITextView!
-    
-    
+    // Genetal Variables
     var image:UIImage?
-    
+    // Saving nutrition info
     var grain = 0
     var protein = 0
     var fruit = 0
     var vegetable = 0
     var dairy = 0
- 
-    
-    
     // Array of all filters
     var CIFilterNames = [
         "CIPhotoEffectChrome",
@@ -45,23 +41,22 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        // Working with interface transition
         addnoteText.text = "add some note here..."
         addnoteText.textColor = UIColor.lightGray
         addnoteText.delegate = self
-        
         originalImage.image = image
-        
+        doneButton.alpha = 1
+        buttonBar.alpha = 0
+        //Working with scrollbar
         var XCoord:CGFloat = 5
         let yCoord:CGFloat = 5
         let buttonWidth:CGFloat = 80
         let buttonHeight:CGFloat = 80
         let gapBetweenButtons:CGFloat = 5
-        doneButton.alpha = 1
         
-        buttonBar.alpha = 0
-        
+        // For each filter, create it as a button with filtered-image in the scroll bar
         var itemCount = 5
-        
         for i in 0..<CIFilterNames.count
         {
             itemCount = i
@@ -85,13 +80,11 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
             filtersScrollView.addSubview(filterButton)
         }
         filtersScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(itemCount + 2),height: yCoord + 50)
-        
     }
     
+    //Working with nutrition recognition
     @IBAction func nutritionTapped(_ sender: AnyObject)
     {
-        
-        print(sender.tag)
         switch sender.tag
         {
         case 1:
@@ -110,17 +103,19 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
             dairy += 1
             print("dairy: \(dairy)")
         default:
+            alertMessage(title: "You sure?", message: "Are you sure you don't want to add some nutrition?")
             print("none")
         }
  
     }
     
-    
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // Show pop up dialog
     @IBAction func doneTapped(_ sender: Any)
     {
         UIView.animate(withDuration: 0.2, animations: {self.buttonBar.alpha = 1}, completion: nil)
@@ -128,6 +123,7 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
         filtersScrollView.alpha = 0
         addnoteText.alpha = 0
     }
+    // Save image
     @IBAction func completeTapped(_ sender: Any)
     {
         let format = DateFormatter()
@@ -137,6 +133,7 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
         saveImage(imageName: currentFileName, time: currentTime)
     }
 
+    // Save image processing
     func saveImage(imageName: String, time: Date)
     {
         //create an instance of the FileManager
@@ -156,21 +153,12 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
         let data = UIImageJPEGRepresentation(imageSaveImage, 0.5)
         //store it in the document directory
         fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
-        //print("This is the image path \(imagePath)")
 
-        // Update the image name array to keep track of all the photos
-//        let defaults = UserDefaults.standard
-//        var myarray = defaults.object(forKey: "imageFileName") as? [String] ?? [String]()
-//        myarray.append(imageName)
-//        defaults.set(myarray, forKey: "imageFileName")
-//        for i in myarray
-//        {
-//            print("\(i) saved succesfully\n")
-//        }
-        
+        // Accessing core data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let newValue = NSEntityDescription.insertNewObject(forEntityName: "UserEntries", into: context)
+        // Setting values for each corresponding data
         newValue.setValue(time, forKey: "time")
         newValue.setValue(imageName, forKey: "imageName")
         if addnoteText.text != "add some note here..."
@@ -180,7 +168,6 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
         {
             newValue.setValue("", forKey: "note")
         }
-        
         if grain != 0
         {
             newValue.setValue(grain, forKey: "n_Grain")
@@ -216,21 +203,23 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
         {
             newValue.setValue(0, forKey: "n_Dairy")
         }
-        
         do {
             try context.save()
             print("All data saved succesfully")
         } catch {
+            alertMessage(title: "Problem with saving", message: "Sorry")
             print("Problem Saving Data")
         }
     }
     
+    //Action when filter is tapped (Change the current image to filtered ones)
     @objc func filterButtonTapped(sender:UIButton)
     {
         let button = sender as UIButton
         imageToFilter.image = button.backgroundImage(for: UIControlState.normal)
     }
     
+    // Working with textfield ##
     func textViewDidBeginEditing(_ textView: UITextView) {
         if addnoteText.textColor == UIColor.lightGray
         {
@@ -238,7 +227,6 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
             addnoteText.textColor = UIColor.black
         }
     }
-    
     func textViewDidEndEditing(_ textView: UITextView)
     {
         if addnoteText.text == ""
@@ -246,6 +234,12 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
             addnoteText.text = "add some note here..."
             addnoteText.textColor = UIColor.lightGray
         }
+    }
+    //##
+    func alertMessage(title: String, message: String)
+    {
+        let mes = AlertMessage()
+        mes.displayAlert(title: title, message: message, VC: self)
     }
     
 }

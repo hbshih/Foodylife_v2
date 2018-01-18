@@ -11,12 +11,12 @@ import CoreData
 
 class DiaryTableViewController: UITableViewController {
     
-    var images: [UIImage] = []
-    var fileName: [String] = []
-    var notes: [String] = []
-    // var nutritionList = ["vegetable":0,"protein":0,"diary":0,"fruit":0,"grain":0]
-    var nutritionList: [Int:[Int]]?
-    //var revFileName: [String] = []
+    // General Variables
+    var images: [UIImage] = [] // Storing Images
+    var fileName: [String] = [] // Storing the names of the images to get images
+    var notes: [String] = [] // Storing notes
+    
+    // Nutrition Info Variables
     var dairyList: [Int] = []
     var vegetableList: [Int] = []
     var proteinList: [Int] = []
@@ -26,12 +26,11 @@ class DiaryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nutritionList?.removeAll()
+        // Accessing Core Data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
         request.returnsObjectsAsFaults = false
-        
         do
         {
             let results = try context.fetch(request)
@@ -39,6 +38,7 @@ class DiaryTableViewController: UITableViewController {
             {
                 for result in results as! [NSManagedObject]
                 {
+                    // Store data in the corresponding array
                     if let imageName = result.value(forKey: "imageName") as? String
                     {
                         fileName.append(imageName)
@@ -56,8 +56,6 @@ class DiaryTableViewController: UITableViewController {
                                     {
                                         if let proteinValue = result.value(forKey: "n_Protein") as? Int
                                         {
-                                            var pr = [grain_value,vegetableValue,fruitValue,dairyValue,proteinValue]
-                                            print(pr)
                                             grainList.append(grain_value)
                                             vegetableList.append(vegetableValue)
                                             proteinList.append(proteinValue)
@@ -76,10 +74,10 @@ class DiaryTableViewController: UITableViewController {
         }catch
         {
             print("Retrieving core data error")
+            alertMessage(title: "Error", message: "We are having problem dealing with your diary, something might be wrong, try again later.")
         }
         
         //-- to display the most up to date items first
-        print(grainList)
         fileName = fileName.reversed()
         notes = notes.reversed()
         fruitList = fruitList.reversed()
@@ -88,7 +86,7 @@ class DiaryTableViewController: UITableViewController {
         proteinList = proteinList.reversed()
         grainList = grainList.reversed()
         
-        
+        //-- Accesing App File, getting images
         if fileName.count != 0
         {
             let fileManager = FileManager.default
@@ -111,11 +109,10 @@ class DiaryTableViewController: UITableViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -126,15 +123,17 @@ class DiaryTableViewController: UITableViewController {
     {
         return true 
     }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
+        // Delete Button
         if editingStyle == .delete
         {
-            print("I will delete")
-            
+            // Accesing Core Data
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
+            // Get the corresponding image that user intend to delete
             request.predicate = NSPredicate(format: "imageName = %@", "\(fileName[indexPath.row])")
             request.returnsObjectsAsFaults = false
             do
@@ -145,6 +144,7 @@ class DiaryTableViewController: UITableViewController {
                 {
                     for name in result as! [NSManagedObject]
                     {
+                        // Access to coredata and delete them
                         if let Imagename = name.value(forKey: "imageName") as? String
                         {
                             print("\(Imagename) deleted complete")
@@ -152,20 +152,18 @@ class DiaryTableViewController: UITableViewController {
                             do {
                                 try context.save()
                             } catch  {
+                                alertMessage(title: "Delete Failed", message: "An Error has occured, please try again later.")
                                 print("Delete Failed")
                             }
                         }
                     }
-                }else
-                {
                 }
-                
-                
             }catch
             {
-                
+                alertMessage(title: "Error", message: "An Error has occured, please try again later.")
             }
             
+            // Access to file and delete them
             let fileManager = FileManager.default
             let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(fileName[indexPath.row])
             if fileManager.fileExists(atPath: imagePath)
@@ -181,22 +179,19 @@ class DiaryTableViewController: UITableViewController {
             }else{
                 print("Panic! No Image!")
             }
+            // Delete from the table
             images.remove(at: indexPath.row)
             notes.remove(at: indexPath.row)
             fileName.remove(at: indexPath.row)
-            
             tableView.reloadData()
-            
         }
-        
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? DiaryTableViewCell
         {
-            print(indexPath.row)
+            // Manipulating Data, showing correct information
             let str = self.fileName[indexPath.row]
             var subString = str.prefix(10)
             let month = subString.suffix(2)
@@ -206,17 +201,16 @@ class DiaryTableViewController: UITableViewController {
             let hour = subString.suffix(2)
             subString = str.prefix(19)
             let minute = subString.suffix(2)
-            
             let date = "\(month)/\(day)"
             let time = "\(hour):\(minute)"
             
+            // Displaying informations
             cell.foodImage.image = images[indexPath.row]
             cell.date.text = date
             cell.time.text = time
-            
             cell.note.text = notes[indexPath.row]
             
-            // Showing nutritions
+            // Showing nutrition icon
             if grainList[indexPath.row] > 0
             {
                 cell.grainField.alpha = 1
@@ -264,6 +258,12 @@ class DiaryTableViewController: UITableViewController {
         {
             return UITableViewCell ()
         }
+    }
+    
+    func alertMessage(title: String, message: String)
+    {
+        let mes = AlertMessage()
+        mes.displayAlert(title: title, message: message, VC: self)
     }
     
     

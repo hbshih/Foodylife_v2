@@ -26,11 +26,6 @@ class DiaryTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        vegetableField.alpha = 0.25
-        diaryField.alpha = 0.25
-        fruitField.alpha = 0.25
-        proteinField.alpha = 0.25
-        grainField.alpha = 0.25
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

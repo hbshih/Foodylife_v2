@@ -34,12 +34,12 @@ class VegetableDashboardViewController: UIViewController {
             {
                 for result in results as! [NSManagedObject]
                 {
-                    if let imageName = result.value(forKey: "imageName") as? String
+                    if let vegValue = result.value(forKey: "n_Vegetable") as? Int
                     {
-                        fileName.append(imageName)
-                        if let note = result.value(forKey: "note") as? String
+                        if vegValue != 0
                         {
-                            notes.append(note)
+                            print(result.value(forKey: "ImageName") as! String)
+                            fileName.append(result.value(forKey: "ImageName") as! String)
                         }
                     }
                 }
@@ -48,6 +48,8 @@ class VegetableDashboardViewController: UIViewController {
         {
             print("Retrieving core data error")
         }
+        
+        fileName = fileName.reversed()
         
         if fileName.count != 0
         {
