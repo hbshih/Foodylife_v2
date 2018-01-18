@@ -108,6 +108,44 @@ class homepageViewController: UIViewController {
         let icon = UIImage(named:"Alert_Yellow.png")
         let color = UIColor.orange        
         _ = alert.showCustom("STOP", subTitle: "STOP TOUCHING MY EYES! YOU MEATBALL", color: color, icon: icon!)
-        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "vegetableDashSegue"
+        {
+            if let vegeVC = segue.destination as? VegetableDashboardViewController
+            {
+                vegeVC.dashboardType = "Vegetable"
+            }
+        }else if segue.identifier == "grainDashSegue"
+        {
+            if let vegeVC = segue.destination as? VegetableDashboardViewController
+            {
+                vegeVC.dashboardType = "Grain"
+            }
+        }else if segue.identifier == "proteinDashSegue"
+        {
+            if let vegeVC = segue.destination as? VegetableDashboardViewController
+            {
+                vegeVC.dashboardType = "Protein"
+            }
+        }else if segue.identifier == "fruitDashSegue"
+        {
+            if let vegeVC = segue.destination as? VegetableDashboardViewController
+            {
+                vegeVC.dashboardType = "Fruit"
+            }
+        }else if segue.identifier == "dairyDashSegue"
+        {
+            if let vegeVC = segue.destination as? VegetableDashboardViewController
+            {
+                vegeVC.dashboardType = "Dairy"
+            }
+        }else
+        {
+            
+        }
+    }
+    
 }

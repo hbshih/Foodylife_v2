@@ -804,7 +804,7 @@
                                                 <rect key="frame" x="16" y="25.5" width="37" height="28"/>
                                                 <state key="normal" image="Demo_Vegetable"/>
                                                 <connections>
-                                                    <segue destination="zBE-bZ-8WM" kind="custom" customClass="PresentFlipSegue" customModule="IBAnimatable" id="3Ts-RM-Mb9"/>
+                                                    <segue destination="zBE-bZ-8WM" kind="custom" identifier="vegetableDashSegue" customClass="PresentFlipSegue" customModule="IBAnimatable" id="3Ts-RM-Mb9"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -838,8 +838,11 @@
                                         <rect key="frame" x="68.5" y="0.0" width="68.5" height="78"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMb-a9-cdS">
-                                                <rect key="frame" x="26" y="28.5" width="17" height="22"/>
-                                                <state key="normal" image="Image_Vegetable"/>
+                                                <rect key="frame" x="13.5" y="22.5" width="42" height="34"/>
+                                                <state key="normal" image="Demo_Grain"/>
+                                                <connections>
+                                                    <segue destination="zBE-bZ-8WM" kind="show" identifier="grainDashSegue" id="ymR-04-8EK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -872,8 +875,11 @@
                                         <rect key="frame" x="137" y="0.0" width="69" height="78"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mH4-k9-41C">
-                                                <rect key="frame" x="26.5" y="28.5" width="17" height="22"/>
-                                                <state key="normal" image="Image_Vegetable"/>
+                                                <rect key="frame" x="17" y="25.5" width="36" height="28"/>
+                                                <state key="normal" image="Demo_Protein"/>
+                                                <connections>
+                                                    <segue destination="zBE-bZ-8WM" kind="show" identifier="proteinDashSegue" id="3dm-K3-1UH"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -906,8 +912,11 @@
                                         <rect key="frame" x="206" y="0.0" width="68.5" height="78"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4K-ik-9jj">
-                                                <rect key="frame" x="25.5" y="28.5" width="17" height="22"/>
-                                                <state key="normal" image="Image_Vegetable"/>
+                                                <rect key="frame" x="16" y="23" width="36" height="33"/>
+                                                <state key="normal" image="Demo_Fruit"/>
+                                                <connections>
+                                                    <segue destination="zBE-bZ-8WM" kind="show" identifier="fruitDashSegue" id="ysE-PK-aPl"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -940,8 +949,11 @@
                                         <rect key="frame" x="274.5" y="0.0" width="68.5" height="78"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hul-Qd-21M">
-                                                <rect key="frame" x="25.5" y="28.5" width="17" height="22"/>
-                                                <state key="normal" image="Image_Vegetable"/>
+                                                <rect key="frame" x="18" y="25" width="32" height="29"/>
+                                                <state key="normal" image="Demo_Dairy"/>
+                                                <connections>
+                                                    <segue destination="zBE-bZ-8WM" kind="show" identifier="dairyDashSegue" id="XKj-v3-0Nw"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1430,6 +1442,8 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="centerImage" destination="S64-hM-eVx" id="ti3-7U-Qeu"/>
+                        <outlet property="navDash" destination="FHi-8x-107" id="cKE-X7-3Fy"/>
                         <outlet property="scrollView" destination="7k3-3J-pdv" id="ZP2-QQ-Ugd"/>
                     </connections>
                 </viewController>
@@ -1526,103 +1540,6 @@
             </objects>
             <point key="canvasLocation" x="8413.6000000000004" y="184.85757121439281"/>
         </scene>
-        <!--Fruits Dashboard-->
-        <scene sceneID="grg-xR-y6z">
-            <objects>
-                <viewController title="Fruits Dashboard" id="tfi-QV-4IM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="f3T-5L-KO3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUi-gy-9Ma" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_BiggerVegetable" translatesAutoresizingMaskIntoConstraints="NO" id="Eeu-I9-VCo">
-                                        <rect key="frame" x="142" y="150" width="91" height="75"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="EUi-gy-9Ma" secondAttribute="height" multiplier="1:1" id="3by-wl-9T0"/>
-                                    <constraint firstItem="Eeu-I9-VCo" firstAttribute="centerX" secondItem="EUi-gy-9Ma" secondAttribute="centerX" id="PyZ-sb-Kes"/>
-                                    <constraint firstItem="Eeu-I9-VCo" firstAttribute="centerY" secondItem="EUi-gy-9Ma" secondAttribute="centerY" id="V7a-bw-bbW"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="angle">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
-                                        <real key="value" value="-90"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="progressThickness">
-                                        <real key="value" value="0.20000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="trackThickness">
-                                        <real key="value" value="0.20000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
-                                        <color key="value" red="0.9521811604" green="0.97788041830000005" blue="0.9097866416" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="IBColor1">
-                                        <color key="value" red="0.69858199359999995" green="0.87692767380000003" blue="0.47049587970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_SeparatingLine" translatesAutoresizingMaskIntoConstraints="NO" id="KNR-o8-2or">
-                                <rect key="frame" x="0.0" y="439" width="375" height="3"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Recent Vegetables" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryX-L9-RoU">
-                                <rect key="frame" x="90.5" y="450" width="194" height="25"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKx-Ao-xz7">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.965406239" green="0.57776814700000001" blue="0.1163986996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Fruit Dashboard" id="ude-vG-g21">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="PvA-aE-SyC"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2t-pa-Hyh">
-                                <rect key="frame" x="0.0" y="503" width="375" height="164"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="t2t-pa-Hyh" secondAttribute="height" multiplier="16:7" id="tJa-V1-QcM"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="EUi-gy-9Ma" firstAttribute="leading" secondItem="jIq-fB-Pxf" secondAttribute="leading" id="3hK-Nb-gCQ"/>
-                            <constraint firstItem="ryX-L9-RoU" firstAttribute="top" secondItem="KNR-o8-2or" secondAttribute="bottom" constant="8" id="51j-t9-3B6"/>
-                            <constraint firstItem="rKx-Ao-xz7" firstAttribute="top" secondItem="jIq-fB-Pxf" secondAttribute="top" id="BGP-ny-ija"/>
-                            <constraint firstItem="ryX-L9-RoU" firstAttribute="centerX" secondItem="jIq-fB-Pxf" secondAttribute="centerX" id="Jy6-Ap-wx9"/>
-                            <constraint firstItem="KNR-o8-2or" firstAttribute="leading" secondItem="f3T-5L-KO3" secondAttribute="leading" id="OyR-Wy-E9p"/>
-                            <constraint firstItem="EUi-gy-9Ma" firstAttribute="trailing" secondItem="jIq-fB-Pxf" secondAttribute="trailing" id="VaZ-Ly-bfG"/>
-                            <constraint firstAttribute="trailing" secondItem="KNR-o8-2or" secondAttribute="trailing" id="Z8O-73-Nok"/>
-                            <constraint firstItem="rKx-Ao-xz7" firstAttribute="trailing" secondItem="jIq-fB-Pxf" secondAttribute="trailing" id="bVc-Qw-iKW"/>
-                            <constraint firstItem="EUi-gy-9Ma" firstAttribute="top" secondItem="rKx-Ao-xz7" secondAttribute="bottom" id="n1j-gT-X90"/>
-                            <constraint firstItem="t2t-pa-Hyh" firstAttribute="leading" secondItem="jIq-fB-Pxf" secondAttribute="leading" id="nca-f6-3vh"/>
-                            <constraint firstItem="t2t-pa-Hyh" firstAttribute="bottom" secondItem="jIq-fB-Pxf" secondAttribute="bottom" id="pL1-Yb-4md"/>
-                            <constraint firstItem="rKx-Ao-xz7" firstAttribute="leading" secondItem="jIq-fB-Pxf" secondAttribute="leading" id="s6W-DD-WpE"/>
-                            <constraint firstItem="KNR-o8-2or" firstAttribute="top" secondItem="EUi-gy-9Ma" secondAttribute="bottom" id="uYY-d1-xZ2"/>
-                            <constraint firstItem="t2t-pa-Hyh" firstAttribute="trailing" secondItem="jIq-fB-Pxf" secondAttribute="trailing" id="zW2-xD-4ft"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="jIq-fB-Pxf"/>
-                    </view>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <connections>
-                        <outlet property="scrollView" destination="t2t-pa-Hyh" id="kuK-tA-Re4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1y-jn-98y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1886" y="949"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ZT-o6-p34">
             <objects>
@@ -1667,7 +1584,6 @@
         <image name="Face_Yellow" width="118" height="118"/>
         <image name="Image_FacebookLogIn" width="250" height="39"/>
         <image name="Image_GoogleLogin" width="250" height="39"/>
-        <image name="Image_Vegetable" width="17" height="14"/>
         <image name="Image_lock" width="18" height="22"/>
         <image name="Image_profile" width="22" height="22"/>
         <image name="Logo_Foody Life" width="266" height="56"/>
@@ -10915,9 +10831,10 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="orLine" width="260" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="XKj-v3-0Nw"/>
         <segue reference="Oq9-67-GAe"/>
         <segue reference="UbM-Po-ocL"/>
-        <segue reference="I63-Bd-qlj"/>
+        <segue reference="LyA-Rf-FrZ"/>
         <segue reference="1gd-EK-yKm"/>
         <segue reference="2iH-jb-HTL"/>
     </inferredMetricsTieBreakers>

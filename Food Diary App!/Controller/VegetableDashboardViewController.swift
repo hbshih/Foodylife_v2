@@ -11,22 +11,26 @@ import CoreData
 
 class VegetableDashboardViewController: UIViewController {
 
+    // Outlets
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var centerImage: UIImageView!
+    @IBOutlet weak var navDash: UINavigationItem!
+    // General Variables
     var images: [UIImage] = []
     var fileName: [String] = []
-    var notes: [String] = []
-    //var revFileName: [String] = []
+    var dashboardType: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Building interface
+        buildDashboard()
+        
+        // Accessing Core Data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
-        
         request.returnsObjectsAsFaults = false
-        
         do
         {
             let results = try context.fetch(request)
@@ -34,12 +38,13 @@ class VegetableDashboardViewController: UIViewController {
             {
                 for result in results as! [NSManagedObject]
                 {
-                    if let vegValue = result.value(forKey: "n_Vegetable") as? Int
+                    let searchFor = "n_\(dashboardType!)"
+                    if let vegValue = result.value(forKey: searchFor) as? Int
                     {
+                        let imageName = result.value(forKey: "ImageName") as! String
                         if vegValue != 0
                         {
-                            print(result.value(forKey: "ImageName") as! String)
-                            fileName.append(result.value(forKey: "ImageName") as! String)
+                            fileName.append(imageName)
                         }
                     }
                 }
@@ -51,56 +56,60 @@ class VegetableDashboardViewController: UIViewController {
         
         fileName = fileName.reversed()
         
-        if fileName.count != 0
-        {
-            let fileManager = FileManager.default
-            for imageName in fileName
-            {
-                let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-                if fileManager.fileExists(atPath: imagePath){
-                    if let outputImage = UIImage(contentsOfFile: imagePath)
-                    {
-                        images.append(outputImage)
-                    }else
-                    {
-                        print("cannot find \(imagePath)")
-                    }
-                }else{
-                    print("Panic! No Image!")
-                }
-            }
-        }
+        //Getting corresponding images
+        let fileManager = FileMangerModel()
+        images = fileManager.lookupImage(fileNames: fileName)
         
+        // Preparing for scroll image views
         var XCoord:CGFloat = 5
         let yCoord:CGFloat = 5
         let scrollImageWidth:CGFloat =  130
         let scrollImageHeight:CGFloat = 130
         let gapBetweenImage:CGFloat = 5
         var itemCount = 0
-        
+        // Loading images
         for i in 0..<images.count
         {
             itemCount = i
-            let imagebutton = UIButton(type:.custom)
-            imagebutton.frame = CGRect(x: XCoord,y: yCoord,width: scrollImageWidth,height: scrollImageHeight)
-            imagebutton.addTarget(self,action:#selector(imageButtonTapped(sender:)),for:.touchUpInside)
-            imagebutton.layer.cornerRadius = 6
-            imagebutton.clipsToBounds = true
             let imageForButton = images[itemCount]
-            imagebutton.setBackgroundImage(imageForButton,for:.normal)
+            let imageView = UIImageView(image: imageForButton)
+            imageView.frame = CGRect(x: XCoord,y: yCoord,width: scrollImageWidth,height: scrollImageHeight)
+            imageView.layer.cornerRadius = 6
+            imageView.clipsToBounds = true
             XCoord += scrollImageWidth + gapBetweenImage
-            scrollView.addSubview(imagebutton)
+            // Add it to the view controller
+            scrollView.addSubview(imageView)
         }
         scrollView.contentSize = CGSize(width: scrollImageWidth * CGFloat(itemCount + 2),height: yCoord + 50)
-        
     }
     
-    @objc func imageButtonTapped(sender:UIButton)
+    func buildDashboard()
     {
-        print("Tapped")
+        if dashboardType == "Vegetable"
+        {
+            navDash.title = "Vegetable Dashboard"
+            centerImage.image = #imageLiteral(resourceName: "Demo_Vegetable")
+        } else if dashboardType == "Grain"
+        {
+            navDash.title = "Grain Dashboard"
+            centerImage.image = #imageLiteral(resourceName: "Demo_Grain")
+        }else if dashboardType == "Protein"
+        {
+            navDash.title = "Protein Dashboard"
+            centerImage.image = #imageLiteral(resourceName: "Demo_Protein")
+        }else if dashboardType == "Fruit"
+        {
+            navDash.title = "Fruit Dashboard"
+            centerImage.image = #imageLiteral(resourceName: "Demo_Fruit")
+        }else
+        {
+            navDash.title = "Dairy Dashboard"
+            centerImage.image = #imageLiteral(resourceName: "Demo_Dairy")
+        }
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

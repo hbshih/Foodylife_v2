@@ -18,22 +18,21 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
     var caption: [String] = []
     var fileImage: [UIImage] = []
     var fileName: [String] = []
-   // var notes: [String] = []
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        // Making sure that the arrays are empty
         fileName.removeAll()
         fileImage.removeAll()
         caption.removeAll()
         images.removeAll()
         
+        // Accesing core data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
         request.returnsObjectsAsFaults = false
-        
         do
         {
             let results = try context.fetch(request)
@@ -46,7 +45,6 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
                         fileName.append(imageName)
                         if let note = result.value(forKey: "note") as? String
                         {
-                           // notes.append(note)
                             caption.append(note)
                         }
                     }
@@ -153,11 +151,7 @@ class FromLocalViewController: UIViewController, UICollectionViewDataSource, UIC
         fileName.remove(at: index)
         */
         //browser.reloadData()
-        
- 
         browser.dismissPhotoBrowser(animated: true)
-        
-       
     }
 }
 
