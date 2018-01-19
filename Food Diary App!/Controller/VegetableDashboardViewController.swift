@@ -41,10 +41,12 @@ class VegetableDashboardViewController: UIViewController {
                     let searchFor = "n_\(dashboardType!)"
                     if let vegValue = result.value(forKey: searchFor) as? Int
                     {
-                        let imageName = result.value(forKey: "ImageName") as! String
-                        if vegValue != 0
+                        if let imageName = result.value(forKey: "ImageName") as? String
                         {
-                            fileName.append(imageName)
+                            if vegValue != 0
+                            {
+                                fileName.append(imageName)
+                            }
                         }
                     }
                 }
