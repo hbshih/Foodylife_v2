@@ -114,31 +114,31 @@ class homepageViewController: UIViewController {
     {
         if segue.identifier == "vegetableDashSegue"
         {
-            if let vegeVC = segue.destination as? VegetableDashboardViewController
+            if let vegeVC = segue.destination as? DashboardViewController
             {
                 vegeVC.dashboardType = "Vegetable"
             }
         }else if segue.identifier == "grainDashSegue"
         {
-            if let vegeVC = segue.destination as? VegetableDashboardViewController
+            if let vegeVC = segue.destination as? DashboardViewController
             {
                 vegeVC.dashboardType = "Grain"
             }
         }else if segue.identifier == "proteinDashSegue"
         {
-            if let vegeVC = segue.destination as? VegetableDashboardViewController
+            if let vegeVC = segue.destination as? DashboardViewController
             {
                 vegeVC.dashboardType = "Protein"
             }
         }else if segue.identifier == "fruitDashSegue"
         {
-            if let vegeVC = segue.destination as? VegetableDashboardViewController
+            if let vegeVC = segue.destination as? DashboardViewController
             {
                 vegeVC.dashboardType = "Fruit"
             }
         }else if segue.identifier == "dairyDashSegue"
         {
-            if let vegeVC = segue.destination as? VegetableDashboardViewController
+            if let vegeVC = segue.destination as? DashboardViewController
             {
                 vegeVC.dashboardType = "Dairy"
             }
