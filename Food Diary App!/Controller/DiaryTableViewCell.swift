@@ -21,11 +21,22 @@ class DiaryTableViewCell: UITableViewCell {
     @IBOutlet weak var grainField: UIImageView!
     @IBOutlet weak var fruitField: UIImageView!
     @IBOutlet weak var diaryField: UIImageView!
+    @IBOutlet weak var vegetableCount: UILabel!
+    @IBOutlet weak var proteinCount: UILabel!
+    @IBOutlet weak var grainCount: UILabel!
+    @IBOutlet weak var fruitCount: UILabel!
+    @IBOutlet weak var dairycount: UILabel!
     
     
-    override func awakeFromNib() {
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
         // Initialization code
+        vegetableCount.isHidden = true
+        proteinCount.isHidden = true
+        grainCount.isHidden = true
+        fruitCount.isHidden = true
+        dairycount.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

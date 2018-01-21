@@ -10,6 +10,7 @@
 		2E388CAC82D57EE643AC7C59 /* Pods_Food_Diary_App_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE7B708F7170D4055C55FB7 /* Pods_Food_Diary_App_UITests.framework */; };
 		373891DAD9C61286CE8A3716 /* Pods_Food_Diary_App_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */; };
 		5ED87B49F86EA263E6B4C293 /* Pods_Food_Diary_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7BBA844F0BBB3BE83A4317 /* Pods_Food_Diary_App_Tests.framework */; };
+		B506BECC2015401000680B46 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B506BECB2015401000680B46 /* IntroductionViewController.swift */; };
 		B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422441FE16947002C2540 /* KDCircularProgress.swift */; };
 		B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422461FE16D13002C2540 /* homepageViewController.swift */; };
 		B54DEF4D20112EB900251A19 /* FileManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DEF4C20112EB900251A19 /* FileManagerModel.swift */; };
@@ -28,7 +29,6 @@
 		B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */; };
 		B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBD20121623008E11B5 /* ReportViewController.swift */; };
 		B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */; };
-		B5C0404E200A72CF0013A5E0 /* TestCoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0404D200A72CF0013A5E0 /* TestCoreDataViewController.swift */; };
 		B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */; };
 		B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */; };
 		B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */; };
@@ -36,6 +36,8 @@
 		B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */; };
 		B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */; };
 		B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F61738200FAED900B0C871 /* Assets.xcassets */; };
+		B5FA2232201496EE004F3020 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FA2231201496EE004F3020 /* LoginCoordinator.swift */; };
+		B5FA223420149841004F3020 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FA223320149841004F3020 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,7 @@
 		9CCF8A4D64473F57091EEFC0 /* Pods-Food Diary App!UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Diary App!UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Food Diary App!UITests/Pods-Food Diary App!UITests.release.xcconfig"; sourceTree = "<group>"; };
 		A08B397D9C4F0A1F200238EE /* Pods-Food Diary App!UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Diary App!UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Food Diary App!UITests/Pods-Food Diary App!UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Diary_App_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B506BECB2015401000680B46 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		B53422441FE16947002C2540 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		B53422461FE16D13002C2540 /* homepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homepageViewController.swift; sourceTree = "<group>"; };
 		B54DEF4C20112EB900251A19 /* FileManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerModel.swift; sourceTree = "<group>"; };
@@ -89,7 +92,6 @@
 		B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
-		B5C0404D200A72CF0013A5E0 /* TestCoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataViewController.swift; sourceTree = "<group>"; };
 		B5C42E271FF80F8D002B887A /* Core Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Core Data.xcdatamodel"; sourceTree = "<group>"; };
 		B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,8 @@
 		B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPhotoViewController.swift; sourceTree = "<group>"; };
 		B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Rotate.swift; sourceTree = "<group>"; };
 		B5F61738200FAED900B0C871 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5FA2231201496EE004F3020 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		B5FA223320149841004F3020 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,8 @@
 				B57935371FE022DE00E663DB /* ViewController.swift */,
 				B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */,
 				B57CF9B91FE886D7003AEB1E /* CreateUsernameViewController.swift */,
+				B5FA2231201496EE004F3020 /* LoginCoordinator.swift */,
+				B5FA223320149841004F3020 /* LoginViewController.swift */,
 				B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */,
 				B53422461FE16D13002C2540 /* homepageViewController.swift */,
 				B55234321FE9AC79009A757D /* CameraViewController.swift */,
@@ -218,8 +224,8 @@
 				B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */,
 				B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */,
 				B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */,
-				B5C0404D200A72CF0013A5E0 /* TestCoreDataViewController.swift */,
 				B5A9ADBD20121623008E11B5 /* ReportViewController.swift */,
+				B506BECB2015401000680B46 /* IntroductionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -449,24 +455,36 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Food Diary App!/Pods-Food Diary App!-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
+				"${BUILT_PRODUCTS_DIR}/ILLoginKit/ILLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/ScrollableGraphView/ScrollableGraphView.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/Validator/Validator.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ILLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableGraphView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Validator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,8 +580,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B506BECC2015401000680B46 /* IntroductionViewController.swift in Sources */,
+				B5FA223420149841004F3020 /* LoginViewController.swift in Sources */,
 				B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */,
 				B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */,
+				B5FA2232201496EE004F3020 /* LoginCoordinator.swift in Sources */,
 				B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */,
 				B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */,
 				B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */,
@@ -574,7 +595,6 @@
 				B57935381FE022DE00E663DB /* ViewController.swift in Sources */,
 				B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */,
 				B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */,
-				B5C0404E200A72CF0013A5E0 /* TestCoreDataViewController.swift in Sources */,
 				B57CF9BA1FE886D7003AEB1E /* CreateUsernameViewController.swift in Sources */,
 				B57CF9BE1FE88712003AEB1E /* CreatePasswordViewController.swift in Sources */,
 				B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */,

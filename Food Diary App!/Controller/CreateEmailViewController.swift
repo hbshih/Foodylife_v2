@@ -7,12 +7,10 @@
 //
 
 import UIKit
-//import SkyFloatingLabelTextField
 
 class CreateEmailViewController: UIViewController {
     
     var username = ""
-
     @IBOutlet weak var emailTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +25,7 @@ class CreateEmailViewController: UIViewController {
     
     @IBAction func nextTapped(_ sender: Any)
     {
+        
         //emailTextField.errorMessage = "Wrong email format"
         if emailTextField.text != ""
         {
