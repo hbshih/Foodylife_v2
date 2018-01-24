@@ -15,6 +15,7 @@ class ReportViewController: UIViewController, ScrollableGraphViewDataSource
     var graphView: ScrollableGraphView!
     var graphConstraints = [NSLayoutConstraint]()
     
+
     // Data for graphs with multiple plots
     lazy var blueLinePlotData: [Double] = [67.0,42.0,50.0,12.0,77.0,90.0]
     

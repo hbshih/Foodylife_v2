@@ -10,6 +10,7 @@ import UIKit
 import SCLAlertView
 import FirebaseDatabase
 import FirebaseAuth
+import CoreData
 
 class homepageViewController: UIViewController {
     
@@ -17,10 +18,85 @@ class homepageViewController: UIViewController {
     @IBOutlet weak var centerFace: UIButton!
     var healthPercentage = 0
     
+    //--
+    // General Variables
+    var images: [UIImage] = [] // Storing Images
+    var fileName: [String] = [] // Storing the names of the images to get images
+    var notes: [String] = [] // Storing notes
+    
+    // Nutrition Info Variables
+    var dairyList: [Int] = []
+    var vegetableList: [Int] = []
+    var proteinList: [Int] = []
+    var fruitList: [Int] = []
+    var grainList: [Int] = []
+    //--
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         circularSlider.startAngle = -90.0
+        
+        //--
+        // Accessing Core Data
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
+        request.returnsObjectsAsFaults = false
+        do
+        {
+            let results = try context.fetch(request)
+            if results.count > 0
+            {
+                for result in results as! [NSManagedObject]
+                {
+                    // Store data in the corresponding array
+                    if let imageName = result.value(forKey: "imageName") as? String
+                    {
+                        var str = imageName.prefix(13)
+                        var date = str.suffix(10)
+                        self.fileName.append(String(date))
+                        if let grain_value = result.value(forKey: "n_Grain") as? Int
+                        {
+                            if let vegetableValue = result.value(forKey: "n_Vegetable") as? Int
+                            {
+                                if let fruitValue = result.value(forKey: "n_Fruit") as? Int
+                                {
+                                    if let dairyValue = result.value(forKey: "n_Dairy") as? Int
+                                    {
+                                        if let proteinValue = result.value(forKey: "n_Protein") as? Int
+                                        {
+                                            self.grainList.append(grain_value)
+                                            self.vegetableList.append(vegetableValue)
+                                            self.proteinList.append(proteinValue)
+                                            self.dairyList.append(dairyValue)
+                                            self.fruitList.append(fruitValue)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }catch
+        {
+            print("Retrieving core data error")
+        }
+        //--
+        
+        if fileName.count > 2
+        {
+        var rate = balanceRate()
+        rate.fileName = fileName
+        rate.dairyList = dairyList
+        rate.vegetableList = vegetableList
+        rate.proteinList = proteinList
+        rate.fruitList = fruitList
+        rate.grainList = grainList
+        rate.getDailyNumbers()
+        }
+        
     }
     
     @IBAction func buttonTapped(_ sender: Any)

@@ -210,59 +210,65 @@ class DiaryTableViewController: UITableViewController {
             cell.time.text = time
             cell.note.text = notes[indexPath.row]
             
-            // Showing nutrition icon
-            if grainList[indexPath.row] > 0
-            {
-                cell.grainCount.isHidden = false
-                cell.grainCount.text = String(grainList[indexPath.row])
-                cell.grainField.alpha = 1
-            }else
-            {
-                cell.grainCount.isHidden = true
-                cell.grainField.alpha = 0.25
-            }
+            // Show nutrition icons and counts
+            
             if vegetableList[indexPath.row] > 0
             {
-                cell.vegetableCount.isHidden = false
-                cell.vegetableCount.text = String(vegetableList[indexPath.row])
                 cell.vegetableField.alpha = 1
+                cell.vegetableLabel.alpha = 1
+                cell.vegetableLabel.text = String(vegetableList[indexPath.row])
             }else
             {
-                cell.vegetableCount.isHidden = true
                 cell.vegetableField.alpha = 0.25
-            }
-            if proteinList[indexPath.row] > 0
-            {
-                cell.proteinCount.isHidden = false
-                cell.proteinCount.text = String(proteinList[indexPath.row])
-                cell.proteinField.alpha = 1
-            }else
-            {
-                cell.proteinCount.isHidden = true
-                cell.proteinField.alpha = 0.25
-            }
-            if fruitList[indexPath.row] > 0
-            {
-                cell.fruitCount.isHidden = false
-                cell.fruitCount.text = String(fruitList[indexPath.row])
-                cell.fruitField.alpha = 1
-            }else
-            {
-                cell.fruitCount.isHidden = true
-                cell.fruitField.alpha = 0.25
-            }
-            if dairyList[indexPath.row] > 0
-            {
-                cell.dairycount.isHidden = false
-                cell.dairycount.text = String(dairyList[indexPath.row])
-                cell.diaryField.alpha = 1
-            }else
-            {
-                cell.dairycount.isHidden = true
-                cell.diaryField.alpha = 0.25
+                cell.vegetableLabel.alpha = 0
             }
             
+            if proteinList[indexPath.row] > 0
+            {
+                cell.proteinField.alpha = 1
+                cell.proteinLabel.alpha = 1
+                cell.proteinLabel.text = String(proteinList[indexPath.row])
+            }else
+            {
+                cell.proteinField.alpha = 0.25
+                cell.proteinLabel.alpha = 0
+            }
+            
+            if grainList[indexPath.row] > 0
+            {
+                cell.grainField.alpha = 1
+                cell.grainLabel.alpha = 1
+                cell.grainLabel.text = String(grainList[indexPath.row])
+            }else
+            {
+                cell.grainField.alpha = 0.25
+                cell.grainLabel.alpha = 0
+            }
+            
+            if fruitList[indexPath.row] > 0
+            {
+                cell.fruitField.alpha = 1
+                cell.fruitLabel.alpha = 1
+                cell.fruitLabel.text = String(fruitList[indexPath.row])
+            }else
+            {
+                cell.fruitField.alpha = 0.25
+                cell.fruitLabel.alpha = 0
+            }
+            
+            if dairyList[indexPath.row] != 0
+            {
+                cell.dairyLabel.alpha = 1
+                cell.dairyField.alpha = 1
+                cell.dairyLabel.text = String(dairyList[indexPath.row])
+            }else
+            {
+                cell.dairyLabel.alpha = 0
+                cell.dairyField.alpha = 0.25
+            }
+
             // Add a ending line
+            
             if indexPath.row == fileName.count - 1
             {
                 cell.separationLine.image = UIImage(named: "Timeline_endLine.png")

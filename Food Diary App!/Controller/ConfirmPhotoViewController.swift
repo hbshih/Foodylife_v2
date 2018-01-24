@@ -9,8 +9,8 @@
 import UIKit
 import CoreData
 
-class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
-    
+class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
+{
     @IBOutlet weak var containerView:UIView!
     @IBOutlet weak var originalImage:UIImageView!
     @IBOutlet weak var imageToFilter:UIImageView!
@@ -18,6 +18,12 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
     @IBOutlet weak var buttonBar:UIView!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var addnoteText: UITextView!
+    @IBOutlet weak var dairyField: UIImageView!
+    @IBOutlet weak var proteinField: UIImageView!
+    @IBOutlet weak var grainField: UIImageView!
+    @IBOutlet weak var fruitField: UIImageView!
+    @IBOutlet weak var vegetableField: UIImageView!
+    
     // Genetal Variables
     var image:UIImage?
     // Saving nutrition info
@@ -88,19 +94,24 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
         switch sender.tag
         {
         case 1:
-            grain += 1
-            print("grain: \(grain)")
+            vegetable += 1
+            vegetableField.alpha = 1
+            print("grain: \(vegetable)")
         case 2:
-            fruit += 1
-            print("fruit: \(fruit)")
+            grain += 1
+            grainField.alpha = 1
+            print("fruit: \(grain)")
         case 3:
             protein += 1
+            proteinField.alpha = 1
             print("protein: \(protein)")
         case 4:
-            vegetable += 1
-            print("vegetable: \(vegetable)")
+            fruit += 1
+            fruitField.alpha = 1
+            print("vegetable: \(fruit)")
         case 5:
             dairy += 1
+            dairyField.alpha = 1
             print("dairy: \(dairy)")
         default:
             alertMessage(title: "You sure?", message: "Are you sure you don't want to add some nutrition?")
@@ -184,7 +195,8 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate {
         }
         if protein != 0
         {
-            newValue.setValue(fruit, forKey: "n_Protein")
+            newValue.setValue(protein
+                , forKey: "n_Protein")
         }else
         {
             newValue.setValue(0, forKey: "n_Protein")

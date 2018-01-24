@@ -30,6 +30,8 @@
 		B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBD20121623008E11B5 /* ReportViewController.swift */; };
 		B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */; };
 		B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */; };
+		B5CF1DE92017F0B80006AD90 /* PlateElementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF1DE82017F0B80006AD90 /* PlateElementCollectionViewCell.swift */; };
+		B5CF1DEB201802CE0006AD90 /* balanceRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF1DEA201802CE0006AD90 /* balanceRate.swift */; };
 		B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */; };
 		B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */; };
 		B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */; };
@@ -93,6 +95,8 @@
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
 		B5C42E271FF80F8D002B887A /* Core Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Core Data.xcdatamodel"; sourceTree = "<group>"; };
+		B5CF1DE82017F0B80006AD90 /* PlateElementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateElementCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5CF1DEA201802CE0006AD90 /* balanceRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = balanceRate.swift; sourceTree = "<group>"; };
 		B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
 		B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumBrowserViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 		B59F55851FE9566000E22CCD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B5CF1DE82017F0B80006AD90 /* PlateElementCollectionViewCell.swift */,
 				B57935371FE022DE00E663DB /* ViewController.swift */,
 				B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */,
 				B57CF9B91FE886D7003AEB1E /* CreateUsernameViewController.swift */,
@@ -243,6 +248,7 @@
 			children = (
 				B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */,
 				B54DEF4C20112EB900251A19 /* FileManagerModel.swift */,
+				B5CF1DEA201802CE0006AD90 /* balanceRate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -586,7 +592,9 @@
 				B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */,
 				B5FA2232201496EE004F3020 /* LoginCoordinator.swift in Sources */,
 				B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */,
+				B5CF1DEB201802CE0006AD90 /* balanceRate.swift in Sources */,
 				B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */,
+				B5CF1DE92017F0B80006AD90 /* PlateElementCollectionViewCell.swift in Sources */,
 				B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */,
 				B57CF9BC1FE886E3003AEB1E /* CreateEmailViewController.swift in Sources */,
 				B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */,

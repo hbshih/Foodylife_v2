@@ -94,23 +94,23 @@ class DashboardViewController: UIViewController {
         if dashboardType == "Vegetable"
         {
             navDash.title = "Vegetable Dashboard"
-            centerImage.image = #imageLiteral(resourceName: "Demo_Vegetable")
+            centerImage.image = #imageLiteral(resourceName: "Icon_Vegetable")
         } else if dashboardType == "Grain"
         {
             navDash.title = "Grain Dashboard"
-            centerImage.image = #imageLiteral(resourceName: "Demo_Grain")
+            centerImage.image = #imageLiteral(resourceName: "Icon_Grain")
         }else if dashboardType == "Protein"
         {
             navDash.title = "Protein Dashboard"
-            centerImage.image = #imageLiteral(resourceName: "Demo_Protein")
+            centerImage.image = #imageLiteral(resourceName: "Icon_Protein")
         }else if dashboardType == "Fruit"
         {
             navDash.title = "Fruit Dashboard"
-            centerImage.image = #imageLiteral(resourceName: "Demo_Fruit")
+            centerImage.image = #imageLiteral(resourceName: "Icon_Fruit")
         }else
         {
             navDash.title = "Dairy Dashboard"
-            centerImage.image = #imageLiteral(resourceName: "Demo_Dairy")
+            centerImage.image = #imageLiteral(resourceName: "Icon_Dairy")
         }
     }
     
