@@ -12,47 +12,71 @@ import ScrollableGraphView
 class ReportViewController: UIViewController, ScrollableGraphViewDataSource
 {
     @IBOutlet weak var graphField: UIView!
+    @IBOutlet weak var percentageLabel: UILabel!
+    
+    // Add graph view and add constraints to it
     var graphView: ScrollableGraphView!
     var graphConstraints = [NSLayoutConstraint]()
-    
 
     // Data for graphs with multiple plots
-    lazy var blueLinePlotData: [Double] = [67.0,42.0,50.0,12.0,77.0,90.0]
+    var blueLinePlotData: [Double]?
+    // An initial array when no data is found i.e. First time using
+    var blank = [0.0,0.0,0.0,0.0,0.0]
+    var dates: [String]?
     
     // Init
-    // ####
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // --- Need to improve structure
+        var data = accessNutritionData()
+        var rate = balanceRate()
+        data.viewDidLoad()
+        rate.fileName = data.fileName
+        rate.grainList = data.grainList
+        rate.fruitList = data.fruitList
+        rate.dairyList = data.dairyList
+        rate.proteinList = data.proteinList
+        rate.vegetableList = data.vegetableList
+        rate.setPercentage()
+        
+        dates = rate.dateSaved
+        
+        blueLinePlotData = rate.AverageCount
+        
+        // Create graph
         graphView = createMultiPlotGraph(self.graphField.frame)
         graphView.backgroundFillColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
         self.graphField.addSubview(graphView)
+        percentageLabel.text = "\(rate.averageHealth)%"
         setupConstraints()
     }
     
-    // Implementation for ScrollableGraphViewDataSource protocol
-    // #########################################################
-    
-    // You would usually only have a couple of cases here, one for each
-    // plot you want to display on the graphField. However as this is showing
-    // off many graphs with different plots, we are using one big switch
-    // statement.
+    // drawing the values to the graph
     func value(forPlot plot: Plot, atIndex pointIndex: Int) -> Double {
-        return blueLinePlotData[pointIndex]
+        if blueLinePlotData!.count > 0
+        {
+            return blueLinePlotData![pointIndex]
+        }
+        return blank[pointIndex]
     }
     
+    // Adding labels below the graph
     func label(atIndex pointIndex: Int) -> String {
         // Ensure that you have a label to return for the index
-        return "FEB \(pointIndex)"
+        return "\(dates![pointIndex].suffix(5))"
     }
     
+    // return the numbers of plots to draw
     func numberOfPoints() -> Int {
-        return blueLinePlotData.count
+        if blueLinePlotData!.count > 0
+        {
+            return blueLinePlotData!.count
+        }
+        return blank.count
     }
     
-    // Multi plot v2
-    // min: 0
-    // max: determined from active points
-    // The max reference line will be the max of all visible points
+    // Create the graph
     fileprivate func createMultiPlotGraph(_ frame: CGRect) -> ScrollableGraphView {
         let graphView = ScrollableGraphView(frame: frame, dataSource: self)
         graphView.backgroundFillColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)

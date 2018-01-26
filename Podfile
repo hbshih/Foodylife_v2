@@ -19,7 +19,6 @@ target 'Food Diary App!' do
   #pod 'SkyFloatingLabelTextField', '~> 3.0'
   #pod 'ACFloatingTextfield-Swift', '~> 1.7'
   pod 'TextFieldEffects'
-  pod "ILLoginKit"
 
   target 'Food Diary App!Tests' do
     inherit! :search_paths

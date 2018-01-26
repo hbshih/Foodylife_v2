@@ -59,6 +59,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                 haveCamera = false
             }
         } catch {
+            // For testing purpose
             print("You don't have a camera")
             image = #imageLiteral(resourceName: "Sample_Image")
             haveCamera = false

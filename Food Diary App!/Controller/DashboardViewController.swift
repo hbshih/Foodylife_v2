@@ -12,6 +12,7 @@ import CoreData
 class DashboardViewController: UIViewController {
     
     // Outlets
+    @IBOutlet weak var circularProgress: KDCircularProgress!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var centerImage: UIImageView!
     @IBOutlet weak var navDash: UINavigationItem!
@@ -91,26 +92,67 @@ class DashboardViewController: UIViewController {
     
     func buildDashboard()
     {
+        var data = accessNutritionData()
+        var rate = balanceRate()
+        data.viewDidLoad()
+        rate.fileName = data.fileName
+        rate.grainList = data.grainList
+        rate.fruitList = data.fruitList
+        rate.dairyList = data.dairyList
+        rate.proteinList = data.proteinList
+        rate.vegetableList = data.vegetableList
+        rate.setPercentage()
         if dashboardType == "Vegetable"
         {
             navDash.title = "Vegetable Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Vegetable")
+            setUpSlider(value: rate.averageVegetable*3.6)
         } else if dashboardType == "Grain"
         {
             navDash.title = "Grain Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Grain")
+            setUpSlider(value: rate.averageGrain*3.6)
         }else if dashboardType == "Protein"
         {
             navDash.title = "Protein Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Protein")
+            setUpSlider(value: rate.averageProtein*3.6)
         }else if dashboardType == "Fruit"
         {
             navDash.title = "Fruit Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Fruit")
+            setUpSlider(value: rate.averageFruit*3.6)
         }else
         {
             navDash.title = "Dairy Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Dairy")
+            setUpSlider(value: rate.averageDairy*3.6)
+        }
+    }
+    
+    func setUpSlider(value: Double)
+    {
+        let slider = circularProgress!
+        slider.animate(toAngle: value, duration: 1.0, completion: nil)
+        if value >= 0 && value <= 30
+        {
+            slider.set(colors: UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0))
+            slider.trackColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:0.2)
+        }// Yellow -- Neutral
+        else if value > 30 && value <= 180
+        {
+            slider.set(colors: UIColor(red:0.99, green:0.82, blue:0.39, alpha:1.0))
+            slider.trackColor = UIColor(red:0.99, green:0.82, blue:0.39, alpha:0.2)
+        }
+            // Blue -- Good
+        else if value > 180 && value <= 330
+        {
+            slider.set(colors:UIColor(red:0.39, green:0.82, blue:0.99, alpha:1.0))
+            slider.trackColor = UIColor(red:0.39, green:0.82, blue:0.99, alpha:0.2)
+        }else if value > 330 && value <= 360
+        {
+            slider.set(colors: UIColor(red:0.60, green:0.80, blue:0.29, alpha:1.0))
+            slider.trackColor = UIColor(red:0.60, green:0.80, blue:0.29, alpha:0.2)
         }
     }
     

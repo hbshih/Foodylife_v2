@@ -14,11 +14,20 @@ import CoreData
 
 class homepageViewController: UIViewController {
     
+    @IBOutlet weak var dairyCircularSlider: KDCircularProgress!
+    @IBOutlet weak var fruitCircularSlider: KDCircularProgress!
+    @IBOutlet weak var proteinCircularSlider: KDCircularProgress!
+    @IBOutlet weak var grainCircularSlider: KDCircularProgress!
+    @IBOutlet weak var vegetableCircularSlider: KDCircularProgress!
     @IBOutlet weak var circularSlider: KDCircularProgress!
     @IBOutlet weak var centerFace: UIButton!
-    var healthPercentage = 0
+    var healthPercentage = 0.0
+    var vegetablePercentage = 0.0
+    var dairyPercentage = 0.0
+    var fruitPercentage = 0.0
+    var proteinPercentage = 0.0
+    var grainPercentage = 0.0
     
-    //--
     // General Variables
     var images: [UIImage] = [] // Storing Images
     var fileName: [String] = [] // Storing the names of the images to get images
@@ -30,14 +39,12 @@ class homepageViewController: UIViewController {
     var proteinList: [Int] = []
     var fruitList: [Int] = []
     var grainList: [Int] = []
-    //--
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         circularSlider.startAngle = -90.0
         
-        //--
         // Accessing Core Data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -83,83 +90,70 @@ class homepageViewController: UIViewController {
         {
             print("Retrieving core data error")
         }
-        //--
-        
+        //-- access nutrtiion data nad blaance rate.swift
         if fileName.count > 2
         {
-        var rate = balanceRate()
-        rate.fileName = fileName
-        rate.dairyList = dairyList
-        rate.vegetableList = vegetableList
-        rate.proteinList = proteinList
-        rate.fruitList = fruitList
-        rate.grainList = grainList
-        rate.getDailyNumbers()
+            var rate = balanceRate()
+            rate.fileName = fileName
+            rate.dairyList = dairyList
+            rate.vegetableList = vegetableList
+            rate.proteinList = proteinList
+            rate.fruitList = fruitList
+            rate.grainList = grainList
+            rate.setPercentage()
+            
+            healthPercentage = rate.averageHealth * 3.6
+            vegetablePercentage = rate.averageVegetable * 3.6
+            grainPercentage = rate.averageGrain * 3.6
+            proteinPercentage = rate.averageProtein * 3.6
+            fruitPercentage = rate.averageFruit * 3.6
+            dairyPercentage = rate.averageDairy * 3.6
         }
+        
+        
         
     }
     
     @IBAction func buttonTapped(_ sender: Any)
     {
-        
-        let newAngleView = newAngle()
-        print(newAngleView)
-        circularSlider.animate(toAngle: newAngleView, duration: 0.5, completion: nil)
+        //let newAngleView = newAngle()
+        setSliderColor(value: vegetablePercentage, slider: vegetableCircularSlider)
+        setSliderColor(value: proteinPercentage, slider: proteinCircularSlider)
+        setSliderColor(value: grainPercentage, slider: grainCircularSlider)
+        setSliderColor(value: dairyPercentage, slider: dairyCircularSlider)
+        setSliderColor(value: fruitPercentage, slider: fruitCircularSlider)
+        setSliderColor(value: healthPercentage, slider: circularSlider)
         shake(layer: self.centerFace.layer)
     }
-    
-    func getHealthInfo()
+
+    func setSliderColor(value: Double, slider: KDCircularProgress)
     {
-        let uid = Auth.auth().currentUser?.uid
-        Database.database().reference().child("Users").child(uid!).observeSingleEvent(of: .value) { (snapshot) in
-            if let dictionary = snapshot.value as? [String: AnyObject]
-            {
-                if let number = dictionary["Overall"] as? Int
-                {
-                    self.healthPercentage = number
-                }
-            }
-            
-        }
-    }
-    
-    func newAngle() -> Double
-    {
-        getHealthInfo()
-        print(circularSlider.angle)
-        if circularSlider.angle >= 360
+        slider.animate(toAngle: value, duration: 0.5, completion: nil)
+        if value >= 0 && value <= 30
         {
-            print("----- Start Again -----")
-            return 0
-        }
-        // Red -- Bad Health
-        if circularSlider.angle >= 0 && circularSlider.angle <= 30
-        {
-            circularSlider.set(colors: UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0))
-            circularSlider.trackColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:0.2)
-            centerFace.setImage(UIImage(named: "Face_Sad.png"), for: .normal)
+            slider.set(colors: UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0))
+            slider.trackColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:0.2)
+            if slider == circularSlider
+            {centerFace.setImage(UIImage(named: "Face_Sad.png"), for: .normal);print("I am slider : \(slider)")}
         }// Yellow -- Neutral
-        else if circularSlider.angle > 30 && circularSlider.angle <= 180
+        else if value > 30 && value <= 180
         {
-            circularSlider.set(colors: UIColor(red:0.99, green:0.82, blue:0.39, alpha:1.0))
-            circularSlider.trackColor = UIColor(red:0.99, green:0.82, blue:0.39, alpha:0.2)
-            centerFace.setImage(UIImage(named: "Face_Yellow.png"), for: .normal)
+            slider.set(colors: UIColor(red:0.99, green:0.82, blue:0.39, alpha:1.0))
+            slider.trackColor = UIColor(red:0.99, green:0.82, blue:0.39, alpha:0.2)
+            if slider == circularSlider {centerFace.setImage(UIImage(named: "Face_Yellow.png"), for: .normal)}
         }
             // Blue -- Good
-        else if circularSlider.angle > 180 && circularSlider.angle <= 330
+        else if value > 180 && value <= 330
         {
-            circularSlider.set(colors:UIColor(red:0.39, green:0.82, blue:0.99, alpha:1.0))
-            circularSlider.trackColor = UIColor(red:0.39, green:0.82, blue:0.99, alpha:0.2)
-            centerFace.setImage(UIImage(named: "Face_Happy.png"), for: .normal)
-        }else if circularSlider.angle > 330 && circularSlider.angle < 360
+            slider.set(colors:UIColor(red:0.39, green:0.82, blue:0.99, alpha:1.0))
+            slider.trackColor = UIColor(red:0.39, green:0.82, blue:0.99, alpha:0.2)
+            if slider == circularSlider {centerFace.setImage(UIImage(named: "Face_Happy.png"), for: .normal)}
+        }else if value > 330 && value <= 360
         {
-            circularSlider.set(colors: UIColor(red:0.60, green:0.80, blue:0.29, alpha:1.0))
-            circularSlider.trackColor = UIColor(red:0.60, green:0.80, blue:0.29, alpha:0.2)
-            centerFace.setImage(UIImage(named: "Face_Smile.png"), for: .normal)
+            slider.set(colors: UIColor(red:0.60, green:0.80, blue:0.29, alpha:1.0))
+            slider.trackColor = UIColor(red:0.60, green:0.80, blue:0.29, alpha:0.2)
+            if slider == circularSlider {centerFace.setImage(UIImage(named: "Face_Smile.png"), for: .normal)}
         }
-        
-        let currentAngle = circularSlider.angle
-        return currentAngle + 10
     }
     
     func shake(layer: CALayer)

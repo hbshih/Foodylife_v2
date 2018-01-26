@@ -88,7 +88,7 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
         filtersScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(itemCount + 2),height: yCoord + 50)
     }
     
-    //Working with nutrition recognition
+    //Working with nutrition element selection
     @IBAction func nutritionTapped(_ sender: AnyObject)
     {
         switch sender.tag
