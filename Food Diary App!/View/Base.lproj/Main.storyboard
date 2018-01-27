@@ -1234,7 +1234,18 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTX-CX-Yhv">
                                 <rect key="frame" x="0.0" y="20" width="375" height="447"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Background-1" translatesAutoresizingMaskIntoConstraints="NO" id="jPb-jw-wSu">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="jPb-jw-wSu" secondAttribute="bottom" id="CfA-LB-sun"/>
+                                    <constraint firstItem="jPb-jw-wSu" firstAttribute="leading" secondItem="hTX-CX-Yhv" secondAttribute="leading" id="P38-DJ-GHQ"/>
+                                    <constraint firstItem="jPb-jw-wSu" firstAttribute="top" secondItem="hTX-CX-Yhv" secondAttribute="top" id="Z3X-qy-aD8"/>
+                                    <constraint firstAttribute="trailing" secondItem="jPb-jw-wSu" secondAttribute="trailing" id="ek4-rv-6Tb"/>
+                                </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6Fi-zh-J4R">
                                 <rect key="frame" x="0.0" y="467" width="375" height="200"/>
@@ -1264,9 +1275,15 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVe-LO-WqL">
                                         <rect key="frame" x="0.0" y="100" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="vVe-LO-WqL" secondAttribute="height" multiplier="15:2" id="4eZ-rY-9EZ"/>
+                                        </constraints>
                                         <state key="normal" image="Facebook Login-2">
                                             <color key="titleShadowColor" red="0.46524854274611394" green="0.46524854274611394" blue="0.46524854274611394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="facebookLogin:" destination="7Hp-w2-4ko" eventType="touchUpInside" id="eug-Te-fdX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <edgeInsets key="layoutMargins" top="20" left="0.0" bottom="50" right="0.0"/>
@@ -1305,9 +1322,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4YP-fJ-gN3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone 8" translatesAutoresizingMaskIntoConstraints="NO" id="jbV-3C-2yU">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAL-mv-RBf">
-                                        <rect key="frame" x="40" y="290" width="295" height="50"/>
-                                        <state key="normal" image="Create Account Button"/>
+                                        <rect key="frame" x="40" y="306" width="295" height="50"/>
+                                        <state key="normal" image="Create Account-1"/>
                                         <connections>
                                             <action selector="createAccountTapped:" destination="UFi-hU-Smt" eventType="touchUpInside" id="4E8-My-X84"/>
                                         </connections>
@@ -1495,12 +1515,15 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.48627450980392156" green="0.64313725490196072" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="jbV-3C-2yU" secondAttribute="trailing" id="1zn-Vz-wJJ"/>
                                     <constraint firstAttribute="trailing" secondItem="CEH-hl-0mc" secondAttribute="trailing" constant="40" id="3gf-8W-BMe"/>
-                                    <constraint firstItem="AAL-mv-RBf" firstAttribute="top" secondItem="CEH-hl-0mc" secondAttribute="bottom" constant="44" id="KQL-JN-JJk"/>
+                                    <constraint firstItem="AAL-mv-RBf" firstAttribute="top" secondItem="CEH-hl-0mc" secondAttribute="bottom" constant="60" id="KQL-JN-JJk"/>
                                     <constraint firstItem="OJ1-p6-aux" firstAttribute="top" secondItem="4YP-fJ-gN3" secondAttribute="top" constant="38" id="Lxz-DD-Ubq"/>
                                     <constraint firstItem="OJ1-p6-aux" firstAttribute="leading" secondItem="4YP-fJ-gN3" secondAttribute="leading" constant="18" id="RM0-C4-JZe"/>
+                                    <constraint firstItem="jbV-3C-2yU" firstAttribute="leading" secondItem="4YP-fJ-gN3" secondAttribute="leading" id="SnM-Of-DpO"/>
+                                    <constraint firstItem="jbV-3C-2yU" firstAttribute="top" secondItem="4YP-fJ-gN3" secondAttribute="top" id="TKu-0F-Rgw"/>
+                                    <constraint firstAttribute="bottom" secondItem="jbV-3C-2yU" secondAttribute="bottom" id="bYZ-P0-nnD"/>
                                     <constraint firstItem="CEH-hl-0mc" firstAttribute="leading" secondItem="4YP-fJ-gN3" secondAttribute="leading" constant="40" id="ky4-To-LuQ"/>
                                     <constraint firstItem="CEH-hl-0mc" firstAttribute="top" secondItem="OJ1-p6-aux" secondAttribute="bottom" constant="-2" id="pHH-Bi-dsL"/>
                                     <constraint firstItem="AAL-mv-RBf" firstAttribute="centerX" secondItem="4YP-fJ-gN3" secondAttribute="centerX" id="r1h-cW-181"/>
@@ -1528,10 +1551,10 @@
             </objects>
             <point key="canvasLocation" x="-2551.1999999999998" y="1337.1814092953525"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In Page View Controller-->
         <scene sceneID="fGY-9R-tYc">
             <objects>
-                <viewController id="18o-gT-fQM" sceneMemberID="viewController">
+                <viewController id="18o-gT-fQM" customClass="LogInPageViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UOS-lp-oTe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1555,11 +1578,14 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxO-pS-kaW">
                                         <rect key="frame" x="40" y="567" width="295" height="50"/>
                                         <state key="normal" image="Sign in Button"/>
+                                        <connections>
+                                            <action selector="signInTapped:" destination="18o-gT-fQM" eventType="touchUpInside" id="yuX-MP-7ad"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="VY4-hU-ph9">
                                         <rect key="frame" x="40" y="238.5" width="295" height="190"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r1T-mC-cHL" customClass="SkyFloatingLabelTextField" customModule="Food_Diary_App_" customModuleProvider="target">
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r1T-mC-cHL" customClass="SkyFloatingLabelTextField" customModule="Food_Diary_App_" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -1590,8 +1616,11 @@
                                                         <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="endEditing:" destination="18o-gT-fQM" eventType="editingDidEnd" id="GfZ-Y9-24P"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0T-if-nCn" customClass="SkyFloatingLabelTextField" customModule="Food_Diary_App_" customModuleProvider="target">
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0T-if-nCn" customClass="SkyFloatingLabelTextField" customModule="Food_Diary_App_" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="80" width="295" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1622,6 +1651,9 @@
                                                         <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="endEditing:" destination="18o-gT-fQM" eventType="editingDidEnd" id="798-yS-UKN"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtd-za-vvB">
                                                 <rect key="frame" x="0.0" y="160" width="295" height="30"/>
@@ -1658,15 +1690,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9ks-kX-9Hq"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextfield" destination="r1T-mC-cHL" id="CR4-CZ-j7C"/>
+                        <outlet property="passwordTextfield" destination="h0T-if-nCn" id="dVw-8b-net"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77f-1B-tQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1845.5999999999999" y="1333.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Recover Password View Controller-->
         <scene sceneID="DaC-yh-pjQ">
             <objects>
-                <viewController id="EvO-CJ-fBs" sceneMemberID="viewController">
+                <viewController id="EvO-CJ-fBs" customClass="RecoverPasswordViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4zM-u8-PJ8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1717,7 +1753,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqg-7G-ST0">
                                 <rect key="frame" x="13" y="567" width="349" height="50"/>
-                                <state key="normal" image="Recover Icon"/>
+                                <state key="normal" image="Recover Icon-1"/>
+                                <connections>
+                                    <action selector="recoverTapped:" destination="EvO-CJ-fBs" eventType="touchUpInside" id="B8s-8o-fvQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1738,6 +1777,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U0Y-YE-VtB"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextfield" destination="2u2-nK-Dsk" id="Fkk-Jh-EIv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJk-K9-wRc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2371,7 +2413,7 @@
         <image name="Button_LogIn" width="160" height="50"/>
         <image name="Button_Next" width="160" height="50"/>
         <image name="Button_Take" width="63" height="63"/>
-        <image name="Create Account Button" width="295" height="50"/>
+        <image name="Create Account-1" width="295" height="50"/>
         <image name="CreateAccountIcon" width="142" height="31"/>
         <image name="Face_Yellow" width="118" height="118"/>
         <image name="Facebook Login-2" width="295" height="50"/>
@@ -2390,6 +2432,7 @@
         <image name="Icon_Vegetable" width="147" height="148"/>
         <image name="Icon_VegetableBlank" width="47" height="47"/>
         <image name="Icon_VegetableBlank-1" width="47" height="60"/>
+        <image name="Image_Background-1" width="375" height="667"/>
         <image name="Image_FacebookLogIn" width="250" height="39"/>
         <image name="Image_GoogleLogin" width="250" height="39"/>
         <image name="Image_PlateDairy" width="39" height="38"/>
@@ -2400,13 +2443,14 @@
         <image name="Image_lock" width="18" height="22"/>
         <image name="Image_profile" width="22" height="22"/>
         <image name="Logo_Foody Life" width="266" height="56"/>
-        <image name="Recover Icon" width="295" height="50"/>
+        <image name="Recover Icon-1" width="295" height="50"/>
         <image name="Sign in Button" width="295" height="50"/>
         <image name="SignInIcon" width="142" height="32"/>
         <image name="Test_Desktop" width="253" height="450"/>
         <image name="Timeline_Circle" width="11" height="11"/>
         <image name="Timeline_Line" width="3" height="481"/>
         <image name="Timeline_Rect" width="54" height="28"/>
+        <image name="iPhone 8" width="375" height="667"/>
         <image name="imageView:0qI-qL-mml:image" width="375" height="365">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGVVZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI
@@ -11649,12 +11693,11 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="orLine" width="260" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AnP-dS-6P1"/>
         <segue reference="3Ts-RM-Mb9"/>
         <segue reference="DCc-zE-KdY"/>
         <segue reference="jfo-5l-jJg"/>
-        <segue reference="lG3-dv-e0l"/>
-        <segue reference="iHF-go-9e0"/>
+        <segue reference="HzW-k9-dOE"/>
+        <segue reference="DSz-U6-guT"/>
         <segue reference="LyA-Rf-FrZ"/>
         <segue reference="1gd-EK-yKm"/>
         <segue reference="2iH-jb-HTL"/>

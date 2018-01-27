@@ -11,6 +11,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
+
 class CreatePasswordViewController: UIViewController {
     
     var username = ""
