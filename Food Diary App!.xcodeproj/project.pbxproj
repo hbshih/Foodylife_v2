@@ -11,8 +11,11 @@
 		373891DAD9C61286CE8A3716 /* Pods_Food_Diary_App_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */; };
 		5ED87B49F86EA263E6B4C293 /* Pods_Food_Diary_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7BBA844F0BBB3BE83A4317 /* Pods_Food_Diary_App_Tests.framework */; };
 		B506BECC2015401000680B46 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B506BECB2015401000680B46 /* IntroductionViewController.swift */; };
+		B508F577201D37330025205C /* apple.json in Resources */ = {isa = PBXBuildFile; fileRef = B508F576201D37330025205C /* apple.json */; };
 		B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422441FE16947002C2540 /* KDCircularProgress.swift */; };
 		B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422461FE16D13002C2540 /* homepageViewController.swift */; };
+		B54616D6201D5FA7006E81C7 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = B54616D5201D5FA7006E81C7 /* main.json */; };
+		B54616D8201DE6B6006E81C7 /* SCLAlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */; };
 		B54DEF4D20112EB900251A19 /* FileManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DEF4C20112EB900251A19 /* FileManagerModel.swift */; };
 		B55234331FE9AC79009A757D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55234321FE9AC79009A757D /* CameraViewController.swift */; };
 		B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */; };
@@ -42,6 +45,9 @@
 		B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */; };
 		B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */; };
 		B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */; };
+		B5ED8495201D152D009062D7 /* appleOrange.json in Resources */ = {isa = PBXBuildFile; fileRef = B5ED8494201D152D009062D7 /* appleOrange.json */; };
+		B5ED8497201D3087009062D7 /* PinJump.json in Resources */ = {isa = PBXBuildFile; fileRef = B5ED8496201D3087009062D7 /* PinJump.json */; };
+		B5ED8499201D32C8009062D7 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B5ED8498201D32C8009062D7 /* data.json */; };
 		B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */; };
 		B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */; };
 		B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F61738200FAED900B0C871 /* Assets.xcassets */; };
@@ -75,8 +81,11 @@
 		A08B397D9C4F0A1F200238EE /* Pods-Food Diary App!UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Diary App!UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Food Diary App!UITests/Pods-Food Diary App!UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Diary_App_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B506BECB2015401000680B46 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
+		B508F576201D37330025205C /* apple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apple.json; sourceTree = "<group>"; };
 		B53422441FE16947002C2540 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		B53422461FE16D13002C2540 /* homepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homepageViewController.swift; sourceTree = "<group>"; };
+		B54616D5201D5FA7006E81C7 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = main.json; path = ../../../../main.json; sourceTree = "<group>"; };
+		B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCLAlertMessage.swift; sourceTree = "<group>"; };
 		B54DEF4C20112EB900251A19 /* FileManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerModel.swift; sourceTree = "<group>"; };
 		B55234321FE9AC79009A757D /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +121,9 @@
 		B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
 		B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumBrowserViewController.swift; sourceTree = "<group>"; };
+		B5ED8494201D152D009062D7 /* appleOrange.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appleOrange.json; sourceTree = "<group>"; };
+		B5ED8496201D3087009062D7 /* PinJump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PinJump.json; sourceTree = "<group>"; };
+		B5ED8498201D32C8009062D7 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPhotoViewController.swift; sourceTree = "<group>"; };
 		B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Rotate.swift; sourceTree = "<group>"; };
 		B5F61738200FAED900B0C871 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -215,6 +227,11 @@
 		B59F55841FE9565600E22CCD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B5ED8496201D3087009062D7 /* PinJump.json */,
+				B54616D5201D5FA7006E81C7 /* main.json */,
+				B508F576201D37330025205C /* apple.json */,
+				B5ED8494201D152D009062D7 /* appleOrange.json */,
+				B5ED8498201D32C8009062D7 /* data.json */,
 				B5D0CC6F201B8669005295BC /* Sources */,
 				B53422441FE16947002C2540 /* KDCircularProgress.swift */,
 				B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */,
@@ -262,6 +279,7 @@
 				B54DEF4C20112EB900251A19 /* FileManagerModel.swift */,
 				B57E7F6F201A845400136E54 /* accessNutritionData.swift */,
 				B5CF1DEA201802CE0006AD90 /* balanceRate.swift */,
+				B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -405,10 +423,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54616D6201D5FA7006E81C7 /* main.json in Resources */,
 				B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */,
+				B5ED8499201D32C8009062D7 /* data.json in Resources */,
+				B5ED8495201D152D009062D7 /* appleOrange.json in Resources */,
 				B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */,
+				B508F577201D37330025205C /* apple.json in Resources */,
 				B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */,
 				B579353B1FE022DE00E663DB /* Main.storyboard in Resources */,
+				B5ED8497201D3087009062D7 /* PinJump.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +647,7 @@
 				B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */,
 				B5D0CC74201B8669005295BC /* UITextField+fixCaretPosition.swift in Sources */,
 				B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */,
+				B54616D8201DE6B6006E81C7 /* SCLAlertMessage.swift in Sources */,
 				B57935381FE022DE00E663DB /* ViewController.swift in Sources */,
 				B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */,
 				B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */,

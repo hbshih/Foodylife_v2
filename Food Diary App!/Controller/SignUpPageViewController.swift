@@ -19,7 +19,7 @@ class SignUpPageViewController: UIViewController {
     var readyToSignUp = [false,false,false,false]
     override func viewDidLoad() {
         super.viewDidLoad()
-       // emailTextfield.placeholderFont = UIFont(name: "<#T##String#>", size: <#T##CGFloat#>)
+        // emailTextfield.placeholderFont = UIFont(name: "<#T##String#>", size: <#T##CGFloat#>)
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,6 +29,10 @@ class SignUpPageViewController: UIViewController {
     
     @IBAction func createAccountTapped(_ sender: Any)
     {
+        validate(field: emailTextfield)
+        validate(field: usernameTextfield)
+        validate(field: passwordTextfield)
+        validate(field: confirmPasswordTextfield)
         var ready = true
         for i in 0 ..< readyToSignUp.count
         {
@@ -39,20 +43,30 @@ class SignUpPageViewController: UIViewController {
         }
         if ready
         {
-            /*
-             Auth.auth().createUser(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { (user, error) in
-             if error != nil
-             {
-             print(error.debugDescription)
-             }else
-             {
-             print("Sign up succesfully")
-             //  Database.database().reference().child("email").setValue(self.email)
-             let uid = Auth.auth().currentUser?.uid
-             Database.database().reference().child("Users").child(uid!).setValue(["username":self.usernameTextfield.text ,"email":self.emailTextfield.text])
-             }
-             }
-             */
+            
+            Auth.auth().createUser(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { (user, error) in
+                if error != nil
+                {
+                    print(error.debugDescription)
+                    var errorMessage = "Please try again later"
+                    if let newError = error as NSError?
+                    {
+                        if let detailError = newError.userInfo["NSLocalizedDescription"] as? String
+                        {
+                            errorMessage = detailError
+                            SCLAlertMessage(title: "Error", message: errorMessage).showMessage()
+                        }
+                    }
+                }else
+                {
+                    print("Sign up succesfully")
+                    //  Database.database().reference().child("email").setValue(self.email)
+                    let uid = Auth.auth().currentUser?.uid
+                    Database.database().reference().child("Users").child(uid!).setValue(["username":self.usernameTextfield.text ,"email":self.emailTextfield.text])
+                    self.performSegue(withIdentifier: "signUpSuccesfulSegue", sender: nil)
+                }
+            }
+            
             print("Sign up completed")
         }
     }
@@ -64,7 +78,11 @@ class SignUpPageViewController: UIViewController {
         case 1:
             validate(field: emailTextfield)
         case 2:
+            validate(field: usernameTextfield)
+        case 3:
             validate(field: passwordTextfield)
+        case 4:
+            validate(field: confirmPasswordTextfield)
         default:
             print("")
         }

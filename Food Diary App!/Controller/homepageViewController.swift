@@ -174,7 +174,6 @@ class homepageViewController: UIViewController {
             showCloseButton: true
         )
         let alert = SCLAlertView(appearance: appearance)
-        
         let icon = UIImage(named:"Alert_Yellow.png")
         let color = UIColor.orange        
         _ = alert.showCustom("STOP", subTitle: "STOP TOUCHING MY EYES! YOU MEATBALL", color: color, icon: icon!)

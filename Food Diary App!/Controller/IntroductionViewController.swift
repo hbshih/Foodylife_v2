@@ -9,12 +9,16 @@
 import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
+import Lottie
+
+
 
 class IntroductionViewController: UIViewController {
     
     @IBOutlet weak var createAccountOutlet: UIButton!
     @IBOutlet weak var signInOutlet: UIButton!
     @IBOutlet weak var facebookOutlet: UIButton!
+    @IBOutlet weak var animationView: UIView!
     
     override func viewDidLoad()
     {
@@ -24,6 +28,31 @@ class IntroductionViewController: UIViewController {
         facebookOutlet.layer.shadowColor = UIColor(red: 89.0/255.0, green: 117.0/255.0, blue: 177.0/255.0, alpha: 1).cgColor
         facebookOutlet.layer.shadowOffset = CGSize(width: 15, height: 15)
         facebookOutlet.layer.shadowRadius = 7
+        runAnimation()
+        checkIfUserLogged()
+    }
+    
+    func checkIfUserLogged()
+    {
+        let user = Auth.auth().currentUser
+        if user != nil
+        {
+            performSegue(withIdentifier: "showHomepageSegue", sender: nil)
+        }
+    }
+    
+    func runAnimation()
+    {
+        let animation = LOTAnimationView(name:"main.json")
+        animation.frame = CGRect(x: 0, y: 100, width: self.animationView.frame.size.width, height: 250)
+        animation.contentMode = .scaleAspectFill
+        
+        self.view.addSubview(animation)
+        
+        animation.play { (success) in
+            print("The Animation is Done")
+        }
+        animation.loopAnimation = true
     }
     
     override func didReceiveMemoryWarning()

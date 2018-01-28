@@ -22,6 +22,7 @@ target 'Food Diary App!' do
   pod ‘FBSDKCoreKit’
   pod ‘FBSDKShareKit’
   pod ‘FBSDKLoginKit’
+  pod 'lottie-ios'
 
   target 'Food Diary App!Tests' do
     inherit! :search_paths

@@ -7,19 +7,20 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LogInPageViewController: UIViewController {
-
+    
     @IBOutlet weak var passwordTextfield: SkyFloatingLabelTextField!
     @IBOutlet weak var emailTextfield: SkyFloatingLabelTextField!
     
     var readyToSignUp = [false,false]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -27,6 +28,8 @@ class LogInPageViewController: UIViewController {
     
     @IBAction func signInTapped(_ sender: Any)
     {
+        validate(field: emailTextfield)
+        validate(field: passwordTextfield)
         var ready = true
         for i in 0 ..< readyToSignUp.count
         {
@@ -37,21 +40,27 @@ class LogInPageViewController: UIViewController {
         }
         if ready
         {
-            /*
-             Auth.auth().createUser(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { (user, error) in
-             if error != nil
-             {
-             print(error.debugDescription)
-             }else
-             {
-             print("Sign up succesfully")
-             //  Database.database().reference().child("email").setValue(self.email)
-             let uid = Auth.auth().currentUser?.uid
-             Database.database().reference().child("Users").child(uid!).setValue(["username":self.usernameTextfield.text ,"email":self.emailTextfield.text])
-             }
-             }
-             */
-            print("Sign in completed")
+            Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!, completion: { (user, error) in
+                // Log in error
+                if error != nil
+                {
+                    print(error.debugDescription)
+                    var errorMessage = "Please try again later"
+                    if let newError = error as NSError?
+                    {
+                        if let detailError = newError.userInfo["NSLocalizedDescription"] as? String
+                        {
+                            errorMessage = detailError
+                            SCLAlertMessage(title: "Error", message: errorMessage).showMessage()
+                        }
+                    }
+                }else
+                {
+                    print("Log up Success")
+                    self.performSegue(withIdentifier: "logInSegue", sender: nil)
+                }
+            })
+            
         }
     }
     
@@ -126,5 +135,7 @@ class LogInPageViewController: UIViewController {
         return emailTest.evaluate(with: testStr)
     }
     
-
+    
+    
+    
 }

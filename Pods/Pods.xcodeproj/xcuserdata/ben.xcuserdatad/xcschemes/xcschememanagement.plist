@@ -121,6 +121,11 @@
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
+		<key>lottie-ios.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>19</integer>
+		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>isShown</key>

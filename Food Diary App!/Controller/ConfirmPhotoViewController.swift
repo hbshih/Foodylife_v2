@@ -24,6 +24,8 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
     @IBOutlet weak var fruitField: UIImageView!
     @IBOutlet weak var vegetableField: UIImageView!
     
+
+    
     // Genetal Variables
     var image:UIImage?
     // Saving nutrition info
@@ -41,7 +43,8 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
         "CIPhotoEffectProcess",
         "CIPhotoEffectTonal",
         "CIPhotoEffectTransfer",
-        "CISepiaTone"
+        "CISepiaTone",
+        "CIColorControls"
     ]
     
     override func viewDidLoad()
@@ -252,6 +255,11 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
     {
         let mes = AlertMessage()
         mes.displayAlert(title: title, message: message, VC: self)
+    }
+    
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
     }
     
 }

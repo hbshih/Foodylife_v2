@@ -48,6 +48,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.11)
   - IBAnimatable (4.1.0)
   - IQKeyboardManagerSwift (5.0.0)
+  - lottie-ios (2.1.5)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - Firebase/Database
   - IBAnimatable
   - IQKeyboardManagerSwift (= 5.0.0)
+  - lottie-ios
   - SCLAlertView
   - ScrollableGraphView
   - SKPhotoBrowser
@@ -87,12 +89,13 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   IBAnimatable: 0fd2c9fd38c4798d71bcc18dbd87d473a7df2577
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
+  lottie-ios: 836cdbba92f62f3c6a00e37a4ce485321fe317cf
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   ScrollableGraphView: 072ea302f4ca27779692656a49d51fe537b2b1e7
   SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
   TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
 
-PODFILE CHECKSUM: 0593a415822033caf964dee8c520410f23154154
+PODFILE CHECKSUM: 0319d49ad82089447af408c0db26ce62e7ebb3e7
 
 COCOAPODS: 1.1.1

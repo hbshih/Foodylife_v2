@@ -32,13 +32,12 @@ class RecoverPasswordViewController: UIViewController {
             if let email = emailTextfield.text {
                 Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
                     if let error = error {
-                        let alertController = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                        alertController.addAction(okAction)
-                        self.present(alertController, animated: true, completion: nil)
+                        SCLAlertMessage(title: "Error",message: error.localizedDescription).showMessage()
                     } else {
                        // UserNotification.show("Password reset e-mail sent")
-                        print("PAssword reset e-mail sent")
+                        print("Password reset e-mail sent")
+                        SCLAlertMessage(title: "Error",message: "Password reset E-Mail has sent, please check your email.").showMessage()
+                        self.performSegue(withIdentifier: "recoverPasswordSegue", sender: nil)
                     }
                 })
             }
