@@ -22,17 +22,15 @@
 		B55C97C3201BDD600087E29D /* LogInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C97C2201BDD600087E29D /* LogInPageViewController.swift */; };
 		B55C97C5201BDEFA0087E29D /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */; };
 		B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57935351FE022DE00E663DB /* AppDelegate.swift */; };
-		B57935381FE022DE00E663DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57935371FE022DE00E663DB /* ViewController.swift */; };
 		B579353B1FE022DE00E663DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57935391FE022DE00E663DB /* Main.storyboard */; };
 		B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B579353E1FE022DE00E663DB /* LaunchScreen.storyboard */; };
 		B579354B1FE022DE00E663DB /* Food_Diary_App_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B579354A1FE022DE00E663DB /* Food_Diary_App_Tests.swift */; };
 		B57935561FE022DE00E663DB /* Food_Diary_App_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57935551FE022DE00E663DB /* Food_Diary_App_UITests.swift */; };
 		B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B57935631FE0234600E663DB /* GoogleService-Info.plist */; };
-		B57CF9BA1FE886D7003AEB1E /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9B91FE886D7003AEB1E /* CreateUsernameViewController.swift */; };
-		B57CF9BC1FE886E3003AEB1E /* CreateEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */; };
-		B57CF9BE1FE88712003AEB1E /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */; };
 		B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */; };
 		B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E7F6F201A845400136E54 /* accessNutritionData.swift */; };
+		B58066FF201E763A00F8FB89 /* validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58066FE201E763A00F8FB89 /* validate.swift */; };
+		B5806701201E7C8100F8FB89 /* signUpOrLogInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5806700201E7C8100F8FB89 /* signUpOrLogInHandler.swift */; };
 		B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBD20121623008E11B5 /* ReportViewController.swift */; };
 		B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */; };
 		B5ABB849201B6CD400FC5A0D /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */; };
@@ -93,7 +91,6 @@
 		B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 		B57935321FE022DE00E663DB /* Food Diary App!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Diary App!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57935351FE022DE00E663DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B57935371FE022DE00E663DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B579353A1FE022DE00E663DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B579353F1FE022DE00E663DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B57935411FE022DE00E663DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,11 +101,10 @@
 		B57935551FE022DE00E663DB /* Food_Diary_App_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_Diary_App_UITests.swift; sourceTree = "<group>"; };
 		B57935571FE022DE00E663DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B57935631FE0234600E663DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B57CF9B91FE886D7003AEB1E /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
-		B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmailViewController.swift; sourceTree = "<group>"; };
-		B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
 		B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		B57E7F6F201A845400136E54 /* accessNutritionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessNutritionData.swift; sourceTree = "<group>"; };
+		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
+		B5806700201E7C8100F8FB89 /* signUpOrLogInHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpOrLogInHandler.swift; sourceTree = "<group>"; };
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
 		B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
@@ -246,9 +242,6 @@
 				B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */,
 				B55234321FE9AC79009A757D /* CameraViewController.swift */,
 				B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */,
-				B57CF9BB1FE886E3003AEB1E /* CreateEmailViewController.swift */,
-				B57CF9BD1FE88712003AEB1E /* CreatePasswordViewController.swift */,
-				B57CF9B91FE886D7003AEB1E /* CreateUsernameViewController.swift */,
 				B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */,
 				B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */,
 				B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */,
@@ -259,7 +252,6 @@
 				B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */,
 				B5A9ADBD20121623008E11B5 /* ReportViewController.swift */,
 				B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */,
-				B57935371FE022DE00E663DB /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -280,6 +272,8 @@
 				B57E7F6F201A845400136E54 /* accessNutritionData.swift */,
 				B5CF1DEA201802CE0006AD90 /* balanceRate.swift */,
 				B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */,
+				B58066FE201E763A00F8FB89 /* validate.swift */,
+				B5806700201E7C8100F8FB89 /* signUpOrLogInHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -635,6 +629,7 @@
 				B506BECC2015401000680B46 /* IntroductionViewController.swift in Sources */,
 				B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */,
 				B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */,
+				B5806701201E7C8100F8FB89 /* signUpOrLogInHandler.swift in Sources */,
 				B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */,
 				B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */,
 				B55C97C3201BDD600087E29D /* LogInPageViewController.swift in Sources */,
@@ -642,18 +637,15 @@
 				B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */,
 				B5CF1DE92017F0B80006AD90 /* PlateElementCollectionViewCell.swift in Sources */,
 				B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */,
-				B57CF9BC1FE886E3003AEB1E /* CreateEmailViewController.swift in Sources */,
 				B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */,
 				B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */,
 				B5D0CC74201B8669005295BC /* UITextField+fixCaretPosition.swift in Sources */,
 				B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */,
+				B58066FF201E763A00F8FB89 /* validate.swift in Sources */,
 				B54616D8201DE6B6006E81C7 /* SCLAlertMessage.swift in Sources */,
-				B57935381FE022DE00E663DB /* ViewController.swift in Sources */,
 				B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */,
 				B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */,
 				B5D0CC75201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
-				B57CF9BA1FE886D7003AEB1E /* CreateUsernameViewController.swift in Sources */,
-				B57CF9BE1FE88712003AEB1E /* CreatePasswordViewController.swift in Sources */,
 				B55C97C5201BDEFA0087E29D /* RecoverPasswordViewController.swift in Sources */,
 				B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */,
 				B5ABB849201B6CD400FC5A0D /* SignUpPageViewController.swift in Sources */,

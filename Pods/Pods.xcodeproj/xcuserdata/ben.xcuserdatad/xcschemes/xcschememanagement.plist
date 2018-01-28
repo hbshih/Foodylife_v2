@@ -28,7 +28,7 @@
 		<key>FBSDKShareKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>17</integer>
 		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
