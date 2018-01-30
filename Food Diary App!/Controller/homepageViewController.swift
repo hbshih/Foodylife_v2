@@ -90,6 +90,7 @@ class homepageViewController: UIViewController {
         {
             print("Retrieving core data error")
         }
+        
         //-- access nutrtiion data nad blaance rate.swift
         if fileName.count > 2
         {
@@ -108,15 +109,16 @@ class homepageViewController: UIViewController {
             proteinPercentage = rate.averageProtein * 3.6
             fruitPercentage = rate.averageFruit * 3.6
             dairyPercentage = rate.averageDairy * 3.6
+            
+            showCircularSliderData()
         }
         
         
         
     }
     
-    @IBAction func buttonTapped(_ sender: Any)
+    func showCircularSliderData()
     {
-        //let newAngleView = newAngle()
         setSliderColor(value: vegetablePercentage, slider: vegetableCircularSlider)
         setSliderColor(value: proteinPercentage, slider: proteinCircularSlider)
         setSliderColor(value: grainPercentage, slider: grainCircularSlider)

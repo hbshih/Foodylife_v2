@@ -43,7 +43,7 @@ class IntroductionViewController: UIViewController {
     
     func runAnimation()
     {
-        let animation = LOTAnimationView(name:"main.json")
+        let animation = LOTAnimationView(name:"HomeScreenAni.json")
         animation.frame = CGRect(x: 0, y: 100, width: self.animationView.frame.size.width, height: 250)
         animation.contentMode = .scaleAspectFill
         
@@ -99,7 +99,7 @@ class IntroductionViewController: UIViewController {
     func fetchProfile(){
         print("attempt to fetch profile......")
         
-        let parameters = ["fields": "email, first_name, last_name, picture.type(large)"]
+        let parameters = ["fields": "email, first_name, last_name"]
         
         FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: {
             connection, result, error -> Void in
@@ -122,11 +122,6 @@ class IntroductionViewController: UIViewController {
                     let lastName = resultNew["last_name"] as! String
                     print(lastName)
                     
-                    if let picture = resultNew["picture"] as? NSDictionary,
-                        let data = picture["data"] as? NSDictionary,
-                        let url = data["url"] as? String {
-                        print(url) //臉書大頭貼的url, 再放入imageView內秀出來
-                    }
                 }
             }
         })

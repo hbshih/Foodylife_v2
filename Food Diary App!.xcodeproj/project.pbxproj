@@ -12,9 +12,10 @@
 		5ED87B49F86EA263E6B4C293 /* Pods_Food_Diary_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7BBA844F0BBB3BE83A4317 /* Pods_Food_Diary_App_Tests.framework */; };
 		B506BECC2015401000680B46 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B506BECB2015401000680B46 /* IntroductionViewController.swift */; };
 		B508F577201D37330025205C /* apple.json in Resources */ = {isa = PBXBuildFile; fileRef = B508F576201D37330025205C /* apple.json */; };
+		B5214F97201FC53C008E66F4 /* HomeScreenAni.json in Resources */ = {isa = PBXBuildFile; fileRef = B5214F96201FC53C008E66F4 /* HomeScreenAni.json */; };
+		B5214F99201FE4E9008E66F4 /* DemoHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5214F98201FE4E9008E66F4 /* DemoHomePageViewController.swift */; };
 		B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422441FE16947002C2540 /* KDCircularProgress.swift */; };
 		B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422461FE16D13002C2540 /* homepageViewController.swift */; };
-		B54616D6201D5FA7006E81C7 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = B54616D5201D5FA7006E81C7 /* main.json */; };
 		B54616D8201DE6B6006E81C7 /* SCLAlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */; };
 		B54DEF4D20112EB900251A19 /* FileManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DEF4C20112EB900251A19 /* FileManagerModel.swift */; };
 		B55234331FE9AC79009A757D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55234321FE9AC79009A757D /* CameraViewController.swift */; };
@@ -80,9 +81,10 @@
 		AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Diary_App_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B506BECB2015401000680B46 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		B508F576201D37330025205C /* apple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apple.json; sourceTree = "<group>"; };
+		B5214F96201FC53C008E66F4 /* HomeScreenAni.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HomeScreenAni.json; sourceTree = "<group>"; };
+		B5214F98201FE4E9008E66F4 /* DemoHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoHomePageViewController.swift; sourceTree = "<group>"; };
 		B53422441FE16947002C2540 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		B53422461FE16D13002C2540 /* homepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homepageViewController.swift; sourceTree = "<group>"; };
-		B54616D5201D5FA7006E81C7 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = main.json; path = ../../../../main.json; sourceTree = "<group>"; };
 		B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCLAlertMessage.swift; sourceTree = "<group>"; };
 		B54DEF4C20112EB900251A19 /* FileManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerModel.swift; sourceTree = "<group>"; };
 		B55234321FE9AC79009A757D /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -224,9 +226,9 @@
 			isa = PBXGroup;
 			children = (
 				B5ED8496201D3087009062D7 /* PinJump.json */,
-				B54616D5201D5FA7006E81C7 /* main.json */,
 				B508F576201D37330025205C /* apple.json */,
 				B5ED8494201D152D009062D7 /* appleOrange.json */,
+				B5214F96201FC53C008E66F4 /* HomeScreenAni.json */,
 				B5ED8498201D32C8009062D7 /* data.json */,
 				B5D0CC6F201B8669005295BC /* Sources */,
 				B53422441FE16947002C2540 /* KDCircularProgress.swift */,
@@ -252,6 +254,7 @@
 				B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */,
 				B5A9ADBD20121623008E11B5 /* ReportViewController.swift */,
 				B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */,
+				B5214F98201FE4E9008E66F4 /* DemoHomePageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -417,7 +420,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B54616D6201D5FA7006E81C7 /* main.json in Resources */,
 				B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */,
 				B5ED8499201D32C8009062D7 /* data.json in Resources */,
 				B5ED8495201D152D009062D7 /* appleOrange.json in Resources */,
@@ -425,6 +427,7 @@
 				B508F577201D37330025205C /* apple.json in Resources */,
 				B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */,
 				B579353B1FE022DE00E663DB /* Main.storyboard in Resources */,
+				B5214F97201FC53C008E66F4 /* HomeScreenAni.json in Resources */,
 				B5ED8497201D3087009062D7 /* PinJump.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,6 +655,7 @@
 				B54DEF4D20112EB900251A19 /* FileManagerModel.swift in Sources */,
 				B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */,
 				B5D0CC73201B8669005295BC /* SkyFloatingLabelTextField.swift in Sources */,
+				B5214F99201FE4E9008E66F4 /* DemoHomePageViewController.swift in Sources */,
 				B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */,
 				B55234331FE9AC79009A757D /* CameraViewController.swift in Sources */,
 			);

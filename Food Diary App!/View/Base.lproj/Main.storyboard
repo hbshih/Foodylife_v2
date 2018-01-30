@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Hp-w2-4ko">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4eB-LP-hWU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,10 +25,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Camera View Controller-->
+        <!--Item-->
         <scene sceneID="fGq-pQ-rk1">
             <objects>
-                <viewController id="uJU-0g-e3D" customClass="CameraViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="uJU-0g-e3D" customClass="CameraViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6P1-lQ-emN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,9 +65,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQs-L8-RbV">
                                 <rect key="frame" x="16" y="40" width="32" height="32"/>
                                 <state key="normal" image="Button_Back"/>
-                                <connections>
-                                    <segue destination="11y-dy-dCj" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="N0P-Jq-hCA"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:0qI-qL-mml:image" translatesAutoresizingMaskIntoConstraints="NO" id="0qI-qL-mml">
                                 <rect key="frame" x="0.0" y="104" width="375" height="375"/>
@@ -97,8 +94,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3b5-ph-nPh"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="camera" id="NKx-nW-apk" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="7QF-Zw-YOR" id="jsQ-hT-A00"/>
+                        </connections>
+                    </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cameraView" destination="fi3-dc-S05" id="yrn-MF-yVe"/>
                         <outlet property="spinner" destination="QWw-Kk-RKv" id="cfw-UN-i96"/>
@@ -106,15 +109,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O9T-X6-xE2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="7QF-Zw-YOR" customClass="RAMFumeAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
-            <point key="canvasLocation" x="1350" y="-858"/>
+            <point key="canvasLocation" x="1688.8" y="-858.62068965517244"/>
         </scene>
         <!--Your Food Diary-->
         <scene sceneID="ya5-Mu-QTH">
             <objects>
                 <tableViewController id="K1M-cg-dHG" customClass="DiaryTableViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jzl-Pe-wzH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -345,9 +349,6 @@
                     <navigationItem key="navigationItem" title="Your Food Diary" id="3fr-MI-9Zb">
                         <barButtonItem key="leftBarButtonItem" image="Button_Back_Orange" id="SXc-sU-Wi7">
                             <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="11y-dy-dCj" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="I63-Bd-qlj"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Album" id="1UE-oO-2P4">
                             <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -359,7 +360,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMK-75-yYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2734" y="97"/>
+            <point key="canvasLocation" x="3469.5999999999999" y="95.802098950524751"/>
         </scene>
         <!--Add more?-->
         <scene sceneID="4fi-3K-zRC">
@@ -450,7 +451,6 @@
                                         <state key="normal" image="Button_Done"/>
                                         <connections>
                                             <action selector="completeTapped:" destination="sdL-l7-QO5" eventType="touchUpInside" id="kxl-zq-omd"/>
-                                            <segue destination="11y-dy-dCj" kind="custom" customClass="PresentTurnSegue" customModule="IBAnimatable" id="ejy-Cq-Uuf"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BAr-gu-p5a">
@@ -620,6 +620,7 @@
                         </variation>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addnoteText" destination="CUj-cx-sQn" id="VvC-fZ-Iur"/>
                         <outlet property="buttonBar" destination="CIb-Xu-utK" id="O9f-YA-Jrt"/>
@@ -637,32 +638,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWa-ma-eix" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4240.8000000000002" y="-939.58020989505258"/>
+            <point key="canvasLocation" x="4580" y="-939.58020989505258"/>
         </scene>
         <!--Foody Life-->
         <scene sceneID="ksv-Bt-3Gj">
             <objects>
                 <viewController title="Foody Life" id="11y-dy-dCj" customClass="homepageViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nlf-dE-DjN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPg-6U-AKF" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="375"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5k-N4-TO3">
                                         <rect key="frame" x="128.5" y="128.5" width="118" height="118"/>
                                         <state key="normal" image="Face_Yellow"/>
                                         <connections>
                                             <action selector="faceTapped:" destination="11y-dy-dCj" eventType="touchUpInside" id="eY7-0s-t8u"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7I-OM-FHD">
-                                        <rect key="frame" x="294" y="345" width="66" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Alert Test"/>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="11y-dy-dCj" eventType="touchUpInside" id="we6-dA-h2h"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idh-yy-Qb8">
@@ -674,7 +667,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7s-rX-LRU">
-                                        <rect key="frame" x="164" y="345" width="47" height="30"/>
+                                        <rect key="frame" x="296" y="345" width="47" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Report"/>
                                         <connections>
@@ -710,13 +703,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0f7-ZQ-Tkz">
-                                <rect key="frame" x="16" y="395" width="343" height="78"/>
+                                <rect key="frame" x="16" y="415" width="343" height="73"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ksj-pq-oPL" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="68.5" height="78"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="68.5" height="73"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIb-Gc-8x9">
-                                                <rect key="frame" x="19.5" y="24.5" width="30" height="30"/>
+                                                <rect key="frame" x="19.5" y="22" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="OSd-fa-vpe"/>
                                                     <constraint firstAttribute="width" constant="30" id="dXg-z9-ANR"/>
@@ -754,10 +747,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3YS-CH-PD4" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
-                                        <rect key="frame" x="68.5" y="0.0" width="68.5" height="78"/>
+                                        <rect key="frame" x="68.5" y="0.0" width="68.5" height="73"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMb-a9-cdS">
-                                                <rect key="frame" x="19.5" y="24.5" width="30" height="30"/>
+                                                <rect key="frame" x="19.5" y="22" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="pXK-39-w8B"/>
                                                     <constraint firstAttribute="width" constant="30" id="tnb-Io-fcy"/>
@@ -795,10 +788,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWR-f3-Qfd" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
-                                        <rect key="frame" x="137" y="0.0" width="69" height="78"/>
+                                        <rect key="frame" x="137" y="0.0" width="69" height="73"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mH4-k9-41C">
-                                                <rect key="frame" x="20" y="24.5" width="30" height="30"/>
+                                                <rect key="frame" x="20" y="22" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="Grn-lf-UAP"/>
                                                     <constraint firstAttribute="height" constant="30" id="iVh-N4-TtI"/>
@@ -836,10 +829,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QuF-Zm-BKe" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
-                                        <rect key="frame" x="206" y="0.0" width="68.5" height="78"/>
+                                        <rect key="frame" x="206" y="0.0" width="68.5" height="73"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4K-ik-9jj">
-                                                <rect key="frame" x="19" y="24.5" width="30" height="30"/>
+                                                <rect key="frame" x="19" y="22" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="3Pm-t6-lJw"/>
                                                     <constraint firstAttribute="height" constant="30" id="htQ-G3-lcB"/>
@@ -877,10 +870,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1u-qM-M1c" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
-                                        <rect key="frame" x="274.5" y="0.0" width="68.5" height="78"/>
+                                        <rect key="frame" x="274.5" y="0.0" width="68.5" height="73"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hul-Qd-21M">
-                                                <rect key="frame" x="19" y="24.5" width="30" height="30"/>
+                                                <rect key="frame" x="19" y="22" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="UFT-9a-Mdr"/>
                                                     <constraint firstAttribute="height" constant="30" id="glo-34-ElG"/>
@@ -919,12 +912,9 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiZ-hW-pFG">
-                                <rect key="frame" x="107.5" y="498" width="160" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiZ-hW-pFG">
+                                <rect key="frame" x="107" y="528" width="160" height="50"/>
                                 <state key="normal" image="Button_Camera"/>
-                                <connections>
-                                    <segue destination="uJU-0g-e3D" kind="show" id="2iH-jb-HTL"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -934,16 +924,22 @@
                             <constraint firstAttribute="trailing" secondItem="0f7-ZQ-Tkz" secondAttribute="trailing" constant="16" id="2N0-4a-LFW"/>
                             <constraint firstItem="pI6-C2-Nqy" firstAttribute="bottom" secondItem="0f7-ZQ-Tkz" secondAttribute="bottom" constant="130" id="7Lf-fN-7ov"/>
                             <constraint firstAttribute="trailing" secondItem="WPg-6U-AKF" secondAttribute="trailing" id="8Ig-fm-U90"/>
-                            <constraint firstItem="pI6-C2-Nqy" firstAttribute="bottom" secondItem="UiZ-hW-pFG" secondAttribute="bottom" constant="55" id="H8q-Qa-5cz"/>
                             <constraint firstItem="UiZ-hW-pFG" firstAttribute="centerX" secondItem="pI6-C2-Nqy" secondAttribute="centerX" id="LbQ-lx-De7"/>
                             <constraint firstItem="WPg-6U-AKF" firstAttribute="centerX" secondItem="pI6-C2-Nqy" secondAttribute="centerX" id="Qft-Ba-6dO"/>
                             <constraint firstItem="0f7-ZQ-Tkz" firstAttribute="top" secondItem="WPg-6U-AKF" secondAttribute="bottom" constant="20" id="YCJ-1X-HGQ"/>
                             <constraint firstItem="WPg-6U-AKF" firstAttribute="leading" secondItem="Nlf-dE-DjN" secondAttribute="leading" id="h6r-9t-pXw"/>
                             <constraint firstItem="0f7-ZQ-Tkz" firstAttribute="leading" secondItem="pI6-C2-Nqy" secondAttribute="leading" constant="16" id="kpQ-rA-jT8"/>
+                            <constraint firstItem="pI6-C2-Nqy" firstAttribute="bottom" secondItem="UiZ-hW-pFG" secondAttribute="bottom" constant="46" id="mID-8J-Wjf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pI6-C2-Nqy"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <tabBarItem key="tabBarItem" title="home" image="home" id="nJ5-rq-yuN" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <color key="badgeColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <connections>
+                            <outlet property="animation" destination="iGq-cq-jsL" id="veo-Ll-lbN"/>
+                        </connections>
+                    </tabBarItem>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="centerFace" destination="I5k-N4-TO3" id="v4m-c0-QtS"/>
                         <outlet property="circularSlider" destination="WPg-6U-AKF" id="SiD-NG-l0J"/>
@@ -955,9 +951,10 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCP-u7-gde" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="iGq-cq-jsL" customClass="RAMFumeAnimation" customModule="RAMAnimatedTabBarController"/>
                 <swipeGestureRecognizer direction="right" id="Mcs-lb-UcB"/>
             </objects>
-            <point key="canvasLocation" x="-250" y="19"/>
+            <point key="canvasLocation" x="490" y="140"/>
         </scene>
         <!--Introduction View Controller-->
         <scene sceneID="1V3-NW-7Bm">
@@ -1036,7 +1033,6 @@
                         <outlet property="createAccountOutlet" destination="tIl-bd-ee8" id="DAz-vx-lE9"/>
                         <outlet property="facebookOutlet" destination="vVe-LO-WqL" id="CBN-gN-yLU"/>
                         <outlet property="signInOutlet" destination="o7n-kX-efN" id="dcd-Vd-TZe"/>
-                        <segue destination="11y-dy-dCj" kind="show" identifier="showHomepageSegue" id="ASS-XV-1ux"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lqk-Xf-3Rv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1277,7 +1273,6 @@
                         <outlet property="emailTextfield" destination="Cg3-O0-SX9" id="jEy-jl-vNl"/>
                         <outlet property="passwordTextfield" destination="n4k-iu-aaW" id="OR5-Jy-5aO"/>
                         <outlet property="usernameTextfield" destination="Ay8-Nm-0Np" id="pYn-EM-tYp"/>
-                        <segue destination="11y-dy-dCj" kind="custom" identifier="signUpSuccesfulSegue" customClass="PresentPortalSegue" customModule="IBAnimatable" id="tQ4-N3-5ZK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5q-Mm-Xnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1432,7 +1427,6 @@
                     <connections>
                         <outlet property="emailTextfield" destination="r1T-mC-cHL" id="CR4-CZ-j7C"/>
                         <outlet property="passwordTextfield" destination="h0T-if-nCn" id="dVw-8b-net"/>
-                        <segue destination="11y-dy-dCj" kind="custom" identifier="logInSegue" customClass="PresentPortalSegue" customModule="IBAnimatable" id="Zrs-9i-GAz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77f-1B-tQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1601,9 +1595,6 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button" image="Button_Back_Orange"/>
                                             </button>
-                                            <connections>
-                                                <segue destination="11y-dy-dCj" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="hLM-Fi-WXI"/>
-                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -1635,6 +1626,7 @@
                         <viewLayoutGuide key="safeArea" id="EKo-vf-SxY"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="centerImage" destination="S64-hM-eVx" id="6oq-H0-R8j"/>
                         <outlet property="circularProgress" destination="qA0-IQ-J7y" id="mY0-SB-dUi"/>
@@ -1646,7 +1638,7 @@
             </objects>
             <point key="canvasLocation" x="873" y="1388"/>
         </scene>
-        <!--Report View Controller-->
+        <!--Report-->
         <scene sceneID="D8q-EV-BlN">
             <objects>
                 <viewController id="zzn-M5-u8p" customClass="ReportViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
@@ -1655,7 +1647,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxy-TI-eGl">
-                                <rect key="frame" x="0.0" y="334" width="375" height="333"/>
+                                <rect key="frame" x="0.0" y="285" width="375" height="333"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uxy-TI-eGl" secondAttribute="height" multiplier="125:111" id="n58-3t-1OO"/>
@@ -1686,9 +1678,6 @@
                                                 <rect key="frame" x="16" y="8" width="68" height="28"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back" image="Button_Back_Orange"/>
-                                                <connections>
-                                                    <segue destination="11y-dy-dCj" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="8ne-Wb-RWK"/>
-                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1710,6 +1699,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="epl-ay-jib"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Report" image="Comment" id="7hN-t4-fgX" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="4ut-Kc-D5w" id="94b-p2-UNo"/>
+                        </connections>
+                    </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="graphField" destination="uxy-TI-eGl" id="jRx-jM-PGN"/>
@@ -1717,13 +1711,19 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFi-Q1-DQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="4ut-Kc-D5w" customClass="RAMFumeAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="1628" y="1388"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Diary-->
         <scene sceneID="QiT-w3-ISs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wfq-2r-gss" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Diary" image="to-do" id="hx1-of-fe8" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="36c-np-9hd" id="bnb-6l-oLW"/>
+                        </connections>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="TCK-2u-SVv">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1739,8 +1739,9 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3J-nc-lx6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="36c-np-9hd" customClass="RAMFumeAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
-            <point key="canvasLocation" x="1809" y="97"/>
+            <point key="canvasLocation" x="2543.1999999999998" y="95.802098950524751"/>
         </scene>
         <!--Album-->
         <scene sceneID="Dk1-iL-5ze">
@@ -1751,7 +1752,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aSV-rH-hcR">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jo7-hX-yN8">
                                     <size key="itemSize" width="182" height="182"/>
@@ -1794,6 +1795,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pDI-TP-Gau"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Photo" image="Photo" id="8qe-IK-tHa" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="TM6-iy-f0P" id="j2x-vr-UbV"/>
+                        </connections>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Album" id="L5A-wI-3XO">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="v1o-uQ-err">
                             <connections>
@@ -1806,8 +1817,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIV-r8-rJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="TM6-iy-f0P" customClass="RAMFumeAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
-            <point key="canvasLocation" x="4908" y="97"/>
+            <point key="canvasLocation" x="5642.3999999999996" y="95.802098950524751"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ZT-o6-p34">
@@ -1825,10 +1837,110 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTd-vQ-fMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3820" y="97"/>
+            <point key="canvasLocation" x="4556" y="95.802098950524751"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0Oj-Za-8RW">
+            <objects>
+                <viewController id="RvS-Jx-4yg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xC3-RV-wKm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbj-Nk-zlZ">
+                                <rect key="frame" x="166" y="307" width="28" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oYI-XO-eMl"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="Back_TriangleIcon-1" id="Ldk-ib-qKZ" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="4eU-Kx-P2V" id="JmH-Ar-Jvb"/>
+                        </connections>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7JA-KG-KgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="4eU-Kx-P2V" customClass="RAMLeftRotationAnimation" customModule="RAMAnimatedTabBarController"/>
+            </objects>
+            <point key="canvasLocation" x="-1586.4000000000001" y="-1331.784107946027"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fFp-ei-rwm">
+            <objects>
+                <viewController id="jpQ-g8-w1h" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VLy-GK-BBX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoS-Wo-E5P">
+                                <rect key="frame" x="166" y="292" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="EWA-eT-1jb"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="Alert_Yellow" id="FRc-tT-hfr" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="IDp-jb-Brr" id="ZKg-tK-nWb"/>
+                        </connections>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nZw-uJ-4Gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="IDp-jb-Brr" customClass="RAMRightRotationAnimation" customModule="RAMAnimatedTabBarController"/>
+            </objects>
+            <point key="canvasLocation" x="-1586" y="-1996"/>
+        </scene>
+        <!--Animated Tab Bar Controller-->
+        <scene sceneID="PhW-y8-Gro">
+            <objects>
+                <tabBarController id="CxD-q4-xwH" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kdk-48-TaC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="jpQ-g8-w1h" kind="relationship" relationship="viewControllers" id="sJY-Va-Rn4"/>
+                        <segue destination="RvS-Jx-4yg" kind="relationship" relationship="viewControllers" id="cEh-H5-bMt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIM-ti-Yha" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2542" y="-1665"/>
+        </scene>
+        <!--Animated Tab Bar Controller-->
+        <scene sceneID="rKb-n9-H1c">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4eB-LP-hWU" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HcP-kR-uW0">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="11y-dy-dCj" kind="relationship" relationship="viewControllers" id="J1c-E2-Sw3"/>
+                        <segue destination="zzn-M5-u8p" kind="relationship" relationship="viewControllers" id="oRA-tl-3q2"/>
+                        <segue destination="wfq-2r-gss" kind="relationship" relationship="viewControllers" id="XKU-bx-50R"/>
+                        <segue destination="uJU-0g-e3D" kind="relationship" relationship="viewControllers" id="8Lz-Me-fey"/>
+                        <segue destination="EOA-aA-dqT" kind="relationship" relationship="viewControllers" id="7tH-s5-6BM"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0kv-sr-2vj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-734" y="1"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Alert_Yellow" width="79" height="79"/>
         <image name="Back_TriangleIcon-1" width="11" height="18"/>
         <image name="Background" width="375" height="667"/>
         <image name="Background_PhotoPreview" width="375" height="667"/>
@@ -1837,6 +1949,7 @@
         <image name="Button_Camera" width="160" height="50"/>
         <image name="Button_Done" width="160" height="50"/>
         <image name="Button_Take" width="63" height="63"/>
+        <image name="Comment" width="34" height="30"/>
         <image name="Create Account-1" width="295" height="50"/>
         <image name="CreateAccountIcon" width="142" height="31"/>
         <image name="Face_Yellow" width="118" height="118"/>
@@ -1861,12 +1974,15 @@
         <image name="Image_PlateGrain" width="42" height="36"/>
         <image name="Image_PlateProtein" width="40" height="37"/>
         <image name="Image_PlateVegetable" width="37" height="36"/>
+        <image name="Photo" width="34" height="28"/>
         <image name="Recover Icon-1" width="295" height="50"/>
         <image name="Sign in Button" width="295" height="50"/>
         <image name="SignInIcon" width="142" height="32"/>
         <image name="Timeline_Circle" width="11" height="11"/>
         <image name="Timeline_Line" width="3" height="481"/>
         <image name="Timeline_Rect" width="54" height="28"/>
+        <image name="camera" width="28" height="25"/>
+        <image name="home" width="26" height="27"/>
         <image name="iPhone 8-2" width="375" height="667"/>
         <image name="imageView:0qI-qL-mml:image" width="375" height="365">
             <mutableData key="keyedArchiveRepresentation">
@@ -11107,12 +11223,15 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="image_SeparatingLine" width="375" height="3"/>
         <image name="image_mat" width="263" height="158"/>
         <image name="image_plate" width="149" height="149"/>
+        <image name="to-do" width="24" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="7tH-s5-6BM"/>
+        <segue reference="XKU-bx-50R"/>
+        <segue reference="oRA-tl-3q2"/>
         <segue reference="3Ts-RM-Mb9"/>
         <segue reference="HzW-k9-dOE"/>
         <segue reference="DSz-U6-guT"/>
-        <segue reference="ejy-Cq-Uuf"/>
-        <segue reference="1gd-EK-yKm"/>
+        <segue reference="GHi-nD-NU8"/>
     </inferredMetricsTieBreakers>
 </document>
