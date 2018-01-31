@@ -20,6 +20,8 @@ class DashboardViewController: UIViewController {
     var images: [UIImage] = []
     var fileName: [String] = []
     var dashboardType: String?
+    // Create and data handler to handle all core data query
+    private var dataHandler = CoreDataHandler()
     
     override func viewDidLoad()
     {
@@ -28,38 +30,12 @@ class DashboardViewController: UIViewController {
         //Building interface
         buildDashboard()
         
+        
         if dashboardType != ""
         {
-            // Accessing Core Data
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
-            request.returnsObjectsAsFaults = false
-            do
-            {
-                let results = try context.fetch(request)
-                if results.count > 0
-                {
-                    for result in results as! [NSManagedObject]
-                    {
-                        let searchFor = "n_\(dashboardType!)"
-                        if let vegValue = result.value(forKey: searchFor) as? Int
-                        {
-                            if let imageName = result.value(forKey: "ImageName") as? String
-                            {
-                                if vegValue != 0
-                                {
-                                    fileName.append(imageName)
-                                }
-                            }
-                        }
-                    }
-                }
-            }catch
-            {
-                print("Retrieving core data error")
-            }
-            
+            // Core data handler
+            fileName = dataHandler.getImageFilename()
+            //Display image in order of the most recent first
             fileName = fileName.reversed()
             
             //Getting corresponding images
@@ -92,41 +68,33 @@ class DashboardViewController: UIViewController {
     
     func buildDashboard()
     {
-        var data = accessNutritionData()
-        var rate = balanceRate()
-        data.viewDidLoad()
-        rate.fileName = data.fileName
-        rate.grainList = data.grainList
-        rate.fruitList = data.fruitList
-        rate.dairyList = data.dairyList
-        rate.proteinList = data.proteinList
-        rate.vegetableList = data.vegetableList
-        rate.setPercentage()
+        var healthData = HealthPercentageCalculator(fileNames: dataHandler.getImageFilename(),nutritionDic: dataHandler.get5nList())
+
         if dashboardType == "Vegetable"
         {
             navDash.title = "Vegetable Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Vegetable")
-            setUpSlider(value: rate.averageVegetable*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageVegetable"]!*3.6)
         } else if dashboardType == "Grain"
         {
             navDash.title = "Grain Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Grain")
-            setUpSlider(value: rate.averageGrain*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageGrain"]!*3.6)
         }else if dashboardType == "Protein"
         {
             navDash.title = "Protein Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Protein")
-            setUpSlider(value: rate.averageProtein*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageProtein"]!*3.6)
         }else if dashboardType == "Fruit"
         {
             navDash.title = "Fruit Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Fruit")
-            setUpSlider(value: rate.averageFruit*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageFruit"]!*3.6)
         }else
         {
             navDash.title = "Dairy Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Dairy")
-            setUpSlider(value: rate.averageDairy*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageDairy"]!*3.6)
         }
     }
     

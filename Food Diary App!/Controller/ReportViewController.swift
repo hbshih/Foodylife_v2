@@ -22,19 +22,18 @@ class ReportViewController: UIViewController, ScrollableGraphViewDataSource
     var blueLinePlotData: [Double]?
     // An initial array when no data is found i.e. First time using
     var blank = [0.0,0.0,0.0,0.0,0.0]
+    // An array to show all related dates
     var dates: [String]?
     
     // Init
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //Get initial data from core Data
         var coreManager = CoreDataHandler()
-
+        //Calculate data
         var healthData = HealthPercentageCalculator(fileNames: coreManager.getImageFilename(),nutritionDic: coreManager.get5nList())
         dates = healthData.getTrimmedDate()
-        
         blueLinePlotData = healthData.getDayBalancePercentage()
-        
         // Create graph
         graphView = createMultiPlotGraph(self.graphField.frame)
         graphView.backgroundFillColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)

@@ -43,78 +43,32 @@ class homepageViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        circularSlider.startAngle = -90.0
-        
-        // Accessing Core Data
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
-        request.returnsObjectsAsFaults = false
-        do
-        {
-            let results = try context.fetch(request)
-            if results.count > 0
-            {
-                for result in results as! [NSManagedObject]
-                {
-                    // Store data in the corresponding array
-                    if let imageName = result.value(forKey: "imageName") as? String
-                    {
-                        var str = imageName.prefix(13)
-                        var date = str.suffix(10)
-                        self.fileName.append(String(date))
-                        if let grain_value = result.value(forKey: "n_Grain") as? Int
-                        {
-                            if let vegetableValue = result.value(forKey: "n_Vegetable") as? Int
-                            {
-                                if let fruitValue = result.value(forKey: "n_Fruit") as? Int
-                                {
-                                    if let dairyValue = result.value(forKey: "n_Dairy") as? Int
-                                    {
-                                        if let proteinValue = result.value(forKey: "n_Protein") as? Int
-                                        {
-                                            self.grainList.append(grain_value)
-                                            self.vegetableList.append(vegetableValue)
-                                            self.proteinList.append(proteinValue)
-                                            self.dairyList.append(dairyValue)
-                                            self.fruitList.append(fruitValue)
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }catch
-        {
-            print("Retrieving core data error")
-        }
+      //  circularSlider.startAngle = -90.0
+        var dataHandler = CoreDataHandler()
+        var nutritionDic = dataHandler.get5nList()
+        dairyList = nutritionDic["dairyList"]!
+        vegetableList = nutritionDic["vegetableList"]!
+        proteinList = nutritionDic["proteinList"]!
+        fruitList = nutritionDic["fruitList"]!
+        grainList = nutritionDic["grainList"]!
+        fileName = dataHandler.getImageFilename()
+        print(fileName)
         
         //-- access nutrtiion data nad blaance rate.swift
-        if fileName.count > 2
+        if fileName.count > 2 // After 2 meal
         {
-            var rate = balanceRate()
-            rate.fileName = fileName
-            rate.dairyList = dairyList
-            rate.vegetableList = vegetableList
-            rate.proteinList = proteinList
-            rate.fruitList = fruitList
-            rate.grainList = grainList
-            rate.setPercentage()
-            
-            healthPercentage = rate.averageHealth * 3.6
-            vegetablePercentage = rate.averageVegetable * 3.6
-            grainPercentage = rate.averageGrain * 3.6
-            proteinPercentage = rate.averageProtein * 3.6
-            fruitPercentage = rate.averageFruit * 3.6
-            dairyPercentage = rate.averageDairy * 3.6
-            
+            var healthData = HealthPercentageCalculator(fileNames: dataHandler.getImageFilename(),nutritionDic: dataHandler.get5nList())
+            healthPercentage = healthData.getAverageHealth() * 3.6
+            vegetablePercentage = healthData.getEachNutritionHealthAverage()["averageVegetable"]! * 3.6
+            grainPercentage = healthData.getEachNutritionHealthAverage()["averageGrain"]! * 3.6
+            proteinPercentage = healthData.getEachNutritionHealthAverage()["averageProtein"]! * 3.6
+            fruitPercentage = healthData.getEachNutritionHealthAverage()["averageFruit"]! * 3.6
+            dairyPercentage = healthData.getEachNutritionHealthAverage()["averageDairy"]! * 3.6
             showCircularSliderData()
+        }else
+        {
+            print("Haven't got enough data to show")
         }
-        
-        
-        
     }
     
     func showCircularSliderData()
