@@ -28,27 +28,18 @@ class ReportViewController: UIViewController, ScrollableGraphViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // --- Need to improve structure
-        var data = accessNutritionData()
-        var rate = balanceRate()
-        data.viewDidLoad()
-        rate.fileName = data.fileName
-        rate.grainList = data.grainList
-        rate.fruitList = data.fruitList
-        rate.dairyList = data.dairyList
-        rate.proteinList = data.proteinList
-        rate.vegetableList = data.vegetableList
-        rate.setPercentage()
+        var coreManager = CoreDataHandler()
+
+        var healthData = HealthPercentageCalculator(fileNames: coreManager.getImageFilename(),nutritionDic: coreManager.get5nList())
+        dates = healthData.getTrimmedDate()
         
-        dates = rate.dateSaved
-        
-        blueLinePlotData = rate.AverageCount
+        blueLinePlotData = healthData.getDayBalancePercentage()
         
         // Create graph
         graphView = createMultiPlotGraph(self.graphField.frame)
         graphView.backgroundFillColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
         self.graphField.addSubview(graphView)
-        percentageLabel.text = "\(rate.averageHealth)%"
+        percentageLabel.text = "\(healthData.getAverageHealth())%"
         setupConstraints()
     }
     

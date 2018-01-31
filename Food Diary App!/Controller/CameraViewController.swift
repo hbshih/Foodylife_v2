@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import RAMAnimatedTabBarController
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
@@ -24,10 +25,18 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     {
         super.viewDidLoad()
         spinner.alpha = 0
+        //self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
+        animatedTabBar.animationTabBarHidden(false)
     }
     
     override func viewDidAppear(_ animated: Bool)
     {
+        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
+        animatedTabBar.animationTabBarHidden(true)
         captureSesssion = AVCaptureSession()
         captureSesssion.sessionPreset = AVCaptureSession.Preset.photo
         cameraOutput = AVCapturePhotoOutput()

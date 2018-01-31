@@ -65,6 +65,7 @@ struct accessNutritionData{
                     }
                 }
             }
+            print ("old \(grainList)")
         }catch
         {
             print("Retrieving core data error")
