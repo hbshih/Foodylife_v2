@@ -27,55 +27,15 @@ class DiaryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Accessing Core Data
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserEntries")
-        request.returnsObjectsAsFaults = false
-        do
-        {
-            let results = try context.fetch(request)
-            if results.count > 0
-            {
-                for result in results as! [NSManagedObject]
-                {
-                    // Store data in the corresponding array
-                    if let imageName = result.value(forKey: "imageName") as? String
-                    {
-                        fileName.append(imageName)
-                        if let note = result.value(forKey: "note") as? String
-                        {
-                            notes.append(note)
-                        }
-                        if let grain_value = result.value(forKey: "n_Grain") as? Int
-                        {
-                            if let vegetableValue = result.value(forKey: "n_Vegetable") as? Int
-                            {
-                                if let fruitValue = result.value(forKey: "n_Fruit") as? Int
-                                {
-                                    if let dairyValue = result.value(forKey: "n_Dairy") as? Int
-                                    {
-                                        if let proteinValue = result.value(forKey: "n_Protein") as? Int
-                                        {
-                                            grainList.append(grain_value)
-                                            vegetableList.append(vegetableValue)
-                                            proteinList.append(proteinValue)
-                                            dairyList.append(dairyValue)
-                                            fruitList.append(fruitValue)
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        
-                    }
-                 
-                }
-            }
-        }catch
-        {
-            print("Retrieving core data error")
-            alertMessage(title: "Error", message: "We are having problem dealing with your diary, something might be wrong, try again later.")
-        }
+        var dataHandler = CoreDataHandler()
+        fileName = dataHandler.getImageFilename()
+        notes = dataHandler.getNote()
+        let nutritionDic = dataHandler.get5nList()
+        dairyList = nutritionDic["dairyList"]!
+        vegetableList = nutritionDic["vegetableList"]!
+        proteinList = nutritionDic["proteinList"]!
+        fruitList = nutritionDic["fruitList"]!
+        grainList = nutritionDic["grainList"]!
         
         //-- to display the most up to date items first
         fileName = fileName.reversed()

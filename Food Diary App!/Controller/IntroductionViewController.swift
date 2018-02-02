@@ -78,21 +78,43 @@ class IntroductionViewController: UIViewController {
             
             let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
             
-            // Perform login by calling Firebase APIs
-            Auth.auth().signIn(with: credential, completion: { (user, error) in
-                if let error = error {
-                    print("Login error: \(error.localizedDescription)")
-                    let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
-                    let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(okayAction)
-                    self.present(alertController, animated: true, completion: nil)
-                    return
-                }else
-                {
-                    print("log in success")
-                }
-            })
+            if let user = Auth.auth().currentUser
+            {
+                user.link(with: credential, completion: { (user, error) in
+                    if error != nil
+                    {
+                        print("Link Error: \(error?.localizedDescription)")
+                        let alertController = UIAlertController(title: "Login Error", message: error?.localizedDescription, preferredStyle: .alert)
+                        let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        alertController.addAction(okayAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        return
+                    }else
+                    {
+                        print("link success")
+                        self.performSegue(withIdentifier: "showHomepageSegue", sender: nil)
+                    }
+                })
+            }else
+            {
             
+                // Perform login by calling Firebase APIs
+                Auth.auth().signIn(with: credential, completion: { (user, error) in
+                    if let error = error {
+                        print("Login error: \(error.localizedDescription)")
+                        let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
+                        let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        alertController.addAction(okayAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        return
+                    }else
+                    {
+                        print("log in success")
+                        self.performSegue(withIdentifier: "showHomepageSegue", sender: nil)
+                    }
+                })
+                
+            }
         }
     }
     

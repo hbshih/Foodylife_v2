@@ -20,6 +20,7 @@
 		B54DEF4D20112EB900251A19 /* FileManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DEF4C20112EB900251A19 /* FileManagerModel.swift */; };
 		B55234331FE9AC79009A757D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55234321FE9AC79009A757D /* CameraViewController.swift */; };
 		B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */; };
+		B55645F22024C80100E587BA /* NutritionSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */; };
 		B55C97C3201BDD600087E29D /* LogInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C97C2201BDD600087E29D /* LogInPageViewController.swift */; };
 		B55C97C5201BDEFA0087E29D /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */; };
 		B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57935351FE022DE00E663DB /* AppDelegate.swift */; };
@@ -32,11 +33,14 @@
 		B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E7F6F201A845400136E54 /* accessNutritionData.swift */; };
 		B58066FF201E763A00F8FB89 /* validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58066FE201E763A00F8FB89 /* validate.swift */; };
 		B5806701201E7C8100F8FB89 /* signUpOrLogInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5806700201E7C8100F8FB89 /* signUpOrLogInHandler.swift */; };
+		B5A714172024B915009922C4 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A714162024B915009922C4 /* SettingTableViewController.swift */; };
 		B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBD20121623008E11B5 /* ReportViewController.swift */; };
 		B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */; };
 		B5ABB849201B6CD400FC5A0D /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */; };
 		B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */; };
 		B5CF1DEB201802CE0006AD90 /* balanceRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF1DEA201802CE0006AD90 /* balanceRate.swift */; };
+		B5D0C0152023BC7F00E4D6F8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0C0142023BC7F00E4D6F8 /* SettingViewController.swift */; };
+		B5D0C0172023C17900E4D6F8 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0C0162023C17900E4D6F8 /* SettingTableViewCell.swift */; };
 		B5D0CC73201B8669005295BC /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0CC70201B8669005295BC /* SkyFloatingLabelTextField.swift */; };
 		B5D0CC74201B8669005295BC /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0CC71201B8669005295BC /* UITextField+fixCaretPosition.swift */; };
 		B5D0CC75201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0CC72201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift */; };
@@ -90,6 +94,7 @@
 		B54DEF4C20112EB900251A19 /* FileManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerModel.swift; sourceTree = "<group>"; };
 		B55234321FE9AC79009A757D /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionSettingTableViewController.swift; sourceTree = "<group>"; };
 		B55C97C2201BDD600087E29D /* LogInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPageViewController.swift; sourceTree = "<group>"; };
 		B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 		B57935321FE022DE00E663DB /* Food Diary App!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Diary App!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,11 +113,14 @@
 		B57E7F6F201A845400136E54 /* accessNutritionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessNutritionData.swift; sourceTree = "<group>"; };
 		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
 		B5806700201E7C8100F8FB89 /* signUpOrLogInHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpOrLogInHandler.swift; sourceTree = "<group>"; };
+		B5A714162024B915009922C4 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingTableViewController.swift; path = "Food Diary App!/Controller/SettingTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
 		B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
 		B5C42E271FF80F8D002B887A /* Core Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Core Data.xcdatamodel"; sourceTree = "<group>"; };
 		B5CF1DEA201802CE0006AD90 /* balanceRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = balanceRate.swift; sourceTree = "<group>"; };
+		B5D0C0142023BC7F00E4D6F8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B5D0C0162023C17900E4D6F8 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		B5D0CC70201B8669005295BC /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		B5D0CC71201B8669005295BC /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		B5D0CC72201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
@@ -247,15 +255,19 @@
 				B55234321FE9AC79009A757D /* CameraViewController.swift */,
 				B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */,
 				B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */,
+				B5214F98201FE4E9008E66F4 /* DemoHomePageViewController.swift */,
 				B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */,
 				B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */,
 				B53422461FE16D13002C2540 /* homepageViewController.swift */,
 				B506BECB2015401000680B46 /* IntroductionViewController.swift */,
 				B55C97C2201BDD600087E29D /* LogInPageViewController.swift */,
+				B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */,
 				B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */,
 				B5A9ADBD20121623008E11B5 /* ReportViewController.swift */,
+				B5D0C0162023C17900E4D6F8 /* SettingTableViewCell.swift */,
+				B5A714162024B915009922C4 /* SettingTableViewController.swift */,
+				B5D0C0142023BC7F00E4D6F8 /* SettingViewController.swift */,
 				B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */,
-				B5214F98201FE4E9008E66F4 /* DemoHomePageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -654,10 +666,14 @@
 				B5D0CC75201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				B55C97C5201BDEFA0087E29D /* RecoverPasswordViewController.swift in Sources */,
 				B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */,
+				B5D0C0172023C17900E4D6F8 /* SettingTableViewCell.swift in Sources */,
+				B55645F22024C80100E587BA /* NutritionSettingTableViewController.swift in Sources */,
 				B5ABB849201B6CD400FC5A0D /* SignUpPageViewController.swift in Sources */,
 				B54DEF4D20112EB900251A19 /* FileManagerModel.swift in Sources */,
 				B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */,
 				B5D0CC73201B8669005295BC /* SkyFloatingLabelTextField.swift in Sources */,
+				B5D0C0152023BC7F00E4D6F8 /* SettingViewController.swift in Sources */,
+				B5A714172024B915009922C4 /* SettingTableViewController.swift in Sources */,
 				B5214F99201FE4E9008E66F4 /* DemoHomePageViewController.swift in Sources */,
 				B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */,
 				B5D5E6C820212452009BE907 /* HealthPercentageCalculator.swift in Sources */,

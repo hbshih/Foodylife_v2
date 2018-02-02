@@ -29,14 +29,14 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
-        animatedTabBar.animationTabBarHidden(false)
+//        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
+//        animatedTabBar.animationTabBarHidden(false)
     }
     
     override func viewDidAppear(_ animated: Bool)
     {
-        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
-        animatedTabBar.animationTabBarHidden(true)
+//        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
+//        animatedTabBar.animationTabBarHidden(true)
         captureSesssion = AVCaptureSession()
         captureSesssion.sessionPreset = AVCaptureSession.Preset.photo
         cameraOutput = AVCapturePhotoOutput()
