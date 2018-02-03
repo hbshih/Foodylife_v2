@@ -23,6 +23,10 @@
 		B55645F22024C80100E587BA /* NutritionSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */; };
 		B55C97C3201BDD600087E29D /* LogInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C97C2201BDD600087E29D /* LogInPageViewController.swift */; };
 		B55C97C5201BDEFA0087E29D /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */; };
+		B570B0FF2025F6BB008BF8BC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */; };
+		B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B570B1022025F77A008BF8BC /* Montserrat-Bold.otf */; };
+		B570B1042025F78D008BF8BC /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B570B1002025F771008BF8BC /* Montserrat-Light.otf */; };
+		B570B1052025F78F008BF8BC /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B570B1012025F776008BF8BC /* Montserrat-Medium.otf */; };
 		B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57935351FE022DE00E663DB /* AppDelegate.swift */; };
 		B579353B1FE022DE00E663DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57935391FE022DE00E663DB /* Main.storyboard */; };
 		B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B579353E1FE022DE00E663DB /* LaunchScreen.storyboard */; };
@@ -97,6 +101,10 @@
 		B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionSettingTableViewController.swift; sourceTree = "<group>"; };
 		B55C97C2201BDD600087E29D /* LogInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPageViewController.swift; sourceTree = "<group>"; };
 		B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
+		B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		B570B1002025F771008BF8BC /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		B570B1012025F776008BF8BC /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
+		B570B1022025F77A008BF8BC /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		B57935321FE022DE00E663DB /* Food Diary App!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Diary App!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57935351FE022DE00E663DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B579353A1FE022DE00E663DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -175,6 +183,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B570B1062025F79E008BF8BC /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				B570B1022025F77A008BF8BC /* Montserrat-Bold.otf */,
+				B570B1002025F771008BF8BC /* Montserrat-Light.otf */,
+				B570B1012025F776008BF8BC /* Montserrat-Medium.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		B57935291FE022DE00E663DB = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +253,7 @@
 		B59F55841FE9565600E22CCD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B570B1062025F79E008BF8BC /* Font */,
 				B5ED8496201D3087009062D7 /* PinJump.json */,
 				B508F576201D37330025205C /* apple.json */,
 				B5ED8494201D152D009062D7 /* appleOrange.json */,
@@ -262,6 +281,7 @@
 				B506BECB2015401000680B46 /* IntroductionViewController.swift */,
 				B55C97C2201BDD600087E29D /* LogInPageViewController.swift */,
 				B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */,
+				B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */,
 				B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */,
 				B5A9ADBD20121623008E11B5 /* ReportViewController.swift */,
 				B5D0C0162023C17900E4D6F8 /* SettingTableViewCell.swift */,
@@ -435,11 +455,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B570B1042025F78D008BF8BC /* Montserrat-Light.otf in Resources */,
+				B570B1052025F78F008BF8BC /* Montserrat-Medium.otf in Resources */,
 				B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */,
 				B5ED8499201D32C8009062D7 /* data.json in Resources */,
 				B5ED8495201D152D009062D7 /* appleOrange.json in Resources */,
 				B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */,
 				B508F577201D37330025205C /* apple.json in Resources */,
+				B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */,
 				B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */,
 				B579353B1FE022DE00E663DB /* Main.storyboard in Resources */,
 				B5214F97201FC53C008E66F4 /* HomeScreenAni.json in Resources */,
@@ -653,6 +676,7 @@
 				B55C97C3201BDD600087E29D /* LogInPageViewController.swift in Sources */,
 				B5CF1DEB201802CE0006AD90 /* balanceRate.swift in Sources */,
 				B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */,
+				B570B0FF2025F6BB008BF8BC /* OnBoardingViewController.swift in Sources */,
 				B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */,
 				B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */,
 				B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */,

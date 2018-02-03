@@ -24,6 +24,7 @@ target 'Food Diary App!' do
   pod ‘FBSDKLoginKit’
   pod 'lottie-ios'
   pod 'RAMAnimatedTabBarController'
+  pod 'SwiftyOnboard'
 
   target 'Food Diary App!Tests' do
     inherit! :search_paths

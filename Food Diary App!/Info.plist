@@ -41,25 +41,31 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb171997136898368</string>
-            </array>
-        </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>171997136898368</string>
-    <key>FacebookDisplayName</key>
-    <string>Foody Life !</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fb-messenger-share-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
-    </array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb171997136898368</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>171997136898368</string>
+	<key>FacebookDisplayName</key>
+	<string>Foody Life !</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Montserrat-Bold.otf</string>
+		<string>Montserrat-Medium.otf</string>
+		<string>Montserrat-Bold-Light.otf</string>
+	</array>
 </dict>
 </plist>
