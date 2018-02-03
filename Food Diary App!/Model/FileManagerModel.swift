@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct FileMangerModel
+struct FileManagerModel
 {
     func lookupImage(fileNames: [String]) -> [UIImage]
     {

@@ -34,12 +34,12 @@ class DashboardViewController: UIViewController {
         if dashboardType != ""
         {
             // Core data handler
-            fileName = dataHandler.getImageFilename()
+            fileName = dataHandler.getImageFilename(type: "n_\(dashboardType!)")
             //Display image in order of the most recent first
             fileName = fileName.reversed()
             
             //Getting corresponding images
-            let fileManager = FileMangerModel()
+            let fileManager = FileManagerModel()
             images = fileManager.lookupImage(fileNames: fileName)
             
             // Preparing for scroll image views

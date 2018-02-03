@@ -57,6 +57,37 @@ struct CoreDataHandler
         return fileName
     }
     
+    mutating func getImageFilename(type: String) -> [String]
+    {
+        let queryFor = type
+        fileName.removeAll()
+        do
+        {
+            let results = try context.fetch(request)
+            if results.count > 0
+            {
+                for result in results as! [NSManagedObject]
+                {
+                    if let queryElement = result.value(forKey: queryFor) as? Int
+                    {
+                        // Store data in the corresponding array
+                        if queryElement != 0
+                        {
+                            if let imageName = result.value(forKey: "imageName") as? String
+                            {
+                                fileName.append(imageName)
+                            }
+                        }
+                    }
+                }
+            }
+        }catch
+        {
+            print("Retrieving core data error")
+        }
+        return fileName
+    }
+    
     mutating func get5nList() -> [String:[Int]]
     {
         grainList.removeAll()

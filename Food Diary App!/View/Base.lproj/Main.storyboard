@@ -116,7 +116,7 @@
             <objects>
                 <tableViewController id="K1M-cg-dHG" customClass="DiaryTableViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jzl-Pe-wzH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -646,7 +646,7 @@
             <objects>
                 <viewController title="Foody Life" id="11y-dy-dCj" customClass="homepageViewController" customModule="Food_Diary_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nlf-dE-DjN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPg-6U-AKF" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
@@ -704,13 +704,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0f7-ZQ-Tkz">
-                                <rect key="frame" x="16" y="415" width="343" height="122"/>
+                                <rect key="frame" x="16" y="415" width="343" height="73"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ksj-pq-oPL" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="68.5" height="122"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="68.5" height="73"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIb-Gc-8x9">
-                                                <rect key="frame" x="19.5" y="46.5" width="30" height="30"/>
+                                                <rect key="frame" x="19.5" y="22" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="OSd-fa-vpe"/>
                                                     <constraint firstAttribute="width" constant="30" id="dXg-z9-ANR"/>
@@ -748,10 +748,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3YS-CH-PD4" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
-                                        <rect key="frame" x="68.5" y="0.0" width="68.5" height="122"/>
+                                        <rect key="frame" x="68.5" y="0.0" width="68.5" height="73"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMb-a9-cdS">
-                                                <rect key="frame" x="19.5" y="46.5" width="30" height="30"/>
+                                                <rect key="frame" x="19.5" y="22" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="pXK-39-w8B"/>
                                                     <constraint firstAttribute="width" constant="30" id="tnb-Io-fcy"/>
@@ -789,10 +789,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWR-f3-Qfd" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
-                                        <rect key="frame" x="137" y="0.0" width="69" height="122"/>
+                                        <rect key="frame" x="137" y="0.0" width="69" height="73"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mH4-k9-41C">
-                                                <rect key="frame" x="20" y="46.5" width="30" height="30"/>
+                                                <rect key="frame" x="20" y="22" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="Grn-lf-UAP"/>
                                                     <constraint firstAttribute="height" constant="30" id="iVh-N4-TtI"/>
@@ -830,10 +830,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QuF-Zm-BKe" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
-                                        <rect key="frame" x="206" y="0.0" width="68.5" height="122"/>
+                                        <rect key="frame" x="206" y="0.0" width="68.5" height="73"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4K-ik-9jj">
-                                                <rect key="frame" x="19" y="46.5" width="30" height="30"/>
+                                                <rect key="frame" x="19" y="22" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="3Pm-t6-lJw"/>
                                                     <constraint firstAttribute="height" constant="30" id="htQ-G3-lcB"/>
@@ -871,10 +871,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1u-qM-M1c" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
-                                        <rect key="frame" x="274.5" y="0.0" width="68.5" height="122"/>
+                                        <rect key="frame" x="274.5" y="0.0" width="68.5" height="73"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hul-Qd-21M">
-                                                <rect key="frame" x="19" y="46.5" width="30" height="30"/>
+                                                <rect key="frame" x="19" y="22" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="UFT-9a-Mdr"/>
                                                     <constraint firstAttribute="height" constant="30" id="glo-34-ElG"/>
@@ -914,7 +914,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiZ-hW-pFG">
-                                <rect key="frame" x="107.5" y="571" width="160" height="50"/>
+                                <rect key="frame" x="107.5" y="522" width="160" height="50"/>
                                 <state key="normal" image="Button_Camera"/>
                                 <connections>
                                     <segue destination="uJU-0g-e3D" kind="popoverPresentation" popoverAnchorView="UiZ-hW-pFG" id="5zp-0J-8XU">
@@ -939,7 +939,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pI6-C2-Nqy"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="home" image="home" id="nJ5-rq-yuN" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="home" image="mbri-home-1" selectedImage="mbri-home-1" id="nJ5-rq-yuN" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <color key="badgeColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <connections>
                             <outlet property="animation" destination="iGq-cq-jsL" id="veo-Ll-lbN"/>
@@ -1563,7 +1563,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F7l-9g-oHx"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" image="profile" selectedImage="profile" id="fQm-71-5Cg" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="Setting" image="mbri-setting3-1" selectedImage="mbri-setting3-1" id="fQm-71-5Cg" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <connections>
                             <outlet property="animation" destination="oEC-4B-R2M" id="iy9-5W-AYp"/>
                         </connections>
@@ -1767,7 +1767,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Vs-aH-JPg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="586"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Privacy Policy
+                                <string key="text">Privacy Policy
 
 Hau-Ben Benjamin Shih built the FoodyLife app as a Free app. This SERVICE is provided by Hau-Ben Benjamin Shih at no cost and is intended for use as is.
 
@@ -1824,7 +1824,7 @@ I may update our Privacy Policy from time to time. Thus, you are advised to revi
 
 Contact Us
 
-If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me. h.b.shih@se15.qmul.ac.uk</mutableString>
+If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me. h.b.shih@se15.qmul.ac.uk</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2083,7 +2083,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="epl-ay-jib"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Report" image="Comment" id="7hN-t4-fgX" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="Report" image="mbri-growing-chart-1" id="7hN-t4-fgX" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <connections>
                             <outlet property="animation" destination="4ut-Kc-D5w" id="94b-p2-UNo"/>
                         </connections>
@@ -2103,7 +2103,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
         <scene sceneID="QiT-w3-ISs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wfq-2r-gss" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Diary" image="to-do" id="hx1-of-fe8" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="Diary" image="mbri-bulleted-list-1" id="hx1-of-fe8" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <connections>
                             <outlet property="animation" destination="36c-np-9hd" id="bnb-6l-oLW"/>
                         </connections>
@@ -2570,7 +2570,6 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
         <image name="Button_Camera" width="160" height="50"/>
         <image name="Button_Done" width="160" height="50"/>
         <image name="Button_Take" width="63" height="63"/>
-        <image name="Comment" width="34" height="30"/>
         <image name="Create Account-1" width="295" height="50"/>
         <image name="CreateAccountIcon" width="142" height="31"/>
         <image name="Face_Yellow" width="118" height="118"/>
@@ -2603,7 +2602,6 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
         <image name="Timeline_Line" width="3" height="481"/>
         <image name="Timeline_Rect" width="54" height="28"/>
         <image name="camera" width="28" height="25"/>
-        <image name="home" width="26" height="27"/>
         <image name="iPhone 8-2" width="375" height="667"/>
         <image name="icon_dataSetting" width="29" height="29"/>
         <image name="icon_nutritionSetting" width="29" height="29"/>
@@ -11848,18 +11846,20 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="image_SeparatingLine" width="375" height="3"/>
         <image name="image_mat" width="263" height="158"/>
         <image name="image_plate" width="149" height="149"/>
-        <image name="profile" width="26" height="27"/>
-        <image name="to-do" width="24" height="26"/>
+        <image name="mbri-bulleted-list-1" width="30" height="27"/>
+        <image name="mbri-growing-chart-1" width="30" height="30"/>
+        <image name="mbri-home-1" width="30" height="26"/>
+        <image name="mbri-setting3-1" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WLy-Ea-IEz"/>
-        <segue reference="XKU-bx-50R"/>
-        <segue reference="oRA-tl-3q2"/>
+        <segue reference="bUA-Jh-8J7"/>
+        <segue reference="TWV-lQ-as0"/>
         <segue reference="3Ts-RM-Mb9"/>
         <segue reference="HzW-k9-dOE"/>
         <segue reference="DSz-U6-guT"/>
-        <segue reference="1Pe-sN-5n2"/>
-        <segue reference="GHi-nD-NU8"/>
-        <segue reference="wSv-ml-raZ"/>
+        <segue reference="J1c-E2-Sw3"/>
+        <segue reference="1gd-EK-yKm"/>
+        <segue reference="5zp-0J-8XU"/>
     </inferredMetricsTieBreakers>
 </document>
