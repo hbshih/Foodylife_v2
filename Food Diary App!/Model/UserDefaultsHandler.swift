@@ -13,9 +13,9 @@ struct UserDefaultsHandler
 {
     private let defaults = UserDefaults.standard
     
-    mutating func getOnboardingStatus() -> Bool
+    mutating func getOnboardingStatus() -> AnyObject
     {
-        return  (defaults.object(forKey: "OnboardingSuccess") as? Bool)!
+        return defaults.object(forKey: "OnboardingSuccess") as AnyObject
     }
     
     mutating func getPlanStandard() -> AnyObject

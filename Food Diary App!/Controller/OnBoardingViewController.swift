@@ -31,7 +31,19 @@ class OnBoardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let ShowOnBoard = defaults.getOnboardingStatus()
+        if defaults.getOnboardingStatus() is Bool
+        {
+            DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute:{self.performSegue(withIdentifier: "getStartedSegue", sender: self)})
+        }else
+        {
+            gradient()
+            UIApplication.shared.statusBarStyle = .lightContent
+            swiftyOnboard = SwiftyOnboard(frame: view.frame, style: .light)
+            view.addSubview(swiftyOnboard)
+            swiftyOnboard.dataSource = self as SwiftyOnboardDataSource
+            swiftyOnboard.delegate = self as? SwiftyOnboardDelegate
+        }
+        /*
         if ShowOnBoard == nil || ShowOnBoard == false
         {
             gradient()
@@ -43,7 +55,7 @@ class OnBoardingViewController: UIViewController {
         }else
         {
             DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute:{self.performSegue(withIdentifier: "getStartedSegue", sender: self)})
-        }
+        }*/
     }
     
     func gradient() {

@@ -23,17 +23,19 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
     @IBOutlet weak var grainField: UIImageView!
     @IBOutlet weak var fruitField: UIImageView!
     @IBOutlet weak var vegetableField: UIImageView!
-    
-
-    
+    @IBOutlet weak var vegetableCountLabel: UILabel!
+    @IBOutlet weak var dairyCountLabel: UILabel!
+    @IBOutlet weak var proteinCountLabel: UILabel!
+    @IBOutlet weak var grainCountLabel: UILabel!
+    @IBOutlet weak var fruitCountLabel: UILabel!
     // Genetal Variables
     var image:UIImage?
     // Saving nutrition info
-    var grain = 0
-    var protein = 0
-    var fruit = 0
-    var vegetable = 0
-    var dairy = 0
+    var grain = 0.0
+    var protein = 0.0
+    var fruit = 0.0
+    var vegetable = 0.0
+    var dairy = 0.0
     // Array of all filters
     var CIFilterNames = [
         "CIPhotoEffectChrome",
@@ -97,24 +99,34 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
         switch sender.tag
         {
         case 1:
-            vegetable += 1
+            vegetable += 0.5
             vegetableField.alpha = 1
+            vegetableCountLabel.alpha = 1
+            vegetableCountLabel.text = "x\(String(vegetable))"
             print("grain: \(vegetable)")
         case 2:
-            grain += 1
+            grain += 0.5
             grainField.alpha = 1
+            grainCountLabel.alpha = 1
+            grainCountLabel.text = "x\(String(grain))"
             print("fruit: \(grain)")
         case 3:
-            protein += 1
+            protein += 0.5
             proteinField.alpha = 1
+            proteinCountLabel.alpha = 1
+            proteinCountLabel.text = "x\(String(protein))"
             print("protein: \(protein)")
         case 4:
-            fruit += 1
+            fruit += 0.5
             fruitField.alpha = 1
+            fruitCountLabel.alpha = 1
+            fruitCountLabel.text = "x\(String(fruit))"
             print("vegetable: \(fruit)")
         case 5:
-            dairy += 1
+            dairy += 0.5
             dairyField.alpha = 1
+            dairyCountLabel.alpha = 1
+            dairyCountLabel.text = "x\(String(dairy))"
             print("dairy: \(dairy)")
         default:
             alertMessage(title: "You sure?", message: "Are you sure you don't want to add some nutrition?")

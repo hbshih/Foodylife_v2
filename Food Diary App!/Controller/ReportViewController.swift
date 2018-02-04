@@ -38,7 +38,7 @@ class ReportViewController: UIViewController, ScrollableGraphViewDataSource
         graphView = createMultiPlotGraph(self.graphField.frame)
         graphView.backgroundFillColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
         self.graphField.addSubview(graphView)
-        percentageLabel.text = "\(healthData.getAverageHealth())%"
+        percentageLabel.text = "\((round(healthData.getAverageHealth()*100)/100))%"
         setupConstraints()
     }
     
