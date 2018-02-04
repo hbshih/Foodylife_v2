@@ -33,7 +33,7 @@
 		<key>FBSDKShareKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>18</integer>
 		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
@@ -91,10 +91,15 @@
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
-		<key>RAMAnimatedTabBarController.xcscheme</key>
+		<key>PopupDialog.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>20</integer>
+		</dict>
+		<key>RAMAnimatedTabBarController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>21</integer>
 		</dict>
 		<key>SCLAlertView.xcscheme</key>
 		<dict>
@@ -120,7 +125,7 @@
 		<key>SwiftyOnboard.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>22</integer>
 		</dict>
 		<key>TextFieldEffects.xcscheme</key>
 		<dict>

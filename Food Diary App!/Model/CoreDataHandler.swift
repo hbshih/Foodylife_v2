@@ -17,11 +17,11 @@ struct CoreDataHandler
     private var notes: [String] = [] // Storing notes
     
     // Nutrition Info Variables
-    private var dairyList: [Int] = []
-    private var vegetableList: [Int] = []
-    private var proteinList: [Int] = []
-    private var fruitList: [Int] = []
-    private var grainList: [Int] = []
+    private var dairyList: [Double] = []
+    private var vegetableList: [Double] = []
+    private var proteinList: [Double] = []
+    private var fruitList: [Double] = []
+    private var grainList: [Double] = []
     private let request: NSFetchRequest<NSFetchRequestResult>
     private let context: NSManagedObjectContext
     
@@ -88,7 +88,7 @@ struct CoreDataHandler
         return fileName
     }
     
-    mutating func get5nList() -> [String:[Int]]
+    mutating func get5nList() -> [String:[Double]]
     {
         grainList.removeAll()
         vegetableList.removeAll()
@@ -105,15 +105,15 @@ struct CoreDataHandler
                     if let imageName = result.value(forKey: "imageName") as? String
                     {
                         // Store data in the corresponding array
-                        if let grain_value = result.value(forKey: "n_Grain") as? Int
+                        if let grain_value = result.value(forKey: "n_Grain") as? Double
                         {
-                            if let vegetableValue = result.value(forKey: "n_Vegetable") as? Int
+                            if let vegetableValue = result.value(forKey: "n_Vegetable") as? Double
                             {
-                                if let fruitValue = result.value(forKey: "n_Fruit") as? Int
+                                if let fruitValue = result.value(forKey: "n_Fruit") as? Double
                                 {
-                                    if let dairyValue = result.value(forKey: "n_Dairy") as? Int
+                                    if let dairyValue = result.value(forKey: "n_Dairy") as? Double
                                     {
-                                        if let proteinValue = result.value(forKey: "n_Protein") as? Int
+                                        if let proteinValue = result.value(forKey: "n_Protein") as? Double
                                         {
                                             self.grainList.append(grain_value)
                                             self.vegetableList.append(vegetableValue)

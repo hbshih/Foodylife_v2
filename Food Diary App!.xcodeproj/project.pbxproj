@@ -10,6 +10,7 @@
 		2E388CAC82D57EE643AC7C59 /* Pods_Food_Diary_App_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE7B708F7170D4055C55FB7 /* Pods_Food_Diary_App_UITests.framework */; };
 		373891DAD9C61286CE8A3716 /* Pods_Food_Diary_App_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */; };
 		5ED87B49F86EA263E6B4C293 /* Pods_Food_Diary_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7BBA844F0BBB3BE83A4317 /* Pods_Food_Diary_App_Tests.framework */; };
+		B50322DE20267F4900584FA0 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50322DD20267F4900584FA0 /* SettingTableViewController.swift */; };
 		B506BECC2015401000680B46 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B506BECB2015401000680B46 /* IntroductionViewController.swift */; };
 		B508F577201D37330025205C /* apple.json in Resources */ = {isa = PBXBuildFile; fileRef = B508F576201D37330025205C /* apple.json */; };
 		B5214F97201FC53C008E66F4 /* HomeScreenAni.json in Resources */ = {isa = PBXBuildFile; fileRef = B5214F96201FC53C008E66F4 /* HomeScreenAni.json */; };
@@ -23,6 +24,9 @@
 		B55645F22024C80100E587BA /* NutritionSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */; };
 		B55C97C3201BDD600087E29D /* LogInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C97C2201BDD600087E29D /* LogInPageViewController.swift */; };
 		B55C97C5201BDEFA0087E29D /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */; };
+		B56F51D9202659F400F36D9E /* SelectPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */; };
+		B56F51DA202659F400F36D9E /* SelectPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */; };
+		B56F51DE20267B1000F36D9E /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */; };
 		B570B0FF2025F6BB008BF8BC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */; };
 		B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B570B1022025F77A008BF8BC /* Montserrat-Bold.otf */; };
 		B570B1042025F78D008BF8BC /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B570B1002025F771008BF8BC /* Montserrat-Light.otf */; };
@@ -37,14 +41,11 @@
 		B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E7F6F201A845400136E54 /* accessNutritionData.swift */; };
 		B58066FF201E763A00F8FB89 /* validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58066FE201E763A00F8FB89 /* validate.swift */; };
 		B5806701201E7C8100F8FB89 /* signUpOrLogInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5806700201E7C8100F8FB89 /* signUpOrLogInHandler.swift */; };
-		B5A714172024B915009922C4 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A714162024B915009922C4 /* SettingTableViewController.swift */; };
 		B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBD20121623008E11B5 /* ReportViewController.swift */; };
 		B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */; };
 		B5ABB849201B6CD400FC5A0D /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */; };
 		B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */; };
 		B5CF1DEB201802CE0006AD90 /* balanceRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF1DEA201802CE0006AD90 /* balanceRate.swift */; };
-		B5D0C0152023BC7F00E4D6F8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0C0142023BC7F00E4D6F8 /* SettingViewController.swift */; };
-		B5D0C0172023C17900E4D6F8 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0C0162023C17900E4D6F8 /* SettingTableViewCell.swift */; };
 		B5D0CC73201B8669005295BC /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0CC70201B8669005295BC /* SkyFloatingLabelTextField.swift */; };
 		B5D0CC74201B8669005295BC /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0CC71201B8669005295BC /* UITextField+fixCaretPosition.swift */; };
 		B5D0CC75201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0CC72201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift */; };
@@ -88,6 +89,7 @@
 		9CCF8A4D64473F57091EEFC0 /* Pods-Food Diary App!UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Diary App!UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Food Diary App!UITests/Pods-Food Diary App!UITests.release.xcconfig"; sourceTree = "<group>"; };
 		A08B397D9C4F0A1F200238EE /* Pods-Food Diary App!UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Diary App!UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Food Diary App!UITests/Pods-Food Diary App!UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Diary_App_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B50322DD20267F4900584FA0 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		B506BECB2015401000680B46 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		B508F576201D37330025205C /* apple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apple.json; sourceTree = "<group>"; };
 		B5214F96201FC53C008E66F4 /* HomeScreenAni.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HomeScreenAni.json; sourceTree = "<group>"; };
@@ -101,6 +103,9 @@
 		B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionSettingTableViewController.swift; sourceTree = "<group>"; };
 		B55C97C2201BDD600087E29D /* LogInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPageViewController.swift; sourceTree = "<group>"; };
 		B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
+		B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlanViewController.swift; sourceTree = "<group>"; };
+		B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectPlanViewController.xib; sourceTree = "<group>"; };
+		B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
 		B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		B570B1002025F771008BF8BC /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
 		B570B1012025F776008BF8BC /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
@@ -121,14 +126,11 @@
 		B57E7F6F201A845400136E54 /* accessNutritionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessNutritionData.swift; sourceTree = "<group>"; };
 		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
 		B5806700201E7C8100F8FB89 /* signUpOrLogInHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpOrLogInHandler.swift; sourceTree = "<group>"; };
-		B5A714162024B915009922C4 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingTableViewController.swift; path = "Food Diary App!/Controller/SettingTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
 		B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
 		B5C42E271FF80F8D002B887A /* Core Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Core Data.xcdatamodel"; sourceTree = "<group>"; };
 		B5CF1DEA201802CE0006AD90 /* balanceRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = balanceRate.swift; sourceTree = "<group>"; };
-		B5D0C0142023BC7F00E4D6F8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		B5D0C0162023C17900E4D6F8 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		B5D0CC70201B8669005295BC /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		B5D0CC71201B8669005295BC /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		B5D0CC72201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
@@ -225,7 +227,6 @@
 				B5F61738200FAED900B0C871 /* Assets.xcassets */,
 				B57935351FE022DE00E663DB /* AppDelegate.swift */,
 				B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */,
-				B579353E1FE022DE00E663DB /* LaunchScreen.storyboard */,
 				B57935411FE022DE00E663DB /* Info.plist */,
 				B57935631FE0234600E663DB /* GoogleService-Info.plist */,
 			);
@@ -284,10 +285,10 @@
 				B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */,
 				B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */,
 				B5A9ADBD20121623008E11B5 /* ReportViewController.swift */,
-				B5D0C0162023C17900E4D6F8 /* SettingTableViewCell.swift */,
-				B5A714162024B915009922C4 /* SettingTableViewController.swift */,
-				B5D0C0142023BC7F00E4D6F8 /* SettingViewController.swift */,
+				B50322DD20267F4900584FA0 /* SettingTableViewController.swift */,
 				B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */,
+				B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */,
+				B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -296,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				B57935391FE022DE00E663DB /* Main.storyboard */,
+				B579353E1FE022DE00E663DB /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +314,7 @@
 				B5D5E6C520211D3D009BE907 /* CoreDataHandler.swift */,
 				B58066FE201E763A00F8FB89 /* validate.swift */,
 				B5806700201E7C8100F8FB89 /* signUpOrLogInHandler.swift */,
+				B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */,
 				B508F577201D37330025205C /* apple.json in Resources */,
 				B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */,
+				B56F51DA202659F400F36D9E /* SelectPlanViewController.xib in Resources */,
 				B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */,
 				B579353B1FE022DE00E663DB /* Main.storyboard in Resources */,
 				B5214F97201FC53C008E66F4 /* HomeScreenAni.json in Resources */,
@@ -690,14 +694,14 @@
 				B5D0CC75201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				B55C97C5201BDEFA0087E29D /* RecoverPasswordViewController.swift in Sources */,
 				B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */,
-				B5D0C0172023C17900E4D6F8 /* SettingTableViewCell.swift in Sources */,
+				B56F51D9202659F400F36D9E /* SelectPlanViewController.swift in Sources */,
+				B50322DE20267F4900584FA0 /* SettingTableViewController.swift in Sources */,
 				B55645F22024C80100E587BA /* NutritionSettingTableViewController.swift in Sources */,
 				B5ABB849201B6CD400FC5A0D /* SignUpPageViewController.swift in Sources */,
 				B54DEF4D20112EB900251A19 /* FileManagerModel.swift in Sources */,
+				B56F51DE20267B1000F36D9E /* UserDefaultsHandler.swift in Sources */,
 				B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */,
 				B5D0CC73201B8669005295BC /* SkyFloatingLabelTextField.swift in Sources */,
-				B5D0C0152023BC7F00E4D6F8 /* SettingViewController.swift in Sources */,
-				B5A714172024B915009922C4 /* SettingTableViewController.swift in Sources */,
 				B5214F99201FE4E9008E66F4 /* DemoHomePageViewController.swift in Sources */,
 				B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */,
 				B5D5E6C820212452009BE907 /* HealthPercentageCalculator.swift in Sources */,

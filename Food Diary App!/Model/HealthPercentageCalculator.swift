@@ -14,18 +14,19 @@ struct HealthPercentageCalculator
     private var fileName: [String] = [] // Storing the names of the images to get images
     
     // Nutrition Info Variables
-    private var dairyList: [Int] = []
-    private var vegetableList: [Int] = []
-    private var proteinList: [Int] = []
-    private var fruitList: [Int] = []
-    private var grainList: [Int] = []
+    var dairyList: [Double] = []
+    var vegetableList: [Double] = []
+    var proteinList: [Double] = []
+    var fruitList: [Double] = []
+    var grainList: [Double] = []
     
     // The daily food balance standard
-    private let vegetableStandard = 4.0
-    private let fruitStandard = 3.0
-    private let grainStandard = 6.0
-    private let dairyStandard = 3.0
-    private let proteinStandard = 3.0
+    private var userPlan: [Double] = []
+    private var vegetableStandard = 4.0
+    private var fruitStandard = 3.0
+    private var grainStandard = 6.0
+    private var dairyStandard = 3.0
+    private var proteinStandard = 3.0
     
     //Save the date the user record on
     private var dateSaved: [String] = []
@@ -44,8 +45,23 @@ struct HealthPercentageCalculator
     private var averageFruit = 0.0
     private var averageDairy = 0.0
     
-    init(fileNames: [String], nutritionDic:[String:[Int]])
+    
+    
+    init(fileNames: [String], nutritionDic:[String:[Double]])
     {
+        /*
+         * Access user defaults
+         */
+        var defaults = UserDefaultsHandler()
+        let userPlan = defaults.getPlanStandard() as! [Double]
+        
+        //-- Set Standard
+        grainStandard = userPlan[0]
+        vegetableStandard = userPlan[1]
+        fruitStandard = userPlan[2]
+        dairyStandard = userPlan[3]
+        proteinStandard = userPlan [4]
+        
         self.fileName = getTrimmedDate(Name: fileNames)
         dairyList = nutritionDic["dairyList"]!
         vegetableList = nutritionDic["vegetableList"]!
@@ -57,7 +73,6 @@ struct HealthPercentageCalculator
     
     private mutating func calculateOverallHealthRate()
     {
-        
         calculateEachElementDailyTotalCount()
         convertDailyCountIntoBalancePercentage()
         getAverageOfEachElement()
@@ -65,17 +80,17 @@ struct HealthPercentageCalculator
     
     private mutating func calculateEachElementDailyTotalCount()
     {
-        var v = 0
-        var d = 0
-        var g = 0
-        var p = 0
-        var f = 0
+        var v = 0.0
+        var d = 0.0
+        var g = 0.0
+        var p = 0.0
+        var f = 0.0
         
         for i in 0 ..< fileName.count - 1
         {
             if fileName[i] == fileName[i + 1]
             {
-                v += vegetableList [i]
+                v += vegetableList[i]
                 p += proteinList [i]
                 d += dairyList [i]
                 f += fruitList [i]

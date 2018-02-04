@@ -21,30 +21,30 @@ class homepageViewController: UIViewController {
     @IBOutlet weak var vegetableCircularSlider: KDCircularProgress!
     @IBOutlet weak var circularSlider: KDCircularProgress!
     @IBOutlet weak var centerFace: UIButton!
-    var healthPercentage = 0.0
-    var vegetablePercentage = 0.0
-    var dairyPercentage = 0.0
-    var fruitPercentage = 0.0
-    var proteinPercentage = 0.0
-    var grainPercentage = 0.0
+    private var healthPercentage = 0.0
+    private var vegetablePercentage = 0.0
+    private var dairyPercentage = 0.0
+    private var fruitPercentage = 0.0
+    private var proteinPercentage = 0.0
+    private var grainPercentage = 0.0
     
     // General Variables
-    var images: [UIImage] = [] // Storing Images
-    var fileName: [String] = [] // Storing the names of the images to get images
-    var notes: [String] = [] // Storing notes
+    private var images: [UIImage] = [] // Storing Images
+    private var fileName: [String] = [] // Storing the names of the images to get images
+    private var notes: [String] = [] // Storing notes
     
     // Nutrition Info Variables
-    var dairyList: [Int] = []
-    var vegetableList: [Int] = []
-    var proteinList: [Int] = []
-    var fruitList: [Int] = []
-    var grainList: [Int] = []
+    private var dairyList: [Double] = []
+    private var vegetableList: [Double] = []
+    private var proteinList: [Double] = []
+    private var fruitList: [Double] = []
+    private var grainList: [Double] = []
+    
+    private var dataHandler = CoreDataHandler()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-      //  circularSlider.startAngle = -90.0
-        var dataHandler = CoreDataHandler()
         var nutritionDic = dataHandler.get5nList()
         dairyList = nutritionDic["dairyList"]!
         vegetableList = nutritionDic["vegetableList"]!
@@ -52,8 +52,10 @@ class homepageViewController: UIViewController {
         fruitList = nutritionDic["fruitList"]!
         grainList = nutritionDic["grainList"]!
         fileName = dataHandler.getImageFilename()
-        print(fileName)
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
         //-- access nutrtiion data nad blaance rate.swift
         if fileName.count > 2 // After 2 meal
         {

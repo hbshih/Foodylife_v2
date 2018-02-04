@@ -24,20 +24,44 @@ class NutritionSettingTableViewController: UITableViewController {
     @IBOutlet weak var fruitSwitch: UIStepper!
     @IBOutlet weak var dairySwitch: UIStepper!
     
+    private var standard: [Double] = [0.0,0.0,0.0,0.0,0.0]
+    private let maleDefaultSet = [9.0,4.0,7.0,2.0,3.0]
+    private let femaleDefauthSet = [6.0,3.0,6.0,2.0,3.0]
+    private var custom = [1.0,2.0,3.0,4.0,5.0]
+    var planType:String = ""
     
-    private let maleDefaultSet = [5,4,8,7,2]
-    private let femaleDefauthSet = [2,3,4,5,6]
-    private var customSet = [5,5,5,5,5]
+    var defaults = UserDefaultsHandler()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         valueEditable(flag: false)
-        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let plan = defaults.getPlanStandard() as? [Double]
+        {
+            standard = plan
+            setTextfields()
+            if plan == maleDefaultSet
+            {
+                maleCell.accessoryType = .checkmark
+                planType = "Male"
+            }else if plan == femaleDefauthSet
+            {
+                femaleCell.accessoryType = .checkmark
+                planType = "Female"
+            }else
+            {
+                customCell.accessoryType = .checkmark
+                valueEditable(flag: true)
+                planType = "Custom"
+            }
+        }
+    }
+    
     @IBAction func grainStepper(_ sender: UIStepper)
     {
-        let value = Int(sender.value)
+        let value = Double(sender.value)
         switch sender.tag
         {
         case 0:
@@ -61,19 +85,45 @@ class NutritionSettingTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setStandard(type: String)
+    func setStandard()
     {
-        var standard: [Int] = []
-        if type == "Male"
+        if planType == "Male"
         {
             standard = maleDefaultSet
-        }else if type == "Female"
+        }else if planType == "Female"
         {
             standard = femaleDefauthSet
         }else
         {
-            standard = customSet
+            //nothing
         }
+        setTextfields()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        print("Plan Type : \(planType)")
+        var Callstandard: [Double] = []
+        if planType == "Custom"
+        {
+            Callstandard = getCustomValues()
+        }else
+        {
+            Callstandard = standard
+        }
+        defaults.setPlanStandard(value: Callstandard)
+        print("saved \(Callstandard)")
+        print("I am disappearing")
+        //defaults.setPlanStandard(value: standard)
+    }
+    
+    func getCustomValues() -> [Double]
+    {
+        return [Double(grainValue.text!)!,Double(vegetableValue.text!)!,Double(proteinValue.text!)!,Double(fruitValue.text!)!,Double(dairyValue.text!)!]
+    }
+    
+    func setTextfields()
+    {
         grainValue.text = String(standard[0])
         vegetableValue.text = String(standard[1])
         proteinValue.text = String(standard[2])
@@ -85,7 +135,6 @@ class NutritionSettingTableViewController: UITableViewController {
         proteinSwitch.value = Double(standard[2])
         fruitSwitch.value = Double(standard[3])
         dairySwitch.value = Double(standard[4])
-        
     }
     
     
@@ -118,6 +167,8 @@ class NutritionSettingTableViewController: UITableViewController {
         }
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         maleCell.accessoryType = UITableViewCellAccessoryType.none
         femaleCell.accessoryType = UITableViewCellAccessoryType.none
@@ -130,20 +181,21 @@ class NutritionSettingTableViewController: UITableViewController {
             case 0:
                 maleCell.accessoryType = UITableViewCellAccessoryType.checkmark
                 valueEditable(flag: false)
-                setStandard(type: "Male")
+                planType = "Male"
                 
             case 1:
                 femaleCell.accessoryType = UITableViewCellAccessoryType.checkmark
                 valueEditable(flag: false)
-                setStandard(type: "Female")
+                planType = "Female"
                 
             case 2:
                 customCell.accessoryType = UITableViewCellAccessoryType.checkmark
                 valueEditable(flag: true)
-                setStandard(type: "Custom")
+                planType = "Custom"
             default:
                 print("None")
             }
         }
+        setStandard()
     }
 }

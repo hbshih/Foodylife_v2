@@ -17,11 +17,11 @@ class DiaryTableViewController: UITableViewController {
     var notes: [String] = [] // Storing notes
     
     // Nutrition Info Variables
-    var dairyList: [Int] = []
-    var vegetableList: [Int] = []
-    var proteinList: [Int] = []
-    var fruitList: [Int] = []
-    var grainList: [Int] = []
+    var dairyList: [Double] = []
+    var vegetableList: [Double] = []
+    var proteinList: [Double] = []
+    var fruitList: [Double] = []
+    var grainList: [Double] = []
     
     
     override func viewDidLoad() {

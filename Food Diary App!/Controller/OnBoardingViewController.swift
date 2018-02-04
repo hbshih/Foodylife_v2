@@ -8,9 +8,11 @@
 
 import UIKit
 import SwiftyOnboard
+import PopupDialog
 
 class OnBoardingViewController: UIViewController {
 
+    var defaults = UserDefaultsHandler()
     var swiftyOnboard: SwiftyOnboard!
     let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.7150892615, blue: 0, alpha: 1),#colorLiteral(red: 0.5621222854, green: 0.7577332258, blue: 0, alpha: 1),#colorLiteral(red: 1, green: 0.6476797462, blue: 0, alpha: 1),#colorLiteral(red: 0.2067656815, green: 0.8225870728, blue: 1, alpha: 1)]
     var titleArray: [String] = ["Welcome to FoodyLife!", "Make food tracking easy", "Balance your diet", "Become Healthier!"]
@@ -26,15 +28,22 @@ class OnBoardingViewController: UIViewController {
         return gradiant
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        gradient()
-        UIApplication.shared.statusBarStyle = .lightContent
-        
-        swiftyOnboard = SwiftyOnboard(frame: view.frame, style: .light)
-        view.addSubview(swiftyOnboard)
-        swiftyOnboard.dataSource = self as! SwiftyOnboardDataSource
-        swiftyOnboard.delegate = self as? SwiftyOnboardDelegate
+        let ShowOnBoard = defaults.getOnboardingStatus()
+        if ShowOnBoard == nil || ShowOnBoard == false
+        {
+            gradient()
+            UIApplication.shared.statusBarStyle = .lightContent
+            swiftyOnboard = SwiftyOnboard(frame: view.frame, style: .light)
+            view.addSubview(swiftyOnboard)
+            swiftyOnboard.dataSource = self as SwiftyOnboardDataSource
+            swiftyOnboard.delegate = self as? SwiftyOnboardDelegate
+        }else
+        {
+            DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute:{self.performSegue(withIdentifier: "getStartedSegue", sender: self)})
+        }
     }
     
     func gradient() {
@@ -53,8 +62,37 @@ class OnBoardingViewController: UIViewController {
         if index == 3
         {
             print("GET STARTED!")
-            performSegue(withIdentifier: "getStartedSegue", sender: nil)
+            selectPlan()
+         //   performSegue(withIdentifier: "getStartedSegue", sender: nil)
         }
+    }
+    
+    func selectPlan()
+    {
+        // Create a custom view controller
+        let selectPlanVC = SelectPlanViewController(nibName: "SelectPlanViewController", bundle: nil)
+        
+        // Create the dialog
+        let popup = PopupDialog(viewController: selectPlanVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true)
+        
+        // Create first button
+        let buttonOne = CancelButton(title: "DECIDE LATER", height: 60) {
+            self.performSegue(withIdentifier: "getStartedSegue", sender: nil)
+        }
+        
+        // Create second button
+        let buttonTwo = DefaultButton(title: "LET'S START", height: 60) {
+            self.defaults.setOnboardingStatus(status: true)
+            self.defaults.setPlanStandard(value: selectPlanVC.getSelectedOption())
+            print("Choosed plan \(selectPlanVC.getSelectedOption())")
+            self.performSegue(withIdentifier: "getStartedSegue", sender: nil)
+        }
+        
+        // Add buttons to dialog
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        present(popup, animated: true, completion: nil)
     }
 }
 
