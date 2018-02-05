@@ -24,6 +24,7 @@
 		B55645F22024C80100E587BA /* NutritionSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */; };
 		B55C97C3201BDD600087E29D /* LogInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C97C2201BDD600087E29D /* LogInPageViewController.swift */; };
 		B55C97C5201BDEFA0087E29D /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */; };
+		B561D6EB2027D0BD00561AE7 /* facebook-circle-heart-love-png-4.png in Resources */ = {isa = PBXBuildFile; fileRef = B561D6EA2027D0BA00561AE7 /* facebook-circle-heart-love-png-4.png */; };
 		B56F51D9202659F400F36D9E /* SelectPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */; };
 		B56F51DA202659F400F36D9E /* SelectPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */; };
 		B56F51DE20267B1000F36D9E /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */; };
@@ -103,6 +104,7 @@
 		B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionSettingTableViewController.swift; sourceTree = "<group>"; };
 		B55C97C2201BDD600087E29D /* LogInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPageViewController.swift; sourceTree = "<group>"; };
 		B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
+		B561D6EA2027D0BA00561AE7 /* facebook-circle-heart-love-png-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-circle-heart-love-png-4.png"; sourceTree = "<group>"; };
 		B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlanViewController.swift; sourceTree = "<group>"; };
 		B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectPlanViewController.xib; sourceTree = "<group>"; };
 		B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				B59F55851FE9566000E22CCD /* Controller */,
 				B59F55841FE9565600E22CCD /* Helper */,
 				B5F61738200FAED900B0C871 /* Assets.xcassets */,
+				B561D6EA2027D0BA00561AE7 /* facebook-circle-heart-love-png-4.png */,
 				B57935351FE022DE00E663DB /* AppDelegate.swift */,
 				B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */,
 				B57935411FE022DE00E663DB /* Info.plist */,
@@ -467,6 +470,7 @@
 				B508F577201D37330025205C /* apple.json in Resources */,
 				B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */,
 				B56F51DA202659F400F36D9E /* SelectPlanViewController.xib in Resources */,
+				B561D6EB2027D0BD00561AE7 /* facebook-circle-heart-love-png-4.png in Resources */,
 				B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */,
 				B579353B1FE022DE00E663DB /* Main.storyboard in Resources */,
 				B5214F97201FC53C008E66F4 /* HomeScreenAni.json in Resources */,

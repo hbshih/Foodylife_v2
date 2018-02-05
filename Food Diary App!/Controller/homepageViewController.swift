@@ -11,6 +11,7 @@ import SCLAlertView
 import FirebaseDatabase
 import FirebaseAuth
 import CoreData
+import Spring
 
 class homepageViewController: UIViewController {
     
@@ -33,6 +34,7 @@ class homepageViewController: UIViewController {
     private var fileName: [String] = [] // Storing the names of the images to get images
     private var notes: [String] = [] // Storing notes
     
+    @IBOutlet weak var animationDemo: UIImageView!
     // Nutrition Info Variables
     private var dairyList: [Double] = []
     private var vegetableList: [Double] = []
@@ -52,7 +54,11 @@ class homepageViewController: UIViewController {
         fruitList = nutritionDic["fruitList"]!
         grainList = nutritionDic["grainList"]!
         fileName = dataHandler.getImageFilename()
+        
+        
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool)
     {
@@ -71,6 +77,18 @@ class homepageViewController: UIViewController {
         {
             print("Haven't got enough data to show")
         }
+
+        animationDemo.alpha = 1
+        self.animationDemo.frame = CGRect(x: 147, y: 157, width: self.animationDemo.frame.width, height: self.animationDemo.frame.height)
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
+            self.animationDemo.frame = CGRect(x: 130, y: 50, width: self.animationDemo.frame.width, height: self.animationDemo.frame.height)
+        }) { (finish) in
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                self.animationDemo.alpha = 0
+            }, completion: nil)
+        }
+       
+
     }
     
     func showCircularSliderData()
@@ -86,7 +104,7 @@ class homepageViewController: UIViewController {
 
     func setSliderColor(value: Double, slider: KDCircularProgress)
     {
-        slider.animate(toAngle: value, duration: 0.5, completion: nil)
+        slider.animate(toAngle: value, duration: 1.5, completion: nil)
         if value >= 0 && value <= 30
         {
             slider.set(colors: UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0))

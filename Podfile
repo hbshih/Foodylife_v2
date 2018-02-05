@@ -25,6 +25,7 @@ target 'Food Diary App!' do
   pod 'RAMAnimatedTabBarController'
   pod 'SwiftyOnboard'
   pod 'PopupDialog'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
 
   target 'Food Diary App!Tests' do
     inherit! :search_paths

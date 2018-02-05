@@ -685,6 +685,13 @@
                                             <constraint firstAttribute="bottom" secondItem="YO9-uL-XPO" secondAttribute="bottom" constant="2" id="ye3-0F-PMk"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTU-an-rri">
+                                        <rect key="frame" x="302" y="345" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="tTU-an-rri" secondAttribute="height" multiplier="1:1" id="LoI-fD-HfI"/>
+                                        </constraints>
+                                        <state key="normal" image="info-2"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -694,6 +701,7 @@
                                     <constraint firstAttribute="height" constant="400" id="7TK-uP-kLe"/>
                                     <constraint firstItem="ZY3-Rg-iWd" firstAttribute="top" secondItem="CIb-Xu-utK" secondAttribute="top" constant="8" id="DGw-5H-OJ4"/>
                                     <constraint firstItem="ZY3-Rg-iWd" firstAttribute="leading" secondItem="g9E-8v-sIh" secondAttribute="trailing" constant="-80" id="F5V-ro-a4B"/>
+                                    <constraint firstItem="tTU-an-rri" firstAttribute="centerY" secondItem="2J7-pg-aTQ" secondAttribute="centerY" id="IAG-Gn-gpd"/>
                                     <constraint firstAttribute="trailing" secondItem="9Yz-n9-XeC" secondAttribute="trailing" constant="5" id="LMO-4X-bYV"/>
                                     <constraint firstAttribute="trailing" secondItem="BAr-gu-p5a" secondAttribute="trailing" constant="5" id="Lpw-4f-svv"/>
                                     <constraint firstItem="wTj-0z-QPC" firstAttribute="centerY" secondItem="g9E-8v-sIh" secondAttribute="centerY" id="a3W-1x-lbr"/>
@@ -703,6 +711,7 @@
                                     <constraint firstItem="2J7-pg-aTQ" firstAttribute="centerX" secondItem="CIb-Xu-utK" secondAttribute="centerX" id="fHf-g8-ygk"/>
                                     <constraint firstItem="g9E-8v-sIh" firstAttribute="top" secondItem="CIb-Xu-utK" secondAttribute="top" constant="30" id="idh-V3-l5v"/>
                                     <constraint firstItem="Z4K-Bv-kMW" firstAttribute="centerX" secondItem="wTj-0z-QPC" secondAttribute="centerX" id="lOj-XR-iCU"/>
+                                    <constraint firstAttribute="trailing" secondItem="tTU-an-rri" secondAttribute="trailing" constant="16" id="n5Q-fe-9a3"/>
                                     <constraint firstItem="g9E-8v-sIh" firstAttribute="leading" secondItem="CIb-Xu-utK" secondAttribute="leading" constant="16" id="pez-Ns-XgJ"/>
                                     <constraint firstItem="9Yz-n9-XeC" firstAttribute="leading" secondItem="CIb-Xu-utK" secondAttribute="leading" constant="5" id="wWB-lZ-cnq"/>
                                     <constraint firstItem="BAr-gu-p5a" firstAttribute="leading" secondItem="CIb-Xu-utK" secondAttribute="leading" constant="5" id="yzv-Sh-29F"/>
@@ -777,6 +786,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="facebook-circle-heart-love-png-4.png" translatesAutoresizingMaskIntoConstraints="NO" id="3pG-aw-l2n">
+                                <rect key="frame" x="147" y="157" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPg-6U-AKF" customClass="KDCircularProgress" customModule="Food_Diary_App_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="375"/>
                                 <subviews>
@@ -804,7 +817,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="I5k-N4-TO3" firstAttribute="centerX" secondItem="WPg-6U-AKF" secondAttribute="centerX" id="Amm-IG-HVY"/>
                                     <constraint firstAttribute="width" secondItem="WPg-6U-AKF" secondAttribute="height" multiplier="1:1" id="WhI-X0-H0o"/>
@@ -1075,6 +1087,7 @@
                     </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="animationDemo" destination="3pG-aw-l2n" id="94X-TM-as1"/>
                         <outlet property="centerFace" destination="I5k-N4-TO3" id="v4m-c0-QtS"/>
                         <outlet property="circularSlider" destination="WPg-6U-AKF" id="SiD-NG-l0J"/>
                         <outlet property="dairyCircularSlider" destination="K1u-qM-M1c" id="chD-NM-96V"/>
@@ -1088,7 +1101,7 @@
                 <customObject id="iGq-cq-jsL" customClass="RAMFumeAnimation" customModule="RAMAnimatedTabBarController"/>
                 <swipeGestureRecognizer direction="right" id="Mcs-lb-UcB"/>
             </objects>
-            <point key="canvasLocation" x="487.5" y="139.43661971830986"/>
+            <point key="canvasLocation" x="487.19999999999999" y="138.98050974512745"/>
         </scene>
         <!--Introduction View Controller-->
         <scene sceneID="1V3-NW-7Bm">
@@ -2133,6 +2146,9 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
                                                     <segue destination="11y-dy-dCj" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="eEZ-Fz-1Hi"/>
                                                 </connections>
                                             </button>
+                                            <connections>
+                                                <segue destination="11y-dy-dCj" kind="custom" customClass="DismissSegue" customModule="IBAnimatable" id="62p-qe-xJc"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -2748,6 +2764,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
         <image name="Timeline_Line" width="3" height="481"/>
         <image name="Timeline_Rect" width="54" height="28"/>
         <image name="camera" width="28" height="25"/>
+        <image name="facebook-circle-heart-love-png-4.png" width="2362" height="2362"/>
         <image name="iPhone 8-2" width="375" height="667"/>
         <image name="icon_dataSetting" width="29" height="29"/>
         <image name="icon_nutritionSetting" width="29" height="29"/>
@@ -11992,6 +12009,7 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="image_SeparatingLine" width="375" height="3"/>
         <image name="image_mat" width="263" height="158"/>
         <image name="image_plate" width="149" height="149"/>
+        <image name="info-2" width="25" height="25"/>
         <image name="mbri-bulleted-list-1" width="30" height="27"/>
         <image name="mbri-growing-chart-1" width="30" height="30"/>
         <image name="mbri-home-1" width="30" height="26"/>
@@ -12004,8 +12022,8 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <segue reference="3Ts-RM-Mb9"/>
         <segue reference="HzW-k9-dOE"/>
         <segue reference="DSz-U6-guT"/>
-        <segue reference="2Q3-47-NRj"/>
+        <segue reference="eEZ-Fz-1Hi"/>
         <segue reference="1gd-EK-yKm"/>
-        <segue reference="wSv-ml-raZ"/>
+        <segue reference="5zp-0J-8XU"/>
     </inferredMetricsTieBreakers>
 </document>
