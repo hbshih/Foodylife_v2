@@ -94,12 +94,12 @@
 		<key>PopupDialog.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>20</integer>
 		</dict>
 		<key>RAMAnimatedTabBarController.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>21</integer>
 		</dict>
 		<key>SCLAlertView.xcscheme</key>
 		<dict>
@@ -125,7 +125,7 @@
 		<key>Spring.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>22</integer>
 		</dict>
 		<key>SwiftyOnboard.xcscheme</key>
 		<dict>
@@ -149,7 +149,7 @@
 		<key>lottie-ios.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>20</integer>
+			<integer>19</integer>
 		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>

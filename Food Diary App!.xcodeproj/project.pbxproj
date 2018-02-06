@@ -12,6 +12,7 @@
 		5ED87B49F86EA263E6B4C293 /* Pods_Food_Diary_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7BBA844F0BBB3BE83A4317 /* Pods_Food_Diary_App_Tests.framework */; };
 		B50322DE20267F4900584FA0 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50322DD20267F4900584FA0 /* SettingTableViewController.swift */; };
 		B506BECC2015401000680B46 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B506BECB2015401000680B46 /* IntroductionViewController.swift */; };
+		B5081E282028AB5100EC3E98 /* APPLEORANGE_loop.gif in Resources */ = {isa = PBXBuildFile; fileRef = B5081E272028AB5000EC3E98 /* APPLEORANGE_loop.gif */; };
 		B508F577201D37330025205C /* apple.json in Resources */ = {isa = PBXBuildFile; fileRef = B508F576201D37330025205C /* apple.json */; };
 		B5214F97201FC53C008E66F4 /* HomeScreenAni.json in Resources */ = {isa = PBXBuildFile; fileRef = B5214F96201FC53C008E66F4 /* HomeScreenAni.json */; };
 		B5214F99201FE4E9008E66F4 /* DemoHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5214F98201FE4E9008E66F4 /* DemoHomePageViewController.swift */; };
@@ -42,6 +43,8 @@
 		B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E7F6F201A845400136E54 /* accessNutritionData.swift */; };
 		B58066FF201E763A00F8FB89 /* validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58066FE201E763A00F8FB89 /* validate.swift */; };
 		B5806701201E7C8100F8FB89 /* signUpOrLogInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5806700201E7C8100F8FB89 /* signUpOrLogInHandler.swift */; };
+		B587EF00202899D1001D7F8E /* InstructionPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587EEFE202899D0001D7F8E /* InstructionPopUpViewController.swift */; };
+		B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */; };
 		B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBD20121623008E11B5 /* ReportViewController.swift */; };
 		B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */; };
 		B5ABB849201B6CD400FC5A0D /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */; };
@@ -92,6 +95,7 @@
 		AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Diary_App_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50322DD20267F4900584FA0 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		B506BECB2015401000680B46 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
+		B5081E272028AB5000EC3E98 /* APPLEORANGE_loop.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = APPLEORANGE_loop.gif; sourceTree = "<group>"; };
 		B508F576201D37330025205C /* apple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apple.json; sourceTree = "<group>"; };
 		B5214F96201FC53C008E66F4 /* HomeScreenAni.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HomeScreenAni.json; sourceTree = "<group>"; };
 		B5214F98201FE4E9008E66F4 /* DemoHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoHomePageViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 		B57E7F6F201A845400136E54 /* accessNutritionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessNutritionData.swift; sourceTree = "<group>"; };
 		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
 		B5806700201E7C8100F8FB89 /* signUpOrLogInHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpOrLogInHandler.swift; sourceTree = "<group>"; };
+		B587EEFE202899D0001D7F8E /* InstructionPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionPopUpViewController.swift; sourceTree = "<group>"; };
+		B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionPopUpViewController.xib; sourceTree = "<group>"; };
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
 		B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +263,7 @@
 		B59F55841FE9565600E22CCD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B5081E272028AB5000EC3E98 /* APPLEORANGE_loop.gif */,
 				B570B1062025F79E008BF8BC /* Font */,
 				B5ED8496201D3087009062D7 /* PinJump.json */,
 				B508F576201D37330025205C /* apple.json */,
@@ -292,6 +299,8 @@
 				B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */,
 				B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */,
 				B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */,
+				B587EEFE202899D0001D7F8E /* InstructionPopUpViewController.swift */,
+				B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -468,6 +477,7 @@
 				B5ED8495201D152D009062D7 /* appleOrange.json in Resources */,
 				B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */,
 				B508F577201D37330025205C /* apple.json in Resources */,
+				B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */,
 				B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */,
 				B56F51DA202659F400F36D9E /* SelectPlanViewController.xib in Resources */,
 				B561D6EB2027D0BD00561AE7 /* facebook-circle-heart-love-png-4.png in Resources */,
@@ -475,6 +485,7 @@
 				B579353B1FE022DE00E663DB /* Main.storyboard in Resources */,
 				B5214F97201FC53C008E66F4 /* HomeScreenAni.json in Resources */,
 				B5ED8497201D3087009062D7 /* PinJump.json in Resources */,
+				B5081E282028AB5100EC3E98 /* APPLEORANGE_loop.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +690,7 @@
 				B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */,
 				B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */,
 				B5806701201E7C8100F8FB89 /* signUpOrLogInHandler.swift in Sources */,
+				B587EF00202899D1001D7F8E /* InstructionPopUpViewController.swift in Sources */,
 				B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */,
 				B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */,
 				B55C97C3201BDD600087E29D /* LogInPageViewController.swift in Sources */,
@@ -883,7 +895,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BenShih.Food-Diary-App-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -899,7 +911,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BenShih.Food-Diary-App-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import PopupDialog
 
 class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
 {
@@ -267,6 +268,24 @@ class ConfirmPhotoViewController:UIViewController, UITextViewDelegate
     {
         let mes = AlertMessage()
         mes.displayAlert(title: title, message: message, VC: self)
+    }
+    @IBAction func instructionTapped(_ sender: Any)
+    {
+        // Create a custom view controller
+        let InstructionPopUpVC = InstructionPopUpViewController(nibName: "InstructionPopUpViewController", bundle: nil)
+        
+        // Create the dialog
+        let popup = PopupDialog(viewController: InstructionPopUpVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true)
+        
+        // Create first button
+        let buttonOne = CancelButton(title: "I understand now", height: 60) {
+        }
+        
+        // Add buttons to dialog
+        popup.addButtons([buttonOne])
+        
+        // Present dialog
+        present(popup, animated: true, completion: nil)
     }
     
     override var prefersStatusBarHidden: Bool
