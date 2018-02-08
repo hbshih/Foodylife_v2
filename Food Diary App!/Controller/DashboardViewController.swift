@@ -26,6 +26,7 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         
         //Building interface
         buildDashboard()
@@ -122,6 +123,10 @@ class DashboardViewController: UIViewController {
             slider.set(colors: UIColor(red:0.60, green:0.80, blue:0.29, alpha:1.0))
             slider.trackColor = UIColor(red:0.60, green:0.80, blue:0.29, alpha:0.2)
         }
+    }
+    @IBAction func BackTapped(_ sender: Any)
+    {
+        dismiss(animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning()

@@ -11,6 +11,7 @@ import ScrollableGraphView
 
 class ReportViewController: UIViewController, ScrollableGraphViewDataSource
 {
+
     @IBOutlet weak var graphField: UIView!
     @IBOutlet weak var percentageLabel: UILabel!
     
@@ -28,6 +29,7 @@ class ReportViewController: UIViewController, ScrollableGraphViewDataSource
     // Init
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         //Get initial data from core Data
         var coreManager = CoreDataHandler()
         //Calculate data
@@ -40,6 +42,7 @@ class ReportViewController: UIViewController, ScrollableGraphViewDataSource
         self.graphField.addSubview(graphView)
         percentageLabel.text = "\((round(healthData.getAverageHealth()*100)/100))%"
         setupConstraints()
+        
     }
     
     // drawing the values to the graph

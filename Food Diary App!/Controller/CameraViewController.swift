@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import RAMAnimatedTabBarController
 
-class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
+class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var captureSesssion : AVCaptureSession!
     var cameraOutput : AVCapturePhotoOutput!
@@ -148,6 +148,26 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             }
         }
 
+    }
+    @IBAction func uploadPhotoTapped(_ sender: Any)
+    {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        let imagePicked = info[UIImagePickerControllerOriginalImage] as! UIImage
+        image = imagePicked
+        dismiss(animated: true) {
+            print("Dismissed")
+            self.performSegue(withIdentifier: "confirmPhotoSegue", sender: nil)
+        }
     }
     
 }

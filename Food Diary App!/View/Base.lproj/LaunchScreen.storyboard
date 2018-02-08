@@ -18,12 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo_Foody Life" translatesAutoresizingMaskIntoConstraints="NO" id="F2z-g8-qTK">
-                                <rect key="frame" x="88" y="280" width="198" height="106"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wallpaper-1" translatesAutoresizingMaskIntoConstraints="NO" id="F2z-g8-qTK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.88898558937823835" green="0.77629819089265595" blue="0.45900503262806708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="F2z-g8-qTK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LOA-Lg-eHm"/>
+                            <constraint firstItem="F2z-g8-qTK" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="QA2-44-X3Z"/>
+                            <constraint firstItem="F2z-g8-qTK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X6r-C8-HI1"/>
+                            <constraint firstItem="F2z-g8-qTK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tZM-Vm-dW8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -33,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo_Foody Life" width="266" height="56"/>
+        <image name="Wallpaper-1" width="375" height="667"/>
     </resources>
 </document>

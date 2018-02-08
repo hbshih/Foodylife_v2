@@ -79,9 +79,9 @@ class homepageViewController: UIViewController {
         }
 
         animationDemo.alpha = 1
-        self.animationDemo.frame = CGRect(x: 147, y: 157, width: self.animationDemo.frame.width, height: self.animationDemo.frame.height)
+        self.animationDemo.frame = CGRect(x: 153, y: 123, width: self.animationDemo.frame.width, height: self.animationDemo.frame.height)
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
-            self.animationDemo.frame = CGRect(x: 130, y: 50, width: self.animationDemo.frame.width, height: self.animationDemo.frame.height)
+            self.animationDemo.frame = CGRect(x: 90, y: 50, width: self.animationDemo.frame.width, height: self.animationDemo.frame.height)
         }) { (finish) in
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
                 self.animationDemo.alpha = 0
