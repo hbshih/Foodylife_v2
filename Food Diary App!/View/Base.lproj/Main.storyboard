@@ -2007,7 +2007,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="58p-tm-y12">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="4pe-rb-ga2">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D1t-Lt-9j6">
-                                <rect key="frame" x="-23" y="-15" width="86" height="32"/>
+                                <rect key="frame" x="16" y="6" width="86" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Button_Back_Orange"/>
                                 <connections>
@@ -12173,11 +12173,12 @@ WQAAAAAAAAAAAAAAAAAIcZk
         <image name="settings" width="21" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="34h-gc-Teg"/>
+        <segue reference="hdb-Cv-0Ws"/>
+        <segue reference="J5g-rl-4FN"/>
         <segue reference="127-SN-MXU"/>
         <segue reference="HzW-k9-dOE"/>
         <segue reference="DSz-U6-guT"/>
-        <segue reference="hiA-i1-PdZ"/>
+        <segue reference="Byg-c1-ksH"/>
         <segue reference="1gd-EK-yKm"/>
         <segue reference="v1n-Cz-j5E"/>
     </inferredMetricsTieBreakers>

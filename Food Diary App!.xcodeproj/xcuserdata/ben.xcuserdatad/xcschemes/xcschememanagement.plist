@@ -7,7 +7,25 @@
 		<key>Food Diary App!.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>22</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>B57935311FE022DE00E663DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B57935451FE022DE00E663DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B57935501FE022DE00E663DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

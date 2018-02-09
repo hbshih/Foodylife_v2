@@ -12,6 +12,8 @@ import FirebaseDatabase
 import FirebaseAuth
 import CoreData
 import Spring
+import Crashlytics
+import FirebaseAnalytics
 
 class homepageViewController: UIViewController {
     
@@ -33,6 +35,8 @@ class homepageViewController: UIViewController {
     private var images: [UIImage] = [] // Storing Images
     private var fileName: [String] = [] // Storing the names of the images to get images
     private var notes: [String] = [] // Storing notes
+    private var messageCounter = 0
+    private var messageToUsers = ["Poke my eye as much as you want, meatbag. Soon I'll have my revenge.","What?!","This is impossible","I paid that assassin good money to get you stop poking my face!","How did you manage to evade his daggers?","Oh. The police blotter says he was arrested outside a public restroom.","You get to keep stabbing your finger into my eye.","Over...","and Over..."]
     
     @IBOutlet weak var animationDemo: UIImageView!
     // Nutrition Info Variables
@@ -55,9 +59,22 @@ class homepageViewController: UIViewController {
         grainList = nutritionDic["grainList"]!
         fileName = dataHandler.getImageFilename()
         
+        let button = UIButton(type: .roundedRect)
+        button.frame = CGRect(x: 20, y: 50, width: 100, height: 30)
+        button.setTitle("Crash", for: [])
+        button.addTarget(self, action: #selector(self.crashButtonTapped(_:)), for: .touchUpInside)
+        view.addSubview(button)
         
     }
     
+    @IBAction func crashButtonTapped(_ sender: AnyObject) {
+        Crashlytics.sharedInstance().crash()
+    }
+    
+    @IBAction func errorTest(_ sender: Any)
+    {
+        Crashlytics.sharedInstance().crash()
+    }
     
     
     override func viewDidAppear(_ animated: Bool)
@@ -142,6 +159,7 @@ class homepageViewController: UIViewController {
     
     @IBAction func faceTapped(_ sender: Any)
     {
+        Analytics.logEvent("FaceTapped", parameters: ["times": messageCounter])
         let appearance = SCLAlertView.SCLAppearance(
             //kCircleIconHeight: 55.0
             kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
@@ -152,7 +170,8 @@ class homepageViewController: UIViewController {
         let alert = SCLAlertView(appearance: appearance)
         let icon = UIImage(named:"Alert_Yellow.png")
         let color = UIColor.orange        
-        _ = alert.showCustom("STOP", subTitle: "STOP TOUCHING MY EYES! YOU MEATBALL", color: color, icon: icon!)
+        _ = alert.showCustom("FOODY FACE", subTitle: messageToUsers[messageCounter % messageToUsers.count], color: color, icon: icon!)
+        messageCounter += 1
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

@@ -26,6 +26,10 @@ target 'Food Diary App!' do
   pod 'SwiftyOnboard'
   pod 'PopupDialog'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+pod 'Fabric'
+pod 'Crashlytics'
+pod 'Firebase/Performance'
+pod 'Firebase/Messaging'
 
   target 'Food Diary App!Tests' do
     inherit! :search_paths

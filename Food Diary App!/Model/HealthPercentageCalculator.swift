@@ -156,11 +156,31 @@ struct HealthPercentageCalculator
         for i in 0 ..< dateSaved.count
         {
             dayCountVegetable[i] = ((dayCountVegetable[i] / vegetableStandard)*100).rounded()
+            if dayCountVegetable[i] > 20.0
+            {
+                dayCountVegetable[i] = 20.0
+            }
             dayCountDairy[i] = ((dayCountDairy[i] / dairyStandard)*100).rounded()
+            if dayCountDairy[i] > 20
+            {
+                dayCountDairy[i] = 20
+            }
             dayCountProtein[i] = ((dayCountProtein[i] / proteinStandard)*100).rounded()
+            if dayCountProtein[i] > 20
+            {
+                dayCountProtein[i] = 20
+            }
             dayCountFruit[i] = ((dayCountFruit[i] / fruitStandard)*100).rounded()
+            if dayCountFruit[i] > 20
+            {
+                dayCountFruit[i] = 20
+            }
             dayCountGrain[i] = ((dayCountGrain[i] / grainStandard)*100).rounded()
-            dayBalancePercentage.append((dayCountGrain[i] + dayCountFruit[i] + dayCountProtein[i] + dayCountDairy[i] + dayCountVegetable[i]) / 5.0)
+            if dayCountGrain[i] > 20
+            {
+                dayCountGrain[i] = 20
+            }
+            dayBalancePercentage.append((dayCountGrain[i] + dayCountFruit[i] + dayCountProtein[i] + dayCountDairy[i] + dayCountVegetable[i]))
         }
         print("###")
         print("DaycountOfVege: \(dayCountVegetable)")
