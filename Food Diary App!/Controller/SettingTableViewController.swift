@@ -7,48 +7,73 @@
 //
 
 import UIKit
+import UserNotifications
 
-class SettingTableViewController: UITableViewController {
-
-    override func viewDidLoad() {
+class SettingTableViewController: UITableViewController
+{
+    @IBOutlet weak var notificationSwitch: UISwitch!
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        print("Notification Status \(UserDefaultsHandler().getNotificationStatus())")
+        if UserDefaultsHandler().getNotificationStatus()
+        {
+            notificationSwitch.setOn(true, animated: false)
+        }else
+        {
+           notificationSwitch.setOn(false, animated: false)
+        //    notificationSwitch.isOn = false
+        }
     }
-
+    @IBAction func smartNotificationSwitch(_ sender: Any)
+    {
+        if (notificationSwitch.isOn)
+        {
+            SCLAlertMessage(title: "Love you 💕", message: "I will remind you when you should improve your balance diet").showMessage()
+            UserDefaultsHandler().setNotificationStatus(flag: true)
+        }
+        else
+        {
+            SCLAlertMessage(title: "Awwwww", message: "I will not bother you when you are eating imbalance, but don't forget to keep recording your food diary with me").showMessage()
+            UserDefaultsHandler().setNotificationStatus(flag: false)
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (req) in
+                print(req)
+            })
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
+    // Showing all settings options
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         print(indexPath.row)
-        if indexPath.row == 0
+        if indexPath.row == 1
         {
             performSegue(withIdentifier: "nutritionSettings", sender: nil)
-        }else if indexPath.row == 1
-        {
-            performSegue(withIdentifier: "dataSettingsSegue", sender: nil)
         }else if indexPath.row == 2
         {
-                        performSegue(withIdentifier: "privatePolicySegue", sender: nil)
+            performSegue(withIdentifier: "dataSettingsSegue", sender: nil)
         }else if indexPath.row == 3
         {
-            performSegue(withIdentifier: "privatePolicySegue", sender: nil)
+            performSegue(withIdentifier: "conditionSegue", sender: nil)
         }else if indexPath.row == 4
         {
+            performSegue(withIdentifier: "privacySegue", sender: nil)
+        }else if indexPath.row == 5
+        {
             performSegue(withIdentifier: "reportABugSegue", sender: nil)
+        }else if indexPath.row == 6
+        {
+            performSegue(withIdentifier: "licenseSegue", sender: nil)
         }else
         {
-            performSegue(withIdentifier: "privatePolicySegue", sender: nil)
+            //Do nothing
+            
         }
-        
     }
+    
 }

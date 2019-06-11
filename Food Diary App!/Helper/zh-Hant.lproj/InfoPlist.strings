@@ -1,0 +1,13 @@
+/* 
+  InfoPlist.strings
+  Food Diary App!
+
+  Created by Ben Shih on 21/03/2018.
+  Copyright © 2018 BenShih. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "吃貨人生";
+"CFBundleName" = "吃貨人生";
+"NSCameraUsageDescription" = "需要取得您的授權才能使用相機功能";
+"NSPhotoLibraryAddUsageDescription" = "需要取得您的授權才能將照片加入相簿";
+"NSPhotoLibraryUsageDescription" = "需要取得您的授權才能使用相簿";

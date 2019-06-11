@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Food Diary App!
+
+  Created by Ben Shih on 21/03/2018.
+  Copyright © 2018 BenShih. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "Foody Life!"
+"CFBundleName" = "Foody Life!"

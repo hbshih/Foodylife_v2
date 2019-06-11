@@ -8,10 +8,9 @@
 
 import UIKit
 import Firebase
-import FBSDKCoreKit
-import IQKeyboardManagerSwift
 import CoreData
 import Fabric
+import IQKeyboardManagerSwift
 import UserNotifications
 
 @UIApplicationMain
@@ -19,43 +18,122 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     var window: UIWindow?
     
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
-    }
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        //Firebases
-        FirebaseApp.configure()
         
-        if #available(iOS 10.0, *) {
-            // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.current().delegate = self
-            
-            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-            UNUserNotificationCenter.current().requestAuthorization(
-                options: authOptions,
-                completionHandler: {_, _ in })
-        } else {
-            let settings: UIUserNotificationSettings =
-                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            application.registerUserNotificationSettings(settings)
-        }
+        UNUserNotificationCenter.current().delegate = self
+        Messaging.messaging().delegate = self as? MessagingDelegate
+        
+        //Firebafses
+        FirebaseApp.configure()
+        //        if #available(iOS 8.0, *)
+        //        {
+        //            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert,.sound], categories: nil)
+        //            application.registerUserNotificationSettings(settings)
+        //            application.registerForRemoteNotifications()
+        //        }else
+        //        {
+        //            let types: UIRemoteNotificationType = [.alert,.sound]
+        //            application.registerForRemoteNotifications(matching: types)
+        //        }
+        
+        //        if #available(iOS 10.0, *) {
+        //            // For iOS 10 display notification (sent via APNS)
+        //            UNUserNotificationCenter.current().delegate = self
+        //
+        //            let authOptions: UNAuthorizationOptions = [.alert, .sound]
+        //            UNUserNotificationCenter.current().requestAuthorization(
+        //                options: authOptions,
+        //                completionHandler: {_, _ in })
+        //        } else {
+        //            let settings: UIUserNotificationSettings =
+        //                UIUserNotificationSettings(types: [.alert, .sound], categories: nil)
+        //            application.registerUserNotificationSettings(settings)
+        //        }
         
         application.registerForRemoteNotifications()
         
-        if let token = InstanceID.instanceID().token()
-        {
-            print("Token : \(token)")
+        //        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (success, error) in
+        //
+        //            if error != nil {
+        //                print("Authorization Unsuccessfull")
+        //            }else {
+        //                print("Authorization Successfull")
+        //            }
+        //        }
+        
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            if settings.authorizationStatus != .authorized
+            {
+                print("Notification Not Authorized")
+                // Notifications not allowed
+            }else
+            {
+                print("Notification Authorized")
+            }
         }
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.tokenRefreshNotification(notification:)), name: NSNotification.Name.InstanceIDTokenRefresh, object: nil)
         
         Fabric.sharedSDK().debug = true
         // Override point for customization after application launch.
         IQKeyboardManager.sharedManager().enable = true
         
         //--facebook
-                FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        //FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        // get the time the app last launched
+        let lastLaunch = UserDefaults.standard.double(forKey: "lastLaunch")
+        let lastLaunchDate = Date(timeIntervalSince1970: lastLaunch)
+        // check to see if lastLaunchDate is today.
+        let lastLaunchIsToday = Calendar.current.isDateInToday(lastLaunchDate)
+        
+        print("Home Loaded")
+        
+        if UserDefaultsHandler().getNotificationStatus()
+        {
+            if !lastLaunchIsToday
+            {
+                print("First launch Today")
+                // show a popup or whatever
+                
+                UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                localNotification_Scheduled.init().scheduleTomorrowNoUseNotification()
+                
+            }else
+            {
+                print("Launched Today")
+                
+//                UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (request) in
+//                    print(request)
+//                })
+            }
+        }
+        // update the last launch value
+        UserDefaults().set(Date().timeIntervalSince1970, forKey: "lastLaunch")
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("Device Tokenn \(deviceToken)")
+        Messaging.messaging().apnsToken = deviceToken
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
+    }
+    
+    @objc func tokenRefreshNotification(notification: NSNotification)
+    {
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
+        connectToFCM()
+    }
+    func connectToFCM()
+    {
+        // Won't connect since there is no token
+        guard InstanceID.instanceID().token() != nil else {
+            return;
+        }
+        Messaging.messaging().shouldEstablishDirectChannel = true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -63,18 +141,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
     
-    func applicationDidEnterBackground(_ application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication)
+    {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        print("Go Background")
+        
+        UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
+            var identifiers: [String] = []
+            for notification:UNNotificationRequest in notificationRequests {
+                if notification.identifier == "lackConsumeNoti" {
+                    identifiers.append(notification.identifier)
+                }
+            }
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+            
+            DispatchQueue.main.asyncAfter(deadline:.now(), execute:
+            {
+                    self.lackConsumeNotification()
+                    UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (request) in
+                        print(request)
+                    })
+            })
+        }
+    }
+    
+    func lackConsumeNotification()
+    {
+        if UserDefaultsHandler().getNotificationStatus()
+        {
+            var coreDataHandler = CoreDataHandler()
+            if coreDataHandler.getId().count > 5
+            {
+                var healthCalculator = HealthPercentageCalculator(nutritionDic: coreDataHandler.get5nList(), timestamp: coreDataHandler.getTimestamp())
+                let _ = healthCalculator.getLastSevenDaysEachElementPercentage()
+                let minConsumeElement = healthCalculator.getMinConsumeElement() as String
+                if minConsumeElement != ""
+                {
+                    print("Has less")
+                    // Have element that percentage is less than 20%
+                    // Schedule remind notification tmr noon
+                    localNotification_Scheduled.init().scheduleTomorrowHelpBalanceNotification(MinConsume: minConsumeElement)
+                }
+                
+            }
+        }
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        FBSDKAppEvents.activateApp()
+        //  FBSDKAppEvents.activateApp()
+        connectToFCM()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -126,5 +249,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
 }
+
 

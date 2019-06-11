@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "Dairy"; ObjectID = "0MW-us-GGe"; */
+"0MW-us-GGe.text" = "乳品類";
+
+/* Class = "UITextField"; text = "10.0"; ObjectID = "1g6-3s-e9J"; */
+"1g6-3s-e9J.text" = "10.0";
+
+/* Class = "UITextView"; text = "Add note here..."; ObjectID = "2pQ-5Z-uKr"; */
+"2pQ-5Z-uKr.text" = "加入筆記...";
+
+/* Class = "UILabel"; text = "Protein"; ObjectID = "5hS-S5-RAF"; */
+"5hS-S5-RAF.text" = "豆魚肉蛋類";
+
+/* Class = "UILabel"; text = "Grain"; ObjectID = "6cG-4a-6zH"; */
+"6cG-4a-6zH.text" = "全穀雜糧類";
+
+/* Class = "UITextField"; text = "10.0"; ObjectID = "J5j-om-CQh"; */
+"J5j-om-CQh.text" = "10.0";
+
+/* Class = "UITextField"; text = "10.0"; ObjectID = "NE6-q5-Zb5"; */
+"NE6-q5-Zb5.text" = "10.0";
+
+/* Class = "UILabel"; text = "Fruit"; ObjectID = "PDK-hW-Pqm"; */
+"PDK-hW-Pqm.text" = "水果類";
+
+/* Class = "UITextField"; text = "10.0"; ObjectID = "jLP-it-Pq1"; */
+"jLP-it-Pq1.text" = "10.0";
+
+/* Class = "UITextField"; text = "10.0"; ObjectID = "mlz-N6-TGj"; */
+"mlz-N6-TGj.text" = "10.0";
+
+/* Class = "UILabel"; text = "Vegetable"; ObjectID = "t1v-D0-KVt"; */
+"t1v-D0-KVt.text" = "蔬菜類";

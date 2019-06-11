@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>FoodyŁife!</string>
+	<string>FoodyLife</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.10</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -28,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>44</string>
 	<key>FacebookAppID</key>
 	<string>171997136898368</string>
 	<key>FacebookDisplayName</key>
@@ -42,13 +42,25 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>We have to use your camera</string>
+	<string>Your camera is used to take photos</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>MIcrophone</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Will need your permission to access the album</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photos is used to share and upload photos</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-Bold.otf</string>
 		<string>Montserrat-Medium.otf</string>
 		<string>Montserrat-Bold-Light.otf</string>
+		<string>nougatine.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -59,7 +71,9 @@
 		<string>armv7</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
-	<array/>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -67,9 +81,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Grant me access</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>NEed to use</string>
 </dict>
 </plist>

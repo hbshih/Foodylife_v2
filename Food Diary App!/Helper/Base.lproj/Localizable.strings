@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Food Diary App!
+
+  Created by Ben Shih on 07/03/2018.
+  Copyright © 2018 BenShih. All rights reserved.
+*/
+
+"Welcome to FoodyLife!" = "Welcome to FoodyLife!";
+"Track your food" = "Track your food";
+"Balance the five food groups" = "Balance the five food groups";
+"Become healthier and happier!" = "Become healthier and happier!";
+"Understanding more of your diet helps you eat right and live a healthier life!" = "Understanding more of your diet helps you eat right and live a healthier life!";
+"Take a picture and record your food with a simple interface -  keeping track of what you eat has never been easier." = "Take a picture and record your food with a simple interface -  keeping track of what you eat has never been easier.";
+"Have you eaten vegetables today? Check your Balance Board of the 5 food groups and get all nutrition needed every day." = "Have you eaten vegetables today? Check your Balance Board of the 5 food groups and get all nutrition needed every day.";
+"Transform the way you eat without the focus on calories counting! Become a Foody with a balanced diet and a balanced life!." = "Transform the way you eat without the focus on calories counting! Become a Foody with a balanced diet and a balanced life!.";
+"Continue" = "Continue";
+"Skip" = "Skip";
+"Get Started!" = "Get Started!";
+

@@ -8,11 +8,13 @@
 
 import Foundation
 import SCLAlertView
+import UIKit
 
 struct SCLAlertMessage
 {
     let title: String
     let message: String
+    
     
     func showMessage()
     {
@@ -28,4 +30,6 @@ struct SCLAlertMessage
         let color = UIColor.orange
         _ = alert.showCustom(title, subTitle: message, color: color, icon: icon!)
     }
+    
+    
 }

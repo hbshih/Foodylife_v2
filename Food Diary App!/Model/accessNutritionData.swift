@@ -39,8 +39,8 @@ struct accessNutritionData{
                     // Store data in the corresponding array
                     if let imageName = result.value(forKey: "imageName") as? String
                     {
-                        var str = imageName.prefix(13)
-                        var date = str.suffix(10)
+                        let str = imageName.prefix(13)
+                        let date = str.suffix(10)
                         self.fileName.append(String(date))
                         if let grain_value = result.value(forKey: "n_Grain") as? Int
                         {

@@ -1,0 +1,273 @@
+
+/* Class = "UITableViewSection"; headerTitle = "choose custom to edit the values "; ObjectID = "0KQ-zb-gfQ"; */
+"0KQ-zb-gfQ.headerTitle" = "choose custom to edit the values ";
+
+/* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "0Ph-WE-rHD"; */
+"0Ph-WE-rHD.title" = "Done";
+
+/* Class = "UILabel"; text = "Fruit"; ObjectID = "0yn-Zo-a1U"; */
+"0yn-Zo-a1U.text" = "Fruit";
+
+/* Class = "UILabel"; text = "Custom"; ObjectID = "11z-qZ-szh"; */
+"11z-qZ-szh.text" = "Custom";
+
+/* Class = "UILabel"; text = "1.0"; ObjectID = "17d-xp-VSm"; */
+"17d-xp-VSm.text" = "1.0";
+
+/* Class = "UIBarButtonItem"; title = "Album"; ObjectID = "1UE-oO-2P4"; */
+"1UE-oO-2P4.title" = "Album";
+
+/* Class = "UILabel"; text = "x1"; ObjectID = "1r7-F6-JTU"; */
+"1r7-F6-JTU.text" = "x1";
+
+/* Class = "UITextView"; text = "Enter your note here..."; ObjectID = "2LY-UP-vLG"; */
+"2LY-UP-vLG.text" = "Enter your note here...";
+
+/* Class = "UINavigationItem"; title = "Your Food Diary"; ObjectID = "3fr-MI-9Zb"; */
+"3fr-MI-9Zb.title" = "Your Food Diary";
+
+/* Class = "UILabel"; text = "Saving Date?"; ObjectID = "4SW-H4-YKN"; */
+"4SW-H4-YKN.text" = "Saving Date?";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "58p-tm-y12"; */
+"58p-tm-y12.title" = "Settings";
+
+/* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "6Aq-hD-O5Z"; */
+"6Aq-hD-O5Z.title" = "Done";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "7EP-wg-rwE"; */
+"7EP-wg-rwE.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Tap icons on plate to decrease"; ObjectID = "7gA-uS-Ror"; */
+"7gA-uS-Ror.text" = "Tap icons on plate to decrease";
+
+/* Class = "UITabBarItem"; title = "Report"; ObjectID = "7hN-t4-fgX"; */
+"7hN-t4-fgX.title" = "Report";
+
+/* Class = "UILabel"; text = "1.0"; ObjectID = "8ke-b8-SAP"; */
+"8ke-b8-SAP.text" = "1.0";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "8mX-Hk-AA2"; */
+"8mX-Hk-AA2.normalTitle" = "Done";
+
+/* Class = "UITabBarItem"; title = "Photo"; ObjectID = "8qe-IK-tHa"; */
+"8qe-IK-tHa.title" = "Photo";
+
+/* Class = "UILabel"; text = "Food contains?"; ObjectID = "9Yz-n9-XeC"; */
+"9Yz-n9-XeC.text" = "Food contains?";
+
+/* Class = "UILabel"; text = "1.0"; ObjectID = "A3I-k9-6zo"; */
+"A3I-k9-6zo.text" = "1.0";
+
+/* Class = "UILabel"; text = "You are a type of vegetable human "; ObjectID = "Au1-vD-K5T"; */
+"Au1-vD-K5T.text" = "You are a type of vegetable human ";
+
+/* Class = "UILabel"; text = "Data Setting"; ObjectID = "BBc-p3-8Zu"; */
+"BBc-p3-8Zu.text" = "Data Setting";
+
+/* Class = "UILabel"; text = "x1"; ObjectID = "Bi5-9f-lpO"; */
+"Bi5-9f-lpO.text" = "x1";
+
+/* Class = "UILabel"; text = "Dairy"; ObjectID = "CXy-Ef-cfA"; */
+"CXy-Ef-cfA.text" = "Dairy";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "D1t-Lt-9j6"; */
+"D1t-Lt-9j6.normalTitle" = "Back";
+
+/* Class = "UILabel"; text = "Did you set the CollectionViewController to "; ObjectID = "E6F-HJ-J7T"; */
+"E6F-HJ-J7T.text" = "Did you set the CollectionViewController to ";
+
+/* Class = "UINavigationItem"; title = "Dashboard"; ObjectID = "FHi-8x-107"; */
+"FHi-8x-107.title" = "Dashboard";
+
+/* Class = "UITableViewController"; title = "Settings"; ObjectID = "FvX-cZ-MUi"; */
+"FvX-cZ-MUi.title" = "Settings";
+
+/* Class = "UILabel"; text = "Your all-time average score"; ObjectID = "HbH-tm-D35"; */
+"HbH-tm-D35.text" = "Your all-time average score";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "HdS-vv-iym"; */
+"HdS-vv-iym.text" = "Privacy Policy";
+
+/* Class = "UILabel"; text = "Saving Date?"; ObjectID = "HlD-Px-NUJ"; */
+"HlD-Px-NUJ.text" = "Saving Date?";
+
+/* Class = "UILabel"; text = "Tap icons on plate to decrease"; ObjectID = "IVs-3q-s13"; */
+"IVs-3q-s13.text" = "Tap icons on plate to decrease";
+
+/* Class = "UILabel"; text = "100%"; ObjectID = "Ign-TW-UDc"; */
+"Ign-TW-UDc.text" = "100%";
+
+/* Class = "UILabel"; text = "- Recent score on each group -"; ObjectID = "KlM-AF-Ct2"; */
+"KlM-AF-Ct2.text" = "- Recent score on each group -";
+
+/* Class = "UINavigationItem"; title = "Album"; ObjectID = "L5A-wI-3XO"; */
+"L5A-wI-3XO.title" = "Album";
+
+/* Class = "UILabel"; text = "Fruit"; ObjectID = "Lby-sG-nLH"; */
+"Lby-sG-nLH.text" = "Fruit";
+
+/* Class = "UITextView"; text = "Enter your note here..."; ObjectID = "MBS-dE-m9b"; */
+"MBS-dE-m9b.text" = "Enter your note here...";
+
+/* Class = "UILabel"; text = "9:41"; ObjectID = "NDt-bR-wql"; */
+"NDt-bR-wql.text" = "9:41";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "NJL-uA-iPv"; */
+"NJL-uA-iPv.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "NKx-nW-apk"; */
+"NKx-nW-apk.title" = "Item";
+
+/* Class = "UILabel"; text = "1.0"; ObjectID = "NSI-3B-enz"; */
+"NSI-3B-enz.text" = "1.0";
+
+/* Class = "UITableViewSection"; headerTitle = "Settings"; ObjectID = "Nuc-aW-mSp"; */
+"Nuc-aW-mSp.headerTitle" = "Settings";
+
+/* Class = "UILabel"; text = "Male"; ObjectID = "ObH-m5-Skf"; */
+"ObH-m5-Skf.text" = "Male";
+
+/* Class = "UITextField"; placeholder = "E-Mail"; ObjectID = "PHo-aM-URj"; */
+"PHo-aM-URj.placeholder" = "E-Mail";
+
+/* Class = "UILabel"; text = "Nutrition Setting"; ObjectID = "PNN-2B-PIG"; */
+"PNN-2B-PIG.text" = "Nutrition Setting";
+
+/* Class = "UILabel"; text = "Give us some feedback"; ObjectID = "PRK-lL-4td"; */
+"PRK-lL-4td.text" = "Give us some feedback";
+
+/* Class = "UILabel"; text = "x1"; ObjectID = "PVz-H0-BWC"; */
+"PVz-H0-BWC.text" = "x1";
+
+/* Class = "UITextView"; text = "Please type in your feedback"; ObjectID = "R5U-WP-waS"; */
+"R5U-WP-waS.text" = "Please type in your feedback";
+
+/* Class = "UIButton"; normalTitle = "Today"; ObjectID = "RB8-Sx-zBY"; */
+"RB8-Sx-zBY.normalTitle" = "Today";
+
+/* Class = "UILabel"; text = "Protein"; ObjectID = "RKR-AI-eyG"; */
+"RKR-AI-eyG.text" = "Protein";
+
+/* Class = "UIButton"; normalTitle = "Today"; ObjectID = "Rbt-Hg-xUM"; */
+"Rbt-Hg-xUM.normalTitle" = "Today";
+
+/* Class = "UILabel"; text = "Report"; ObjectID = "SNt-Nh-D4S"; */
+"SNt-Nh-D4S.text" = "Report";
+
+/* Class = "UILabel"; text = "Open Source License"; ObjectID = "SfA-zy-VYS"; */
+"SfA-zy-VYS.text" = "Open Source License";
+
+/* Class = "UILabel"; text = "x1"; ObjectID = "Tul-JP-aHo"; */
+"Tul-JP-aHo.text" = "x1";
+
+/* Class = "UITableViewSection"; headerTitle = "Plan"; ObjectID = "URR-xl-aSt"; */
+"URR-xl-aSt.headerTitle" = "Plan";
+
+/* Class = "UILabel"; text = "x1"; ObjectID = "WX5-S5-uSv"; */
+"WX5-S5-uSv.text" = "x1";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "XA1-I0-NIB"; */
+"XA1-I0-NIB.normalTitle" = "Send";
+
+/* Class = "UILabel"; text = "1.0"; ObjectID = "XJz-43-ZqM"; */
+"XJz-43-ZqM.text" = "1.0";
+
+/* Class = "UINavigationItem"; title = "Recent Report"; ObjectID = "XfR-Zc-dGD"; */
+"XfR-Zc-dGD.title" = "Recent Report";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Xkx-2g-xTJ"; */
+"Xkx-2g-xTJ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "x1"; ObjectID = "Xln-E3-m1S"; */
+"Xln-E3-m1S.text" = "x1";
+
+/* Class = "UILabel"; text = "x1"; ObjectID = "YO9-uL-XPO"; */
+"YO9-uL-XPO.text" = "x1";
+
+/* Class = "UIButton"; normalTitle = " Help"; ObjectID = "ZHI-ug-LCs"; */
+"ZHI-ug-LCs.normalTitle" = " Help";
+
+/* Class = "UINavigationItem"; title = "Add your story"; ObjectID = "a9I-zX-7th"; */
+"a9I-zX-7th.title" = "Add your story";
+
+/* Class = "UILabel"; text = "Protein"; ObjectID = "b4H-ls-2Om"; */
+"b4H-ls-2Om.text" = "Protein";
+
+/* Class = "UINavigationItem"; title = "Foody Life"; ObjectID = "cB6-8z-GiS"; */
+"cB6-8z-GiS.title" = "Foody Life";
+
+/* Class = "UILabel"; text = "Vegetable"; ObjectID = "fCM-ws-go0"; */
+"fCM-ws-go0.text" = "Vegetable";
+
+/* Class = "UILabel"; text = "Add new records to display\n"; ObjectID = "fEK-X8-18c"; */
+"fEK-X8-18c.text" = "Add new records to display\n";
+
+/* Class = "UITabBarItem"; title = "Setting"; ObjectID = "fQm-71-5Cg"; */
+"fQm-71-5Cg.title" = "Setting";
+
+/* Class = "UILabel"; text = "x1"; ObjectID = "gqg-lw-KK1"; */
+"gqg-lw-KK1.text" = "x1";
+
+/* Class = "UILabel"; text = "Grain"; ObjectID = "hDN-GU-KBk"; */
+"hDN-GU-KBk.text" = "Grain";
+
+/* Class = "UILabel"; text = "x1"; ObjectID = "hhz-HC-bWV"; */
+"hhz-HC-bWV.text" = "x1";
+
+/* Class = "UITabBarItem"; title = "Diary"; ObjectID = "hx1-of-fe8"; */
+"hx1-of-fe8.title" = "Diary";
+
+/* Class = "UILabel"; text = "08/16"; ObjectID = "iam-p0-skx"; */
+"iam-p0-skx.text" = "08/16";
+
+/* Class = "UIButton"; normalTitle = "Clear All Data"; ObjectID = "j3z-5R-VTh"; */
+"j3z-5R-VTh.normalTitle" = "Clear All Data";
+
+/* Class = "UILabel"; text = "Diary"; ObjectID = "kXh-O3-Tft"; */
+"kXh-O3-Tft.text" = "Diary";
+
+/* Class = "UIViewController"; title = "FoodyLife"; ObjectID = "kmQ-HH-xb9"; */
+"kmQ-HH-xb9.title" = "FoodyLife";
+
+/* Class = "UILabel"; text = "Dairy"; ObjectID = "leL-t3-wnw"; */
+"leL-t3-wnw.text" = "Dairy";
+
+/* Class = "UILabel"; text = "x1"; ObjectID = "nGZ-Tw-YJI"; */
+"nGZ-Tw-YJI.text" = "x1";
+
+/* Class = "UILabel"; text = "Grain"; ObjectID = "nak-Oc-QQT"; */
+"nak-Oc-QQT.text" = "Grain";
+
+/* Class = "UILabel"; text = "Term & Condition"; ObjectID = "qz9-z0-BXC"; */
+"qz9-z0-BXC.text" = "Term & Condition";
+
+/* Class = "UIViewController"; title = "Add more?"; ObjectID = "sdL-l7-QO5"; */
+"sdL-l7-QO5.title" = "Add more?";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "szm-w4-61O"; */
+"szm-w4-61O.normalTitle" = "Done";
+
+/* Class = "UIButton"; normalTitle = " Help"; ObjectID = "tTU-an-rri"; */
+"tTU-an-rri.normalTitle" = " Help";
+
+/* Class = "UINavigationItem"; title = "Add your story"; ObjectID = "tjh-Pv-ZgY"; */
+"tjh-Pv-ZgY.title" = "Add your story";
+
+/* Class = "UILabel"; text = "Female"; ObjectID = "uLr-sc-3LD"; */
+"uLr-sc-3LD.text" = "Female";
+
+/* Class = "UILabel"; text = "Your Recent Vegetables"; ObjectID = "vBJ-8h-QYx"; */
+"vBJ-8h-QYx.text" = "Your Recent Vegetables";
+
+/* Class = "UILabel"; text = "Food contains?"; ObjectID = "vWK-3y-Qsr"; */
+"vWK-3y-Qsr.text" = "Food contains?";
+
+/* Class = "UILabel"; text = "Vegetable"; ObjectID = "wBm-Tm-X1Q"; */
+"wBm-Tm-X1Q.text" = "Vegetable";
+
+/* Class = "UINavigationItem"; title = "Add your story"; ObjectID = "xV4-ER-qJi"; */
+"xV4-ER-qJi.title" = "Add your story";
+
+/* Class = "UIViewController"; title = "Dashboard"; ObjectID = "zBE-bZ-8WM"; */
+"zBE-bZ-8WM.title" = "Dashboard";

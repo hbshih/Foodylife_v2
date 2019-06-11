@@ -16,6 +16,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var centerImage: UIImageView!
     @IBOutlet weak var navDash: UINavigationItem!
+    @IBOutlet weak var informationLabel: UILabel!
     // General Variables
     var images: [UIImage] = []
     var fileName: [String] = []
@@ -36,8 +37,7 @@ class DashboardViewController: UIViewController {
         {
             // Core data handler
             fileName = dataHandler.getImageFilename(type: "n_\(dashboardType!)")
-            //Display image in order of the most recent first
-            fileName = fileName.reversed()
+            print(fileName)
             
             //Getting corresponding images
             let fileManager = FileManagerModel()
@@ -69,60 +69,62 @@ class DashboardViewController: UIViewController {
     
     func buildDashboard()
     {
-        var healthData = HealthPercentageCalculator(fileNames: dataHandler.getImageFilename(),nutritionDic: dataHandler.get5nList())
-
+        informationLabel.text = "Your Recent \(dashboardType!)".localized()
+        navDash.title = "\(dashboardType!) Dashboard".localized()
+        var healthData = HealthPercentageCalculator(nutritionDic: dataHandler.get5nList(), timestamp: dataHandler.getTimestamp())
+        
         if dashboardType == "Vegetable"
         {
-            navDash.title = "Vegetable Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Vegetable")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageVegetable"]!*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageVegetable"]!*5)
         } else if dashboardType == "Grain"
         {
-            navDash.title = "Grain Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Grain")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageGrain"]!*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageGrain"]!*5)
         }else if dashboardType == "Protein"
         {
-            navDash.title = "Protein Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Protein")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageProtein"]!*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageProtein"]!*5)
         }else if dashboardType == "Fruit"
         {
-            navDash.title = "Fruit Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Fruit")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageFruit"]!*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageFruit"]!*5)
         }else
         {
-            navDash.title = "Dairy Dashboard"
             centerImage.image = #imageLiteral(resourceName: "Icon_Dairy")
-            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageDairy"]!*3.6)
+            setUpSlider(value: healthData.getEachNutritionHealthAverage()["averageDairy"]!*5)
         }
     }
     
     func setUpSlider(value: Double)
     {
+        var sliderDeterminer = circularSliderDeterminer(value: value, count: 2)
         let slider = circularProgress!
+        slider.set(colors: sliderDeterminer.getSliderColour())
+        slider.trackColor = sliderDeterminer.getSliderTrackColour()
+        slider.animate(toAngle: sliderDeterminer.getSliderValue(), duration: 1.0, completion: nil)
+        /*
         slider.animate(toAngle: value, duration: 1.0, completion: nil)
-        if value >= 0 && value <= 30
+        if value >= 0 && value <= 75
         {
             slider.set(colors: UIColor(red:0.99, green:0.44, blue:0.39, alpha:1.0))
             slider.trackColor = UIColor(red:0.99, green:0.44, blue:0.39, alpha:0.2)
         }// Yellow -- Neutral
-        else if value > 30 && value <= 180
+        else if value > 75 && value <= 225
         {
             slider.set(colors: UIColor(red:0.99, green:0.82, blue:0.39, alpha:1.0))
             slider.trackColor = UIColor(red:0.99, green:0.82, blue:0.39, alpha:0.2)
         }
             // Blue -- Good
-        else if value > 180 && value <= 330
+        else if value > 225 && value <= 300
         {
             slider.set(colors:UIColor(red:0.39, green:0.82, blue:0.99, alpha:1.0))
             slider.trackColor = UIColor(red:0.39, green:0.82, blue:0.99, alpha:0.2)
-        }else if value > 330 && value <= 360
+        }else if value > 300 && value <= 360
         {
             slider.set(colors: UIColor(red:0.60, green:0.80, blue:0.29, alpha:1.0))
             slider.trackColor = UIColor(red:0.60, green:0.80, blue:0.29, alpha:0.2)
-        }
+        }*/
     }
     @IBAction func BackTapped(_ sender: Any)
     {

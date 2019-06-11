@@ -11,8 +11,14 @@ import UIKit
 
 class InstructionPopUpViewController: UIViewController {
     
+    @IBOutlet weak var infoGraph: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let locale = NSLocale.current.languageCode
+        if (locale! == "zh")
+        {
+            infoGraph.image = #imageLiteral(resourceName: "zh_Image_EatWellGuide")
+        }
     }
 
     override func didReceiveMemoryWarning() {

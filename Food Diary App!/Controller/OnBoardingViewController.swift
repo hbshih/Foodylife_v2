@@ -9,14 +9,22 @@
 import UIKit
 import SwiftyOnboard
 import PopupDialog
+import SCLAlertView
+import FirebaseAnalytics
 
 class OnBoardingViewController: UIViewController {
-
+    
     var defaults = UserDefaultsHandler()
     var swiftyOnboard: SwiftyOnboard!
-    let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.7150892615, blue: 0, alpha: 1),#colorLiteral(red: 0.5621222854, green: 0.7577332258, blue: 0, alpha: 1),#colorLiteral(red: 1, green: 0.6476797462, blue: 0, alpha: 1),#colorLiteral(red: 0.2067656815, green: 0.8225870728, blue: 1, alpha: 1)]
-    var titleArray: [String] = ["Welcome to FoodyLife!", "Make food tracking easy", "Balance your diet", "Become Healthier!"]
-    var subTitleArray: [String] = ["Confess lets you anonymously\n send confessions to your friends\n and receive confessions from them.", "All confessions sent are\n anonymous. Your friends will only\n know that it came from one of\n their facebook friends.", "Be nice to your friends.\n Send them confessions that\n will make them smile :)","Be nice to your friends.\n Send them confessions that\n will make them smile :)"]
+    let colors:[UIColor] = [#colorLiteral(red: 0.9725490196, green: 0.6705882353, blue: 0.2745098039, alpha: 1),#colorLiteral(red: 0.9921568627, green: 0.5215686275, blue: 0.3490196078, alpha: 1),#colorLiteral(red: 0.9764705882, green: 0.4470588235, blue: 0.4039215686, alpha: 1),#colorLiteral(red: 0.5621222854, green: 0.7577332258, blue: 0, alpha: 1)]
+    
+    var titleArray: [String] = ["Welcome to FoodyLife!".localized(), NSLocalizedString("Track your food", comment: ""), NSLocalizedString("Balance the five food groups", comment: ""),NSLocalizedString("Become healthier and happier!", comment: "")]
+    
+    var subTitleArray: [String] = [
+        NSLocalizedString("Understanding more about your diet helps you eat right and live a healthier life!", comment: ""),
+        NSLocalizedString("Take a picture and record your food with a simple interface -  keeping track of what you eat has never been easier.", comment: ""),
+        NSLocalizedString("Have you eaten your vegetables today? Check the Balance Board to review your progress with the 5 food groups and get all nutrition needed every day.", comment: ""),
+        NSLocalizedString("Transform the way you eat without the focus on calorie counting! Become a Foody with a balanced diet and a balanced life!.", comment: "")]
     
     var gradiant: CAGradientLayer = {
         //Gradiant for the background view
@@ -31,7 +39,7 @@ class OnBoardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if defaults.getOnboardingStatus() is Bool
+        if defaults.getOnboardingStatus() == true
         {
             DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute:{self.performSegue(withIdentifier: "getStartedSegue", sender: self)})
         }else
@@ -43,19 +51,6 @@ class OnBoardingViewController: UIViewController {
             swiftyOnboard.dataSource = self as SwiftyOnboardDataSource
             swiftyOnboard.delegate = self as? SwiftyOnboardDelegate
         }
-        /*
-        if ShowOnBoard == nil || ShowOnBoard == false
-        {
-            gradient()
-            UIApplication.shared.statusBarStyle = .lightContent
-            swiftyOnboard = SwiftyOnboard(frame: view.frame, style: .light)
-            view.addSubview(swiftyOnboard)
-            swiftyOnboard.dataSource = self as SwiftyOnboardDataSource
-            swiftyOnboard.delegate = self as? SwiftyOnboardDelegate
-        }else
-        {
-            DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute:{self.performSegue(withIdentifier: "getStartedSegue", sender: self)})
-        }*/
     }
     
     func gradient() {
@@ -73,9 +68,8 @@ class OnBoardingViewController: UIViewController {
         swiftyOnboard?.goToPage(index: index + 1, animated: true)
         if index == 3
         {
-            print("GET STARTED!")
             selectPlan()
-         //   performSegue(withIdentifier: "getStartedSegue", sender: nil)
+            //   performSegue(withIdentifier: "getStartedSegue", sender: nil)
         }
     }
     
@@ -88,25 +82,75 @@ class OnBoardingViewController: UIViewController {
         let popup = PopupDialog(viewController: selectPlanVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true)
         
         // Create first button
-        let buttonOne = CancelButton(title: "DECIDE LATER", height: 60) {
-            self.performSegue(withIdentifier: "getStartedSegue", sender: nil)
+        
+        let buttonOne = CancelButton(title: NSLocalizedString("DECIDE LATER", comment: ""), height: 60) {
+            self.defaults.setPlanStandard(value: numberOfServes().getCustom())
+            let appearance = SCLAlertView.SCLAppearance(
+                //kCircleIconHeight: 55.0
+                kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
+                kTextFont: UIFont(name: "HelveticaNeue", size: 16)!,
+                kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 18)!,
+                showCloseButton: false
+            )
+            let alert = SCLAlertView(appearance: appearance)
+            let icon = UIImage(named:"Alert_Yellow.png")
+            let color = UIColor.orange
+            alert.addButton(NSLocalizedString("Ready to explore", comment: ""), target: self, selector: #selector(self.segueToNotiAuthorization))
+            _ = alert.showCustom(NSLocalizedString("Undecided plan?", comment: ""), subTitle: NSLocalizedString("Your diet plan will be set to custom now, you can change the plan in the setting page! See you there!", comment: ""), color: color, icon: icon!)
         }
         
         // Create second button
-        let buttonTwo = DefaultButton(title: "LET'S START", height: 60) {
-            self.defaults.setOnboardingStatus(status: true)
+        let buttonTwo = DefaultButton(title: NSLocalizedString("LET'S START", comment: ""), height: 60) {
             self.defaults.setPlanStandard(value: selectPlanVC.getSelectedOption())
-            print("Choosed plan \(selectPlanVC.getSelectedOption())")
-            self.performSegue(withIdentifier: "getStartedSegue", sender: nil)
+            if selectPlanVC.getSelectedOption() == numberOfServes().getCustom()
+            {
+                //print("Customize")
+                self.segueToCustomize()
+                //                self.defaults.setPlanStandard(value: numberOfServes().getCustom())
+                //                let appearance = SCLAlertView.SCLAppearance(
+                //                    //kCircleIconHeight: 55.0
+                //                    kTitleFont: UIFont(name: "HelveticaNeue-Medium", size: 18)!,
+                //                    kTextFont: UIFont(name: "HelveticaNeue", size: 16)!,
+                //                    kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 18)!,
+                //                    showCloseButton: false
+                //                )
+                //                let alert = SCLAlertView(appearance: appearance)
+                //                let icon = UIImage(named:"Alert_Yellow.png")
+                //                let color = UIColor.orange
+                //                alert.addButton("Ready to explore", target: self, selector: #selector(self.segueToHomeScreen))
+                //                _ = alert.showCustom("Undecided plan?", subTitle: "Your diet plan will be set to custom now, you can change the plan in the setting page! See you there!", color: color, icon: icon!)
+            }else
+            {
+                Analytics.logEvent("Chose_Gender_Standard", parameters: nil)
+                self.defaults.setOnboardingStatus(status: true)
+                //print("Customize2")
+                self.segueToNotiAuthorization()
+            }
         }
         
         // Add buttons to dialog
         popup.addButtons([buttonOne, buttonTwo])
         
         // Present dialog
-        present(popup, animated: true, completion: nil)
+        present(popup, animated: true, completion:nil)
+    }
+    
+    @objc func segueToNotiAuthorization()
+    {
+        performSegue(withIdentifier: "notificationAuthorizationSegue", sender: nil)
+    }
+    
+    @objc func segueToHomeScreen()
+    {
+        performSegue(withIdentifier: "getStartedSegue", sender: nil)
+    }
+    
+    @objc func segueToCustomize()
+    {
+        performSegue(withIdentifier: "customizeSegue", sender: nil)
     }
 }
+
 
 extension OnBoardingViewController: SwiftyOnboardDataSource {
     
@@ -158,15 +202,14 @@ extension OnBoardingViewController: SwiftyOnboardDataSource {
     func swiftyOnboardOverlayForPosition(_ swiftyOnboard: SwiftyOnboard, overlay: SwiftyOnboardOverlay, for position: Double) {
         let currentPage = round(position)
         overlay.pageControl.currentPage = Int(currentPage)
-        print(Int(currentPage))
         overlay.continueButton.tag = Int(position)
         
         if currentPage == 0.0 || currentPage == 1.0 || currentPage == 2.0{
-            overlay.continueButton.setTitle("Continue", for: .normal)
-            overlay.skipButton.setTitle("Skip", for: .normal)
+            overlay.continueButton.setTitle(NSLocalizedString("Continue", comment: ""), for: .normal)
+            overlay.skipButton.setTitle(NSLocalizedString("Skip", comment: ""), for: .normal)
             overlay.skipButton.isHidden = false
         } else {
-            overlay.continueButton.setTitle("Get Started!", for: .normal)
+            overlay.continueButton.setTitle(NSLocalizedString("Get Started!", comment: ""), for: .normal)
             overlay.skipButton.isHidden = true
         }
     }

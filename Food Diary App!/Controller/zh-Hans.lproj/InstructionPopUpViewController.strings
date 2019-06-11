@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "your PALM\nis\n2 Portion of Protein"; ObjectID = "4dK-o7-StC"; */
+"4dK-o7-StC.text" = "您的手掌\n等于\n两份的豆鱼蛋肉类";
+
+/* Class = "UILabel"; text = "your FIST\nis \n1 Portion of Vegetable, Grain, Dairy, and Fruit"; ObjectID = "P5T-WB-KOH"; */
+"P5T-WB-KOH.text" = "您的拳头\n等于\n一碟的蔬菜、一碗全谷杂粮、一份水果、或一杯乳品类";
+
+/* Class = "UILabel"; text = "Easy way to measure portions"; ObjectID = "TZ8-Np-gIT"; */
+"TZ8-Np-gIT.text" = "算食物份量的小技巧";

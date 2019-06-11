@@ -11,7 +11,7 @@ import Foundation
 struct HealthPercentageCalculator
 {
     // General Variables
-    private var fileName: [String] = [] // Storing the names of the images to get images
+    private var recordedTime: [String] = [] // Storing the names of the images to get images
     
     // Nutrition Info Variables
     var dairyList: [Double] = []
@@ -22,11 +22,11 @@ struct HealthPercentageCalculator
     
     // The daily food balance standard
     private var userPlan: [Double] = []
-    private var vegetableStandard = 4.0
-    private var fruitStandard = 3.0
-    private var grainStandard = 6.0
-    private var dairyStandard = 3.0
-    private var proteinStandard = 3.0
+    private var vegetableStandard : Double
+    private var fruitStandard : Double
+    private var grainStandard : Double
+    private var dairyStandard : Double
+    private var proteinStandard : Double
     
     //Save the date the user record on
     private var dateSaved: [String] = []
@@ -36,6 +36,12 @@ struct HealthPercentageCalculator
     private var dayCountFruit: [Double] = []
     private var dayCountGrain: [Double] = []
     private var dayCountDairy: [Double] = []
+    
+    private var dayCountVegetablePercentage: [Double] = []
+    private var dayCountProteinPercentage: [Double] = []
+    private var dayCountFruitPercentage: [Double] = []
+    private var dayCountGrainPercentage: [Double] = []
+    private var dayCountDairyPercentage: [Double] = []
     private var dayBalancePercentage: [Double] = []
     
     private var averageHealth: Double = 0.0
@@ -47,28 +53,44 @@ struct HealthPercentageCalculator
     
     
     
-    init(fileNames: [String], nutritionDic:[String:[Double]])
+    init(nutritionDic:[String:[Double]],timestamp: [Date])
     {
         /*
          * Access user defaults
          */
-        var defaults = UserDefaultsHandler()
+        let defaults = UserDefaultsHandler()
         let userPlan = defaults.getPlanStandard() as! [Double]
         
         //-- Set Standard
         grainStandard = userPlan[0]
         vegetableStandard = userPlan[1]
-        fruitStandard = userPlan[2]
-        dairyStandard = userPlan[3]
-        proteinStandard = userPlan [4]
+        proteinStandard = userPlan [2]
+        fruitStandard = userPlan[3]
+        dairyStandard = userPlan[4]
         
-        self.fileName = getTrimmedDate(Name: fileNames)
-        dairyList = nutritionDic["dairyList"]!
-        vegetableList = nutritionDic["vegetableList"]!
-        proteinList = nutritionDic["proteinList"]!
-        fruitList = nutritionDic["fruitList"]!
-        grainList = nutritionDic["grainList"]!
-        calculateOverallHealthRate()
+        //     self.recordedTime = getTrimmedDate(Name: fileNames)
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd"
+        for i in 0 ..< timestamp.count
+        {
+            recordedTime.append(format.string(from: timestamp[i]))
+        }
+        
+        print("Recorded time")
+        print(recordedTime)
+        
+        if recordedTime.count > 0
+        {
+            dairyList = nutritionDic["dairyList"]!
+            vegetableList = nutritionDic["vegetableList"]!
+            proteinList = nutritionDic["proteinList"]!
+            fruitList = nutritionDic["fruitList"]!
+            grainList = nutritionDic["grainList"]!
+            calculateOverallHealthRate()
+        }else
+        {
+            print("Nothing is inside")
+        }
     }
     
     private mutating func calculateOverallHealthRate()
@@ -80,116 +102,252 @@ struct HealthPercentageCalculator
     
     private mutating func calculateEachElementDailyTotalCount()
     {
-        var v = 0.0
-        var d = 0.0
-        var g = 0.0
-        var p = 0.0
-        var f = 0.0
-        
-        for i in 0 ..< fileName.count - 1
+        var keepTrackIndex = 0
+        if recordedTime.count > 0
         {
-            if fileName[i] == fileName[i + 1]
+            
+            for i in 0 ..< recordedTime.count
             {
-                v += vegetableList[i]
-                p += proteinList [i]
-                d += dairyList [i]
-                f += fruitList [i]
-                g += grainList [i]
-                if i + 1 == fileName.count - 1
+                if !dateSaved.contains(recordedTime[i])
                 {
-                    v += vegetableList[i+1]
-                    p += proteinList [i+1]
-                    d += dairyList [i+1]
-                    f += fruitList [i+1]
-                    g += grainList [i+1]
-                    dateSaved.append(fileName[i])
-                    dayCountVegetable.append(Double(v))
-                    dayCountGrain.append(Double(g))
-                    dayCountFruit.append(Double(f))
-                    dayCountProtein.append(Double(p))
-                    dayCountDairy.append(Double(d))
-                }
-            }else
-            {
-                v += vegetableList [i]
-                p += proteinList [i]
-                d += dairyList [i]
-                f += fruitList [i]
-                g += grainList [i]
-                dateSaved.append(fileName[i])
-                dayCountVegetable.append(Double(v))
-                dayCountGrain.append(Double(g))
-                dayCountFruit.append(Double(f))
-                dayCountProtein.append(Double(p))
-                dayCountDairy.append(Double(d))
-                v = 0
-                d = 0
-                p = 0
-                f = 0
-                g = 0
-                if i + 1 == fileName.count - 1
+                    dateSaved.append(recordedTime[i])
+                    dayCountDairy.append(dairyList[i])
+                    dayCountFruit.append(fruitList[i])
+                    dayCountGrain.append(grainList[i])
+                    dayCountProtein.append(proteinList[i])
+                    dayCountVegetable.append(vegetableList[i])
+                    keepTrackIndex = dateSaved.count - 1
+                }else
                 {
-                    v += vegetableList[i+1]
-                    p += proteinList [i+1]
-                    d += dairyList [i+1]
-                    f += fruitList [i+1]
-                    g += grainList [i+1]
-                    dateSaved.append(fileName[i + 1])
-                    dayCountVegetable.append(Double(v))
-                    dayCountGrain.append(Double(g))
-                    dayCountFruit.append(Double(f))
-                    dayCountProtein.append(Double(p))
-                    dayCountDairy.append(Double(d))
+                    dayCountDairy[keepTrackIndex] = dayCountDairy[keepTrackIndex] + dairyList[i]
+                    dayCountFruit[keepTrackIndex] = dayCountFruit[keepTrackIndex] + fruitList[i]
+                    dayCountGrain[keepTrackIndex] = dayCountGrain[keepTrackIndex] + grainList[i]
+                    dayCountProtein[keepTrackIndex] = dayCountProtein[keepTrackIndex] + proteinList[i]
+                    dayCountVegetable[keepTrackIndex] = dayCountVegetable[keepTrackIndex] + vegetableList[i]
                 }
             }
         }
         print("Date: \(dateSaved)")
-        print("DaycountOfVege: \(dayCountVegetable)")
-        print("DaycountOfVege: \(dayCountGrain)")
-        print("DaycountOfVege: \(dayCountProtein)")
-        print("DaycountOfVege: \(dayCountFruit)")
-        print("DaycountOfVege: \(dayCountDairy)")
+        print("Daycount Of Vege: \(dayCountVegetable)")
+        print("Daycount Of Grain: \(dayCountGrain)")
+        print("Daycount Of Protein: \(dayCountProtein)")
+        print("Daycount Of Fruit: \(dayCountFruit)")
+        print("Daycount Of Dairy: \(dayCountDairy)")
+    }
+    
+    func getDateOfRecord () -> [String]
+    {
+        return dateSaved
+    }
+    
+    func getEachDayCount() -> [String: [Double]]
+    {
+        return[
+            "Vegetable": dayCountVegetable,
+            "Grain": dayCountGrain,
+            "Dairy": dayCountDairy,
+            "Fruit": dayCountFruit,
+            "Protein": dayCountProtein]
     }
     
     private mutating func convertDailyCountIntoBalancePercentage()
     {
+        dayCountVegetablePercentage = dayCountVegetable
+        dayCountProteinPercentage = dayCountProtein
+        dayCountFruitPercentage = dayCountFruit
+        dayCountGrainPercentage = dayCountGrain
+        dayCountDairyPercentage = dayCountDairy
+        
         for i in 0 ..< dateSaved.count
         {
-            dayCountVegetable[i] = ((dayCountVegetable[i] / vegetableStandard)*100).rounded()
-            if dayCountVegetable[i] > 20.0
+            if dayCountVegetablePercentage[i] > 0.0
             {
-                dayCountVegetable[i] = 20.0
+                dayCountVegetablePercentage[i] = ((dayCountVegetable[i] / vegetableStandard)*20).rounded()
+                if dayCountVegetablePercentage[i] > 20.0
+                {
+                    dayCountVegetablePercentage[i] = 20.0
+                }
             }
-            dayCountDairy[i] = ((dayCountDairy[i] / dairyStandard)*100).rounded()
-            if dayCountDairy[i] > 20
+            if dayCountDairyPercentage[i] > 0.0
             {
-                dayCountDairy[i] = 20
+                dayCountDairyPercentage[i] = ((dayCountDairy[i] / dairyStandard)*20).rounded()
+                if dayCountDairyPercentage[i] > 20
+                {
+                    dayCountDairyPercentage[i] = 20
+                }
             }
-            dayCountProtein[i] = ((dayCountProtein[i] / proteinStandard)*100).rounded()
-            if dayCountProtein[i] > 20
+            if dayCountProteinPercentage[i] > 0.0
             {
-                dayCountProtein[i] = 20
+                dayCountProteinPercentage[i] = ((dayCountProtein[i] / proteinStandard)*20).rounded()
+                print("Day count protein \(dayCountProtein[i])")
+                print("Day count protein \(proteinStandard)")
+                print("Day count protein percent \(dayCountProteinPercentage[i])")
+                if dayCountProteinPercentage[i] > 20
+                {
+                    dayCountProteinPercentage[i] = 20
+                }
             }
-            dayCountFruit[i] = ((dayCountFruit[i] / fruitStandard)*100).rounded()
-            if dayCountFruit[i] > 20
+            if dayCountFruitPercentage[i] > 0.0
             {
-                dayCountFruit[i] = 20
+                dayCountFruitPercentage[i] = ((dayCountFruit[i] / fruitStandard)*20).rounded()
+                if dayCountFruitPercentage[i] > 20
+                {
+                    dayCountFruitPercentage[i] = 20
+                }
             }
-            dayCountGrain[i] = ((dayCountGrain[i] / grainStandard)*100).rounded()
-            if dayCountGrain[i] > 20
+            if dayCountGrainPercentage[i] > 0.0
             {
-                dayCountGrain[i] = 20
+                dayCountGrainPercentage[i] = ((dayCountGrain[i] / grainStandard)*20).rounded()
+                if dayCountGrainPercentage[i] > 20
+                {
+                    dayCountGrainPercentage[i] = 20
+                }
             }
-            dayBalancePercentage.append((dayCountGrain[i] + dayCountFruit[i] + dayCountProtein[i] + dayCountDairy[i] + dayCountVegetable[i]))
+            dayBalancePercentage.append((dayCountGrainPercentage[i] + dayCountFruitPercentage[i] + dayCountProteinPercentage[i] + dayCountDairyPercentage[i] + dayCountVegetablePercentage[i]))
         }
-        print("###")
-        print("DaycountOfVege: \(dayCountVegetable)")
-        print("DaycountOfG: \(dayCountGrain)")
-        print("DaycountOfP: \(dayCountProtein)")
-        print("DaycountOfF: \(dayCountFruit)")
-        print("DaycountOfD: \(dayCountDairy)")
-        print("Average: \(dayBalancePercentage)")
     }
+    
+    
+    var sevenDayAverageList: [Double] = []
+    var sevenDayAverage: Double = 0.0
+    
+    mutating func getLastSevenDaysPercentage() -> Double
+    {
+        sevenDayAverageList = [0.0,0.0,0.0,0.0,0.0,0.0]
+        var count = 0
+        if dateSaved.count > 7 // a Week
+        {
+            for i in dateSaved.count - 7 ..< dateSaved.count
+            {
+                sevenDayAverageList.append(dayBalancePercentage[i])
+            }
+            count = 7
+        }else
+        {
+            for i in 0 ..< dateSaved.count
+            {
+                sevenDayAverageList.append(dayBalancePercentage[i])
+                count+=1
+            }
+        }
+        var sum = 0.0
+        for i in 0 ..< sevenDayAverageList.count
+        {
+            sum += sevenDayAverageList[i]
+        }
+        sevenDayAverage = sum / Double(count)
+        return sevenDayAverage
+    }
+    
+    
+    private var sevenDayVAverageList: [Double] = []
+    private var sevenDayGAverageList: [Double] = []
+    private var sevenDayPAverageList: [Double] = []
+    private var sevenDayDAverageList: [Double] = []
+    private var sevenDayFAverageList: [Double] = []
+    
+    private var averageEachElement = ["V":0.0,"G":0.0,"P":0.0,"D":0.0,"F":0.0]
+    
+    mutating func getLastSevenDaysEachElementPercentage() -> [String:Double]
+    {
+        sevenDayVAverageList.removeAll()
+        sevenDayGAverageList.removeAll()
+        sevenDayPAverageList.removeAll()
+        sevenDayDAverageList.removeAll()
+        sevenDayFAverageList.removeAll()
+        averageEachElement = ["V":0.0,"G":0.0,"P":0.0,"D":0.0,"F":0.0]
+        
+        if dateSaved.count > 7
+        {
+            for i in dateSaved.count - 7 ..< dateSaved.count
+            {
+                sevenDayVAverageList.append(dayCountVegetablePercentage[i])
+                sevenDayGAverageList.append(dayCountGrainPercentage[i])
+                sevenDayPAverageList.append(dayCountProteinPercentage[i])
+                sevenDayDAverageList.append(dayCountDairyPercentage[i])
+                sevenDayFAverageList.append(dayCountFruitPercentage[i])
+            }
+        }else
+        {
+            for i in 0 ..< dateSaved.count
+            {
+                sevenDayVAverageList.append(dayCountVegetablePercentage[i])
+                sevenDayGAverageList.append(dayCountGrainPercentage[i])
+                sevenDayDAverageList.append(dayCountDairyPercentage[i])
+                sevenDayFAverageList.append(dayCountFruitPercentage[i])
+                sevenDayPAverageList.append(dayCountProteinPercentage[i])
+            }
+        }
+        
+        var sumEachElement = ["V":0.0,"G":0.0,"P":0.0,"D":0.0,"F":0.0]
+        let finalCount = sevenDayPAverageList.count
+        
+        for i in 0 ..< finalCount
+        {
+            sumEachElement["V"]! += sevenDayVAverageList[i]
+            sumEachElement["G"]! += sevenDayGAverageList[i]
+            sumEachElement["P"]! += sevenDayPAverageList[i]
+            sumEachElement["D"]! += sevenDayDAverageList[i]
+            sumEachElement["F"]! += sevenDayFAverageList[i]
+            
+            if i == finalCount - 1
+            {
+                averageEachElement["V"]! = sumEachElement["V"]! / Double(finalCount)
+                averageEachElement["G"]! = sumEachElement["G"]! / Double(finalCount)
+                averageEachElement["P"]! = sumEachElement["P"]! / Double(finalCount)
+                averageEachElement["D"]! = sumEachElement["D"]! / Double(finalCount)
+                averageEachElement["F"]! = sumEachElement["F"]! / Double(finalCount)
+            }
+        }
+        
+        return averageEachElement // Stores percentage of each elemetn
+    }
+    
+    mutating func getMinConsumeElement() -> String
+    {
+        var minConsumeElement = ""
+        var minValue = 0.0
+        var listOfAllElementsPercentage: [Double]?
+        print("HPC - getminconsumeelement")
+        print(averageEachElement)
+        if dateSaved.count > 1
+        {
+            listOfAllElementsPercentage = [averageEachElement["V"]!,averageEachElement["G"]!,averageEachElement["P"]!,averageEachElement["D"]!,averageEachElement["F"]!]
+            minValue = (listOfAllElementsPercentage?.min()!)!
+        }else
+        {
+            return ""
+        }
+        
+        if minValue < 5.0
+        {
+            switch minValue
+            {
+            case listOfAllElementsPercentage![0]:
+                minConsumeElement = "vegetables".localized()
+            case listOfAllElementsPercentage![1]:
+                minConsumeElement = "grains".localized()
+            case listOfAllElementsPercentage![2]:
+                minConsumeElement = "proteins".localized()
+            case listOfAllElementsPercentage![3]:
+                minConsumeElement = "dairies".localized()
+            case listOfAllElementsPercentage![4]:
+                minConsumeElement = "fruits".localized()
+            default:
+                minConsumeElement = ""
+            }
+        }else
+        {
+            return ""
+        }
+        
+        print("Min Consume")
+        print(minConsumeElement)
+        
+        return minConsumeElement
+        
+    }
+    
     
     private mutating func getAverageOfEachElement()
     {
@@ -203,11 +361,11 @@ struct HealthPercentageCalculator
         for i in 0 ..< dayBalancePercentage.count
         {
             sum += dayBalancePercentage[i]
-            sumv += dayCountVegetable[i]
-            sumd += dayCountDairy[i]
-            sump += dayCountProtein[i]
-            sumf += dayCountFruit[i]
-            sumg += dayCountGrain[i]
+            sumv += dayCountVegetablePercentage[i]
+            sumd += dayCountDairyPercentage[i]
+            sump += dayCountProteinPercentage[i]
+            sumf += dayCountFruitPercentage[i]
+            sumg += dayCountGrainPercentage[i]
         }
         
         averageHealth = sum / Double(dayBalancePercentage.count)
@@ -220,14 +378,56 @@ struct HealthPercentageCalculator
     
     mutating func getTrimmedDate(Name: [String]) -> [String]
     {
-        var newFileName: [String] = []
-        for i in 0 ..< Name.count
+        if Name.count > 0
         {
-            let str = Name[i].prefix(13)
-            let date = str.suffix(10)
-            newFileName.append(String(date))
+            var newFileName: [String] = []
+            for i in 0 ..< Name.count
+            {
+                let date = Name[i].prefix(10)
+                //                let str = Name[i].prefix(13)
+                //                let date = str.suffix(10)
+                newFileName.append(String(date))
+            }
+            return newFileName
+        }else
+        {
+            return []
         }
-        return newFileName
+    }
+    
+    private func getTodayDate() -> String
+    {
+        let format = DateFormatter()
+        format.dateFormat = "MM-dd"
+        let currentTime = Date()
+        return "\(format.string(from: currentTime))"
+    }
+    
+    
+    
+    mutating func getTodayEachElementData() -> [
+        Double]
+    {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let todayDateString = formatter.string(from: Date())
+        
+        print("checkpoint")
+        print(dateSaved)
+        
+        // If the last recording is not today
+        if dateSaved[0] != todayDateString
+        {
+            return [0.0,0.0,0.0,0.0,0.0]
+        }else
+        {
+            let todayVegetable = dayCountVegetable[0]
+            let todayGrain = dayCountGrain[0]
+            let todayProtein = dayCountProtein[0]
+            let todayFruit = dayCountFruit[0]
+            let todayDairy = dayCountDairy[0]
+            return [todayGrain,todayVegetable,todayFruit,todayDairy,todayProtein]
+        }
     }
     
     mutating func getTrimmedDate() -> [String]
@@ -238,6 +438,26 @@ struct HealthPercentageCalculator
     mutating func getDayBalancePercentage() -> [Double]
     {
         return dayBalancePercentage
+    }
+    
+    mutating func getTodayPercentage() -> Double
+    {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let todayDateString = formatter.string(from: Date())
+        // If the last recording is not today
+        if dateSaved[dateSaved.count - 1] != todayDateString
+        {
+            return 0.0
+        }else
+        {
+            return round(dayBalancePercentage[dayBalancePercentage.count - 1]*100)/100
+        }
+    }
+    
+    mutating func getElementPercentage() -> [String:Double]
+    {
+        return ["Vegetable":averageVegetable,"Grain":averageGrain,"Protein":averageProtein,"Fruit":averageFruit,"Dairy":averageDairy]
     }
     
     mutating func getAverageHealth() -> Double

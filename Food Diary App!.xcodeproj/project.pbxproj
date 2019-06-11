@@ -11,28 +11,28 @@
 		373891DAD9C61286CE8A3716 /* Pods_Food_Diary_App_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */; };
 		5ED87B49F86EA263E6B4C293 /* Pods_Food_Diary_App_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7BBA844F0BBB3BE83A4317 /* Pods_Food_Diary_App_Tests.framework */; };
 		B50322DE20267F4900584FA0 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50322DD20267F4900584FA0 /* SettingTableViewController.swift */; };
-		B506BECC2015401000680B46 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B506BECB2015401000680B46 /* IntroductionViewController.swift */; };
-		B5081E282028AB5100EC3E98 /* APPLEORANGE_loop.gif in Resources */ = {isa = PBXBuildFile; fileRef = B5081E272028AB5000EC3E98 /* APPLEORANGE_loop.gif */; };
-		B508F577201D37330025205C /* apple.json in Resources */ = {isa = PBXBuildFile; fileRef = B508F576201D37330025205C /* apple.json */; };
-		B5214F97201FC53C008E66F4 /* HomeScreenAni.json in Resources */ = {isa = PBXBuildFile; fileRef = B5214F96201FC53C008E66F4 /* HomeScreenAni.json */; };
-		B5214F99201FE4E9008E66F4 /* DemoHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5214F98201FE4E9008E66F4 /* DemoHomePageViewController.swift */; };
+		B5087DFA2072FF1200964362 /* localNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5087DF92072FF1200964362 /* localNotification.swift */; };
+		B52DB05620630557001C4003 /* messageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52DB05520630557001C4003 /* messageGenerator.swift */; };
+		B52FD02B2031BF9E00C41331 /* nougatine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B52FD02A2031BF6700C41331 /* nougatine.ttf */; };
+		B5318476203B7968002085A9 /* InstructionPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */; };
 		B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422441FE16947002C2540 /* KDCircularProgress.swift */; };
 		B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53422461FE16D13002C2540 /* homepageViewController.swift */; };
+		B536D68720755F4400617A70 /* localNotification_Scheduled.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536D68620755F4400617A70 /* localNotification_Scheduled.swift */; };
 		B54616D8201DE6B6006E81C7 /* SCLAlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */; };
+		B54BCFAD2034E99700DF1B31 /* ClearDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */; };
 		B54DEF4D20112EB900251A19 /* FileManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DEF4C20112EB900251A19 /* FileManagerModel.swift */; };
-		B55234331FE9AC79009A757D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55234321FE9AC79009A757D /* CameraViewController.swift */; };
 		B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */; };
 		B55645F22024C80100E587BA /* NutritionSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */; };
-		B55C97C3201BDD600087E29D /* LogInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C97C2201BDD600087E29D /* LogInPageViewController.swift */; };
-		B55C97C5201BDEFA0087E29D /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */; };
-		B561D6EB2027D0BD00561AE7 /* facebook-circle-heart-love-png-4.png in Resources */ = {isa = PBXBuildFile; fileRef = B561D6EA2027D0BA00561AE7 /* facebook-circle-heart-love-png-4.png */; };
+		B56C2CB12070380A00875E9E /* DayViewDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C2CB02070380A00875E9E /* DayViewDiaryViewController.swift */; };
+		B56C2CB32070398500875E9E /* DayViewDairyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C2CB22070398500875E9E /* DayViewDairyTableViewCell.swift */; };
 		B56F51D9202659F400F36D9E /* SelectPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */; };
-		B56F51DA202659F400F36D9E /* SelectPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */; };
 		B56F51DE20267B1000F36D9E /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */; };
 		B570B0FF2025F6BB008BF8BC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */; };
 		B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B570B1022025F77A008BF8BC /* Montserrat-Bold.otf */; };
 		B570B1042025F78D008BF8BC /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B570B1002025F771008BF8BC /* Montserrat-Light.otf */; };
 		B570B1052025F78F008BF8BC /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B570B1012025F776008BF8BC /* Montserrat-Medium.otf */; };
+		B5743221206082A200C998D0 /* personalisePlanCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5743220206082A200C998D0 /* personalisePlanCalculator.swift */; };
+		B574322920616C9300C998D0 /* CustomizedPlanSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B574322820616C9300C998D0 /* CustomizedPlanSettingViewController.swift */; };
 		B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57935351FE022DE00E663DB /* AppDelegate.swift */; };
 		B579353B1FE022DE00E663DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57935391FE022DE00E663DB /* Main.storyboard */; };
 		B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B579353E1FE022DE00E663DB /* LaunchScreen.storyboard */; };
@@ -41,30 +41,39 @@
 		B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B57935631FE0234600E663DB /* GoogleService-Info.plist */; };
 		B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */; };
 		B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E7F6F201A845400136E54 /* accessNutritionData.swift */; };
+		B57F44BE20627B90001FD68C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F44BD20627B90001FD68C /* StringExtension.swift */; };
 		B58066FF201E763A00F8FB89 /* validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58066FE201E763A00F8FB89 /* validate.swift */; };
-		B5806701201E7C8100F8FB89 /* signUpOrLogInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5806700201E7C8100F8FB89 /* signUpOrLogInHandler.swift */; };
-		B587EF00202899D1001D7F8E /* InstructionPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587EEFE202899D0001D7F8E /* InstructionPopUpViewController.swift */; };
-		B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */; };
+		B595F33D205F1DFC0070124D /* Date_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595F33C205F1DFC0070124D /* Date_Extension.swift */; };
+		B5965DFB2050B120002A2648 /* SelectPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */; };
+		B59701512066A9CB0044ED73 /* InstructionPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59701532066A9CB0044ED73 /* InstructionPopUpViewController.xib */; };
+		B5A5B894203A5179009C0511 /* numberOfServes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5B893203A5179009C0511 /* numberOfServes.swift */; };
+		B5A7AF65207C527B00F1208F /* NotificationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7AF64207C527B00F1208F /* NotificationPageViewController.swift */; };
+		B5A8515E208A8EF60008422E /* EditPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A85160208A8EF60008422E /* EditPopUpViewController.xib */; };
 		B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBD20121623008E11B5 /* ReportViewController.swift */; };
 		B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */; };
-		B5ABB849201B6CD400FC5A0D /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */; };
+		B5AC63EE2063F7C80038DBC3 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */; };
+		B5B56931206176ED003158F8 /* calorieDeterminer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B56930206176ED003158F8 /* calorieDeterminer.swift */; };
 		B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */; };
 		B5C92F11202BBAC700B235FB /* SendFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C92F10202BBAC700B235FB /* SendFeedbackViewController.swift */; };
+		B5CDCEC3205ECB550010213A /* circularSliderDeterminer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDCEC2205ECB550010213A /* circularSliderDeterminer.swift */; };
 		B5CF1DEB201802CE0006AD90 /* balanceRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF1DEA201802CE0006AD90 /* balanceRate.swift */; };
 		B5CF54F7202E467900D1B305 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF54F6202E467800D1B305 /* AdSupport.framework */; };
 		B5D0CC73201B8669005295BC /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0CC70201B8669005295BC /* SkyFloatingLabelTextField.swift */; };
 		B5D0CC74201B8669005295BC /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0CC71201B8669005295BC /* UITextField+fixCaretPosition.swift */; };
 		B5D0CC75201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0CC72201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		B5D187062065516400F884E8 /* popSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B5D187052065516400F884E8 /* popSound.mp3 */; };
 		B5D5E6C620211D3D009BE907 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D5E6C520211D3D009BE907 /* CoreDataHandler.swift */; };
 		B5D5E6C820212452009BE907 /* HealthPercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D5E6C720212452009BE907 /* HealthPercentageCalculator.swift */; };
+		B5D8A6522061DA9B002BE648 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5D8A6542061DA9B002BE648 /* InfoPlist.strings */; };
 		B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */; };
 		B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */; };
+		B5DA2A832050A525003BCDB1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5DA2A852050A525003BCDB1 /* Localizable.strings */; };
 		B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */; };
-		B5ED8495201D152D009062D7 /* appleOrange.json in Resources */ = {isa = PBXBuildFile; fileRef = B5ED8494201D152D009062D7 /* appleOrange.json */; };
-		B5ED8497201D3087009062D7 /* PinJump.json in Resources */ = {isa = PBXBuildFile; fileRef = B5ED8496201D3087009062D7 /* PinJump.json */; };
-		B5ED8499201D32C8009062D7 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B5ED8498201D32C8009062D7 /* data.json */; };
+		B5ECA91F2048B16900E7F819 /* photoProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECA91E2048B16900E7F819 /* photoProcessor.swift */; };
+		B5ECA9212048B5F600E7F819 /* AddInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */; };
 		B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */; };
 		B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */; };
+		B5F5BEC52072647F00CA0770 /* EditPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5BEC32072647F00CA0770 /* EditPopUpViewController.swift */; };
 		B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F61738200FAED900B0C871 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +94,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B58C4F8D20649DBF00F588E4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		17D559FE78D2CB8ABDCD4C2F /* Pods-Food Diary App!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Diary App!.release.xcconfig"; path = "Pods/Target Support Files/Pods-Food Diary App!/Pods-Food Diary App!.release.xcconfig"; sourceTree = "<group>"; };
 		425204C9F820E487D21A9541 /* Pods-Food Diary App!Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Diary App!Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Food Diary App!Tests/Pods-Food Diary App!Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,29 +118,33 @@
 		A08B397D9C4F0A1F200238EE /* Pods-Food Diary App!UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Diary App!UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Food Diary App!UITests/Pods-Food Diary App!UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Diary_App_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50322DD20267F4900584FA0 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
-		B506BECB2015401000680B46 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
-		B5081E272028AB5000EC3E98 /* APPLEORANGE_loop.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = APPLEORANGE_loop.gif; sourceTree = "<group>"; };
-		B508F576201D37330025205C /* apple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apple.json; sourceTree = "<group>"; };
-		B5214F96201FC53C008E66F4 /* HomeScreenAni.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HomeScreenAni.json; sourceTree = "<group>"; };
-		B5214F98201FE4E9008E66F4 /* DemoHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoHomePageViewController.swift; sourceTree = "<group>"; };
+		B5087DF92072FF1200964362 /* localNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = localNotification.swift; sourceTree = "<group>"; };
+		B52DB05520630557001C4003 /* messageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageGenerator.swift; sourceTree = "<group>"; };
+		B52FD02A2031BF6700C41331 /* nougatine.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nougatine.ttf; sourceTree = "<group>"; };
+		B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionPopUpViewController.swift; sourceTree = "<group>"; };
+		B5318478203B79F8002085A9 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = "../../../Downloads/com.crashlytics.ios-manual/Fabric.framework"; sourceTree = "<group>"; };
+		B531847D203B7C40002085A9 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Pods/Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
 		B53422441FE16947002C2540 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		B53422461FE16D13002C2540 /* homepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homepageViewController.swift; sourceTree = "<group>"; };
+		B536D68620755F4400617A70 /* localNotification_Scheduled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = localNotification_Scheduled.swift; sourceTree = "<group>"; };
 		B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCLAlertMessage.swift; sourceTree = "<group>"; };
+		B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearDataViewController.swift; sourceTree = "<group>"; };
 		B54DEF4C20112EB900251A19 /* FileManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerModel.swift; sourceTree = "<group>"; };
-		B55234321FE9AC79009A757D /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		B550A30C22AF9ED5007607D8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SelectPlanViewController.strings"; sourceTree = "<group>"; };
+		B550A30F22AFA1AC007607D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionSettingTableViewController.swift; sourceTree = "<group>"; };
 		B558A46A202E5A92003AA3F4 /* Food Diary App!.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Food Diary App!.entitlements"; sourceTree = "<group>"; };
-		B55C97C2201BDD600087E29D /* LogInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPageViewController.swift; sourceTree = "<group>"; };
-		B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
-		B561D6EA2027D0BA00561AE7 /* facebook-circle-heart-love-png-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-circle-heart-love-png-4.png"; sourceTree = "<group>"; };
+		B56C2CB02070380A00875E9E /* DayViewDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewDiaryViewController.swift; sourceTree = "<group>"; };
+		B56C2CB22070398500875E9E /* DayViewDairyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewDairyTableViewCell.swift; sourceTree = "<group>"; };
 		B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlanViewController.swift; sourceTree = "<group>"; };
-		B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectPlanViewController.xib; sourceTree = "<group>"; };
 		B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
 		B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		B570B1002025F771008BF8BC /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
 		B570B1012025F776008BF8BC /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
 		B570B1022025F77A008BF8BC /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		B5743220206082A200C998D0 /* personalisePlanCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personalisePlanCalculator.swift; sourceTree = "<group>"; };
+		B574322820616C9300C998D0 /* CustomizedPlanSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedPlanSettingViewController.swift; sourceTree = "<group>"; };
 		B57935321FE022DE00E663DB /* Food Diary App!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Diary App!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57935351FE022DE00E663DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B579353A1FE022DE00E663DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,30 +159,51 @@
 		B57935631FE0234600E663DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B57CF9BF1FE88FD6003AEB1E /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		B57E7F6F201A845400136E54 /* accessNutritionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accessNutritionData.swift; sourceTree = "<group>"; };
+		B57F44BD20627B90001FD68C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B58066FE201E763A00F8FB89 /* validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validate.swift; sourceTree = "<group>"; };
-		B5806700201E7C8100F8FB89 /* signUpOrLogInHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpOrLogInHandler.swift; sourceTree = "<group>"; };
-		B587EEFE202899D0001D7F8E /* InstructionPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionPopUpViewController.swift; sourceTree = "<group>"; };
-		B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionPopUpViewController.xib; sourceTree = "<group>"; };
+		B585E6F5207FF9D100137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		B585E6FA207FF9D300137503 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		B58C2E31207D4D6400924D1C /* Appsee.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Appsee.framework; path = ../../../Downloads/Appsee.framework; sourceTree = "<group>"; };
+		B595F33C205F1DFC0070124D /* Date_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date_Extension.swift; sourceTree = "<group>"; };
+		B5965DFC2050B120002A2648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SelectPlanViewController.xib; sourceTree = "<group>"; };
+		B59701552066A9E90044ED73 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InstructionPopUpViewController.xib; sourceTree = "<group>"; };
+		B59701582066AAB80044ED73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InstructionPopUpViewController.xib; sourceTree = "<group>"; };
+		B5A5B893203A5179009C0511 /* numberOfServes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberOfServes.swift; sourceTree = "<group>"; };
+		B5A7AF64207C527B00F1208F /* NotificationPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPageViewController.swift; sourceTree = "<group>"; };
+		B5A8515F208A8EF60008422E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EditPopUpViewController.xib; sourceTree = "<group>"; };
 		B5A9ADBD20121623008E11B5 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colorFromHex.swift"; sourceTree = "<group>"; };
-		B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
+		B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		B5B56930206176ED003158F8 /* calorieDeterminer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calorieDeterminer.swift; sourceTree = "<group>"; };
+		B5C32B10208D319500A8A871 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B5C32B11208D319E00A8A871 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InstructionPopUpViewController.strings"; sourceTree = "<group>"; };
+		B5C32B13208D31AC00A8A871 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SelectPlanViewController.strings"; sourceTree = "<group>"; };
+		B5C32B14208D31B400A8A871 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/EditPopUpViewController.strings"; sourceTree = "<group>"; };
+		B5C32B15208D31C500A8A871 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		B5C42E271FF80F8D002B887A /* Core Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Core Data.xcdatamodel"; sourceTree = "<group>"; };
 		B5C92F10202BBAC700B235FB /* SendFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackViewController.swift; sourceTree = "<group>"; };
+		B5CDCEC2205ECB550010213A /* circularSliderDeterminer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circularSliderDeterminer.swift; sourceTree = "<group>"; };
 		B5CF1DEA201802CE0006AD90 /* balanceRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = balanceRate.swift; sourceTree = "<group>"; };
 		B5CF54F6202E467800D1B305 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		B5D0CC70201B8669005295BC /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		B5D0CC71201B8669005295BC /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		B5D0CC72201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
+		B5D187052065516400F884E8 /* popSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = popSound.mp3; sourceTree = "<group>"; };
 		B5D5E6C520211D3D009BE907 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		B5D5E6C720212452009BE907 /* HealthPercentageCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPercentageCalculator.swift; sourceTree = "<group>"; };
+		B5D8A64F2061D575002BE648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B5D8A6552061DAA2002BE648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B5D8A6572061DAFD002BE648 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
+		B5DA2A802050A4E2003BCDB1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		B5DA2A842050A525003BCDB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumBrowserViewController.swift; sourceTree = "<group>"; };
-		B5ED8494201D152D009062D7 /* appleOrange.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appleOrange.json; sourceTree = "<group>"; };
-		B5ED8496201D3087009062D7 /* PinJump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PinJump.json; sourceTree = "<group>"; };
-		B5ED8498201D32C8009062D7 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		B5ECA91E2048B16900E7F819 /* photoProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoProcessor.swift; sourceTree = "<group>"; };
+		B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoViewController.swift; sourceTree = "<group>"; };
 		B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPhotoViewController.swift; sourceTree = "<group>"; };
 		B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Rotate.swift; sourceTree = "<group>"; };
+		B5F5BEC32072647F00CA0770 /* EditPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPopUpViewController.swift; sourceTree = "<group>"; };
 		B5F61738200FAED900B0C871 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +239,9 @@
 		0CEB4A157D41D8E9D1A2D617 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B58C2E31207D4D6400924D1C /* Appsee.framework */,
+				B531847D203B7C40002085A9 /* Crashlytics.framework */,
+				B5318478203B79F8002085A9 /* Fabric.framework */,
 				B5CF54F6202E467800D1B305 /* AdSupport.framework */,
 				AC99E38A86A30C8DB3F642E7 /* Pods_Food_Diary_App_.framework */,
 				8A7BBA844F0BBB3BE83A4317 /* Pods_Food_Diary_App_Tests.framework */,
@@ -203,6 +253,7 @@
 		B570B1062025F79E008BF8BC /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				B52FD02A2031BF6700C41331 /* nougatine.ttf */,
 				B570B1022025F77A008BF8BC /* Montserrat-Bold.otf */,
 				B570B1002025F771008BF8BC /* Montserrat-Light.otf */,
 				B570B1012025F776008BF8BC /* Montserrat-Medium.otf */,
@@ -241,7 +292,6 @@
 				B59F55851FE9566000E22CCD /* Controller */,
 				B59F55841FE9565600E22CCD /* Helper */,
 				B5F61738200FAED900B0C871 /* Assets.xcassets */,
-				B561D6EA2027D0BA00561AE7 /* facebook-circle-heart-love-png-4.png */,
 				B57935351FE022DE00E663DB /* AppDelegate.swift */,
 				B5C42E261FF80F8D002B887A /* Food Diary App!.xcdatamodeld */,
 				B57935411FE022DE00E663DB /* Info.plist */,
@@ -271,17 +321,16 @@
 		B59F55841FE9565600E22CCD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				B5081E272028AB5000EC3E98 /* APPLEORANGE_loop.gif */,
+				B5D187052065516400F884E8 /* popSound.mp3 */,
 				B570B1062025F79E008BF8BC /* Font */,
-				B5ED8496201D3087009062D7 /* PinJump.json */,
-				B508F576201D37330025205C /* apple.json */,
-				B5ED8494201D152D009062D7 /* appleOrange.json */,
-				B5214F96201FC53C008E66F4 /* HomeScreenAni.json */,
-				B5ED8498201D32C8009062D7 /* data.json */,
 				B5D0CC6F201B8669005295BC /* Sources */,
 				B53422441FE16947002C2540 /* KDCircularProgress.swift */,
 				B5F4549B1FEC7C5400310B24 /* UIImage_Rotate.swift */,
+				B57F44BD20627B90001FD68C /* StringExtension.swift */,
 				B5A9ADBF20122894008E11B5 /* UIColor+colorFromHex.swift */,
+				B5DA2A852050A525003BCDB1 /* Localizable.strings */,
+				B595F33C205F1DFC0070124D /* Date_Extension.swift */,
+				B5D8A6542061DA9B002BE648 /* InfoPlist.strings */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -289,27 +338,30 @@
 		B59F55851FE9566000E22CCD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B5ECA9202048B5F600E7F819 /* AddInfoViewController.swift */,
+				B5AC63ED2063F7C80038DBC3 /* AddNoteViewController.swift */,
 				B5E204571FF698310052F6F2 /* AlbumBrowserViewController.swift */,
-				B55234321FE9AC79009A757D /* CameraViewController.swift */,
+				B54BCFAC2034E99700DF1B31 /* ClearDataViewController.swift */,
 				B5F454971FEC03B400310B24 /* ConfirmPhotoViewController.swift */,
+				B574322820616C9300C998D0 /* CustomizedPlanSettingViewController.swift */,
 				B553E13C2012A0BD000E6D43 /* DashboardViewController.swift */,
-				B5214F98201FE4E9008E66F4 /* DemoHomePageViewController.swift */,
 				B5D9E6331FF5B3E500CA93A0 /* DiaryTableViewCell.swift */,
 				B5D9E6391FF5BE9900CA93A0 /* DiaryTableViewController.swift */,
 				B53422461FE16D13002C2540 /* homepageViewController.swift */,
-				B506BECB2015401000680B46 /* IntroductionViewController.swift */,
-				B55C97C2201BDD600087E29D /* LogInPageViewController.swift */,
+				B5318475203B7968002085A9 /* InstructionPopUpViewController.swift */,
+				B59701532066A9CB0044ED73 /* InstructionPopUpViewController.xib */,
 				B55645F12024C80100E587BA /* NutritionSettingTableViewController.swift */,
 				B570B0FE2025F6BB008BF8BC /* OnBoardingViewController.swift */,
-				B55C97C4201BDEFA0087E29D /* RecoverPasswordViewController.swift */,
 				B5A9ADBD20121623008E11B5 /* ReportViewController.swift */,
-				B50322DD20267F4900584FA0 /* SettingTableViewController.swift */,
-				B5ABB848201B6CD400FC5A0D /* SignUpPageViewController.swift */,
 				B56F51D7202659F300F36D9E /* SelectPlanViewController.swift */,
-				B56F51D8202659F400F36D9E /* SelectPlanViewController.xib */,
-				B587EEFE202899D0001D7F8E /* InstructionPopUpViewController.swift */,
-				B587EEFF202899D1001D7F8E /* InstructionPopUpViewController.xib */,
+				B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */,
 				B5C92F10202BBAC700B235FB /* SendFeedbackViewController.swift */,
+				B50322DD20267F4900584FA0 /* SettingTableViewController.swift */,
+				B56C2CB02070380A00875E9E /* DayViewDiaryViewController.swift */,
+				B56C2CB22070398500875E9E /* DayViewDairyTableViewCell.swift */,
+				B5F5BEC32072647F00CA0770 /* EditPopUpViewController.swift */,
+				B5A85160208A8EF60008422E /* EditPopUpViewController.xib */,
+				B5A7AF64207C527B00F1208F /* NotificationPageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -334,8 +386,15 @@
 				B54616D7201DE6B6006E81C7 /* SCLAlertMessage.swift */,
 				B5D5E6C520211D3D009BE907 /* CoreDataHandler.swift */,
 				B58066FE201E763A00F8FB89 /* validate.swift */,
-				B5806700201E7C8100F8FB89 /* signUpOrLogInHandler.swift */,
 				B56F51DD20267B1000F36D9E /* UserDefaultsHandler.swift */,
+				B5A5B893203A5179009C0511 /* numberOfServes.swift */,
+				B5ECA91E2048B16900E7F819 /* photoProcessor.swift */,
+				B5CDCEC2205ECB550010213A /* circularSliderDeterminer.swift */,
+				B5743220206082A200C998D0 /* personalisePlanCalculator.swift */,
+				B5B56930206176ED003158F8 /* calorieDeterminer.swift */,
+				B52DB05520630557001C4003 /* messageGenerator.swift */,
+				B5087DF92072FF1200964362 /* localNotification.swift */,
+				B536D68620755F4400617A70 /* localNotification_Scheduled.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -375,8 +434,8 @@
 				B579352F1FE022DE00E663DB /* Frameworks */,
 				B57935301FE022DE00E663DB /* Resources */,
 				45DF41A33E2D34CDD3329B77 /* [CP] Embed Pods Frameworks */,
-				19CF577C6426E4B9DBF3B16E /* [CP] Copy Pods Resources */,
 				B5CF54F5202E439900D1B305 /* ShellScript */,
+				B58C4F8D20649DBF00F588E4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -396,7 +455,6 @@
 				B57935431FE022DE00E663DB /* Frameworks */,
 				B57935441FE022DE00E663DB /* Resources */,
 				DA22E0093DE9548A386CEC60 /* [CP] Embed Pods Frameworks */,
-				5ABB344CF4AA472DFB520E07 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -416,8 +474,6 @@
 				B579354D1FE022DE00E663DB /* Sources */,
 				B579354E1FE022DE00E663DB /* Frameworks */,
 				B579354F1FE022DE00E663DB /* Resources */,
-				1A02338E7DFB19202279632D /* [CP] Embed Pods Frameworks */,
-				C8AA0D5EA3C8ABEF3CFA591C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -436,13 +492,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = BenShih;
 				TargetAttributes = {
 					B57935311FE022DE00E663DB = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -467,6 +526,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = B57935291FE022DE00E663DB;
 			productRefGroup = B57935331FE022DE00E663DB /* Products */;
@@ -487,20 +548,18 @@
 			files = (
 				B570B1042025F78D008BF8BC /* Montserrat-Light.otf in Resources */,
 				B570B1052025F78F008BF8BC /* Montserrat-Medium.otf in Resources */,
+				B5D8A6522061DA9B002BE648 /* InfoPlist.strings in Resources */,
+				B5DA2A832050A525003BCDB1 /* Localizable.strings in Resources */,
+				B52FD02B2031BF9E00C41331 /* nougatine.ttf in Resources */,
+				B5D187062065516400F884E8 /* popSound.mp3 in Resources */,
 				B57935641FE0234600E663DB /* GoogleService-Info.plist in Resources */,
-				B5ED8499201D32C8009062D7 /* data.json in Resources */,
-				B5ED8495201D152D009062D7 /* appleOrange.json in Resources */,
+				B5A8515E208A8EF60008422E /* EditPopUpViewController.xib in Resources */,
 				B57935401FE022DE00E663DB /* LaunchScreen.storyboard in Resources */,
-				B508F577201D37330025205C /* apple.json in Resources */,
-				B587EF01202899D1001D7F8E /* InstructionPopUpViewController.xib in Resources */,
+				B59701512066A9CB0044ED73 /* InstructionPopUpViewController.xib in Resources */,
 				B570B1032025F78A008BF8BC /* Montserrat-Bold.otf in Resources */,
-				B56F51DA202659F400F36D9E /* SelectPlanViewController.xib in Resources */,
-				B561D6EB2027D0BD00561AE7 /* facebook-circle-heart-love-png-4.png in Resources */,
+				B5965DFB2050B120002A2648 /* SelectPlanViewController.xib in Resources */,
 				B5F61739200FAED900B0C871 /* Assets.xcassets in Resources */,
 				B579353B1FE022DE00E663DB /* Main.storyboard in Resources */,
-				B5214F97201FC53C008E66F4 /* HomeScreenAni.json in Resources */,
-				B5ED8497201D3087009062D7 /* PinJump.json in Resources */,
-				B5081E282028AB5100EC3E98 /* APPLEORANGE_loop.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,36 +598,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		19CF577C6426E4B9DBF3B16E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Food Diary App!/Pods-Food Diary App!-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1A02338E7DFB19202279632D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Food Diary App!UITests/Pods-Food Diary App!UITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		45DF41A33E2D34CDD3329B77 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -576,66 +605,59 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Food Diary App!/Pods-Food Diary App!-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/FanMenu/FanMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Former/Former.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-ac14cd06/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Instructions/Instructions.framework",
+				"${BUILT_PRODUCTS_DIR}/Macaw/Macaw.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
+				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
+				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 				"${BUILT_PRODUCTS_DIR}/ScrollableGraphView/ScrollableGraphView.framework",
-				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyOnboard/SwiftyOnboard.framework",
+				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FanMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Former.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instructions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Macaw.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableGraphView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyOnboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Food Diary App!/Pods-Food Diary App!-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5ABB344CF4AA472DFB520E07 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Food Diary App!Tests/Pods-Food Diary App!Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7B7C64509D26301FEE2CD94D /* [CP] Check Pods Manifest.lock */ = {
@@ -687,30 +709,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C8AA0D5EA3C8ABEF3CFA591C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Food Diary App!UITests/Pods-Food Diary App!UITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DA22E0093DE9548A386CEC60 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Food Diary App!Tests/Pods-Food Diary App!Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-00567490/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -724,43 +736,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B506BECC2015401000680B46 /* IntroductionViewController.swift in Sources */,
 				B57E7F70201A845400136E54 /* accessNutritionData.swift in Sources */,
+				B5A7AF65207C527B00F1208F /* NotificationPageViewController.swift in Sources */,
 				B53422471FE16D13002C2540 /* homepageViewController.swift in Sources */,
-				B5806701201E7C8100F8FB89 /* signUpOrLogInHandler.swift in Sources */,
-				B587EF00202899D1001D7F8E /* InstructionPopUpViewController.swift in Sources */,
 				B553E13D2012A0BD000E6D43 /* DashboardViewController.swift in Sources */,
+				B5A5B894203A5179009C0511 /* numberOfServes.swift in Sources */,
 				B5C42E281FF80F8D002B887A /* Food Diary App!.xcdatamodeld in Sources */,
-				B55C97C3201BDD600087E29D /* LogInPageViewController.swift in Sources */,
 				B5CF1DEB201802CE0006AD90 /* balanceRate.swift in Sources */,
 				B5A9ADBE20121623008E11B5 /* ReportViewController.swift in Sources */,
 				B570B0FF2025F6BB008BF8BC /* OnBoardingViewController.swift in Sources */,
 				B5D9E6341FF5B3E500CA93A0 /* DiaryTableViewCell.swift in Sources */,
+				B52DB05620630557001C4003 /* messageGenerator.swift in Sources */,
 				B57CF9C01FE88FD6003AEB1E /* AlertMessage.swift in Sources */,
 				B53422451FE16947002C2540 /* KDCircularProgress.swift in Sources */,
+				B56C2CB32070398500875E9E /* DayViewDairyTableViewCell.swift in Sources */,
+				B56C2CB12070380A00875E9E /* DayViewDiaryViewController.swift in Sources */,
+				B536D68720755F4400617A70 /* localNotification_Scheduled.swift in Sources */,
 				B5D0CC74201B8669005295BC /* UITextField+fixCaretPosition.swift in Sources */,
+				B57F44BE20627B90001FD68C /* StringExtension.swift in Sources */,
 				B5D5E6C620211D3D009BE907 /* CoreDataHandler.swift in Sources */,
+				B5F5BEC52072647F00CA0770 /* EditPopUpViewController.swift in Sources */,
 				B5F454981FEC03B400310B24 /* ConfirmPhotoViewController.swift in Sources */,
+				B574322920616C9300C998D0 /* CustomizedPlanSettingViewController.swift in Sources */,
 				B58066FF201E763A00F8FB89 /* validate.swift in Sources */,
+				B5B56931206176ED003158F8 /* calorieDeterminer.swift in Sources */,
+				B595F33D205F1DFC0070124D /* Date_Extension.swift in Sources */,
 				B54616D8201DE6B6006E81C7 /* SCLAlertMessage.swift in Sources */,
 				B5D9E63A1FF5BE9900CA93A0 /* DiaryTableViewController.swift in Sources */,
+				B54BCFAD2034E99700DF1B31 /* ClearDataViewController.swift in Sources */,
 				B5F4549C1FEC7C5400310B24 /* UIImage_Rotate.swift in Sources */,
+				B5CDCEC3205ECB550010213A /* circularSliderDeterminer.swift in Sources */,
 				B5D0CC75201B8669005295BC /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
-				B55C97C5201BDEFA0087E29D /* RecoverPasswordViewController.swift in Sources */,
 				B57935361FE022DE00E663DB /* AppDelegate.swift in Sources */,
 				B56F51D9202659F400F36D9E /* SelectPlanViewController.swift in Sources */,
 				B50322DE20267F4900584FA0 /* SettingTableViewController.swift in Sources */,
 				B55645F22024C80100E587BA /* NutritionSettingTableViewController.swift in Sources */,
-				B5ABB849201B6CD400FC5A0D /* SignUpPageViewController.swift in Sources */,
+				B5743221206082A200C998D0 /* personalisePlanCalculator.swift in Sources */,
 				B54DEF4D20112EB900251A19 /* FileManagerModel.swift in Sources */,
 				B56F51DE20267B1000F36D9E /* UserDefaultsHandler.swift in Sources */,
 				B5A9ADC020122894008E11B5 /* UIColor+colorFromHex.swift in Sources */,
 				B5D0CC73201B8669005295BC /* SkyFloatingLabelTextField.swift in Sources */,
-				B5214F99201FE4E9008E66F4 /* DemoHomePageViewController.swift in Sources */,
 				B5E204581FF698310052F6F2 /* AlbumBrowserViewController.swift in Sources */,
+				B5AC63EE2063F7C80038DBC3 /* AddNoteViewController.swift in Sources */,
+				B5ECA91F2048B16900E7F819 /* photoProcessor.swift in Sources */,
 				B5D5E6C820212452009BE907 /* HealthPercentageCalculator.swift in Sources */,
+				B5087DFA2072FF1200964362 /* localNotification.swift in Sources */,
 				B5C92F11202BBAC700B235FB /* SendFeedbackViewController.swift in Sources */,
-				B55234331FE9AC79009A757D /* CameraViewController.swift in Sources */,
+				B5318476203B7968002085A9 /* InstructionPopUpViewController.swift in Sources */,
+				B5ECA9212048B5F600E7F819 /* AddInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,6 +823,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				B579353A1FE022DE00E663DB /* Base */,
+				B5C32B15208D31C500A8A871 /* zh-Hant */,
+				B550A30F22AFA1AC007607D8 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -808,8 +833,59 @@
 			isa = PBXVariantGroup;
 			children = (
 				B579353F1FE022DE00E663DB /* Base */,
+				B5DA2A802050A4E2003BCDB1 /* zh-Hant */,
+				B585E6F5207FF9D100137503 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B5965DFD2050B120002A2648 /* SelectPlanViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5965DFC2050B120002A2648 /* Base */,
+				B5C32B13208D31AC00A8A871 /* zh-Hant */,
+				B550A30C22AF9ED5007607D8 /* zh-Hans */,
+			);
+			name = SelectPlanViewController.xib;
+			sourceTree = "<group>";
+		};
+		B59701532066A9CB0044ED73 /* InstructionPopUpViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B59701552066A9E90044ED73 /* en */,
+				B59701582066AAB80044ED73 /* Base */,
+				B5C32B11208D319E00A8A871 /* zh-Hant */,
+			);
+			name = InstructionPopUpViewController.xib;
+			sourceTree = "<group>";
+		};
+		B5A85160208A8EF60008422E /* EditPopUpViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5A8515F208A8EF60008422E /* Base */,
+				B5C32B14208D31B400A8A871 /* zh-Hant */,
+			);
+			name = EditPopUpViewController.xib;
+			sourceTree = "<group>";
+		};
+		B5D8A6542061DA9B002BE648 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5D8A6552061DAA2002BE648 /* Base */,
+				B5D8A6572061DAFD002BE648 /* zh-Hant */,
+				B585E6FA207FF9D300137503 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B5DA2A852050A525003BCDB1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5DA2A842050A525003BCDB1 /* en */,
+				B5D8A64F2061D575002BE648 /* Base */,
+				B5C32B10208D319500A8A871 /* zh-Hant */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -819,6 +895,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -829,6 +906,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -836,6 +914,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -876,6 +955,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -886,6 +966,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -893,6 +974,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -931,7 +1013,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 64KKU33NVH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Crashlytics",
+					"$(PROJECT_DIR)/Pods/Fabric",
+				);
 				INFOPLIST_FILE = "Food Diary App!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BenShih.Food-Diary-App-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -948,7 +1036,13 @@
 				CODE_SIGN_ENTITLEMENTS = "Food Diary App!/Food Diary App!.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64KKU33NVH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Crashlytics",
+					"$(PROJECT_DIR)/Pods/Fabric",
+				);
 				INFOPLIST_FILE = "Food Diary App!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BenShih.Food-Diary-App-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
